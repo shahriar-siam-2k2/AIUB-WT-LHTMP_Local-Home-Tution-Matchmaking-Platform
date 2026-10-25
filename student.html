@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LHTMP - Student Dashboard</title>
+    <link rel="stylesheet" href="student.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">LH</div>
+        <h2>LHTMP</h2>
+        <p>Student Portal</p>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Main Menu</span>
+        <a href="#" class="active">
+          <span class="nav-icon">🖥️</span> Dashboard
+        </a>
+        <a href="#"> <span class="nav-icon">🔍</span> Find Tutors </a>
+        <a href="#"> <span class="nav-icon">🕓</span> My Sessions </a>
+        <a href="#"> <span class="nav-icon">📚</span> Study Materials </a>
+        <a href="#"> <span class="nav-icon">📅</span> My Schedule </a>
+        <span class="nav-section-label">Account</span>
+        <a href="#"> <span class="nav-icon">⭐</span> Reviews </a>
+        <a href="#"> <span class="nav-icon">✉️</span> Messages </a>
+        <a href="#"> <span class="nav-icon">👤</span> Profile </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button
+          type="button"
+          class="btn-logout"
+          onclick="window.location.href = 'login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-header">
+        <div class="header-left">
+          <h2>Welcome back, Siam!</h2>
+          <p>Sunday, 26 October 2026 • Student Account</p>
+        </div>
+        <div class="header-right">
+          <button type="button" class="notif-btn">
+            🔔
+            <span class="notif-badge">3</span>
+          </button>
+          <div class="user-avatar">S</div>
+          <div class="user-info">
+            <span>Siam</span>
+            <span>Grade 10 •z Dhaka</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card" data-icon="📅">
+          <div class="stat-label">Upcoming Sessions</div>
+          <div class="stat-value">3</div>
+          <div class="stat-sub">Next: Today at 4:00 PM</div>
+        </div>
+        <div class="stat-card" data-icon="👨‍🏫">
+          <div class="stat-label">Active Tutors</div>
+          <div class="stat-value">2</div>
+          <div class="stat-sub">2 subjects enrolled</div>
+        </div>
+        <div class="stat-card" data-icon="📚">
+          <div class="stat-label">Study Materials</div>
+          <div class="stat-value">12</div>
+          <div class="stat-sub">3 new this week</div>
+        </div>
+        <div class="stat-card" data-icon="⭐">
+          <div class="stat-label">Average Rating Given</div>
+          <div class="stat-value">4.5⭐</div>
+          <div class="stat-sub">Out of 5.0</div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>My Upcoming Sessions</h3>
+          <span class="badge">3 Sessions</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Tutor Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="subject-chip">Mathematics</span></td>
+              <td>Tanbeen</td>
+              <td>26 Oct 2026</td>
+              <td>4:00 PM</td>
+              <td><span class="status-badge confirmed">Confirmed</span></td>
+              <td>
+                <button type="button" class="btn-table-join">Join</button>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="subject-chip">Physics</span></td>
+              <td>Erona</td>
+              <td>27 Oct 2026</td>
+              <td>5:00 PM</td>
+              <td><span class="status-badge confirmed">Confirmed</span></td>
+              <td>
+                <button type="button" class="btn-table-join">Join</button>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="subject-chip">English</span></td>
+              <td>Rodela</td>
+              <td>28 Oct 2026</td>
+              <td>3:00 PM</td>
+              <td><span class="status-badge pending">Pending</span></td>
+              <td>
+                <button type="button" class="btn-table-cancel">Cancel</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>Find Tutors</h3>
+          <span class="badge">Browse All</span>
+        </div>
+        <div class="search-bar-row">
+          <input
+            type="text"
+            placeholder="Search by subject, name, or location... e.g. Mathematics, Dhaka"
+            value=""
+          />
+          <button type="button" class="btn-search">Search</button>
+        </div>
+        <div class="tutor-cards-grid">
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">T</div>
+              <div>
+                <div class="tutor-name">Tanbeen</div>
+                <div class="tutor-subject">Mathematics & Physics</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐⭐</span>
+              <span class="tutor-rating-text">4.9 (128 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳500/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Mirpur</div>
+              <div class="tutor-meta-item">📚 6 years experience</div>
+            </div>
+            <button type="button" class="btn-book">Book Session</button>
+          </div>
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">E</div>
+              <div>
+                <div class="tutor-name">Erona</div>
+                <div class="tutor-subject">Chemistry & Biology</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐☆</span>
+              <span class="tutor-rating-text">4.3 (87 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳450/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Dhanmondi</div>
+              <div class="tutor-meta-item">📚 4 years experience</div>
+            </div>
+            <button type="button" class="btn-book">Book Session</button>
+          </div>
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">R</div>
+              <div>
+                <div class="tutor-name">Rodela</div>
+                <div class="tutor-subject">English & Bangla</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐⭐</span>
+              <span class="tutor-rating-text">4.7 (103 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳400/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Uttara</div>
+              <div class="tutor-meta-item">📚 5 years experience</div>
+            </div>
+            <button type="button" class="btn-book">Book Session</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>Recent Study Materials</h3>
+          <span class="badge">12 Files</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Material Name</th>
+              <th>Subject</th>
+              <th>Tutor</th>
+              <th>Uploaded Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>📄 Chapter 5 - Algebra Notes</td>
+              <td><span class="subject-chip">Mathematics</span></td>
+              <td>Tanbeen</td>
+              <td>24 Oct 2026</td>
+              <td>
+                <button type="button" class="btn-download">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 Motion & Laws of Physics</td>
+              <td><span class="subject-chip">Physics</span></td>
+              <td>Tanbeen</td>
+              <td>22 Oct 2026</td>
+              <td>
+                <button type="button" class="btn-download">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 English Grammar Practice Set</td>
+              <td><span class="subject-chip">English</span></td>
+              <td>Rodela</td>
+              <td>20 Oct 2026</td>
+              <td>
+                <button type="button" class="btn-download">Download</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-footer-main">
+        ©️ 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </div>
+    </main>
+  </body>
+</html>
