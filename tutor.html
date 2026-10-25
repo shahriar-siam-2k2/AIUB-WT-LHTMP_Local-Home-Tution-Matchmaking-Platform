@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHTMP - Tutor Dashboard</title>
+    <link rel="stylesheet" href="tutor.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h1>LHTMP</h1>
+            <span>Tutor Portal</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="active">
+                <span class="nav-icon">🖥️</span> Dashboard
+            </a>
+            <a href="#">
+                <span class="nav-icon">👤</span> My Profile
+            </a>
+            <a href="#">
+                <span class="nav-icon">📅</span> Availability
+            </a>
+            <a href="#">
+                <span class="nav-icon">🎫</span> Booking Requests
+            </a>
+            <a href="#">
+                <span class="nav-icon">📊</span> Student Progress
+            </a>
+            <a href="#">
+                <span class="nav-icon">📚</span> Study Materials
+            </a>
+            <a href="#">
+                <span class="nav-icon">⭐</span> Reviews
+            </a>
+            <a href="#">
+                <span class="nav-icon">💰</span> Earnings
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <button
+          type="button"
+          class="btn-logout"
+          onclick="window.location.href = 'login.html'"
+        >
+          Logout
+        </button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+
+        <header class="top-header">
+            <div class="header-welcome">
+                <h2>Welcome, Tanbeen!</h2>
+                <p>Sunday, 26 October 2026</p>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    🔔
+                    <span class="notif-badge">2</span>
+                </button>
+                <div class="avatar">T</div>
+            </div>
+        </header>
+
+        <main class="content-area">
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Active Students</div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-sub">Currently enrolled</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Pending Requests</div>
+                    <div class="stat-value">2</div>
+                    <div class="stat-sub">Awaiting response</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">This Month Earnings</div>
+                    <div class="stat-value">৳8,500</div>
+                    <div class="stat-sub">October 2026</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Average Rating</div>
+                    <div class="stat-value">4.9⭐</div>
+                    <div class="stat-sub">Based on 38 reviews</div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h3 class="section-heading">Booking Requests</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Subject</th>
+                            <th>Requested Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Erona</td>
+                            <td>Mathematics</td>
+                            <td>27 Oct 2026</td>
+                            <td>4:00 PM</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                            <td>
+                                <button class="btn-accept">Accept</button>
+                                <button class="btn-decline">Decline</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rodela</td>
+                            <td>Physics</td>
+                            <td>28 Oct 2026</td>
+                            <td>5:00 PM</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                            <td>
+                                <button class="btn-accept">Accept</button>
+                                <button class="btn-decline">Decline</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Siam</td>
+                            <td>Mathematics</td>
+                            <td>29 Oct 2026</td>
+                            <td>3:00 PM</td>
+                            <td><span class="badge badge-confirmed">Confirmed</span></td>
+                            <td>
+                                <button class="btn-view">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-block">
+                <h3 class="section-heading">My Subjects & Rates</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Level</th>
+                            <th>Hourly Rate</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mathematics</td>
+                            <td>SSC / HSC</td>
+                            <td>৳500/hr</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Physics</td>
+                            <td>HSC</td>
+                            <td>৳550/hr</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Chemistry</td>
+                            <td>SSC</td>
+                            <td>৳480/hr</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn-add">+ Add Subject</button>
+            </div>
+
+            <div class="section-block">
+                <h3 class="section-heading">Student Progress Log</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Subject</th>
+                            <th>Last Session</th>
+                            <th>Attendance</th>
+                            <th>Score</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jerin</td>
+                            <td>Mathematics</td>
+                            <td>24 Oct 2026</td>
+                            <td>Good</td>
+                            <td>85%</td>
+                            <td><button class="btn-update">Update</button></td>
+                        </tr>
+                        <tr>
+                            <td>Nowrin</td>
+                            <td>Physics</td>
+                            <td>23 Oct 2026</td>
+                            <td>Excellent</td>
+                            <td>90%</td>
+                            <td><button class="btn-update">Update</button></td>
+                        </tr>
+                        <tr>
+                            <td>Erona</td>
+                            <td>Mathematics</td>
+                            <td>22 Oct 2026</td>
+                            <td>Average</td>
+                            <td>70%</td>
+                            <td><button class="btn-update">Update</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-block">
+                <h3 class="section-heading">Earnings Summary</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Sessions</th>
+                            <th>Gross Earnings</th>
+                            <th>Platform Fee (10%)</th>
+                            <th>Net Earnings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>October 2026</td>
+                            <td>17</td>
+                            <td>৳9,500</td>
+                            <td>৳950</td>
+                            <td class="earnings-highlight">৳8,550</td>
+                        </tr>
+                        <tr>
+                            <td>September 2026</td>
+                            <td>15</td>
+                            <td>৳8,000</td>
+                            <td>৳800</td>
+                            <td class="earnings-highlight">৳7,200</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn-payout">Request Payout</button>
+            </div>
+
+            <div class="section-block">
+                <h3 class="section-heading">Upload Study Material</h3>
+                <form class="upload-form">
+                    <label for="material-title">Material Title</label>
+                    <input type="text" id="material-title" placeholder="e.g. Chapter 5 - Integration Notes">
+
+                    <label for="material-subject">Subject</label>
+                    <select id="material-subject">
+                        <option value="">-- Select Subject --</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                    </select>
+
+                    <label for="material-file">Choose File</label>
+                    <input type="file" id="material-file">
+
+                    <button type="submit" class="btn-upload">Upload</button>
+                </form>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            ©️ 2026 Local Home Tuition Matchmaking Platform
+        </footer>
+
+    </div>
+
+</body>
+</html>
