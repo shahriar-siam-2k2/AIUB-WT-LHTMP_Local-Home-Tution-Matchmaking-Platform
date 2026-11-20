@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHTMP - Student Progress & Performance</title>
+    <link rel="stylesheet" href="tutor.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">LHTMP</div>
+            <h2>Tutor Portal</h2>
+            <p>Platform Suite</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Main Navigation</div>
+            <a href="tutor.html"><span class="nav-icon">📊</span> Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+            <a href="availability.html"><span class="nav-icon">📅</span> Availability</a>
+            <a href="booking_requests.html"><span class="nav-icon">📨</span> Booking Requests</a>
+            <a href="student_progress.html" class="active"><span class="nav-icon">📈</span> Student Progress</a>
+            <a href="study_materials.html"><span class="nav-icon">📚</span> Study Materials</a>
+            <a href="reviews.html"><span class="nav-icon">⭐</span> Reviews</a>
+            <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+
+        <header class="top-header">
+            <div class="header-left">
+                <h2>Student Progress & Evaluation</h2>
+                <p>Tutor Account • Track attendance records, test scores, and syllabus milestones</p>
+            </div>
+            <div class="header-right">
+                <button type="button" class="notif-btn" onclick="alert('Weekly progress summary ready for export.')" title="Notifications">
+                    🔔
+                    <span class="notif-badge">1</span>
+                </button>
+                <div class="user-avatar">T</div>
+                <div class="user-info">
+                    <span>Tanbeen</span>
+                    <span>Tutor Account</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card" data-icon="👨‍🎓">
+                <div class="stat-label">Active Learners</div>
+                <div class="stat-value">6</div>
+                <div class="stat-sub">Under active mentoring</div>
+            </div>
+            <div class="stat-card" data-icon="📈">
+                <div class="stat-label">Avg Attendance</div>
+                <div class="stat-value">94.8%</div>
+                <div class="stat-sub">Across all enrolled students</div>
+            </div>
+            <div class="stat-card" data-icon="📝">
+                <div class="stat-label">Avg Exam Score</div>
+                <div class="stat-value">84.2%</div>
+                <div class="stat-sub">+6.5% improvement rate</div>
+            </div>
+            <div class="stat-card" data-icon="🎯">
+                <div class="stat-label">Syllabus Progress</div>
+                <div class="stat-value">76%</div>
+                <div class="stat-sub">Target completion: Dec 2026</div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Enrolled Students Roster & Academic Metrics</h3>
+                <button type="button" class="btn-primary" onclick="document.getElementById('progress-form-box').scrollIntoView({behavior: 'smooth'})">+ Log New Session Progress</button>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Subject & Grade</th>
+                        <th>Sessions Completed</th>
+                        <th>Attendance Rate</th>
+                        <th>Latest Test Score</th>
+                        <th>Syllabus Done</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div><strong>Jerin Kabir</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">ID: STU-8821</div>
+                        </td>
+                        <td>
+                            <span class="subject-chip">Mathematics</span>
+                            <div style="font-size: 12px; color: #6b7280;">Class 10 (SSC)</div>
+                        </td>
+                        <td><strong>18 Sessions</strong></td>
+                        <td>
+                            <span class="status-badge confirmed">95% (19/20)</span>
+                        </td>
+                        <td>
+                            <strong>88 / 100</strong>
+                            <div class="progress-bar-container" style="width: 120px;">
+                                <div class="progress-bar-fill" style="width: 88%;"></div>
+                            </div>
+                        </td>
+                        <td><strong>80%</strong></td>
+                        <td>
+                            <button type="button" class="btn-primary" onclick="document.getElementById('log-student').value='Jerin Kabir'; document.getElementById('log-subject').value='Mathematics'; document.getElementById('progress-form-box').scrollIntoView({behavior: 'smooth'});">Update Progress</button>
+                            <button type="button" class="btn-secondary" onclick="alert('Viewing comprehensive report card for Jerin Kabir.\nLast Assessment: Quadratic Functions & Geometry (88/100).\nAttendance: Regular.')">Report Card</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>Nowrin Jahan</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">ID: STU-8829</div>
+                        </td>
+                        <td>
+                            <span class="subject-chip">Physics</span>
+                            <div style="font-size: 12px; color: #6b7280;">Class 12 (HSC)</div>
+                        </td>
+                        <td><strong>15 Sessions</strong></td>
+                        <td>
+                            <span class="status-badge confirmed">98% (15/15)</span>
+                        </td>
+                        <td>
+                            <strong>92 / 100</strong>
+                            <div class="progress-bar-container" style="width: 120px;">
+                                <div class="progress-bar-fill" style="width: 92%;"></div>
+                            </div>
+                        </td>
+                        <td><strong>85%</strong></td>
+                        <td>
+                            <button type="button" class="btn-primary" onclick="document.getElementById('log-student').value='Nowrin Jahan'; document.getElementById('log-subject').value='Physics'; document.getElementById('progress-form-box').scrollIntoView({behavior: 'smooth'});">Update Progress</button>
+                            <button type="button" class="btn-secondary" onclick="alert('Viewing comprehensive report card for Nowrin Jahan.\nLast Assessment: Electromagnetic Induction & Alternating Current (92/100).')">Report Card</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>Erona Rahman</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">ID: STU-8835</div>
+                        </td>
+                        <td>
+                            <span class="subject-chip">Mathematics</span>
+                            <div style="font-size: 12px; color: #6b7280;">Class 10 (SSC)</div>
+                        </td>
+                        <td><strong>12 Sessions</strong></td>
+                        <td>
+                            <span class="status-badge confirmed">92% (11/12)</span>
+                        </td>
+                        <td>
+                            <strong>76 / 100</strong>
+                            <div class="progress-bar-container" style="width: 120px;">
+                                <div class="progress-bar-fill" style="width: 76%; background: #f59e0b;"></div>
+                            </div>
+                        </td>
+                        <td><strong>68%</strong></td>
+                        <td>
+                            <button type="button" class="btn-primary" onclick="document.getElementById('log-student').value='Erona Rahman'; document.getElementById('log-subject').value='Mathematics'; document.getElementById('progress-form-box').scrollIntoView({behavior: 'smooth'});">Update Progress</button>
+                            <button type="button" class="btn-secondary" onclick="alert('Viewing comprehensive report card for Erona Rahman.\nLast Assessment: Trigonometric Ratios & Distances (76/100).')">Report Card</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>Rodela Ahmed</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">ID: STU-8840</div>
+                        </td>
+                        <td>
+                            <span class="subject-chip">Physics</span>
+                            <div style="font-size: 12px; color: #6b7280;">Class 12 (HSC)</div>
+                        </td>
+                        <td><strong>14 Sessions</strong></td>
+                        <td>
+                            <span class="status-badge confirmed">96% (14/15)</span>
+                        </td>
+                        <td>
+                            <strong>90 / 100</strong>
+                            <div class="progress-bar-container" style="width: 120px;">
+                                <div class="progress-bar-fill" style="width: 90%;"></div>
+                            </div>
+                        </td>
+                        <td><strong>74%</strong></td>
+                        <td>
+                            <button type="button" class="btn-primary" onclick="document.getElementById('log-student').value='Rodela Ahmed'; document.getElementById('log-subject').value='Physics'; document.getElementById('progress-form-box').scrollIntoView({behavior: 'smooth'});">Update Progress</button>
+                            <button type="button" class="btn-secondary" onclick="alert('Viewing comprehensive report card for Rodela Ahmed.\nLast Assessment: Wave Optics & Thermodynamics (90/100).')">Report Card</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>Siam Hossain</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">ID: STU-8844</div>
+                        </td>
+                        <td>
+                            <span class="subject-chip">Higher Math</span>
+                            <div style="font-size: 12px; color: #6b7280;">Class 11 (HSC)</div>
+                        </td>
+                        <td><strong>16 Sessions</strong></td>
+                        <td>
+                            <span class="status-badge pending">88% (14/16)</span>
+                        </td>
+                        <td>
+                            <strong>82 / 100</strong>
+                            <div class="progress-bar-container" style="width: 120px;">
+                                <div class="progress-bar-fill" style="width: 82%;"></div>
+                            </div>
+                        </td>
+                        <td><strong>70%</strong></td>
+                        <td>
+                            <button type="button" class="btn-primary" onclick="document.getElementById('log-student').value='Siam Hossain'; document.getElementById('log-subject').value='Higher Math'; document.getElementById('progress-form-box').scrollIntoView({behavior: 'smooth'});">Update Progress</button>
+                            <button type="button" class="btn-secondary" onclick="alert('Viewing comprehensive report card for Siam Hossain.\nLast Assessment: Differential Calculus & Limits (82/100).')">Report Card</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>Farhan Sadik</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">ID: STU-8851</div>
+                        </td>
+                        <td>
+                            <span class="subject-chip">Chemistry</span>
+                            <div style="font-size: 12px; color: #6b7280;">Class 9 (SSC)</div>
+                        </td>
+                        <td><strong>10 Sessions</strong></td>
+                        <td>
+                            <span class="status-badge confirmed">100% (10/10)</span>
+                        </td>
+                        <td>
+                            <strong>85 / 100</strong>
+                            <div class="progress-bar-container" style="width: 120px;">
+                                <div class="progress-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </td>
+                        <td><strong>60%</strong></td>
+                        <td>
+                            <button type="button" class="btn-primary" onclick="document.getElementById('log-student').value='Farhan Sadik'; document.getElementById('log-subject').value='Chemistry'; document.getElementById('progress-form-box').scrollIntoView({behavior: 'smooth'});">Update Progress</button>
+                            <button type="button" class="btn-secondary" onclick="alert('Viewing comprehensive report card for Farhan Sadik.\nLast Assessment: Chemical Bonds & Periodic Properties (85/100).')">Report Card</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-block" id="progress-form-box">
+            <div class="section-header">
+                <h3>Progress Logging & Evaluation Form</h3>
+                <span class="badge">Performance Entry</span>
+            </div>
+            <div class="form-body">
+                <form onsubmit="alert('Progress record and evaluation logged successfully! Student notified via portal.'); return false;">
+                    <div class="form-grid">
+                        <div class="form-group-custom">
+                            <label for="log-student">Student Name</label>
+                            <select id="log-student" required>
+                                <option value="">-- Select Enrolled Student --</option>
+                                <option value="Jerin Kabir">Jerin Kabir (Class 10 SSC)</option>
+                                <option value="Nowrin Jahan">Nowrin Jahan (Class 12 HSC)</option>
+                                <option value="Erona Rahman">Erona Rahman (Class 10 SSC)</option>
+                                <option value="Rodela Ahmed">Rodela Ahmed (Class 12 HSC)</option>
+                                <option value="Siam Hossain">Siam Hossain (Class 11 HSC)</option>
+                                <option value="Farhan Sadik">Farhan Sadik (Class 9 SSC)</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="log-subject">Subject</label>
+                            <select id="log-subject" required>
+                                <option value="">-- Select Subject --</option>
+                                <option value="Mathematics">General Mathematics</option>
+                                <option value="Higher Math">Higher Mathematics</option>
+                                <option value="Physics">Physics</option>
+                                <option value="Chemistry">Chemistry</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="log-date">Session Date</label>
+                            <input type="date" id="log-date" value="2026-10-26" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="log-attendance">Attendance Status</label>
+                            <select id="log-attendance" required>
+                                <option value="Present - On Time">Present - On Time</option>
+                                <option value="Present - Late">Present - Late Arrival</option>
+                                <option value="Absent - Excused">Absent - Excused with Prior Notice</option>
+                                <option value="Absent - Unexcused">Absent - Unexcused</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="log-score">Quiz / Test Score (% or Marks out of 100)</label>
+                            <input type="number" id="log-score" placeholder="e.g. 88" min="0" max="100" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="log-hw">Homework / Problem Set Completion</label>
+                            <select id="log-hw" required>
+                                <option value="Fully Completed & Verified">Fully Completed & Verified</option>
+                                <option value="Partially Completed">Partially Completed (Some doubts remaining)</option>
+                                <option value="Incomplete / Not Done">Incomplete / Not Done</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom form-grid-full">
+                            <label for="log-topics">Topics Covered in Today's Class</label>
+                            <input type="text" id="log-topics" placeholder="e.g. Chapter 4: Quadratic Equations, Roots formula, Word problems practice" required>
+                        </div>
+                        <div class="form-group-custom form-grid-full">
+                            <label for="log-remarks">Tutor Observations & Recommendations for Student</label>
+                            <textarea id="log-remarks" rows="3" placeholder="Note student strengths, conceptual gaps, and recommended self-study practice before next class." required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Save Progress Log</button>
+                    <button type="reset" class="btn-secondary" style="margin-left: 10px;">Clear Entry</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+
+    </div>
+
+</body>
+</html>

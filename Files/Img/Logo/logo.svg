@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#eff6ff" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bgGrad)" />
+  <path d="M100 45 L160 75 L100 105 L40 75 Z" fill="url(#capGrad)" />
+  <path d="M60 88 L60 120 C60 138 140 138 140 120 L140 88 L100 108 Z" fill="#ffffff" opacity="0.9" />
+  <path d="M150 80 L150 130" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" />
+  <circle cx="150" cy="134" r="5" fill="#f59e0b" />
+  <text x="100" y="172" font-family="'Lato', sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">LHTMP</text>
+</svg>

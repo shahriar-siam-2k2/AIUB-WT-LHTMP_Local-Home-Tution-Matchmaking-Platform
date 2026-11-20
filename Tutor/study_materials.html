@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHTMP - Study Materials Repository</title>
+    <link rel="stylesheet" href="tutor.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">LHTMP</div>
+            <h2>Tutor Portal</h2>
+            <p>Platform Suite</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Main Navigation</div>
+            <a href="tutor.html"><span class="nav-icon">📊</span> Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+            <a href="availability.html"><span class="nav-icon">📅</span> Availability</a>
+            <a href="booking_requests.html"><span class="nav-icon">📨</span> Booking Requests</a>
+            <a href="student_progress.html"><span class="nav-icon">📈</span> Student Progress</a>
+            <a href="study_materials.html" class="active"><span class="nav-icon">📚</span> Study Materials</a>
+            <a href="reviews.html"><span class="nav-icon">⭐</span> Reviews</a>
+            <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+
+        <header class="top-header">
+            <div class="header-left">
+                <h2>Study Materials & Lecture Resources</h2>
+                <p>Tutor Account • Upload worksheets, lecture slides, formulas, and mock tests</p>
+            </div>
+            <div class="header-right">
+                <button type="button" class="notif-btn" onclick="alert('All enrolled students can instantly download your uploaded materials.')" title="Notifications">
+                    🔔
+                    <span class="notif-badge">0</span>
+                </button>
+                <div class="user-avatar">T</div>
+                <div class="user-info">
+                    <span>Tanbeen</span>
+                    <span>Tutor Account</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card" data-icon="📁">
+                <div class="stat-label">Uploaded Files</div>
+                <div class="stat-value">14</div>
+                <div class="stat-sub">Active resources in library</div>
+            </div>
+            <div class="stat-card" data-icon="⬇️">
+                <div class="stat-label">Total Downloads</div>
+                <div class="stat-value">342</div>
+                <div class="stat-sub">By enrolled students</div>
+            </div>
+            <div class="stat-card" data-icon="💾">
+                <div class="stat-label">Cloud Storage Used</div>
+                <div class="stat-value">48.5 MB</div>
+                <div class="stat-sub">Of 500 MB quota (9.7%)</div>
+            </div>
+            <div class="stat-card" data-icon="⭐">
+                <div class="stat-label">Resource Rating</div>
+                <div class="stat-value">4.95</div>
+                <div class="stat-sub">Based on student feedback</div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Upload Study Material</h3>
+                <span class="badge">Share Resources</span>
+            </div>
+            <div class="form-body">
+                <form onsubmit="alert('Study material successfully uploaded! Students enrolled in the selected subject can now access this resource.'); return false;">
+                    <div class="form-grid">
+                        <div class="form-group-custom">
+                            <label for="material-title">Material Title</label>
+                            <input type="text" id="material-title" placeholder="e.g. Chapter 5 - Integration & Calculus Quick Formulas" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="material-subject">Subject</label>
+                            <select id="material-subject" required>
+                                <option value="">-- Select Subject --</option>
+                                <option value="Mathematics">General Mathematics (SSC)</option>
+                                <option value="Higher Mathematics">Higher Mathematics (HSC)</option>
+                                <option value="Physics">Physics (HSC / SSC)</option>
+                                <option value="Chemistry">Chemistry (SSC)</option>
+                                <option value="SAT Math">SAT Math Prep</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="material-grade">Target Grade / Level</label>
+                            <select id="material-grade" required>
+                                <option value="All Enrolled">All Enrolled Students</option>
+                                <option value="Class 9-10 (SSC)">Class 9 - 10 (SSC)</option>
+                                <option value="Class 11-12 (HSC)">Class 11 - 12 (HSC)</option>
+                                <option value="Admission Test">College & University Admission</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="material-type">Resource Category</label>
+                            <select id="material-type" required>
+                                <option value="Lecture Notes">Lecture Notes & Handouts</option>
+                                <option value="Practice Worksheet">Practice Worksheet & Exercises</option>
+                                <option value="Formula Sheet">Formula Sheet & Cheat Sheet</option>
+                                <option value="Past Exam Papers">Past Exam Question Papers</option>
+                                <option value="Solution Manual">Detailed Solution Manual</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom form-grid-full">
+                            <label for="material-file">Choose File to Upload (PDF, DOCX, ZIP, PPTX - Max 25MB)</label>
+                            <input type="file" id="material-file" required>
+                        </div>
+                        <div class="form-group-custom form-grid-full">
+                            <label for="material-notes">Instructions or Description for Students</label>
+                            <textarea id="material-notes" rows="3" placeholder="Provide instructions on which problems to solve before the next tutorial session..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Upload Study Material</button>
+                    <button type="reset" class="btn-secondary" style="margin-left: 10px;">Reset</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Uploaded Study Materials Directory</h3>
+                <span class="badge">14 Files Available</span>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Material Title</th>
+                        <th>Subject</th>
+                        <th>Target Level</th>
+                        <th>Upload Date</th>
+                        <th>File Size</th>
+                        <th>Downloads</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div><strong>Chapter 5: Integration & Calculus Cheat Sheet</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">HSC_Math_Ch5_Calculus.pdf</div>
+                        </td>
+                        <td><span class="subject-chip">Higher Math</span></td>
+                        <td>Class 12 (HSC)</td>
+                        <td>24 Oct 2026</td>
+                        <td>3.8 MB</td>
+                        <td><strong>64</strong></td>
+                        <td>
+                            <button type="button" class="btn-secondary" onclick="alert('Editing metadata for Chapter 5 Calculus Cheat Sheet.')">Manage</button>
+                            <button type="button" class="btn-danger" onclick="alert('Material Chapter 5 Calculus Cheat Sheet removed from student portal.')">Delete</button>
+                            <button type="button" class="btn-primary" onclick="alert('Downloading HSC_Math_Ch5_Calculus.pdf...')">Download</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>Physics 1st Paper: Vectors & Dynamics Question Bank</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">Physics_1st_Paper_Vectors.pdf</div>
+                        </td>
+                        <td><span class="subject-chip">Physics</span></td>
+                        <td>Class 11 - 12</td>
+                        <td>20 Oct 2026</td>
+                        <td>5.2 MB</td>
+                        <td><strong>88</strong></td>
+                        <td>
+                            <button type="button" class="btn-secondary" onclick="alert('Editing metadata for Vectors & Dynamics Question Bank.')">Manage</button>
+                            <button type="button" class="btn-danger" onclick="alert('Material Vectors Question Bank removed.')">Delete</button>
+                            <button type="button" class="btn-primary" onclick="alert('Downloading Physics_1st_Paper_Vectors.pdf...')">Download</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>SSC General Mathematics Board Exam Prep Model Tests</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">SSC_Math_Model_Tests_2026.pdf</div>
+                        </td>
+                        <td><span class="subject-chip">Mathematics</span></td>
+                        <td>Class 10 (SSC)</td>
+                        <td>16 Oct 2026</td>
+                        <td>7.1 MB</td>
+                        <td><strong>112</strong></td>
+                        <td>
+                            <button type="button" class="btn-secondary" onclick="alert('Editing metadata for SSC Math Model Tests.')">Manage</button>
+                            <button type="button" class="btn-danger" onclick="alert('Material SSC Math Model Tests removed.')">Delete</button>
+                            <button type="button" class="btn-primary" onclick="alert('Downloading SSC_Math_Model_Tests_2026.pdf...')">Download</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>Chemistry: Organic Reaction Mechanisms & Functional Groups</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">Chem_Organic_Reactions.pdf</div>
+                        </td>
+                        <td><span class="subject-chip">Chemistry</span></td>
+                        <td>Class 9 - 10</td>
+                        <td>12 Oct 2026</td>
+                        <td>4.4 MB</td>
+                        <td><strong>45</strong></td>
+                        <td>
+                            <button type="button" class="btn-secondary" onclick="alert('Editing metadata for Chemistry Organic Reactions.')">Manage</button>
+                            <button type="button" class="btn-danger" onclick="alert('Material Organic Reactions removed.')">Delete</button>
+                            <button type="button" class="btn-primary" onclick="alert('Downloading Chem_Organic_Reactions.pdf...')">Download</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><strong>SAT Math: 200 Top Hard Problem Sets with Step-by-Step Solutions</strong></div>
+                            <div style="font-size: 12px; color: #6b7280;">SAT_Math_200_ProblemSets.pdf</div>
+                        </td>
+                        <td><span class="subject-chip">SAT Math</span></td>
+                        <td>College Entrance</td>
+                        <td>08 Oct 2026</td>
+                        <td>6.5 MB</td>
+                        <td><strong>33</strong></td>
+                        <td>
+                            <button type="button" class="btn-secondary" onclick="alert('Editing metadata for SAT Math Problem Sets.')">Manage</button>
+                            <button type="button" class="btn-danger" onclick="alert('Material SAT Math Problem Sets removed.')">Delete</button>
+                            <button type="button" class="btn-primary" onclick="alert('Downloading SAT_Math_200_ProblemSets.pdf...')">Download</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+
+    </div>
+
+</body>
+</html>

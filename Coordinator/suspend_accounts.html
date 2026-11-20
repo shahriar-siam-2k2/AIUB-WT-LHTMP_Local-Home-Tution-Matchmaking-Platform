@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Coordinator - Suspend Local Accounts | LHTMP</title>
+    <link rel="stylesheet" href="coordinator.css" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">AC</div>
+            <h2>LHTMP</h2>
+            <p>Coordinator Portal</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Management</div>
+            <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
+            <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
+            <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
+            <a href="tutor_quality.html"><span class="nav-icon">⭐</span>Tutor Quality</a>
+            <a href="suspend_accounts.html" class="active"><span class="nav-icon">🚫</span>Suspend Accounts</a>
+            <a href="area_reports.html"><span class="nav-icon">📈</span>Area Reports</a>
+            <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <h2>Suspend Local Accounts</h2>
+                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+            </div>
+            <div class="header-right">
+                <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
+                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
+                <div class="user-avatar">RZ</div>
+                <div class="user-info">
+                    <span>Razin</span>
+                    <span>Area Coordinator</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card" data-icon="🚫">
+                <div class="stat-label">Currently Suspended</div>
+                <div class="stat-value">2</div>
+                <div class="stat-sub">Mirpur Zone restricted</div>
+            </div>
+            <div class="stat-card" data-icon="⚠️">
+                <div class="stat-label">Flagged for Review</div>
+                <div class="stat-value">2</div>
+                <div class="stat-sub">Pending coordinator decision</div>
+            </div>
+            <div class="stat-card" data-icon="✅">
+                <div class="stat-label">Reinstated This Month</div>
+                <div class="stat-value">5</div>
+                <div class="stat-sub">Compliance confirmed</div>
+            </div>
+            <div class="stat-card" data-icon="🛡️">
+                <div class="stat-label">Policy Adherence</div>
+                <div class="stat-value">98.2%</div>
+                <div class="stat-sub">Platform community safety</div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Accounts Flagged for Policy Violations &amp; Misconduct</h3>
+                <button type="button" class="btn-primary" onclick="alert('Initiating new account policy review docket...')">Flag User Account</button>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Account ID &amp; User</th>
+                        <th>Role</th>
+                        <th>Violation Category</th>
+                        <th>Infraction Description</th>
+                        <th>Flagged Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Tariqul Islam</strong><br />
+                            <small style="color: #6b7280;">ID: ACC-710</small>
+                        </td>
+                        <td>Tutor</td>
+                        <td>Repeated Absenteeism</td>
+                        <td>4 unexcused absences within 2 weeks without prior student or coordinator notice</td>
+                        <td>24 Oct 2026</td>
+                        <td><span class="status-badge suspended">Suspended</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Tariqul Islam account has been reinstated upon mediation pledge.')">Reinstate</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening incident investigation report for ACC-710.')">View History</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Kamal Hossain</strong><br />
+                            <small style="color: #6b7280;">ID: ACC-711</small>
+                        </td>
+                        <td>Student</td>
+                        <td>Harassment &amp; Threats</td>
+                        <td>Hostile and abusive language directed towards tutor during session renegotiation</td>
+                        <td>26 Oct 2026</td>
+                        <td><span class="status-badge suspended">Suspended</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Kamal Hossain account reinstated under monitoring guidelines.')">Reinstate</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening harassment investigation audit for ACC-711.')">View History</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Fahad Al Mamun</strong><br />
+                            <small style="color: #6b7280;">ID: ACC-712</small>
+                        </td>
+                        <td>Tutor</td>
+                        <td>Platform Fee Evasion</td>
+                        <td>Solicited offline direct payments to bypass local tuition escrow protections</td>
+                        <td>27 Oct 2026</td>
+                        <td><span class="status-badge open">Flagged</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-danger" onclick="alert('Account ACC-712 (Fahad Al Mamun) has been suspended.')">Suspend Account</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening fee evasion evidence logs for ACC-712.')">View History</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Sunny Mahmud</strong><br />
+                            <small style="color: #6b7280;">ID: ACC-713</small>
+                        </td>
+                        <td>Student</td>
+                        <td>Spam / False Inquiries</td>
+                        <td>Generated 12 fictitious tuition requests with unreachable phone numbers</td>
+                        <td>28 Oct 2026</td>
+                        <td><span class="status-badge pending">Under Review</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-danger" onclick="alert('Account ACC-713 (Sunny Mahmud) has been suspended.')">Suspend Account</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening spam inquiry analytics for ACC-713.')">View History</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Nabil Ahmed</strong><br />
+                            <small style="color: #6b7280;">ID: ACC-690</small>
+                        </td>
+                        <td>Tutor</td>
+                        <td>Late Cancellation</td>
+                        <td>Penalty period served; completed community conduct refresher training</td>
+                        <td>14 Oct 2026</td>
+                        <td><span class="status-badge active">Reinstated</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-danger" onclick="alert('Account ACC-690 suspended.')">Suspend Account</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Viewing archived reinstatement audit for ACC-690.')">View History</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Mahir Alom</strong><br />
+                            <small style="color: #6b7280;">ID: ACC-685</small>
+                        </td>
+                        <td>Tutor</td>
+                        <td>Document Falsification</td>
+                        <td>Attempted upload of modified academic certificate during credential verification</td>
+                        <td>10 Oct 2026</td>
+                        <td><span class="status-badge suspended">Permanent Ban</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary" onclick="alert('Displaying permanent ban legal dossier for ACC-685.')">View History</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

@@ -15,23 +15,37 @@
       </div>
       <nav class="sidebar-nav">
         <span class="nav-section-label">Main Menu</span>
-        <a href="#" class="active">
+        <a href="student.html" class="active">
           <span class="nav-icon">🖥️</span> Dashboard
         </a>
-        <a href="#"> <span class="nav-icon">🔍</span> Find Tutors </a>
-        <a href="#"> <span class="nav-icon">🕓</span> My Sessions </a>
-        <a href="#"> <span class="nav-icon">📚</span> Study Materials </a>
-        <a href="#"> <span class="nav-icon">📅</span> My Schedule </a>
+        <a href="find_tutors.html">
+          <span class="nav-icon">🔍</span> Find Tutors
+        </a>
+        <a href="my_sessions.html">
+          <span class="nav-icon">🕓</span> My Sessions
+        </a>
+        <a href="study_materials.html">
+          <span class="nav-icon">📚</span> Study Materials
+        </a>
+        <a href="my_schedule.html">
+          <span class="nav-icon">📅</span> My Schedule
+        </a>
         <span class="nav-section-label">Account</span>
-        <a href="#"> <span class="nav-icon">⭐</span> Reviews </a>
-        <a href="#"> <span class="nav-icon">✉️</span> Messages </a>
-        <a href="#"> <span class="nav-icon">👤</span> Profile </a>
+        <a href="reviews.html">
+          <span class="nav-icon">⭐</span> Reviews
+        </a>
+        <a href="messages.html">
+          <span class="nav-icon">✉️</span> Messages
+        </a>
+        <a href="profile.html">
+          <span class="nav-icon">👤</span> Profile
+        </a>
       </nav>
       <div class="sidebar-footer">
         <button
           type="button"
           class="btn-logout"
-          onclick="window.location.href = 'login.html'"
+          onclick="window.location.href = '../Login/login.html'"
         >
           Logout
         </button>
@@ -45,14 +59,18 @@
           <p>Sunday, 26 October 2026 • Student Account</p>
         </div>
         <div class="header-right">
-          <button type="button" class="notif-btn">
+          <button
+            type="button"
+            class="notif-btn"
+            onclick="alert('You have 3 unread notifications')"
+          >
             🔔
             <span class="notif-badge">3</span>
           </button>
           <div class="user-avatar">S</div>
           <div class="user-info">
             <span>Siam</span>
-            <span>Grade 10 •z Dhaka</span>
+            <span>Grade 10 • Dhaka</span>
           </div>
         </div>
       </div>
@@ -82,8 +100,54 @@
 
       <div class="section-block">
         <div class="section-header">
+          <h3>Quick Navigation</h3>
+        </div>
+        <div class="quick-actions-grid">
+          <button
+            type="button"
+            class="btn-quick-action"
+            onclick="window.location.href = 'find_tutors.html'"
+          >
+            <span class="action-icon">🔍</span>
+            <span>Find Tutors</span>
+          </button>
+          <button
+            type="button"
+            class="btn-quick-action"
+            onclick="window.location.href = 'my_sessions.html'"
+          >
+            <span class="action-icon">🕓</span>
+            <span>My Sessions</span>
+          </button>
+          <button
+            type="button"
+            class="btn-quick-action"
+            onclick="window.location.href = 'study_materials.html'"
+          >
+            <span class="action-icon">📚</span>
+            <span>Study Materials</span>
+          </button>
+          <button
+            type="button"
+            class="btn-quick-action"
+            onclick="window.location.href = 'my_schedule.html'"
+          >
+            <span class="action-icon">📅</span>
+            <span>Weekly Schedule</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
           <h3>My Upcoming Sessions</h3>
-          <span class="badge">3 Sessions</span>
+          <button
+            type="button"
+            class="btn-secondary"
+            onclick="window.location.href = 'my_sessions.html'"
+          >
+            View All
+          </button>
         </div>
         <table class="data-table">
           <thead>
@@ -104,7 +168,13 @@
               <td>4:00 PM</td>
               <td><span class="status-badge confirmed">Confirmed</span></td>
               <td>
-                <button type="button" class="btn-table-join">Join</button>
+                <button
+                  type="button"
+                  class="btn-table-join"
+                  onclick="alert('Connecting to virtual classroom with Tanbeen...')"
+                >
+                  Join
+                </button>
               </td>
             </tr>
             <tr>
@@ -114,7 +184,13 @@
               <td>5:00 PM</td>
               <td><span class="status-badge confirmed">Confirmed</span></td>
               <td>
-                <button type="button" class="btn-table-join">Join</button>
+                <button
+                  type="button"
+                  class="btn-table-join"
+                  onclick="alert('Connecting to virtual classroom with Erona...')"
+                >
+                  Join
+                </button>
               </td>
             </tr>
             <tr>
@@ -124,7 +200,13 @@
               <td>3:00 PM</td>
               <td><span class="status-badge pending">Pending</span></td>
               <td>
-                <button type="button" class="btn-table-cancel">Cancel</button>
+                <button
+                  type="button"
+                  class="btn-table-cancel"
+                  onclick="alert('Cancellation request submitted for English session.')"
+                >
+                  Cancel
+                </button>
               </td>
             </tr>
           </tbody>
@@ -133,16 +215,14 @@
 
       <div class="section-block">
         <div class="section-header">
-          <h3>Find Tutors</h3>
-          <span class="badge">Browse All</span>
-        </div>
-        <div class="search-bar-row">
-          <input
-            type="text"
-            placeholder="Search by subject, name, or location... e.g. Mathematics, Dhaka"
-            value=""
-          />
-          <button type="button" class="btn-search">Search</button>
+          <h3>Featured Tutors</h3>
+          <button
+            type="button"
+            class="btn-secondary"
+            onclick="window.location.href = 'find_tutors.html'"
+          >
+            Find More Tutors
+          </button>
         </div>
         <div class="tutor-cards-grid">
           <div class="tutor-card">
@@ -150,7 +230,7 @@
               <div class="tutor-avatar">T</div>
               <div>
                 <div class="tutor-name">Tanbeen</div>
-                <div class="tutor-subject">Mathematics & Physics</div>
+                <div class="tutor-subject">Mathematics &amp; Physics</div>
               </div>
             </div>
             <div>
@@ -164,14 +244,20 @@
               <div class="tutor-meta-item">📍 Dhaka, Mirpur</div>
               <div class="tutor-meta-item">📚 6 years experience</div>
             </div>
-            <button type="button" class="btn-book">Book Session</button>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="window.location.href = 'find_tutors.html'"
+            >
+              Book Session
+            </button>
           </div>
           <div class="tutor-card">
             <div class="tutor-avatar-row">
               <div class="tutor-avatar">E</div>
               <div>
                 <div class="tutor-name">Erona</div>
-                <div class="tutor-subject">Chemistry & Biology</div>
+                <div class="tutor-subject">Chemistry &amp; Biology</div>
               </div>
             </div>
             <div>
@@ -185,14 +271,20 @@
               <div class="tutor-meta-item">📍 Dhaka, Dhanmondi</div>
               <div class="tutor-meta-item">📚 4 years experience</div>
             </div>
-            <button type="button" class="btn-book">Book Session</button>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="window.location.href = 'find_tutors.html'"
+            >
+              Book Session
+            </button>
           </div>
           <div class="tutor-card">
             <div class="tutor-avatar-row">
               <div class="tutor-avatar">R</div>
               <div>
                 <div class="tutor-name">Rodela</div>
-                <div class="tutor-subject">English & Bangla</div>
+                <div class="tutor-subject">English &amp; Bangla</div>
               </div>
             </div>
             <div>
@@ -206,7 +298,13 @@
               <div class="tutor-meta-item">📍 Dhaka, Uttara</div>
               <div class="tutor-meta-item">📚 5 years experience</div>
             </div>
-            <button type="button" class="btn-book">Book Session</button>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="window.location.href = 'find_tutors.html'"
+            >
+              Book Session
+            </button>
           </div>
         </div>
       </div>
@@ -214,7 +312,13 @@
       <div class="section-block">
         <div class="section-header">
           <h3>Recent Study Materials</h3>
-          <span class="badge">12 Files</span>
+          <button
+            type="button"
+            class="btn-secondary"
+            onclick="window.location.href = 'study_materials.html'"
+          >
+            View All
+          </button>
         </div>
         <table class="data-table">
           <thead>
@@ -233,16 +337,28 @@
               <td>Tanbeen</td>
               <td>24 Oct 2026</td>
               <td>
-                <button type="button" class="btn-download">Download</button>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Chapter 5 - Algebra Notes.pdf')"
+                >
+                  Download
+                </button>
               </td>
             </tr>
             <tr>
-              <td>📄 Motion & Laws of Physics</td>
+              <td>📄 Motion &amp; Laws of Physics</td>
               <td><span class="subject-chip">Physics</span></td>
               <td>Tanbeen</td>
               <td>22 Oct 2026</td>
               <td>
-                <button type="button" class="btn-download">Download</button>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Motion & Laws of Physics.pdf')"
+                >
+                  Download
+                </button>
               </td>
             </tr>
             <tr>
@@ -251,7 +367,13 @@
               <td>Rodela</td>
               <td>20 Oct 2026</td>
               <td>
-                <button type="button" class="btn-download">Download</button>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading English Grammar Practice Set.pdf')"
+                >
+                  Download
+                </button>
               </td>
             </tr>
           </tbody>
@@ -259,7 +381,7 @@
       </div>
 
       <div class="page-footer-main">
-        ©️ 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
       </div>
     </main>
   </body>

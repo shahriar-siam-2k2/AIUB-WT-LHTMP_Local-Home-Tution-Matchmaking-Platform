@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHTMP - Availability & Schedule Management</title>
+    <link rel="stylesheet" href="tutor.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">LHTMP</div>
+            <h2>Tutor Portal</h2>
+            <p>Platform Suite</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Main Navigation</div>
+            <a href="tutor.html"><span class="nav-icon">📊</span> Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+            <a href="availability.html" class="active"><span class="nav-icon">📅</span> Availability</a>
+            <a href="booking_requests.html"><span class="nav-icon">📨</span> Booking Requests</a>
+            <a href="student_progress.html"><span class="nav-icon">📈</span> Student Progress</a>
+            <a href="study_materials.html"><span class="nav-icon">📚</span> Study Materials</a>
+            <a href="reviews.html"><span class="nav-icon">⭐</span> Reviews</a>
+            <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+
+        <header class="top-header">
+            <div class="header-left">
+                <h2>Availability & Schedule Management</h2>
+                <p>Tutor Account • Configure working hours, open slots, and weekly calendar</p>
+            </div>
+            <div class="header-right">
+                <button type="button" class="notif-btn" onclick="alert('Schedule is synchronized with the live booking engine.')" title="Notifications">
+                    🔔
+                    <span class="notif-badge">0</span>
+                </button>
+                <div class="user-avatar">T</div>
+                <div class="user-info">
+                    <span>Tanbeen</span>
+                    <span>Tutor Account</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card" data-icon="⏳">
+                <div class="stat-label">Total Teaching Hours</div>
+                <div class="stat-value">28 hrs</div>
+                <div class="stat-sub">Configured per week</div>
+            </div>
+            <div class="stat-card" data-icon="📅">
+                <div class="stat-label">Working Days</div>
+                <div class="stat-value">6 Days</div>
+                <div class="stat-sub">Sunday to Friday</div>
+            </div>
+            <div class="stat-card" data-icon="✅">
+                <div class="stat-label">Booked Slots</div>
+                <div class="stat-value">16</div>
+                <div class="stat-sub">Active recurring sessions</div>
+            </div>
+            <div class="stat-card" data-icon="🔓">
+                <div class="stat-label">Open Slots</div>
+                <div class="stat-value">8</div>
+                <div class="stat-sub">Available for new requests</div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Working Hours & Days Settings</h3>
+                <span class="badge">General Preferences</span>
+            </div>
+            <div class="form-body">
+                <form onsubmit="alert('Availability and working hour preferences saved successfully!'); return false;">
+                    <div class="form-grid">
+                        <div class="form-group-custom">
+                            <label for="start-time">Daily Earliest Start Time</label>
+                            <input type="time" id="start-time" value="09:00" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="end-time">Daily Latest End Time</label>
+                            <input type="time" id="end-time" value="20:30" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="duration">Default Session Duration</label>
+                            <select id="duration" required>
+                                <option value="60">60 Minutes (1 Hour)</option>
+                                <option value="90" selected>90 Minutes (1.5 Hours)</option>
+                                <option value="120">120 Minutes (2 Hours)</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="buffer">Buffer Between Consecutive Sessions</label>
+                            <select id="buffer" required>
+                                <option value="0">No Buffer (0 min)</option>
+                                <option value="15" selected>15 Minutes Travel/Rest Buffer</option>
+                                <option value="30">30 Minutes Buffer</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom form-grid-full">
+                            <label>Default Active Teaching Days</label>
+                            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px;">
+                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
+                                    <input type="checkbox" name="workdays" value="Sun" checked style="accent-color: #3b82f6;"> Sunday
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
+                                    <input type="checkbox" name="workdays" value="Mon" checked style="accent-color: #3b82f6;"> Monday
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
+                                    <input type="checkbox" name="workdays" value="Tue" checked style="accent-color: #3b82f6;"> Tuesday
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
+                                    <input type="checkbox" name="workdays" value="Wed" checked style="accent-color: #3b82f6;"> Wednesday
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
+                                    <input type="checkbox" name="workdays" value="Thu" checked style="accent-color: #3b82f6;"> Thursday
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
+                                    <input type="checkbox" name="workdays" value="Fri" checked style="accent-color: #3b82f6;"> Friday
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
+                                    <input type="checkbox" name="workdays" value="Sat" style="accent-color: #3b82f6;"> Saturday (Off-day)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group-custom form-grid-full">
+                            <label for="vacation-note">Leave / Absence Notice (Optional)</label>
+                            <input type="text" id="vacation-note" placeholder="e.g. Unavailable on Eid holidays (15 Nov - 18 Nov)">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Save Working Hours</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Toggle Time Slots</h3>
+                <div style="display: flex; gap: 8px;">
+                    <button type="button" class="btn-secondary" onclick="alert('All weekly slots enabled.')">Select All</button>
+                    <button type="button" class="btn-secondary" onclick="alert('Weekend slots cleared.')">Reset Weekend</button>
+                    <button type="button" class="btn-primary" onclick="alert('Time slot toggles have been successfully saved!')">Save Availability</button>
+                </div>
+            </div>
+            <div style="padding: 24px;">
+                <p style="font-size: 13px; color: #6b7280; margin-bottom: 16px;">
+                    Check or uncheck individual time slots to control instant booking opportunities for students.
+                </p>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #1e3a5f; margin-bottom: 8px; font-size: 15px;">Sunday & Tuesday (Batch A)</h4>
+                    <div class="slot-toggle-grid">
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 09:00 AM - 10:30 AM (Available)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 03:00 PM - 04:30 PM (Booked: Erona)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 05:00 PM - 06:30 PM (Booked: Siam)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 07:00 PM - 08:30 PM (Available)
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #1e3a5f; margin-bottom: 8px; font-size: 15px;">Monday & Wednesday (Batch B)</h4>
+                    <div class="slot-toggle-grid">
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 10:00 AM - 11:30 AM (Available)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 04:00 PM - 05:30 PM (Booked: Rodela)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 06:00 PM - 07:30 PM (Booked: Jerin)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox"> 07:45 PM - 09:15 PM (Disabled)
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #1e3a5f; margin-bottom: 8px; font-size: 15px;">Thursday & Friday (Weekend Batches)</h4>
+                    <div class="slot-toggle-grid">
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 09:30 AM - 11:00 AM (Booked: Nowrin)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 03:30 PM - 05:00 PM (Available)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox" checked> 05:30 PM - 07:00 PM (Booked: Farhan)
+                        </label>
+                        <label class="slot-toggle-item">
+                            <input type="checkbox"> 07:30 PM - 09:00 PM (Disabled)
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <button type="button" class="btn-primary" onclick="alert('All availability settings updated successfully!')">Save Availability</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Weekly Live Calendar</h3>
+                <span class="badge">Current Week</span>
+            </div>
+            <div class="schedule-grid-container">
+                <div class="schedule-day-column">
+                    <div class="schedule-day-header">SUN</div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">03:00 - 04:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Erona</strong> (Math SSC)</div>
+                    </div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">05:00 - 06:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Siam</strong> (Higher Math)</div>
+                    </div>
+                </div>
+                <div class="schedule-day-column">
+                    <div class="schedule-day-header">MON</div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">04:00 - 05:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Rodela</strong> (Physics HSC)</div>
+                    </div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">06:00 - 07:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Jerin</strong> (General Math)</div>
+                    </div>
+                </div>
+                <div class="schedule-day-column">
+                    <div class="schedule-day-header">TUE</div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">03:00 - 04:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Erona</strong> (Math SSC)</div>
+                    </div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">05:00 - 06:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Siam</strong> (Higher Math)</div>
+                    </div>
+                </div>
+                <div class="schedule-day-column">
+                    <div class="schedule-day-header">WED</div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">04:00 - 05:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Rodela</strong> (Physics HSC)</div>
+                    </div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">06:00 - 07:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Jerin</strong> (General Math)</div>
+                    </div>
+                </div>
+                <div class="schedule-day-column">
+                    <div class="schedule-day-header">THU</div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">05:30 - 07:00 PM</div>
+                        <div class="schedule-slot-subj"><strong>Farhan</strong> (Chemistry)</div>
+                    </div>
+                    <div class="schedule-slot-card" style="border-left-color: #10b981; background: #f0fdf4;">
+                        <div class="schedule-slot-time">07:00 - 08:30 PM</div>
+                        <div class="schedule-slot-subj" style="color: #047857;">[Open Slot]</div>
+                    </div>
+                </div>
+                <div class="schedule-day-column">
+                    <div class="schedule-day-header">FRI</div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">09:30 - 11:00 AM</div>
+                        <div class="schedule-slot-subj"><strong>Nowrin</strong> (Physics HSC)</div>
+                    </div>
+                    <div class="schedule-slot-card">
+                        <div class="schedule-slot-time">04:00 - 05:30 PM</div>
+                        <div class="schedule-slot-subj"><strong>Tanjim</strong> (SAT Math)</div>
+                    </div>
+                </div>
+                <div class="schedule-day-column" style="opacity: 0.65;">
+                    <div class="schedule-day-header">SAT</div>
+                    <div style="text-align: center; font-size: 11px; color: #9ca3af; padding: 20px 0;">
+                        Weekly Day Off
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+
+    </div>
+
+</body>
+</html>

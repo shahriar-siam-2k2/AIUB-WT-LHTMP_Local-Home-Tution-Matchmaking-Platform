@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LHTMP - Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div>
+      <div class="brand-top">
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" class="logo-icon" />
+        <p class="brand-name">LHTMP Portal</p>
+      </div>
+      <div class="login-card">
+        <div class="card-header">
+          <h1>
+            Local Home Tuition <br />
+            Matchmaking Platform
+          </h1>
+          <p>Connecting Students &amp; Qualified Tutors</p>
+          <div class="divider"></div>
+        </div>
+
+        <div id="login-alert" class="alert-box"></div>
+
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="identifier">Email or Phone Number</label>
+            <input
+              type="text"
+              id="identifier"
+              name="identifier"
+              placeholder="user@gmail.com or 017XXXXXXXX"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="forgot-link">
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <div class="form-btn-group">
+            <button type="submit" class="btn-login">
+              Login
+            </button>
+            <button type="reset" class="btn-clear" id="btnClearLogin">
+              Clear
+            </button>
+          </div>
+
+          <div class="or-divider"><span>OR</span></div>
+
+          <a href="../Registration/registration.html">
+            <button type="button" class="btn-register">
+              Create New Account
+            </button>
+          </a>
+        </form>
+
+        <div class="demo-credentials">
+          <p class="demo-label">Demo Credentials (Email / Phone | Password)</p>
+          <p><span>Admin:</span> simba@gmail.com / 01629054073 | <span>Pass:</span> simba</p>
+          <p><span>Coordinator:</span> tbn@gmail.com / 01849239584 | <span>Pass:</span> tbn</p>
+          <p><span>Tutor:</span> jerin@gmail.com / 01957495765 | <span>Pass:</span> jerin</p>
+          <p><span>Student:</span> jui@gmail.com / 01284039498 | <span>Pass:</span> jui</p>
+        </div>
+
+        <div class="direct-portal-links">
+          <a href="../Student/student.html">
+            <button type="button" class="btn-secondary">
+              Direct Access: Student Portal
+            </button>
+          </a>
+          <a href="../Tutor/tutor.html">
+            <button type="button" class="btn-secondary">
+              Direct Access: Tutor Portal
+            </button>
+          </a>
+          <a href="../Coordinator/coordinator.html">
+            <button type="button" class="btn-secondary">
+              Direct Access: Area Coordinator Portal
+            </button>
+          </a>
+          <a href="../Admin/admin.html">
+            <button type="button" class="btn-secondary">
+              Direct Access: Platform Admin Portal
+            </button>
+          </a>
+        </div>
+      </div>
+      <p class="page-footer">
+        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </p>
+    </div>
+
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>
