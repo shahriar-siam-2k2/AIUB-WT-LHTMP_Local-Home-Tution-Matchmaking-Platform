@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LHTMP - My Schedule</title>
+    <link rel="stylesheet" href="student.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">LH</div>
+        <h2>LHTMP</h2>
+        <p>Student Portal</p>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Main Menu</span>
+        <a href="student.html">
+          <span class="nav-icon">🖥️</span> Dashboard
+        </a>
+        <a href="find_tutors.html">
+          <span class="nav-icon">🔍</span> Find Tutors
+        </a>
+        <a href="my_sessions.html">
+          <span class="nav-icon">🕓</span> My Sessions
+        </a>
+        <a href="study_materials.html">
+          <span class="nav-icon">📚</span> Study Materials
+        </a>
+        <a href="my_schedule.html" class="active">
+          <span class="nav-icon">📅</span> My Schedule
+        </a>
+        <span class="nav-section-label">Account</span>
+        <a href="reviews.html">
+          <span class="nav-icon">⭐</span> Reviews
+        </a>
+        <a href="messages.html">
+          <span class="nav-icon">✉️</span> Messages
+        </a>
+        <a href="profile.html">
+          <span class="nav-icon">👤</span> Profile
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button
+          type="button"
+          class="btn-logout"
+          onclick="window.location.href = '../Login/login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-header">
+        <div class="header-left">
+          <h2>My Weekly Schedule</h2>
+          <p>View your 7-day class routine and upcoming tuition timings</p>
+        </div>
+        <div class="header-right">
+          <button
+            type="button"
+            class="notif-btn"
+            onclick="alert('You have 3 unread notifications')"
+          >
+            🔔
+            <span class="notif-badge">3</span>
+          </button>
+          <div class="user-avatar">S</div>
+          <div class="user-info">
+            <span>Siam</span>
+            <span>Grade 10 • Dhaka</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>Class Timetable (26 Oct - 01 Nov 2026)</h3>
+          <button
+            type="button"
+            class="btn-primary"
+            onclick="window.location.href = 'find_tutors.html'"
+          >
+            + Book New Class
+          </button>
+        </div>
+
+        <div class="schedule-grid-container">
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">Saturday</div>
+            <div
+              class="schedule-slot-card"
+              style="border-left-color: #9ca3af; background: #f3f4f6;"
+            >
+              <div class="schedule-slot-time">No Classes</div>
+              <div class="schedule-slot-subj">Free Day</div>
+              <button
+                type="button"
+                class="btn-secondary"
+                style="font-size: 11px; padding: 4px 6px; margin-top: 8px; width: 100%;"
+                onclick="window.location.href = 'find_tutors.html'"
+              >
+                + Add Class
+              </button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">Sunday (Today)</div>
+            <div class="schedule-slot-card" style="border-left-color: #10b981;">
+              <div class="schedule-slot-time">4:00 PM - 5:30 PM</div>
+              <div class="schedule-slot-subj">
+                <strong>Mathematics</strong><br />
+                Tutor: Tanbeen<br />
+                Mode: Online Video
+              </div>
+              <button
+                type="button"
+                class="btn-table-join"
+                style="font-size: 11px; padding: 4px 6px; margin-top: 8px; width: 100%;"
+                onclick="alert('Connecting to virtual classroom with Tanbeen...')"
+              >
+                Join Class
+              </button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">Monday</div>
+            <div class="schedule-slot-card" style="border-left-color: #3b82f6;">
+              <div class="schedule-slot-time">5:00 PM - 6:30 PM</div>
+              <div class="schedule-slot-subj">
+                <strong>Physics</strong><br />
+                Tutor: Erona<br />
+                Mode: Home Visit
+              </div>
+              <button
+                type="button"
+                class="btn-secondary"
+                style="font-size: 11px; padding: 4px 6px; margin-top: 8px; width: 100%;"
+                onclick="alert('Session details: Physics with Erona at 5:00 PM')"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">Tuesday</div>
+            <div class="schedule-slot-card" style="border-left-color: #f59e0b;">
+              <div class="schedule-slot-time">3:00 PM - 4:30 PM</div>
+              <div class="schedule-slot-subj">
+                <strong>English</strong><br />
+                Tutor: Rodela<br />
+                Mode: Online Video
+              </div>
+              <button
+                type="button"
+                class="btn-secondary"
+                style="font-size: 11px; padding: 4px 6px; margin-top: 8px; width: 100%;"
+                onclick="alert('Session details: English with Rodela at 3:00 PM')"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">Wednesday</div>
+            <div class="schedule-slot-card" style="border-left-color: #8b5cf6;">
+              <div class="schedule-slot-time">6:00 PM - 7:30 PM</div>
+              <div class="schedule-slot-subj">
+                <strong>ICT &amp; Comp</strong><br />
+                Tutor: Arafat<br />
+                Mode: Online Video
+              </div>
+              <button
+                type="button"
+                class="btn-secondary"
+                style="font-size: 11px; padding: 4px 6px; margin-top: 8px; width: 100%;"
+                onclick="alert('Session details: ICT with Arafat Rahman at 6:00 PM')"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">Thursday</div>
+            <div class="schedule-slot-card" style="border-left-color: #10b981;">
+              <div class="schedule-slot-time">4:00 PM - 5:30 PM</div>
+              <div class="schedule-slot-subj">
+                <strong>Mathematics</strong><br />
+                Tutor: Tanbeen<br />
+                Mode: Online Video
+              </div>
+              <button
+                type="button"
+                class="btn-secondary"
+                style="font-size: 11px; padding: 4px 6px; margin-top: 8px; width: 100%;"
+                onclick="alert('Session details: Mathematics with Tanbeen at 4:00 PM')"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">Friday</div>
+            <div
+              class="schedule-slot-card"
+              style="border-left-color: #9ca3af; background: #f3f4f6;"
+            >
+              <div class="schedule-slot-time">No Classes</div>
+              <div class="schedule-slot-subj">Self Study Day</div>
+              <button
+                type="button"
+                class="btn-secondary"
+                style="font-size: 11px; padding: 4px 6px; margin-top: 8px; width: 100%;"
+                onclick="window.location.href = 'find_tutors.html'"
+              >
+                + Add Class
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="padding: 16px 24px; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; background: #f8faff;"
+        >
+          <span style="font-size: 14px; color: #4b5563;">
+            Total Scheduled Hours: <strong>7.5 Hours this week</strong> (5 Classes)
+          </span>
+          <div style="display: flex; gap: 10px;">
+            <button
+              type="button"
+              class="btn-secondary"
+              onclick="alert('Preparing schedule printout...')"
+            >
+              Print Routine
+            </button>
+            <button
+              type="button"
+              class="btn-primary"
+              onclick="window.location.href = 'find_tutors.html'"
+            >
+              + Book New Class
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer-main">
+        &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </div>
+    </main>
+  </body>
+</html>

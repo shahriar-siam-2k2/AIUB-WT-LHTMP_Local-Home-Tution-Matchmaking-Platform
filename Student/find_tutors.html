@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LHTMP - Find Tutors</title>
+    <link rel="stylesheet" href="student.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">LH</div>
+        <h2>LHTMP</h2>
+        <p>Student Portal</p>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Main Menu</span>
+        <a href="student.html">
+          <span class="nav-icon">🖥️</span> Dashboard
+        </a>
+        <a href="find_tutors.html" class="active">
+          <span class="nav-icon">🔍</span> Find Tutors
+        </a>
+        <a href="my_sessions.html">
+          <span class="nav-icon">🕓</span> My Sessions
+        </a>
+        <a href="study_materials.html">
+          <span class="nav-icon">📚</span> Study Materials
+        </a>
+        <a href="my_schedule.html">
+          <span class="nav-icon">📅</span> My Schedule
+        </a>
+        <span class="nav-section-label">Account</span>
+        <a href="reviews.html">
+          <span class="nav-icon">⭐</span> Reviews
+        </a>
+        <a href="messages.html">
+          <span class="nav-icon">✉️</span> Messages
+        </a>
+        <a href="profile.html">
+          <span class="nav-icon">👤</span> Profile
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button
+          type="button"
+          class="btn-logout"
+          onclick="window.location.href = '../Login/login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-header">
+        <div class="header-left">
+          <h2>Find Qualified Local Tutors</h2>
+          <p>Discover expert home and online tutors tailored to your syllabus</p>
+        </div>
+        <div class="header-right">
+          <button
+            type="button"
+            class="notif-btn"
+            onclick="alert('You have 3 unread notifications')"
+          >
+            🔔
+            <span class="notif-badge">3</span>
+          </button>
+          <div class="user-avatar">S</div>
+          <div class="user-info">
+            <span>Siam</span>
+            <span>Grade 10 • Dhaka</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>Search &amp; Filter Tutors</h3>
+          <span class="badge">6 Tutors Available</span>
+        </div>
+        <div class="search-bar-row">
+          <input
+            type="text"
+            placeholder="Search by tutor name, subject, or location... e.g. Mirpur, Physics"
+          />
+          <select>
+            <option value="">All Subjects</option>
+            <option value="math">Mathematics</option>
+            <option value="physics">Physics</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="biology">Biology</option>
+            <option value="english">English</option>
+            <option value="ict">ICT &amp; Computer</option>
+          </select>
+          <select>
+            <option value="">All Rates</option>
+            <option value="low">Under ৳400/hr</option>
+            <option value="mid">৳400 - ৳500/hr</option>
+            <option value="high">Above ৳500/hr</option>
+          </select>
+          <button
+            type="button"
+            class="btn-search"
+            onclick="alert('Filtering tutors according to your criteria...')"
+          >
+            Search
+          </button>
+        </div>
+        <div class="tutor-cards-grid">
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">T</div>
+              <div>
+                <div class="tutor-name">Tanbeen</div>
+                <div class="tutor-subject">Mathematics &amp; Physics</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐⭐</span>
+              <span class="tutor-rating-text">4.9 (128 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳500/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Mirpur</div>
+              <div class="tutor-meta-item">📚 6 years experience</div>
+            </div>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="alert('Booking request sent to Tanbeen! The tutor will confirm shortly.')"
+            >
+              Book Session
+            </button>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">E</div>
+              <div>
+                <div class="tutor-name">Erona</div>
+                <div class="tutor-subject">Chemistry &amp; Biology</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐☆</span>
+              <span class="tutor-rating-text">4.3 (87 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳450/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Dhanmondi</div>
+              <div class="tutor-meta-item">📚 4 years experience</div>
+            </div>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="alert('Booking request sent to Erona! The tutor will confirm shortly.')"
+            >
+              Book Session
+            </button>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">R</div>
+              <div>
+                <div class="tutor-name">Rodela</div>
+                <div class="tutor-subject">English &amp; Bangla</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐⭐</span>
+              <span class="tutor-rating-text">4.7 (103 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳400/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Uttara</div>
+              <div class="tutor-meta-item">📚 5 years experience</div>
+            </div>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="alert('Booking request sent to Rodela! The tutor will confirm shortly.')"
+            >
+              Book Session
+            </button>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">A</div>
+              <div>
+                <div class="tutor-name">Arafat Rahman</div>
+                <div class="tutor-subject">ICT &amp; Computer Science</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐⭐</span>
+              <span class="tutor-rating-text">4.8 (64 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳600/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Gulshan</div>
+              <div class="tutor-meta-item">📚 7 years experience</div>
+            </div>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="alert('Booking request sent to Arafat Rahman! The tutor will confirm shortly.')"
+            >
+              Book Session
+            </button>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">N</div>
+              <div>
+                <div class="tutor-name">Nusrat Jahan</div>
+                <div class="tutor-subject">General Science &amp; Math</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐☆</span>
+              <span class="tutor-rating-text">4.6 (92 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳380/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Mohammadpur</div>
+              <div class="tutor-meta-item">📚 3 years experience</div>
+            </div>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="alert('Booking request sent to Nusrat Jahan! The tutor will confirm shortly.')"
+            >
+              Book Session
+            </button>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-avatar-row">
+              <div class="tutor-avatar">F</div>
+              <div>
+                <div class="tutor-name">Fahim Shahriar</div>
+                <div class="tutor-subject">Higher Math &amp; Physics</div>
+              </div>
+            </div>
+            <div>
+              <span class="tutor-stars">⭐⭐⭐⭐⭐</span>
+              <span class="tutor-rating-text">5.0 (45 reviews)</span>
+            </div>
+            <div class="tutor-meta">
+              <div class="tutor-meta-item">
+                💰 <span class="tutor-rate">৳550/hr</span>
+              </div>
+              <div class="tutor-meta-item">📍 Dhaka, Banani</div>
+              <div class="tutor-meta-item">📚 8 years experience</div>
+            </div>
+            <button
+              type="button"
+              class="btn-book"
+              onclick="alert('Booking request sent to Fahim Shahriar! The tutor will confirm shortly.')"
+            >
+              Book Session
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer-main">
+        &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+[USERS]
+{USR-1001}; {Shahriar Ali Seam}; {simba@gmail.com}; {01629054073}; {simba}; {2002-04-03}; {Male}; {Dhaka}; {Mirpur}; {N/A}; {Admin}; {Active}; {2025-01-10 09:30}; {../Files/Img/Profile/admin.svg}
+{USR-1002}; {Tanbeen Taheer Pranta}; {tbn@gmail.com}; {01849239584}; {tbn}; {2002-05-03}; {Male}; {Dhaka}; {Dhanmondi}; {N/A}; {Area Coordinator}; {Active}; {2025-01-11 11:20}; {../Files/Img/Profile/coordinator.svg}
+{USR-1003}; {Nowrrin Kabir}; {jerin@gmail.com}; {01957495765}; {jerin}; {2003-06-03}; {Female}; {Barishal}; {Bhola}; {Graduate_BSc. EEE, BUET}; {Tutor}; {Active}; {2025-01-12 14:15}; {../Files/Img/Profile/tutor.svg}
+{USR-1004}; {Mithila Farzana Jui}; {jui@gmail.com}; {01284039498}; {jui}; {2008-04-03}; {Female}; {Rajshahi}; {Natore}; {HSC-1st year_Science}; {Student}; {Active}; {2025-01-12 16:40}; {../Files/Img/Profile/student.svg}
+{USR-1005}; {Siam Rahman}; {siam.rahman@gmail.com}; {01711223344}; {pass123}; {2006-08-15}; {Male}; {Dhaka}; {Mirpur}; {Class 10_General}; {Student}; {Active}; {2025-01-15 10:00}; {../Files/Img/Profile/student.svg}
+{USR-1006}; {Marium Sultana}; {marium.s@gmail.com}; {01755667788}; {pass123}; {2001-03-22}; {Female}; {Dhaka}; {Uttara}; {Graduate_BSc. CSE, DU}; {Tutor}; {Active}; {2025-01-18 12:30}; {../Files/Img/Profile/tutor.svg}
+{USR-1007}; {Razin Chowdhury}; {razin.c@gmail.com}; {01811223344}; {pass123}; {1998-11-05}; {Male}; {Dhaka}; {Mirpur}; {N/A}; {Area Coordinator}; {Active}; {2025-01-20 15:45}; {../Files/Img/Profile/coordinator.svg}
+{USR-1008}; {Kona Akter}; {kona.a@gmail.com}; {01911223344}; {pass123}; {2000-07-19}; {Female}; {Dhaka}; {Uttara}; {Graduate_BSc. Math, JU}; {Tutor}; {Suspended}; {2025-01-22 09:15}; {../Files/Img/Profile/tutor.svg}
+{USR-1009}; {Nafis Rayan}; {nafis.rayan@gmail.com}; {01511223344}; {pass123}; {2007-02-14}; {Male}; {Dhaka}; {Gulshan}; {Class 9_General}; {Student}; {Active}; {2025-01-25 14:20}; {../Files/Img/Profile/student.svg}
+{USR-1010}; {Farhana Akter}; {farhana.a@gmail.com}; {01611223344}; {pass123}; {1997-09-30}; {Female}; {Dhaka}; {Dhanmondi}; {N/A}; {Area Coordinator}; {Active}; {2025-01-28 11:00}; {../Files/Img/Profile/coordinator.svg}
+{USR-1011}; {Zubair Al Mamun}; {zubair.m@gmail.com}; {01722334455}; {pass123}; {2004-12-10}; {Male}; {Chittagong}; {Chittagong}; {HSC-2nd Year_Science}; {Student}; {Active}; {2025-02-01 13:30}; {../Files/Img/Profile/student.svg}
+{USR-1012}; {Sadia Afreen}; {sadia.a@gmail.com}; {01833445566}; {pass123}; {1999-04-18}; {Female}; {Chittagong}; {Cox's Bazar}; {Graduate_English, CU}; {Tutor}; {Active}; {2025-02-05 16:15}; {../Files/Img/Profile/tutor.svg}
+{USR-1013}; {Imran Hossain}; {imran.h@gmail.com}; {01944556677}; {pass123}; {1996-07-22}; {Male}; {Chittagong}; {Chittagong}; {N/A}; {Area Coordinator}; {Active}; {2025-02-10 10:45}; {../Files/Img/Profile/coordinator.svg}
+{USR-1014}; {Anika Tabassum}; {anika.t@gmail.com}; {01555667788}; {pass123}; {2005-09-08}; {Female}; {Khulna}; {Khulna}; {Class-09_Science}; {Student}; {Active}; {2025-02-14 15:20}; {../Files/Img/Profile/student.svg}
+{USR-1015}; {Mehedi Hasan}; {mehedi.h@gmail.com}; {01666778899}; {pass123}; {1998-10-12}; {Male}; {Khulna}; {Jashore}; {Graduate_Physics, KU}; {Tutor}; {Pending Verification}; {2025-02-18 09:40}; {../Files/Img/Profile/tutor.svg}
+{USR-1016}; {Nusrat Jahan}; {nusrat.j@gmail.com}; {01777889900}; {pass123}; {2003-01-25}; {Female}; {Sylhet}; {Sylhet}; {Undergraduate_CSE, SUST}; {Tutor}; {Active}; {2025-02-22 14:50}; {../Files/Img/Profile/tutor.svg}
+{USR-1017}; {Arifur Rahman}; {arifur.r@gmail.com}; {01888990011}; {pass123}; {2007-06-14}; {Male}; {Sylhet}; {Sunamganj}; {Class-08_General}; {Student}; {Active}; {2025-02-25 11:30}; {../Files/Img/Profile/student.svg}
+{USR-1018}; {Fahim Faysal}; {fahim.f@gmail.com}; {01999001122}; {pass123}; {1995-03-15}; {Male}; {Rajshahi}; {Rajshahi}; {N/A}; {Area Coordinator}; {Active}; {2025-03-01 16:00}; {../Files/Img/Profile/coordinator.svg}
+{USR-1019}; {Rumana Haque}; {rumana.h@gmail.com}; {01500112233}; {pass123}; {2002-11-04}; {Female}; {Rangpur}; {Rangpur}; {Undergraduate_Chemistry, RU}; {Tutor}; {Suspended}; {2025-03-05 10:15}; {../Files/Img/Profile/tutor.svg}
+{USR-1020}; {Shafiqul Islam}; {shafiq.i@gmail.com}; {01611002244}; {pass123}; {2001-08-19}; {Male}; {Mymensingh}; {Mymensingh}; {Graduate_Agriculture, BAU}; {Tutor}; {Active}; {2025-03-10 13:45}; {../Files/Img/Profile/tutor.svg}
+
+[DISPUTES]
+{DISP-005}; {Razin (Mirpur Zone)}; {Student: Siam}; {Tutor: Tanbeen}; {Tuition Fee Non-Refund & Absence}; {2026-11-08 10:15}; {Urgent}; {Pending}
+{DISP-006}; {Kalam (Uttara Zone)}; {Student: Mitu}; {Tutor: Kona}; {Misconduct & Late Cancellations}; {2026-11-09 11:30}; {Medium}; {Pending}
+{DISP-007}; {Farhana (Dhanmondi Zone)}; {Tutor: Rahat}; {Student: Jahirul}; {Withheld Payment After 12 Sessions}; {2026-11-10 14:00}; {High}; {Pending}
+{DISP-008}; {Imran (Chittagong Zone)}; {Student: Zubair}; {Tutor: Sadia}; {Subject Curriculum Incompletion}; {2026-11-11 15:45}; {High}; {Pending}
+{DISP-009}; {Fahim (Rajshahi Zone)}; {Student: Mithila}; {Tutor: Mehedi}; {Unnotified Class Rescheduling}; {2026-11-12 09:20}; {Medium}; {Pending}
+{DISP-010}; {Razin (Mirpur Zone)}; {Student: Nafis}; {Tutor: Marium}; {Advance Fee Settlement Disagreement}; {2026-11-12 11:10}; {Urgent}; {Pending}
+{DISP-004}; {Imtiaz (Gulshan Zone)}; {Student: Nafis}; {Tutor: Sadia}; {Schedule Inconsistency}; {2026-11-05 16:30}; {Low}; {Resolved}
+{DISP-003}; {Razin (Mirpur Zone)}; {Student: Arefin}; {Tutor: Hasan}; {Syllabus Incompletion Complaint}; {2026-11-03 13:15}; {Low}; {Resolved}
+{DISP-002}; {Farhana (Dhanmondi Zone)}; {Tutor: Marium}; {Student: Tahsin}; {Repeated Session Rescheduling}; {2026-11-01 10:00}; {Medium}; {Closed}
+{DISP-001}; {Kalam (Uttara Zone)}; {Student: Anis}; {Tutor: Nowrrin}; {Session Overtime Discrepancy}; {2026-10-28 14:45}; {Low}; {Closed}
+
+[PAYMENTS]
+{TXN-9081}; {Tanbeen Taheer}; {Nowrrin Kabir}; {Tuition Advance Payment}; {৳8,500}; {৳850}; {Card/bKash}; {2026-11-10 14:32}; {Verified}
+{TXN-9082}; {Mithila Farzana}; {Nowrrin Kabir}; {Direct Tuition Fee}; {৳6,000}; {৳600}; {Nagad}; {2026-11-11 10:15}; {Verified}
+{TXN-9083}; {Siam Ahmed}; {Kona Akter}; {Tutor Advance}; {৳4,500}; {৳450}; {Bank Transfer}; {2026-11-11 16:40}; {Pending}
+{TXN-9084}; {Rahat Hossain}; {Platform System}; {Platform Fee (10%)}; {৳1,200}; {৳120}; {Auto-Debit}; {2026-11-11 18:20}; {Completed}
+{TXN-9085}; {Nafis Rayan}; {Sadia Islam}; {Monthly Tuition}; {৳7,000}; {৳700}; {bKash}; {2026-11-12 09:10}; {Verified}
+{TXN-9086}; {Jahirul Haque}; {Tanbeen Taheer}; {Exam Prep Bundle}; {৳5,000}; {৳500}; {Rocket}; {2026-11-12 11:45}; {Completed}
+{TXN-9087}; {Tasnim Zaman}; {Farhana Akter}; {Advance Tuition}; {৳3,800}; {৳380}; {Nagad}; {2026-11-12 12:30}; {Pending}
+{TXN-9088}; {Arefin Shuvo}; {Hasan Mahmud}; {Subject Crash Course}; {৳4,200}; {৳420}; {Bank Transfer}; {2026-11-12 13:00}; {Verified}
+{TXN-9089}; {Zubair Al Mamun}; {Sadia Afreen}; {Monthly Chemistry Batch}; {৳5,500}; {৳550}; {bKash}; {2026-11-12 14:15}; {Verified}
+{TXN-9090}; {Anika Tabassum}; {Mehedi Hasan}; {Physics Foundation Crash}; {৳6,200}; {৳620}; {Nagad}; {2026-11-12 15:40}; {Pending}
+{TXN-9091}; {Arifur Rahman}; {Nusrat Jahan}; {Math & Science Tuition}; {৳4,800}; {৳480}; {Rocket}; {2026-11-12 16:30}; {Completed}
+{TXN-9092}; {Mithila Farzana}; {Shafiqul Islam}; {Biology Crash Course}; {৳3,500}; {৳350}; {Bank Transfer}; {2026-11-12 17:10}; {Verified}
+
+[MODERATION]
+{MOD-101}; {Tutor Profile Listing}; {Kabir Hossain}; {System Auto-Filter}; {Direct phone and fee bypass detected in bio}; {Policy Bypass}; {2026-11-10 11:45}; {High}; {Pending}
+{MOD-102}; {Review Text}; {Rayan Ahmed}; {Tutor: Nowrrin}; {Inappropriate language in tutor review}; {Profanity}; {2026-11-11 14:20}; {Medium}; {Pending}
+{MOD-103}; {Tuition Post}; {Selim Reza}; {Coordinator: Tanbeen}; {Unauthorized external coaching link shared}; {Spam Links}; {2026-11-11 16:00}; {Low}; {Dismissed}
+{MOD-104}; {Message Content}; {Kamal Uddin}; {Student: Mithila}; {Harassment and unsolicited contact}; {Harassment}; {2026-11-12 09:15}; {Urgent}; {Removed}
+{MOD-105}; {Tutor Profile Listing}; {Tania Sultana}; {Coordinator: Tanbeen}; {Unverified academic certificate uploaded}; {Fake Credentials}; {2026-11-12 12:40}; {High}; {Pending}
+{MOD-106}; {Review Text}; {Farhad Ali}; {Tutor: Rahat}; {Defamatory false claims without evidence}; {Defamation}; {2026-11-09 15:30}; {Medium}; {Dismissed}
+{MOD-107}; {Tuition Post}; {Arman Khan}; {Coordinator: Imran}; {Commercial coaching center advertisement posted}; {Spam Links}; {2026-11-12 17:15}; {Medium}; {Pending}
+{MOD-108}; {Message Content}; {Rana Talukder}; {Student: Anika}; {Unprofessional conduct and payment off-platform}; {Policy Bypass}; {2026-11-12 18:30}; {High}; {Removed}
+
+[ALERTS]
+{ALT-401}; {System-wide Maintenance Scheduled}; {Global}; {All Users}; {2026-11-10 22:00}; {Admin (Shahriar)}; {1,248 Users}; {Active}
+{ALT-402}; {Annual SSC Board Prep Guidelines Released}; {Academic}; {Students & Tutors}; {2026-11-11 09:30}; {Admin (Shahriar)}; {918 Students}; {Active}
+{ALT-403}; {Payment Gateway Scheduled Settlement Notice}; {Finance}; {All Coordinators}; {2026-11-12 11:00}; {Admin (Shahriar)}; {18 Coordinators}; {Active}
+{ALT-404}; {Dhaka Division Regional Weather Advisory}; {Urgent}; {Dhaka Zone Users}; {2026-11-08 14:00}; {Coordinator (Tanbeen)}; {540 Users}; {Completed}
+{ALT-405}; {Tutor Verification Policy 2026 Update}; {Policy}; {All Tutors}; {2026-11-05 16:30}; {Admin (Shahriar)}; {312 Tutors}; {Completed}
+{ALT-406}; {Winter Term Tuition Match Guarantee Notice}; {Academic}; {All Users}; {2026-11-12 18:00}; {Admin (Shahriar)}; {1,248 Users}; {Active}
+{ALT-407}; {Chittagong Regional Coordinator Conference}; {Global}; {All Coordinators}; {2026-11-12 19:30}; {Admin (Shahriar)}; {18 Coordinators}; {Active}
+
+[ANALYTICS]
+{New User Registrations}; {145 Users}; {132 Users}; {+9.8%}; {150 Users}; {On Track}
+{Sessions Booked}; {1,023 Sessions}; {940 Sessions}; {+8.8%}; {1,000 Sessions}; {Surpassed}
+{Tuition Revenue Transacted}; {৳2,45,000}; {৳2,15,000}; {+14.0%}; {৳2,30,000}; {Surpassed}
+{Total Payouts Disbursed}; {৳1,95,000}; {৳1,72,000}; {+13.4%}; {৳1,80,000}; {Verified}
+{Disputes Resolved}; {12 Cases}; {10 Cases}; {+20.0%}; {100% Resolved}; {Resolved}
+{Tutor Matching Speed}; {4.2 hrs}; {5.4 hrs}; {-22.2%}; {< 5.0 hrs}; {On Track}
+{Dispute Escalation Rate}; {0.6%}; {0.6%}; {0%}; {< 1.0%}; {On Track}
+{Active Match Retention}; {89%}; {91%}; {-2.2%}; {> 85%}; {On Track}
+{Zero Dispute Compliance Rate}; {99.4%}; {99.4%}; {0%}; {100%}; {On Track}
+
+[ANALYTICS_MONTHLY]
+{November 2026}; {1,380}; {345}; {1,150}; {৳2,75,000}; {৳27,500}; {95%}
+{October 2026}; {1,248}; {312}; {1,023}; {৳2,45,000}; {৳24,500}; {94%}
+{September 2026}; {1,103}; {289}; {940}; {৳2,15,000}; {৳21,500}; {92%}
+{August 2026}; {980}; {260}; {850}; {৳1,90,000}; {৳19,000}; {90%}
+{July 2026}; {850}; {230}; {740}; {৳1,65,000}; {৳16,500}; {88%}
+{June 2026}; {720}; {205}; {620}; {৳1,40,000}; {৳14,000}; {85%}
+
+[ANALYTICS_ZONES]
+{Mirpur Zone}; {Razin}; {320}; {298}; {+93%}; {4.8 / 5.0}
+{Uttara Zone}; {Kalam}; {280}; {265}; {+95%}; {4.9 / 5.0}
+{Dhanmondi Zone}; {Farhana}; {260}; {242}; {+93%}; {4.7 / 5.0}
+{Gulshan Zone}; {Imtiaz}; {210}; {198}; {+94%}; {4.9 / 5.0}
+{Mohammadpur Zone}; {Shakil}; {178}; {164}; {+92%}; {4.6 / 5.0}
+{Chittagong Zone}; {Imran}; {195}; {182}; {+93%}; {4.8 / 5.0}
+{Rajshahi Zone}; {Fahim}; {160}; {148}; {+92%}; {4.7 / 5.0}
+{Sylhet Zone}; {Jamil}; {140}; {126}; {-20%}; {4.5 / 5.0}
+
+[STATS]
+{admin:Total Platform Users}; {1,380}; {+10.5% growth this month}
+{admin:Active Tutors}; {345}; {Verified across 12 city zones}
+{admin:Monthly Revenue}; {৳2,75,000}; {+12.2% gross platform fees}
+{admin:Open Disputes}; {6}; {Transferred to administrative resolution}
+{admin:Content Moderation Queue}; {7}; {Flagged submissions under review}
+{admin:Platform Success Rate}; {95%}; {Tuition match completion rate}
+{users:Total Users}; {1,380}; {Across all 4 active platform roles}
+{users:Registered Students}; {1,005}; {72.8% of total accounts}
+{users:Verified Tutors}; {345}; {25.0% verified educators}
+{users:Area Coordinators}; {24}; {Managing 24 regional zones}
+{users:Suspended Users}; {6}; {Under administrative freeze}
+{users:Platform Admins}; {6}; {Platform administrators}
+{broadcast:Total Broadcasts Dispatched}; {48}; {Across 12 regional zones}
+{broadcast:Active Global Alerts}; {5}; {Presently active on dashboards}
+{broadcast:Total Audience Reach}; {1,380}; {100% platform coverage}
+{broadcast:SMS Alerts Sent}; {960}; {High-priority notifications}
+{moderation:Active Moderation Queue}; {7}; {Pending human review}
+{moderation:Flagged Tutor Profiles}; {3}; {Unverified credentials}
+{moderation:Abusive Reviews Reported}; {2}; {Profanity / harassment}
+{moderation:Inappropriate Messages}; {2}; {Direct contact violations}
+{moderation:Removed Content This Week}; {16}; {Policy violation enforcement}
+{moderation:Dismissed False Reports}; {22}; {Legitimate user submissions}
+{disputes:Total Escalated Disputes}; {10}; {Transferred from coordinators}
+{disputes:Urgent Priority Cases}; {2}; {Immediate admin intervention}
+{disputes:Active Investigations}; {4}; {Evidence under review}
+{disputes:Resolved This Month}; {15}; {100% compliance rate}
+{disputes:Disciplinary Suspensions}; {3}; {Accounts penalized for misconduct}
+{analytics:Total Platform Users}; {1,380}; {+10.5% month-over-month growth}
+{analytics:Matching Success Rate}; {95%}; {+3% above quarterly KPI}
+{analytics:Gross Merchandise Value}; {৳2,75,000}; {+12.2% total fees transacted}
+{analytics:Active Tuition Matches}; {1,150}; {Sessions currently ongoing}
+{analytics:Tutor Retention Rate}; {91%}; {Tutors active after 3 months}
+{payments:Total Platform Inflow}; {৳2,75,000}; {+12.2% growth this month}
+{payments:Platform Commissions}; {৳27,500}; {10% platform service fee}
+{payments:Tutor Payouts Disbursed}; {৳1,90,500}; {Disbursed via bKash / Bank}
+{payments:Pending Verification}; {৳14,500}; {3 transactions under review}
+{payments:Total Refunds Issued}; {৳4,500}; {Dispute resolved refunds}

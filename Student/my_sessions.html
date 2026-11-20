@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LHTMP - My Sessions</title>
+    <link rel="stylesheet" href="student.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">LH</div>
+        <h2>LHTMP</h2>
+        <p>Student Portal</p>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Main Menu</span>
+        <a href="student.html">
+          <span class="nav-icon">🖥️</span> Dashboard
+        </a>
+        <a href="find_tutors.html">
+          <span class="nav-icon">🔍</span> Find Tutors
+        </a>
+        <a href="my_sessions.html" class="active">
+          <span class="nav-icon">🕓</span> My Sessions
+        </a>
+        <a href="study_materials.html">
+          <span class="nav-icon">📚</span> Study Materials
+        </a>
+        <a href="my_schedule.html">
+          <span class="nav-icon">📅</span> My Schedule
+        </a>
+        <span class="nav-section-label">Account</span>
+        <a href="reviews.html">
+          <span class="nav-icon">⭐</span> Reviews
+        </a>
+        <a href="messages.html">
+          <span class="nav-icon">✉️</span> Messages
+        </a>
+        <a href="profile.html">
+          <span class="nav-icon">👤</span> Profile
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button
+          type="button"
+          class="btn-logout"
+          onclick="window.location.href = '../Login/login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-header">
+        <div class="header-left">
+          <h2>My Tuition Sessions</h2>
+          <p>Track your ongoing learning timetable, live sessions, and tuition history</p>
+        </div>
+        <div class="header-right">
+          <button
+            type="button"
+            class="notif-btn"
+            onclick="alert('You have 3 unread notifications')"
+          >
+            🔔
+            <span class="notif-badge">3</span>
+          </button>
+          <div class="user-avatar">S</div>
+          <div class="user-info">
+            <span>Siam</span>
+            <span>Grade 10 • Dhaka</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>Upcoming &amp; Scheduled Sessions</h3>
+          <button
+            type="button"
+            class="btn-primary"
+            onclick="window.location.href = 'find_tutors.html'"
+          >
+            + Book New Session
+          </button>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Tutor Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Mode</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="subject-chip">Mathematics</span></td>
+              <td>Tanbeen</td>
+              <td>Today, 26 Oct 2026</td>
+              <td>4:00 PM - 5:30 PM</td>
+              <td>Online Video</td>
+              <td><span class="status-badge confirmed">Confirmed</span></td>
+              <td>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                  <button
+                    type="button"
+                    class="btn-table-join"
+                    onclick="alert('Connecting to virtual classroom with Tanbeen...')"
+                  >
+                    Join
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-table-reschedule"
+                    onclick="alert('Reschedule request sent for Mathematics session.')"
+                  >
+                    Reschedule
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-table-cancel"
+                    onclick="alert('Cancellation request submitted for Mathematics session.')"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="subject-chip">Physics</span></td>
+              <td>Erona</td>
+              <td>Tomorrow, 27 Oct 2026</td>
+              <td>5:00 PM - 6:30 PM</td>
+              <td>Home Visit</td>
+              <td><span class="status-badge confirmed">Confirmed</span></td>
+              <td>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                  <button
+                    type="button"
+                    class="btn-table-join"
+                    onclick="alert('Confirming home attendance with Erona...')"
+                  >
+                    Join
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-table-reschedule"
+                    onclick="alert('Reschedule request sent for Physics session.')"
+                  >
+                    Reschedule
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-table-cancel"
+                    onclick="alert('Cancellation request submitted for Physics session.')"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="subject-chip">English</span></td>
+              <td>Rodela</td>
+              <td>Wednesday, 28 Oct 2026</td>
+              <td>3:00 PM - 4:30 PM</td>
+              <td>Online Video</td>
+              <td><span class="status-badge pending">Pending</span></td>
+              <td>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                  <button
+                    type="button"
+                    class="btn-table-reschedule"
+                    onclick="alert('Reschedule request sent for English session.')"
+                  >
+                    Reschedule
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-table-cancel"
+                    onclick="alert('Cancellation request submitted for English session.')"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="subject-chip">ICT &amp; Computer</span></td>
+              <td>Arafat Rahman</td>
+              <td>Thursday, 29 Oct 2026</td>
+              <td>6:00 PM - 7:30 PM</td>
+              <td>Online Video</td>
+              <td><span class="status-badge confirmed">Confirmed</span></td>
+              <td>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                  <button
+                    type="button"
+                    class="btn-table-join"
+                    onclick="alert('Connecting to virtual classroom with Arafat Rahman...')"
+                  >
+                    Join
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-table-reschedule"
+                    onclick="alert('Reschedule request sent for ICT session.')"
+                  >
+                    Reschedule
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-table-cancel"
+                    onclick="alert('Cancellation request submitted for ICT session.')"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>Past Completed Sessions</h3>
+          <span class="badge">History</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Tutor Name</th>
+              <th>Date</th>
+              <th>Duration</th>
+              <th>Mode</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="subject-chip">Mathematics</span></td>
+              <td>Tanbeen</td>
+              <td>22 Oct 2026</td>
+              <td>1.5 hrs</td>
+              <td>Online Video</td>
+              <td><span class="status-badge completed">Completed</span></td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="window.location.href = 'reviews.html'"
+                >
+                  Review Tutor
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="subject-chip">Physics</span></td>
+              <td>Erona</td>
+              <td>20 Oct 2026</td>
+              <td>1.5 hrs</td>
+              <td>Home Visit</td>
+              <td><span class="status-badge completed">Completed</span></td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="window.location.href = 'reviews.html'"
+                >
+                  Review Tutor
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="subject-chip">English</span></td>
+              <td>Rodela</td>
+              <td>18 Oct 2026</td>
+              <td>1.5 hrs</td>
+              <td>Online Video</td>
+              <td><span class="status-badge completed">Completed</span></td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="window.location.href = 'reviews.html'"
+                >
+                  Review Tutor
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="subject-chip">Chemistry</span></td>
+              <td>Erona</td>
+              <td>15 Oct 2026</td>
+              <td>1.5 hrs</td>
+              <td>Home Visit</td>
+              <td><span class="status-badge cancelled">Cancelled</span></td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="window.location.href = 'find_tutors.html'"
+                >
+                  Rebook
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-footer-main">
+        &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </div>
+    </main>
+  </body>
+</html>

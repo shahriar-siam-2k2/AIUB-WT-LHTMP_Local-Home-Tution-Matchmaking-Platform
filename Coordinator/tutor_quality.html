@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Coordinator - Tutor Quality Monitoring | LHTMP</title>
+    <link rel="stylesheet" href="coordinator.css" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">AC</div>
+            <h2>LHTMP</h2>
+            <p>Coordinator Portal</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Management</div>
+            <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
+            <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
+            <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
+            <a href="tutor_quality.html" class="active"><span class="nav-icon">⭐</span>Tutor Quality</a>
+            <a href="suspend_accounts.html"><span class="nav-icon">🚫</span>Suspend Accounts</a>
+            <a href="area_reports.html"><span class="nav-icon">📈</span>Area Reports</a>
+            <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <h2>Tutor Quality Monitoring</h2>
+                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+            </div>
+            <div class="header-right">
+                <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
+                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
+                <div class="user-avatar">RZ</div>
+                <div class="user-info">
+                    <span>Razin</span>
+                    <span>Area Coordinator</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card" data-icon="👥">
+                <div class="stat-label">Active Zone Tutors</div>
+                <div class="stat-value">23</div>
+                <div class="stat-sub">Teaching in Mirpur</div>
+            </div>
+            <div class="stat-card" data-icon="⭐">
+                <div class="stat-label">High Performers (4.5+)</div>
+                <div class="stat-value">18</div>
+                <div class="stat-sub">Top rated tier</div>
+            </div>
+            <div class="stat-card" data-icon="⚠️">
+                <div class="stat-label">Quality Flagged (&lt;4.0)</div>
+                <div class="stat-value">2</div>
+                <div class="stat-sub">Audit intervention needed</div>
+            </div>
+            <div class="stat-card" data-icon="🎯">
+                <div class="stat-label">Zone Retention Rate</div>
+                <div class="stat-value">94.6%</div>
+                <div class="stat-sub">Monthly student retention</div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Tutor Performance, Ratings &amp; Student Feedback Summary</h3>
+                <button type="button" class="btn-primary" onclick="alert('Exporting Tutor Quality Audit Report...')">Export Quality Audit</button>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Tutor &amp; ID</th>
+                        <th>Subjects</th>
+                        <th>Sessions Completed</th>
+                        <th>Rating</th>
+                        <th>Completion Rate</th>
+                        <th>Student Feedback Summary</th>
+                        <th>Quality Standing</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Tasin Mahmud</strong><br />
+                            <small style="color: #6b7280;">ID: TUT-398</small>
+                        </td>
+                        <td>Higher Math &amp; Physics</td>
+                        <td>42 Sessions</td>
+                        <td><strong>4.9 ⭐</strong></td>
+                        <td>98.5%</td>
+                        <td>&ldquo;Outstanding conceptual clarity; student scored highest in college exam.&rdquo;</td>
+                        <td><span class="status-badge verified">Exemplary</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary" onclick="alert('Initiating Quality Audit interview for Tasin Mahmud (TUT-398).')">Audit Quality</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Displaying 28 student reviews for Tasin Mahmud.')">View Feedback</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Rodela Chowdhury</strong><br />
+                            <small style="color: #6b7280;">ID: TUT-395</small>
+                        </td>
+                        <td>English Language (O/A Level)</td>
+                        <td>36 Sessions</td>
+                        <td><strong>4.8 ⭐</strong></td>
+                        <td>97.0%</td>
+                        <td>&ldquo;Patient mentor, extremely disciplined with timings and homework tracking.&rdquo;</td>
+                        <td><span class="status-badge verified">Exemplary</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary" onclick="alert('Initiating Quality Audit interview for Rodela Chowdhury (TUT-395).')">Audit Quality</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Displaying 22 student reviews for Rodela Chowdhury.')">View Feedback</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Jerin Sultana</strong><br />
+                            <small style="color: #6b7280;">ID: TUT-380</small>
+                        </td>
+                        <td>Chemistry &amp; Biology</td>
+                        <td>29 Sessions</td>
+                        <td><strong>4.4 ⭐</strong></td>
+                        <td>92.0%</td>
+                        <td>&ldquo;Great subject depth, but requested weekend rescheduling twice this month.&rdquo;</td>
+                        <td><span class="status-badge active">Good Standing</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary" onclick="alert('Initiating Quality Audit interview for Jerin Sultana (TUT-380).')">Audit Quality</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Displaying 18 student reviews for Jerin Sultana.')">View Feedback</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Mitu Rani</strong><br />
+                            <small style="color: #6b7280;">ID: TUT-375</small>
+                        </td>
+                        <td>General Mathematics</td>
+                        <td>22 Sessions</td>
+                        <td><strong>4.1 ⭐</strong></td>
+                        <td>88.0%</td>
+                        <td>&ldquo;Good teacher, but needs faster pace for SSC test paper practice.&rdquo;</td>
+                        <td><span class="status-badge pending">Monitored</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary" onclick="alert('Initiating Quality Audit interview for Mitu Rani (TUT-375).')">Audit Quality</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Displaying 14 student reviews for Mitu Rani.')">View Feedback</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Tariqul Islam</strong><br />
+                            <small style="color: #6b7280;">ID: TUT-342</small>
+                        </td>
+                        <td>ICT &amp; Computer Science</td>
+                        <td>15 Sessions</td>
+                        <td><strong style="color: #ef4444;">3.7 ⭐</strong></td>
+                        <td>78.5%</td>
+                        <td>&ldquo;Late arrivals reported by students; 2 sessions rescheduled at last minute.&rdquo;</td>
+                        <td><span class="status-badge rejected">Audit Flagged</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary" onclick="alert('Urgent Quality Audit initiated for Tariqul Islam. Notice dispatched.')">Audit Quality</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Displaying warning log and student complaints for Tariqul Islam.')">View Feedback</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Fahad Al Mamun</strong><br />
+                            <small style="color: #6b7280;">ID: TUT-331</small>
+                        </td>
+                        <td>Physics (HSC)</td>
+                        <td>18 Sessions</td>
+                        <td><strong style="color: #ef4444;">3.9 ⭐</strong></td>
+                        <td>81.0%</td>
+                        <td>&ldquo;Teaching pace is rushed; student needed additional explanations on mechanics.&rdquo;</td>
+                        <td><span class="status-badge rejected">Audit Flagged</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary" onclick="alert('Urgent Quality Audit initiated for Fahad Al Mamun. Notice dispatched.')">Audit Quality</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Displaying warning log and student complaints for Fahad Al Mamun.')">View Feedback</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

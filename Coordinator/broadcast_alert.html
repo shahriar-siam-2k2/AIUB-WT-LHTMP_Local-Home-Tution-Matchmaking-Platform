@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Coordinator - Broadcast Alert | LHTMP</title>
+    <link rel="stylesheet" href="coordinator.css" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">AC</div>
+            <h2>LHTMP</h2>
+            <p>Coordinator Portal</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Management</div>
+            <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
+            <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
+            <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
+            <a href="tutor_quality.html"><span class="nav-icon">⭐</span>Tutor Quality</a>
+            <a href="suspend_accounts.html"><span class="nav-icon">🚫</span>Suspend Accounts</a>
+            <a href="area_reports.html"><span class="nav-icon">📈</span>Area Reports</a>
+            <a href="broadcast_alert.html" class="active"><span class="nav-icon">📢</span>Broadcast Alert</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <h2>Broadcast Local Alert</h2>
+                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+            </div>
+            <div class="header-right">
+                <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
+                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
+                <div class="user-avatar">RZ</div>
+                <div class="user-info">
+                    <span>Razin</span>
+                    <span>Area Coordinator</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card" data-icon="📢">
+                <div class="stat-label">Active Zone Alerts</div>
+                <div class="stat-value">1</div>
+                <div class="stat-sub">Currently displayed to users</div>
+            </div>
+            <div class="stat-card" data-icon="📨">
+                <div class="stat-label">Total Broadcasts Sent</div>
+                <div class="stat-value">18</div>
+                <div class="stat-sub">Lifetime Mirpur announcements</div>
+            </div>
+            <div class="stat-card" data-icon="👥">
+                <div class="stat-label">Potential Zone Reach</div>
+                <div class="stat-value">142</div>
+                <div class="stat-sub">Tutors &amp; students</div>
+            </div>
+            <div class="stat-card" data-icon="👁️">
+                <div class="stat-label">Avg Read Rate</div>
+                <div class="stat-value">92.4%</div>
+                <div class="stat-sub">Acknowledged within 4h</div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Announcement Message Composer</h3>
+            </div>
+            <form class="form-body" onsubmit="event.preventDefault(); alert('Zone alert dispatched successfully to target audience in Dhaka - Mirpur zone.'); this.reset();">
+                <div class="form-grid">
+                    <div class="form-group-custom">
+                        <label for="target-audience">Target Audience</label>
+                        <select id="target-audience" name="target_audience" required>
+                            <option value="all">All Users in Dhaka - Mirpur Zone (112)</option>
+                            <option value="tutors">Registered Tutors Only (23)</option>
+                            <option value="students">Enrolled Students Only (89)</option>
+                            <option value="hsc_tutors">High School &amp; HSC Tutors (14)</option>
+                        </select>
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="alert-priority">Alert Priority</label>
+                        <select id="alert-priority" name="alert_priority" required>
+                            <option value="normal">Normal Announcement (Standard notice)</option>
+                            <option value="important">Important Advisory (Highlighted banner)</option>
+                            <option value="urgent">Urgent / Emergency (Push notification &amp; SMS)</option>
+                        </select>
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="alert-title">Subject / Title</label>
+                        <input type="text" id="alert-title" name="alert_title" placeholder="e.g. Weather Advisory: Heavy rain schedule adjustments" required />
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="delivery-channel">Delivery Channel</label>
+                        <select id="delivery-channel" name="delivery_channel" required>
+                            <option value="in_app_sms">In-App Notice &amp; SMS Notification</option>
+                            <option value="in_app">In-App Dashboard Banner Only</option>
+                            <option value="sms_only">Direct SMS Only</option>
+                        </select>
+                    </div>
+                    <div class="form-group-custom form-grid-full">
+                        <label for="alert-message">Announcement Message Body</label>
+                        <textarea id="alert-message" name="alert_message" rows="5" placeholder="Type your local zone alert message clearly. Include specific area sectors if applicable..." required></textarea>
+                    </div>
+                </div>
+                <div class="table-actions">
+                    <button type="submit" class="btn-primary">Send Zone Alert</button>
+                    <button type="reset" class="btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Past Broadcast Announcements &amp; Delivery Log</h3>
+                <button type="button" class="btn-secondary" onclick="alert('Refreshing broadcast log...')">🔄 Refresh Log</button>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Broadcast ID &amp; Subject</th>
+                        <th>Target Audience</th>
+                        <th>Priority</th>
+                        <th>Sent Date &amp; Time</th>
+                        <th>Delivery Status</th>
+                        <th>Sent By</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Severe Weather &amp; Waterlogging Advisory</strong><br />
+                            <small style="color: #6b7280;">ID: BCAST-2026-08 &bull; Mirpur-10 Sector</small>
+                        </td>
+                        <td>All Zone Users (142)</td>
+                        <td><span class="status-badge suspended">Urgent</span></td>
+                        <td>29 Oct 2026, 04:30 PM</td>
+                        <td><span class="status-badge active">Active (98% Read)</span></td>
+                        <td>Razin (Coordinator)</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary" onclick="alert('Viewing real-time read metrics for BCAST-2026-08.')">View Details</button>
+                                <button type="button" class="btn-danger" onclick="alert('Broadcast BCAST-2026-08 has been revoked from user noticeboards.')">Revoke Alert</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Monthly Honorarium Settlement Deadline Reminder</strong><br />
+                            <small style="color: #6b7280;">ID: BCAST-2026-07 &bull; Escrow System</small>
+                        </td>
+                        <td>Students Only (89)</td>
+                        <td><span class="status-badge pending">Important</span></td>
+                        <td>25 Oct 2026, 10:00 AM</td>
+                        <td><span class="status-badge verified">Delivered (100%)</span></td>
+                        <td>Razin (Coordinator)</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary" onclick="alert('Viewing delivery logs for BCAST-2026-07.')">View Details</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>HSC Final Exam Preparation Study Guidelines</strong><br />
+                            <small style="color: #6b7280;">ID: BCAST-2026-06 &bull; Academic Board</small>
+                        </td>
+                        <td>Tutors &amp; Students (112)</td>
+                        <td><span class="status-badge active">Normal</span></td>
+                        <td>18 Oct 2026, 02:15 PM</td>
+                        <td><span class="status-badge verified">Delivered (94%)</span></td>
+                        <td>Razin (Coordinator)</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary" onclick="alert('Viewing delivery logs for BCAST-2026-06.')">View Details</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Platform Escrow Security &amp; Safe Payment Policy</strong><br />
+                            <small style="color: #6b7280;">ID: BCAST-2026-05 &bull; Policy Update</small>
+                        </td>
+                        <td>Zone Tutors (23)</td>
+                        <td><span class="status-badge pending">Important</span></td>
+                        <td>10 Oct 2026, 11:00 AM</td>
+                        <td><span class="status-badge verified">Delivered (100%)</span></td>
+                        <td>Razin (Coordinator)</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary" onclick="alert('Viewing delivery logs for BCAST-2026-05.')">View Details</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Welcome &amp; Orientation for New Verified Tutors</strong><br />
+                            <small style="color: #6b7280;">ID: BCAST-2026-04 &bull; Community</small>
+                        </td>
+                        <td>New Tutors (6)</td>
+                        <td><span class="status-badge active">Normal</span></td>
+                        <td>02 Oct 2026, 09:00 AM</td>
+                        <td><span class="status-badge verified">Delivered (100%)</span></td>
+                        <td>Razin (Coordinator)</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary" onclick="alert('Viewing delivery logs for BCAST-2026-04.')">View Details</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

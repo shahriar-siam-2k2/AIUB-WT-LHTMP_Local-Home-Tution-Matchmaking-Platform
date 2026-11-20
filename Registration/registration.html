@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LHTMP - Registration</title>
+    <link rel="stylesheet" href="regManage.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <div class="brand-top">
+        <img
+          src="../Files/Img/Logo/logo.svg"
+          alt="LHTMP Logo"
+          class="logo-icon"
+        />
+        <p class="brand-name">LHTMP Portal</p>
+      </div>
+
+      <div class="registration-card">
+        <div class="card-header">
+          <h1>Create New Account</h1>
+          <p>Join the Local Home Tuition Matchmaking Platform</p>
+          <div class="divider"></div>
+        </div>
+
+        <div id="reg-alert" class="alert-box"></div>
+
+        <form
+          id="registrationForm"
+          class="registration-form"
+          action="../Login/login.html"
+          method="get"
+        >
+          <fieldset class="form-fieldset">
+            <legend>Account Role</legend>
+            <div class="form-group">
+              <label for="userType">User Type <span class="req">*</span></label>
+              <select id="userType" name="userType" required>
+                <option value="" disabled selected>Select User Type</option>
+                <option value="Admin">Admin</option>
+                <option value="Area Coordinator">Area Coordinator</option>
+                <option value="Tutor">Tutor</option>
+                <option value="Student">Student</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-fieldset">
+            <legend>Profile Image</legend>
+            <div class="avatar-preview-container">
+              <img
+                id="avatarPreview"
+                src="../Files/Img/Profile/default.svg"
+                alt="Profile Photo"
+                class="avatar-preview-img"
+                onerror="this.src='../Files/Img/Profile/default.svg'"
+              />
+              <div class="avatar-upload-wrap">
+                <label for="profileImage" class="avatar-upload-label">
+                  Upload Profile Image File (Optional)
+                </label>
+                <div class="avatar-input-box">
+                  <input
+                    type="file"
+                    id="profileImage"
+                    name="profileImage"
+                    accept="image/*"
+                    class="avatar-file-input"
+                  />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-fieldset">
+            <legend>Personal Information</legend>
+
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="req">*</span></label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email"
+                  >Email Address <span class="req">*</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="example@gmail.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone"
+                  >Phone Number <span class="req">*</span></label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="11-digit number (e.g. 017XXXXXXXX)"
+                  maxlength="11"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dob"
+                  >Date of Birth <span class="req">*</span></label
+                >
+                <input type="date" id="dob" name="dob" required />
+              </div>
+
+              <div class="form-group">
+                <label for="gender">Gender <span class="req">*</span></label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="gender"
+                      id="genderMale"
+                      value="Male"
+                      required
+                    />
+                    <span>Male</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="gender"
+                      id="genderFemale"
+                      value="Female"
+                      required
+                    />
+                    <span>Female</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-fieldset">
+            <legend>Location Details</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="division"
+                  >Division <span class="req">*</span></label
+                >
+                <select id="division" name="division" required>
+                  <option value="" disabled selected>Select Division</option>
+                  <option value="Barisal">Barisal</option>
+                  <option value="Chittagong">Chittagong</option>
+                  <option value="Dhaka">Dhaka</option>
+                  <option value="Khulna">Khulna</option>
+                  <option value="Mymensingh">Mymensingh</option>
+                  <option value="Rajshahi">Rajshahi</option>
+                  <option value="Rangpur">Rangpur</option>
+                  <option value="Sylhet">Sylhet</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="area">Area <span class="req">*</span></label>
+                <select id="area" name="area" required disabled>
+                  <option value="" disabled selected>
+                    Select Division First
+                  </option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset
+            id="gradeSection"
+            class="form-fieldset"
+          >
+            <legend>Academic Information</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="grade">Grade</label>
+                <select id="grade" name="grade">
+                  <option value="" disabled selected>Select Grade</option>
+                  <option value="Class-01">Class-01</option>
+                  <option value="Class-02">Class-02</option>
+                  <option value="Class-03">Class-03</option>
+                  <option value="Class-04">Class-04</option>
+                  <option value="Class-05">Class-05</option>
+                  <option value="Class-06">Class-06</option>
+                  <option value="Class-07">Class-07</option>
+                  <option value="Class-08">Class-08</option>
+                  <option value="Class-09">Class-09</option>
+                  <option value="Class-10">Class-10</option>
+                  <option value="SSC">SSC</option>
+                  <option value="HSC-1st Year">HSC-1st Year</option>
+                  <option value="HSC-2nd Year">HSC-2nd Year</option>
+                  <option value="Admission">Admission</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Graduate">Graduate</option>
+                  <option value="PHD">PHD</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="detailedGrade">Detailed Grade</label>
+                <input
+                  type="text"
+                  id="detailedGrade"
+                  name="detailedGrade"
+                  placeholder="e.g. Science / BSc. EEE, BUET"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-fieldset">
+            <legend>Security</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password"
+                  >Password <span class="req">*</span></label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Create password"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="confirmPassword"
+                  >Confirm Password <span class="req">*</span></label
+                >
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Re-enter password"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-btn-group">
+            <button type="submit" class="btn-submit">Register Account</button>
+            <button type="reset" class="btn-clear" id="btnClearReg">
+              Clear
+            </button>
+          </div>
+
+          <div class="or-divider"><span>OR</span></div>
+
+          <a href="../Login/login.html" id="linkCancelReg">
+            <button type="button" class="btn-back-login" id="btnCancelReg">Cancel</button>
+          </a>
+        </form>
+      </div>
+
+      <p class="page-footer">
+        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </p>
+    </div>
+
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="registration.js"></script>
+  </body>
+</html>

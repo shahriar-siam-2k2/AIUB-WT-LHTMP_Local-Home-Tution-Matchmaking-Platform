@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LHTMP - Study Materials</title>
+    <link rel="stylesheet" href="student.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">LH</div>
+        <h2>LHTMP</h2>
+        <p>Student Portal</p>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Main Menu</span>
+        <a href="student.html">
+          <span class="nav-icon">🖥️</span> Dashboard
+        </a>
+        <a href="find_tutors.html">
+          <span class="nav-icon">🔍</span> Find Tutors
+        </a>
+        <a href="my_sessions.html">
+          <span class="nav-icon">🕓</span> My Sessions
+        </a>
+        <a href="study_materials.html" class="active">
+          <span class="nav-icon">📚</span> Study Materials
+        </a>
+        <a href="my_schedule.html">
+          <span class="nav-icon">📅</span> My Schedule
+        </a>
+        <span class="nav-section-label">Account</span>
+        <a href="reviews.html">
+          <span class="nav-icon">⭐</span> Reviews
+        </a>
+        <a href="messages.html">
+          <span class="nav-icon">✉️</span> Messages
+        </a>
+        <a href="profile.html">
+          <span class="nav-icon">👤</span> Profile
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button
+          type="button"
+          class="btn-logout"
+          onclick="window.location.href = '../Login/login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-header">
+        <div class="header-left">
+          <h2>Study Materials &amp; Resources</h2>
+          <p>Access notes, lecture slides, worksheets, and practice exams uploaded by your tutors</p>
+        </div>
+        <div class="header-right">
+          <button
+            type="button"
+            class="notif-btn"
+            onclick="alert('You have 3 unread notifications')"
+          >
+            🔔
+            <span class="notif-badge">3</span>
+          </button>
+          <div class="user-avatar">S</div>
+          <div class="user-info">
+            <span>Siam</span>
+            <span>Grade 10 • Dhaka</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>Search Files &amp; Resources</h3>
+          <span class="badge">8 Materials Available</span>
+        </div>
+        <div class="search-bar-row">
+          <input
+            type="text"
+            placeholder="Search by topic, chapter, or file name... e.g. Algebra, Physics formulas"
+          />
+          <select>
+            <option value="">All Subjects</option>
+            <option value="math">Mathematics</option>
+            <option value="physics">Physics</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="biology">Biology</option>
+            <option value="english">English</option>
+            <option value="ict">ICT &amp; Computer</option>
+          </select>
+          <button
+            type="button"
+            class="btn-search"
+            onclick="alert('Filtering study materials according to search query...')"
+          >
+            Search
+          </button>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Document Name</th>
+              <th>Subject</th>
+              <th>Tutor / Author</th>
+              <th>File Type &amp; Size</th>
+              <th>Date Added</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>📄 Chapter 5 - Quadratic Equations &amp; Algebra Notes</td>
+              <td><span class="subject-chip">Mathematics</span></td>
+              <td>Tanbeen</td>
+              <td>PDF (2.4 MB)</td>
+              <td>24 Oct 2026</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Quadratic Equations & Algebra Notes.pdf')"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 Motion, Force &amp; Dynamics Formula Sheet</td>
+              <td><span class="subject-chip">Physics</span></td>
+              <td>Tanbeen</td>
+              <td>PDF (1.8 MB)</td>
+              <td>22 Oct 2026</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Motion & Dynamics Formula Sheet.pdf')"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 Periodic Table &amp; Chemical Bonding Summaries</td>
+              <td><span class="subject-chip">Chemistry</span></td>
+              <td>Erona</td>
+              <td>PDF (3.1 MB)</td>
+              <td>21 Oct 2026</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Chemical Bonding Summaries.pdf')"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 English Formal Essay Writing &amp; Vocabulary Guide</td>
+              <td><span class="subject-chip">English</span></td>
+              <td>Rodela</td>
+              <td>DOCX (950 KB)</td>
+              <td>20 Oct 2026</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading English Essay & Vocabulary Guide.docx')"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 Introduction to Python Programming &amp; Flowcharts</td>
+              <td><span class="subject-chip">ICT &amp; Computer</span></td>
+              <td>Arafat Rahman</td>
+              <td>ZIP (4.5 MB)</td>
+              <td>19 Oct 2026</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Python Basics & Flowcharts.zip')"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 Cell Division &amp; Genetics Diagrams</td>
+              <td><span class="subject-chip">Biology</span></td>
+              <td>Erona</td>
+              <td>PDF (3.8 MB)</td>
+              <td>16 Oct 2026</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Cell Division & Genetics Diagrams.pdf')"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 Geometry Theorems &amp; Practice Question Set</td>
+              <td><span class="subject-chip">Mathematics</span></td>
+              <td>Tanbeen</td>
+              <td>PDF (1.5 MB)</td>
+              <td>14 Oct 2026</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Geometry Theorems Question Set.pdf')"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>📄 Bangla 2nd Paper Grammar &amp; Composition</td>
+              <td><span class="subject-chip">English &amp; Bangla</span></td>
+              <td>Rodela</td>
+              <td>PDF (2.1 MB)</td>
+              <td>12 Oct 2026</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-download"
+                  onclick="alert('Downloading Bangla Grammar & Composition.pdf')"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="padding: 16px 24px; background: #f8faff; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 14px; color: #4b5563;">Need specific lecture notes or homework worksheets?</span>
+          <button
+            type="button"
+            class="btn-primary"
+            onclick="window.location.href = 'messages.html'"
+          >
+            Request Notes from Tutor
+          </button>
+        </div>
+      </div>
+
+      <div class="page-footer-main">
+        &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </div>
+    </main>
+  </body>
+</html>

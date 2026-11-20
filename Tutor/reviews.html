@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHTMP - Reviews & Ratings</title>
+    <link rel="stylesheet" href="tutor.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">LHTMP</div>
+            <h2>Tutor Portal</h2>
+            <p>Platform Suite</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Main Navigation</div>
+            <a href="tutor.html"><span class="nav-icon">📊</span> Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+            <a href="availability.html"><span class="nav-icon">📅</span> Availability</a>
+            <a href="booking_requests.html"><span class="nav-icon">📨</span> Booking Requests</a>
+            <a href="student_progress.html"><span class="nav-icon">📈</span> Student Progress</a>
+            <a href="study_materials.html"><span class="nav-icon">📚</span> Study Materials</a>
+            <a href="reviews.html" class="active"><span class="nav-icon">⭐</span> Reviews</a>
+            <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+
+        <header class="top-header">
+            <div class="header-left">
+                <h2>Reviews & Student Feedback</h2>
+                <p>Tutor Account • Read reviews from enrolled students and manage public replies</p>
+            </div>
+            <div class="header-right">
+                <button type="button" class="notif-btn" onclick="alert('You received a new 5-star review from Anisur Rahman yesterday.')" title="Notifications">
+                    🔔
+                    <span class="notif-badge">1</span>
+                </button>
+                <div class="user-avatar">T</div>
+                <div class="user-info">
+                    <span>Tanbeen</span>
+                    <span>Tutor Account</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Overall Rating Breakdown</h3>
+                <span class="badge">Platform Verified</span>
+            </div>
+            <div class="rating-overview-box">
+                <div class="rating-score-large">
+                    <h1>4.9</h1>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>42 Verified Ratings</p>
+                    <div style="font-size: 12px; color: #10b981; font-weight: 700; margin-top: 6px;">
+                        ✓ 98% Recommend Tutor
+                    </div>
+                </div>
+                <div class="rating-bars-col">
+                    <div class="rating-bar-row">
+                        <span style="width: 60px;">5 Stars</span>
+                        <div class="rating-bar-track">
+                            <div class="rating-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <span style="width: 40px; text-align: right; font-weight: 700;">38</span>
+                    </div>
+                    <div class="rating-bar-row">
+                        <span style="width: 60px;">4 Stars</span>
+                        <div class="rating-bar-track">
+                            <div class="rating-bar-fill" style="width: 7%; background: #3b82f6;"></div>
+                        </div>
+                        <span style="width: 40px; text-align: right; font-weight: 700;">3</span>
+                    </div>
+                    <div class="rating-bar-row">
+                        <span style="width: 60px;">3 Stars</span>
+                        <div class="rating-bar-track">
+                            <div class="rating-bar-fill" style="width: 3%; background: #9ca3af;"></div>
+                        </div>
+                        <span style="width: 40px; text-align: right; font-weight: 700;">1</span>
+                    </div>
+                    <div class="rating-bar-row">
+                        <span style="width: 60px;">2 Stars</span>
+                        <div class="rating-bar-track">
+                            <div class="rating-bar-fill" style="width: 0%;"></div>
+                        </div>
+                        <span style="width: 40px; text-align: right; font-weight: 700;">0</span>
+                    </div>
+                    <div class="rating-bar-row">
+                        <span style="width: 60px;">1 Star</span>
+                        <div class="rating-bar-track">
+                            <div class="rating-bar-fill" style="width: 0%;"></div>
+                        </div>
+                        <span style="width: 40px; text-align: right; font-weight: 700;">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="filter-toolbar">
+                <div class="filter-btn-group">
+                    <button type="button" class="btn-filter active" onclick="alert('Filtering: All 42 Reviews')">All (42)</button>
+                    <button type="button" class="btn-filter" onclick="alert('Filtering: 5 Star Reviews')">5 Stars (38)</button>
+                    <button type="button" class="btn-filter" onclick="alert('Filtering: 4 Star Reviews')">4 Stars (3)</button>
+                    <button type="button" class="btn-filter" onclick="alert('Filtering: SSC Students')">SSC Students (24)</button>
+                    <button type="button" class="btn-filter" onclick="alert('Filtering: HSC Students')">HSC Students (18)</button>
+                </div>
+                <div>
+                    <button type="button" class="btn-secondary" onclick="alert('Reviews sorted by newest first.')">Sort: Newest First</button>
+                </div>
+            </div>
+
+            <div class="review-list">
+
+                <div class="review-item">
+                    <div class="review-item-header">
+                        <div>
+                            <span class="review-author-name">Erona Rahman</span>
+                            <span style="font-size: 13px; color: #6b7280;">(Student, Class 10 SSC)</span>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                    <div class="review-meta">
+                        Tuition Subject: <span class="subject-chip">General Mathematics</span> • Reviewed on 22 October 2026
+                    </div>
+                    <div class="review-text">
+                        "Sir Tanbeen is an outstanding mathematics mentor. I was struggling with trigonometry and quadratic formulas for months. Within just four weeks of his structured sessions, my mid-term test scores jumped from 62% to 88%. He is always punctual, extremely patient, and gives regular weekly updates after each class."
+                    </div>
+                    <div class="review-reply-box">
+                        <div style="font-weight: 700; color: #1e3a5f; margin-bottom: 4px;">Tanbeen's Response:</div>
+                        <div>Thank you so much, Erona! You are very hardworking and dedicated. Your analytical skills have improved immensely and I am confident you will achieve an A+ in your upcoming SSC board exam.</div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button type="button" class="btn-secondary" onclick="alert('Editing response to Erona Rahman...')">Edit Reply</button>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-item-header">
+                        <div>
+                            <span class="review-author-name">Rodela Ahmed</span>
+                            <span style="font-size: 13px; color: #6b7280;">(Student, Class 12 HSC)</span>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                    <div class="review-meta">
+                        Tuition Subject: <span class="subject-chip">Physics</span> • Reviewed on 18 October 2026
+                    </div>
+                    <div class="review-text">
+                        "Tanbeen has a gift for making complex Physics concepts intuitive. His visual derivations for thermodynamics and electromagnetism made a tremendous difference for me. He provides high quality handwritten formula sheets and problem banks that you cannot find in standard guidebooks."
+                    </div>
+                    <div class="review-reply-box">
+                        <div style="font-weight: 700; color: #1e3a5f; margin-bottom: 4px;">Tanbeen's Response:</div>
+                        <div>Much appreciated, Rodela! Your conceptual grasp is superb, and it is a pleasure guiding you towards your medical and engineering entrance prep.</div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button type="button" class="btn-secondary" onclick="alert('Editing response to Rodela Ahmed...')">Edit Reply</button>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-item-header">
+                        <div>
+                            <span class="review-author-name">Nowrin Jahan</span>
+                            <span style="font-size: 13px; color: #6b7280;">(Student, Class 12 HSC)</span>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                    <div class="review-meta">
+                        Tuition Subject: <span class="subject-chip">Physics</span> • Reviewed on 14 October 2026
+                    </div>
+                    <div class="review-text">
+                        "The best tutor I have ever had! Online classes feel just as interactive as in-person tutoring. Sir solves all my doubts, never rushes, and explains difficult math derivations step-by-step. Scored 92% in my college pre-test thanks to him!"
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button type="button" class="btn-secondary" onclick="alert('Replying to Nowrin Jahan: Thank you Nowrin! Keep up the great work!')">Reply to Review</button>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-item-header">
+                        <div>
+                            <span class="review-author-name">Jerin Kabir</span>
+                            <span style="font-size: 13px; color: #6b7280;">(Student, Class 10 SSC)</span>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                    <div class="review-meta">
+                        Tuition Subject: <span class="subject-chip">General Mathematics</span> • Reviewed on 09 October 2026
+                    </div>
+                    <div class="review-text">
+                        "Very disciplined and professional tutor. He maintains an exact timetable, never cancels on short notice, and provides regular progress log entries that I can view through this portal. Highly recommended for any student in Dhaka."
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button type="button" class="btn-secondary" onclick="alert('Replying to Jerin Kabir: Thank you for your dedication Jerin!')">Reply to Review</button>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-item-header">
+                        <div>
+                            <span class="review-author-name">Farhan Sadik</span>
+                            <span style="font-size: 13px; color: #6b7280;">(Student, Class 9 SSC)</span>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐ 4.0</div>
+                    </div>
+                    <div class="review-meta">
+                        Tuition Subject: <span class="subject-chip">Chemistry</span> • Reviewed on 01 October 2026
+                    </div>
+                    <div class="review-text">
+                        "Great explanations for chemical bonding and reactions. Sometimes he gives a lot of homework problems to finish by next class, but it definitely helps in mastering the chapters."
+                    </div>
+                    <div class="review-reply-box">
+                        <div style="font-weight: 700; color: #1e3a5f; margin-bottom: 4px;">Tanbeen's Response:</div>
+                        <div>Thanks for the honest feedback Farhan! The problem sets are designed to build your muscle memory for the board exam. We will balance the workload smoothly!</div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button type="button" class="btn-secondary" onclick="alert('Editing response to Farhan Sadik...')">Edit Reply</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+
+    </div>
+
+</body>
+</html>
