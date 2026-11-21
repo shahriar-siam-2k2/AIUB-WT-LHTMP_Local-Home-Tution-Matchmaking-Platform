@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Coordinator - Edit Profile | LHTMP</title>
+    <link rel="stylesheet" href="coordinator.css" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">AC</div>
+            <h2>LHTMP</h2>
+            <p>Coordinator Portal</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Management</div>
+            <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html" class="active"><span class="nav-icon">👤</span>Profile</a>
+            <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
+            <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
+            <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
+            <a href="tutor_quality.html"><span class="nav-icon">⭐</span>Tutor Quality</a>
+            <a href="suspend_accounts.html"><span class="nav-icon">🚫</span>Suspend Accounts</a>
+            <a href="area_reports.html"><span class="nav-icon">📈</span>Area Reports</a>
+            <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../Login/login.html"><button type="button" class="btn-logout">🚪 Logout</button></a>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <h2 id="topHeaderGreeting">Edit Coordinator Profile</h2>
+                <p id="topHeaderSub">Area Coordinator &bull; Profile Customization</p>
+            </div>
+            <div class="header-right">
+                <span class="zone-badge-header" id="topHeaderZone">Zone: Regional Operations</span>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">0</span></button>
+                <img src="../Files/Img/Profile/coordinator.svg" alt="Avatar" class="user-avatar" id="topHeaderAvatar" onerror="this.src='../Files/Img/Profile/coordinator.svg'" />
+                <div class="user-info">
+                    <span id="topHeaderName">Coordinator</span>
+                    <span>Area Coordinator</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Edit Area Coordinator Profile &amp; Settings</h3>
+                <span class="badge">Security &amp; Preferences</span>
+            </div>
+
+            <div class="form-body">
+                <div id="coordAlertBox" class="alert-box"></div>
+
+                <form id="coordEditForm">
+                    <fieldset class="form-fieldset">
+                        <legend>System Identification &amp; Regional Assignment (Read-Only)</legend>
+                        <p class="field-note mb-14 text-muted">
+                            <strong class="text-bold">Protected Platform Attributes:</strong> Your User ID, System Role, Account Status, and Assigned Territory cannot be altered by an Area Coordinator. These are exclusively managed by Platform Administration.
+                        </p>
+                        <div class="form-grid">
+                            <div class="form-group-custom">
+                                <label for="coordUserId">User Identifier (System ID)</label>
+                                <input type="text" id="coordUserId" name="userId" readonly disabled class="input-readonly" />
+                            </div>
+                            <div class="form-group-custom">
+                                <label for="coordUserType">Operational System Role</label>
+                                <input type="text" id="coordUserType" name="userType" value="Area Coordinator" readonly disabled class="input-readonly" />
+                            </div>
+                            <div class="form-group-custom">
+                                <label for="coordStatus">Account Status</label>
+                                <input type="text" id="coordStatus" name="status" value="Active" readonly disabled class="input-readonly" />
+                            </div>
+                            <div class="form-group-custom">
+                                <label for="coordDivision">Assigned Division</label>
+                                <input type="text" id="coordDivision" name="division" readonly disabled class="input-readonly" />
+                            </div>
+                            <div class="form-group-custom form-grid-full">
+                                <label for="coordArea">Assigned Local Matching Zone</label>
+                                <input type="text" id="coordArea" name="area" readonly disabled class="input-readonly" />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend>Profile Image (Editable)</legend>
+                        <div class="avatar-preview-container">
+                            <img
+                                id="avatarPreview"
+                                src="../Files/Img/Profile/coordinator.svg"
+                                alt="Profile Photo"
+                                class="avatar-preview-img"
+                                onerror="this.src='../Files/Img/Profile/coordinator.svg'"
+                            />
+                            <div class="avatar-upload-wrap">
+                                <label for="profileImage" class="avatar-upload-label">
+                                    Change Profile Photo File
+                                </label>
+                                <div class="avatar-input-box">
+                                    <input
+                                        type="file"
+                                        id="profileImage"
+                                        name="profileImage"
+                                        accept="image/*"
+                                        class="avatar-file-input"
+                                    />
+                                </div>
+                                <span class="field-note text-muted">Supported formats: JPG, PNG, SVG, WEBP</span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend>Personal Information (Editable)</legend>
+                        <div class="form-grid">
+                            <div class="form-group-custom form-grid-full">
+                                <label for="coordFullName">Full Name *</label>
+                                <input type="text" id="coordFullName" name="fullName" placeholder="Enter your official full name" required />
+                            </div>
+                            <div class="form-group-custom">
+                                <label for="coordEmail">Email Address *</label>
+                                <input type="email" id="coordEmail" name="email" placeholder="example@lhtmp.com" required />
+                            </div>
+                            <div class="form-group-custom">
+                                <label for="coordPhone">Contact Phone Number (11 Digits) *</label>
+                                <input type="tel" id="coordPhone" name="phone" placeholder="01XXXXXXXXX" maxlength="11" required />
+                            </div>
+                            <div class="form-group-custom">
+                                <label for="coordDob">Date of Birth *</label>
+                                <input type="date" id="coordDob" name="dob" required />
+                            </div>
+                            <div class="form-group-custom">
+                                <label>Gender *</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" id="genderMale" value="Male" required />
+                                        <span>Male</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" id="genderFemale" value="Female" required />
+                                        <span>Female</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend>Security Credentials (Editable)</legend>
+                        <div class="form-grid">
+                            <div class="form-group-custom">
+                                <label for="coordPassword">Account Password *</label>
+                                <input type="password" id="coordPassword" name="password" placeholder="Enter password" required />
+                            </div>
+                            <div class="form-group-custom">
+                                <label for="coordConfirmPassword">Confirm Account Password *</label>
+                                <input type="password" id="coordConfirmPassword" name="confirmPassword" placeholder="Confirm password" required />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-btn-row">
+                        <button type="submit" class="btn-primary" id="btnSaveCoordProfile">Save Changes</button>
+                        <a href="profile.html">
+                            <button type="button" class="btn-secondary" id="btnCancelCoordProfile">Cancel</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+    </div>
+
+    <div id="simpleModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="coordinator.js"></script>
+</body>
+</html>

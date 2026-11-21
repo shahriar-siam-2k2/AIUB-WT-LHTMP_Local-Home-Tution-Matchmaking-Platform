@@ -296,6 +296,9 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (r == "Tutor") fallbackUrl = "../Tutor/tutor.html";
       else if (r == "Student") fallbackUrl = "../Student/profile.html";
       else if (r == "Area Coordinator") fallbackUrl = "../Coordinator/coordinator.html";
+      if (r == "Tutor") fallbackUrl = "../Tutor/profile.html";
+      else if (r == "Student") fallbackUrl = "../Student/student_portal.html";
+      else if (r == "Area Coordinator") fallbackUrl = "../Coordinator/profile.html";
     } else if (document.referrer && document.referrer.length > 0) {
       fallbackUrl = document.referrer;
     }
@@ -582,6 +585,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (userType == "Tutor") nextUrl = "../Tutor/tutor.html";
         else if (userType == "Student") nextUrl = "../Student/profile.html";
         else if (userType == "Area Coordinator") nextUrl = "../Coordinator/coordinator.html";
+        if (userType == "Tutor") nextUrl = "../Tutor/profile.html";
+        else if (userType == "Student") nextUrl = "../Student/student_portal.html";
+        else if (userType == "Area Coordinator") nextUrl = "../Coordinator/profile.html";
         else nextUrl = "../Login/login.html";
       }
 

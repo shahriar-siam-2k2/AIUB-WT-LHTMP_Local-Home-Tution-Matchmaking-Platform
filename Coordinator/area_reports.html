@@ -16,6 +16,7 @@
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,22 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+            <a href="../Login/login.html"><button type="button" class="btn-logout">🚪 Logout</button></a>
         </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
-                <h2>Area Performance Reports</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <h2 id="topHeaderGreeting">Area Performance Reports</h2>
+                <p id="topHeaderSub">Area Coordinator &bull; Matching Metrics &amp; Regional Analytics</p>
             </div>
             <div class="header-right">
-                <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <span class="zone-badge-header" id="topHeaderZone">Zone: Regional Operations</span>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">0</span></button>
+                <img src="../Files/Img/Profile/coordinator.svg" alt="Avatar" class="user-avatar" id="topHeaderAvatar" onerror="this.src='../Files/Img/Profile/coordinator.svg'" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span id="topHeaderName">Coordinator</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -49,194 +50,80 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="👥">
                 <div class="stat-label">Active Users in Zone</div>
-                <div class="stat-value">142</div>
-                <div class="stat-sub">119 Students, 23 Tutors</div>
+                <div class="stat-value" id="repStatUsers">0</div>
+                <div class="stat-sub" id="repStatUsersSub">Enrolled students &amp; active tutors</div>
             </div>
             <div class="stat-card" data-icon="📚">
-                <div class="stat-label">Monthly Booking Volume</div>
-                <div class="stat-value">198</div>
-                <div class="stat-sub">+18% growth vs last month</div>
+                <div class="stat-label">Inquiry Volume</div>
+                <div class="stat-value" id="repStatBookings">0</div>
+                <div class="stat-sub">Monthly tuition inquiries</div>
             </div>
             <div class="stat-card" data-icon="💰">
-                <div class="stat-label">Monthly Zone Revenue</div>
-                <div class="stat-value">৳2.65L</div>
-                <div class="stat-sub">Disbursed tuition volume</div>
+                <div class="stat-label">Finalized Placements</div>
+                <div class="stat-value" id="repStatRevenue">0</div>
+                <div class="stat-sub">Successfully matched tuitions</div>
             </div>
             <div class="stat-card" data-icon="⭐">
                 <div class="stat-label">Match Success Rate</div>
-                <div class="stat-value">96.4%</div>
-                <div class="stat-sub">Successful tutor placements</div>
+                <div class="stat-value" id="repStatSuccess">95%</div>
+                <div class="stat-sub">High fulfillment zone</div>
             </div>
         </div>
 
         <div class="section-block">
             <div class="section-header">
-                <h3>Dhaka - Mirpur Sub-Area Performance Breakdown (October 2026)</h3>
-                <button type="button" class="btn-primary" onclick="alert('Downloading Dhaka - Mirpur Zone Comprehensive Performance Report (PDF)...')">Download Report</button>
+                <h3>Regional Performance &amp; Zone Operational Breakdown</h3>
+                <div class="table-actions">
+                    <button type="button" class="btn-primary" id="btnDownloadReportModal">📄 Download Full Report</button>
+                    <button type="button" class="btn-secondary" id="btnRefreshReports">🔄 Refresh</button>
+                </div>
+            </div>
+            <div class="filter-bar">
+                <input type="text" id="repSearchInput" placeholder="Filter by zone or coordinator name..." class="filter-input" />
             </div>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Sub-Zone Sector</th>
-                        <th>Active Tutors</th>
-                        <th>Active Students</th>
-                        <th>Booking Volume</th>
-                        <th>Completed Sessions</th>
-                        <th>Gross Tuition Volume</th>
-                        <th>Satisfaction</th>
+                        <th>Regional Zone</th>
+                        <th>Coordinator</th>
+                        <th>Inquiries Received</th>
+                        <th>Finalized Placements</th>
+                        <th>Success Rate</th>
+                        <th>Avg Rating</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Mirpur-1 &amp; Ansar Camp</strong></td>
-                        <td>6 Tutors</td>
-                        <td>28 Students</td>
-                        <td>45 Bookings</td>
-                        <td>210 Sessions</td>
-                        <td><strong>৳58,000</strong></td>
-                        <td><span class="status-badge verified">4.8 ⭐</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-secondary" onclick="alert('Generating Sub-Zone CSV Export for Mirpur-1...')">Export CSV</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mirpur-2 &amp; Sony Square</strong></td>
-                        <td>5 Tutors</td>
-                        <td>24 Students</td>
-                        <td>38 Bookings</td>
-                        <td>185 Sessions</td>
-                        <td><strong>৳52,000</strong></td>
-                        <td><span class="status-badge verified">4.9 ⭐</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-secondary" onclick="alert('Generating Sub-Zone CSV Export for Mirpur-2...')">Export CSV</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mirpur-10 &amp; Roundabout</strong></td>
-                        <td>4 Tutors</td>
-                        <td>26 Students</td>
-                        <td>42 Bookings</td>
-                        <td>195 Sessions</td>
-                        <td><strong>৳54,000</strong></td>
-                        <td><span class="status-badge verified">4.7 ⭐</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-secondary" onclick="alert('Generating Sub-Zone CSV Export for Mirpur-10...')">Export CSV</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mirpur-11 &amp; Pallabi</strong></td>
-                        <td>3 Tutors</td>
-                        <td>22 Students</td>
-                        <td>31 Bookings</td>
-                        <td>148 Sessions</td>
-                        <td><strong>৳41,000</strong></td>
-                        <td><span class="status-badge verified">4.6 ⭐</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-secondary" onclick="alert('Generating Sub-Zone CSV Export for Mirpur-11...')">Export CSV</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mirpur-12 &amp; Eastern Housing</strong></td>
-                        <td>3 Tutors</td>
-                        <td>18 Students</td>
-                        <td>24 Bookings</td>
-                        <td>120 Sessions</td>
-                        <td><strong>৳32,000</strong></td>
-                        <td><span class="status-badge verified">4.8 ⭐</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-secondary" onclick="alert('Generating Sub-Zone CSV Export for Mirpur-12...')">Export CSV</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mirpur DOHS</strong></td>
-                        <td>2 Tutors</td>
-                        <td>14 Students</td>
-                        <td>18 Bookings</td>
-                        <td>92 Sessions</td>
-                        <td><strong>৳28,000</strong></td>
-                        <td><span class="status-badge verified">5.0 ⭐</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-secondary" onclick="alert('Generating Sub-Zone CSV Export for Mirpur DOHS...')">Export CSV</button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="areaReportsTableBody"></tbody>
             </table>
-        </div>
-
-        <div class="section-block">
-            <div class="section-header">
-                <h3>Historical Monthly Zone Analytics Summary</h3>
-                <button type="button" class="btn-secondary" onclick="alert('Downloading Historical 12-Month Performance Archive (Excel)...')">Download Historical Archive</button>
+            <div class="filter-bar filter-bar-between">
+                <div>Showing regional performance reports</div>
+                <div class="table-actions">
+                    <button type="button" class="btn-secondary" id="btnPrevReports">Previous</button>
+                    <button type="button" class="btn-primary" id="btnPage1Reports">1</button>
+                    <button type="button" class="btn-secondary" id="btnNextReports">Next</button>
+                </div>
             </div>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Month &amp; Year</th>
-                        <th>Active Zone Users</th>
-                        <th>Booking Volumes</th>
-                        <th>Completion Rate</th>
-                        <th>Gross Revenue</th>
-                        <th>Avg Rating</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>October 2026</strong></td>
-                        <td>142 Users</td>
-                        <td>198 Bookings</td>
-                        <td>96.4%</td>
-                        <td><strong>৳2,65,000</strong></td>
-                        <td>4.8 ⭐</td>
-                        <td><span class="status-badge active">Current Month</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>September 2026</strong></td>
-                        <td>128 Users</td>
-                        <td>172 Bookings</td>
-                        <td>95.1%</td>
-                        <td><strong>৳2,34,000</strong></td>
-                        <td>4.7 ⭐</td>
-                        <td><span class="status-badge verified">Archived</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>August 2026</strong></td>
-                        <td>115 Users</td>
-                        <td>155 Bookings</td>
-                        <td>94.8%</td>
-                        <td><strong>৳2,10,000</strong></td>
-                        <td>4.6 ⭐</td>
-                        <td><span class="status-badge verified">Archived</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>July 2026</strong></td>
-                        <td>98 Users</td>
-                        <td>134 Bookings</td>
-                        <td>93.5%</td>
-                        <td><strong>৳1,82,000</strong></td>
-                        <td>4.5 ⭐</td>
-                        <td><span class="status-badge verified">Archived</span></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
         <footer class="page-footer-main">
             &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+
+    <div id="simpleModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="coordinator.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
             <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+            <button type="button" class="btn-logout">🚪 Logout</button>
         </div>
     </aside>
 
@@ -38,13 +38,13 @@
                 <p>Tutor Account • Review, approve, or decline incoming tuition requests</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" onclick="alert('You have 3 booking requests awaiting response.')" title="Notifications">
+                <button type="button" class="notif-btn" title="Notifications">
                     🔔
-                    <span class="notif-badge">3</span>
+                    <span class="notif-badge">0</span>
                 </button>
-                <div class="user-avatar">T</div>
+                <div class="user-avatar"></div>
                 <div class="user-info">
-                    <span>Tanbeen</span>
+                    <span>Tutor</span>
                     <span>Tutor Account</span>
                 </div>
             </div>
@@ -53,7 +53,7 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="📨">
                 <div class="stat-label">Total Inquiries</div>
-                <div class="stat-value">28</div>
+                <div class="stat-value">6</div>
                 <div class="stat-sub">Lifetime received</div>
             </div>
             <div class="stat-card" data-icon="⏳">
@@ -63,12 +63,12 @@
             </div>
             <div class="stat-card" data-icon="✅">
                 <div class="stat-label">Accepted Tuition</div>
-                <div class="stat-value">21</div>
+                <div class="stat-value">1</div>
                 <div class="stat-sub">Confirmed & active</div>
             </div>
             <div class="stat-card" data-icon="🚫">
                 <div class="stat-label">Declined / Closed</div>
-                <div class="stat-value">4</div>
+                <div class="stat-value">1</div>
                 <div class="stat-sub">Due to schedule conflict</div>
             </div>
         </div>
@@ -76,15 +76,15 @@
         <div class="section-block">
             <div class="filter-toolbar">
                 <div class="filter-btn-group">
-                    <button type="button" class="btn-filter active" onclick="alert('Filtering: All Requests')">All (28)</button>
-                    <button type="button" class="btn-filter" onclick="alert('Filtering: Pending Requests')">Pending (3)</button>
-                    <button type="button" class="btn-filter" onclick="alert('Filtering: Confirmed Bookings')">Confirmed (21)</button>
-                    <button type="button" class="btn-filter" onclick="alert('Filtering: Completed')">Completed (2)</button>
-                    <button type="button" class="btn-filter" onclick="alert('Filtering: Declined')">Declined (2)</button>
+                    <button type="button" class="btn-filter btn-filter-booking active" data-filter="All">All</button>
+                    <button type="button" class="btn-filter btn-filter-booking" data-filter="Pending">Pending</button>
+                    <button type="button" class="btn-filter btn-filter-booking" data-filter="Confirmed">Confirmed</button>
+                    <button type="button" class="btn-filter btn-filter-booking" data-filter="Completed">Completed</button>
+                    <button type="button" class="btn-filter btn-filter-booking" data-filter="Declined">Declined</button>
                 </div>
-                <div style="display: flex; gap: 8px;">
-                    <input type="text" placeholder="Search by student or subject..." style="padding: 7px 12px; border: 1.5px solid #d1d5db; border-radius: 6px; font-size: 13px; outline: none; font-family: 'Lato', sans-serif;">
-                    <button type="button" class="btn-primary" onclick="alert('Filter applied.')">Search</button>
+                <div class="flex-gap-8">
+                    <input type="text" id="searchBookingInput" placeholder="Search by student or subject..." class="search-input-box">
+                    <button type="button" class="btn-primary" id="btnSearchBooking">Search</button>
                 </div>
             </div>
 
@@ -98,175 +98,46 @@
                         <th>Mode & Location</th>
                         <th>Rate Offered</th>
                         <th>Status</th>
-                        <th style="min-width: 220px;">Actions</th>
+                        <th class="col-actions-wide">Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>#REQ-1048</strong></td>
-                        <td>
-                            <div><strong>Erona Rahman</strong></div>
-                            <div style="font-size: 12px; color: #6b7280;">Contact: +880 1812-445566</div>
-                        </td>
-                        <td>
-                            <div><span class="subject-chip">Mathematics</span></div>
-                            <div style="font-size: 12px; color: #6b7280;">Class 10 (SSC)</div>
-                        </td>
-                        <td>
-                            <div>Sun & Tue</div>
-                            <div style="font-size: 12px; color: #6b7280;">04:00 PM - 05:30 PM</div>
-                        </td>
-                        <td>Home Tuition (Mirpur-2)</td>
-                        <td><strong>৳500/hr</strong></td>
-                        <td><span class="status-badge pending">Pending</span></td>
-                        <td>
-                            <button type="button" class="btn-success" onclick="alert('Request #REQ-1048 accepted! A confirmation SMS and email have been sent to the student.')">Accept</button>
-                            <button type="button" class="btn-danger" onclick="alert('Request #REQ-1048 declined.')">Decline</button>
-                            <button type="button" class="btn-secondary" onclick="alert('Student: Erona Rahman\nGrade: SSC Class 10\nCurriculum: National (Bangla Medium)\nPhone: +880 1812-445566\nAddress: House 14, Road 3, Mirpur-2, Dhaka\nRemarks: Needs intensive focus on Trigonometry & Algebra.')">View Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#REQ-1049</strong></td>
-                        <td>
-                            <div><strong>Rodela Ahmed</strong></div>
-                            <div style="font-size: 12px; color: #6b7280;">Contact: +880 1911-332211</div>
-                        </td>
-                        <td>
-                            <div><span class="subject-chip">Physics</span></div>
-                            <div style="font-size: 12px; color: #6b7280;">Class 12 (HSC)</div>
-                        </td>
-                        <td>
-                            <div>Mon & Wed</div>
-                            <div style="font-size: 12px; color: #6b7280;">05:30 PM - 07:00 PM</div>
-                        </td>
-                        <td>Online Live (Google Meet)</td>
-                        <td><strong>৳600/hr</strong></td>
-                        <td><span class="status-badge pending">Pending</span></td>
-                        <td>
-                            <button type="button" class="btn-success" onclick="alert('Request #REQ-1049 accepted! Meeting links will be auto-generated in the portal.')">Accept</button>
-                            <button type="button" class="btn-danger" onclick="alert('Request #REQ-1049 declined.')">Decline</button>
-                            <button type="button" class="btn-secondary" onclick="alert('Student: Rodela Ahmed\nGrade: HSC Class 12\nCurriculum: English Version\nPhone: +880 1911-332211\nEmail: rodela.ahmed@gmail.com\nRemarks: Focus on Dynamics, Optics, and Modern Physics.')">View Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#REQ-1050</strong></td>
-                        <td>
-                            <div><strong>Siam Hossain</strong></div>
-                            <div style="font-size: 12px; color: #6b7280;">Contact: +880 1711-889900</div>
-                        </td>
-                        <td>
-                            <div><span class="subject-chip">Higher Math</span></div>
-                            <div style="font-size: 12px; color: #6b7280;">Class 11 (HSC)</div>
-                        </td>
-                        <td>
-                            <div>Sun & Tue</div>
-                            <div style="font-size: 12px; color: #6b7280;">03:00 PM - 04:30 PM</div>
-                        </td>
-                        <td>Home Tuition (Dhanmondi)</td>
-                        <td><strong>৳650/hr</strong></td>
-                        <td><span class="status-badge pending">Pending</span></td>
-                        <td>
-                            <button type="button" class="btn-success" onclick="alert('Request #REQ-1050 accepted! Class schedule locked.')">Accept</button>
-                            <button type="button" class="btn-danger" onclick="alert('Request #REQ-1050 declined.')">Decline</button>
-                            <button type="button" class="btn-secondary" onclick="alert('Student: Siam Hossain\nGrade: HSC Class 11\nCurriculum: National Curriculum\nPhone: +880 1711-889900\nAddress: Road 8/A, Dhanmondi, Dhaka\nRemarks: Preparation for College Mid-terms and Calculus.')">View Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#REQ-1042</strong></td>
-                        <td>
-                            <div><strong>Jerin Kabir</strong></div>
-                            <div style="font-size: 12px; color: #6b7280;">Contact: +880 1622-114477</div>
-                        </td>
-                        <td>
-                            <div><span class="subject-chip">General Math</span></div>
-                            <div style="font-size: 12px; color: #6b7280;">Class 10 (SSC)</div>
-                        </td>
-                        <td>
-                            <div>Mon & Wed</div>
-                            <div style="font-size: 12px; color: #6b7280;">06:00 PM - 07:30 PM</div>
-                        </td>
-                        <td>Home Tuition (Uttara)</td>
-                        <td><strong>৳500/hr</strong></td>
-                        <td><span class="status-badge confirmed">Confirmed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Student: Jerin Kabir\nStatus: Enrolled & Confirmed\nAddress: Sector 4, Uttara, Dhaka\nPhone: +880 1622-114477')">View Details</button>
-                            <button type="button" class="btn-primary" onclick="window.location.href='student_progress.html'">Log Progress</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#REQ-1038</strong></td>
-                        <td>
-                            <div><strong>Nowrin Jahan</strong></div>
-                            <div style="font-size: 12px; color: #6b7280;">Contact: +880 1552-998877</div>
-                        </td>
-                        <td>
-                            <div><span class="subject-chip">Physics</span></div>
-                            <div style="font-size: 12px; color: #6b7280;">Class 12 (HSC)</div>
-                        </td>
-                        <td>
-                            <div>Friday</div>
-                            <div style="font-size: 12px; color: #6b7280;">09:30 AM - 11:00 AM</div>
-                        </td>
-                        <td>Online Live</td>
-                        <td><strong>৳600/hr</strong></td>
-                        <td><span class="status-badge confirmed">Confirmed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Student: Nowrin Jahan\nStatus: Confirmed & Regular\nContact: +880 1552-998877\nPlatform: Google Meet')">View Details</button>
-                            <button type="button" class="btn-primary" onclick="window.location.href='student_progress.html'">Log Progress</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#REQ-1031</strong></td>
-                        <td>
-                            <div><strong>Farhan Sadik</strong></div>
-                            <div style="font-size: 12px; color: #6b7280;">Contact: +880 1744-556677</div>
-                        </td>
-                        <td>
-                            <div><span class="subject-chip">Chemistry</span></div>
-                            <div style="font-size: 12px; color: #6b7280;">Class 9 (SSC)</div>
-                        </td>
-                        <td>
-                            <div>Thursday</div>
-                            <div style="font-size: 12px; color: #6b7280;">05:30 PM - 07:00 PM</div>
-                        </td>
-                        <td>Online Live</td>
-                        <td><strong>৳500/hr</strong></td>
-                        <td><span class="status-badge confirmed">Confirmed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Student: Farhan Sadik\nStatus: Confirmed\nContact: +880 1744-556677')">View Details</button>
-                            <button type="button" class="btn-primary" onclick="window.location.href='student_progress.html'">Log Progress</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#REQ-1025</strong></td>
-                        <td>
-                            <div><strong>Tanvir Alam</strong></div>
-                            <div style="font-size: 12px; color: #6b7280;">Contact: +880 1733-221100</div>
-                        </td>
-                        <td>
-                            <div><span class="subject-chip">SAT Math</span></div>
-                            <div style="font-size: 12px; color: #6b7280;">College Admissions</div>
-                        </td>
-                        <td>
-                            <div>Saturday</div>
-                            <div style="font-size: 12px; color: #6b7280;">07:00 PM - 09:00 PM</div>
-                        </td>
-                        <td>Home Tuition (Banani)</td>
-                        <td><strong>৳900/hr</strong></td>
-                        <td><span class="status-badge cancelled">Declined</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Request #REQ-1025 was declined due to tutor Saturday off-day schedule.')">View Reason</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="bookingRequestsTbody"></tbody>
             </table>
+
+            <div class="filter-bar filter-bar-between">
+                <div>Showing booking inquiry records</div>
+                <div class="table-actions">
+                    <button type="button" class="btn-secondary" id="btnPrevBooking">Previous</button>
+                    <button type="button" class="btn-primary" id="btnPage1Booking">1</button>
+                    <button type="button" class="btn-secondary" id="btnPage2Booking">2</button>
+                    <button type="button" class="btn-secondary" id="btnPage3Booking">3</button>
+                    <button type="button" class="btn-secondary" id="btnPage4Booking">4</button>
+                    <button type="button" class="btn-secondary" id="btnPage5Booking">5</button>
+                    <button type="button" class="btn-secondary" id="btnNextBooking">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="simpleModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+                </div>
+                <div id="simpleModalBody" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                </div>
+            </div>
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="tutor.js"></script>
 </body>
 </html>
