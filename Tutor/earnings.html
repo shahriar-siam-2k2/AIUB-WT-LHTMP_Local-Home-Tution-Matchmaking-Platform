@@ -26,7 +26,7 @@
             <a href="earnings.html" class="active"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+            <button type="button" class="btn-logout">🚪 Logout</button>
         </div>
     </aside>
 
@@ -38,13 +38,13 @@
                 <p>Tutor Account • Track tuition revenues, commission fees, and withdrawal settlements</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" onclick="alert('Your payout balance of ৳18,495 is eligible for immediate withdrawal.')" title="Notifications">
+                <button type="button" class="notif-btn" title="Notifications">
                     🔔
-                    <span class="notif-badge">1</span>
+                    <span class="notif-badge">0</span>
                 </button>
-                <div class="user-avatar">T</div>
+                <div class="user-avatar"></div>
                 <div class="user-info">
-                    <span>Tanbeen</span>
+                    <span>Tutor</span>
                     <span>Tutor Account</span>
                 </div>
             </div>
@@ -53,11 +53,11 @@
         <div class="payout-card-highlight">
             <div>
                 <h3>Available Balance for Payout</h3>
-                <div class="balance-val">৳18,495.00</div>
+                <div class="balance-val" id="availablePayoutBalance">৳18,495.00</div>
                 <p>Settled net revenue ready for disbursement to bKash, Nagad, or Bank Account</p>
             </div>
             <div>
-                <button type="button" class="btn-secondary" style="background: white; color: #1e3a5f; font-size: 15px; padding: 12px 24px;" onclick="document.getElementById('payout-form-box').scrollIntoView({behavior: 'smooth'})">Request Payout</button>
+                <button type="button" class="btn-payout-cta" id="btnScrollToPayoutForm">Request Payout</button>
             </div>
         </div>
 
@@ -90,12 +90,12 @@
                 <span class="badge">Disbursement Gateway</span>
             </div>
             <div class="form-body">
-                <form onsubmit="alert('Payout request submitted successfully! Funds will be credited to your selected account within 24 banking hours.'); return false;">
+                <form id="payoutRequestForm">
                     <div class="form-grid">
                         <div class="form-group-custom">
                             <label for="payout-amount">Withdrawal Amount (BDT)</label>
                             <input type="number" id="payout-amount" value="18495" min="1000" max="18495" required>
-                            <span style="font-size: 12px; color: #6b7280;">Minimum withdrawal is ৳1,000. Maximum available: ৳18,495</span>
+                            <span class="text-meta-small">Minimum withdrawal is ৳1,000. Maximum available: ৳18,495</span>
                         </div>
                         <div class="form-group-custom">
                             <label for="payout-method">Payment Destination</label>
@@ -110,19 +110,19 @@
                         </div>
                         <div class="form-group-custom">
                             <label for="account-num">Account / Wallet Number</label>
-                            <input type="text" id="account-num" value="01712-345678" required>
+                            <input type="text" id="account-num" value="01957495765" required>
                         </div>
                         <div class="form-group-custom">
                             <label for="account-name">Account Holder Name</label>
-                            <input type="text" id="account-name" value="Tanbeen Ahmed" required>
+                            <input type="text" id="account-name" value="Nowrrin Kabir" required>
                         </div>
                         <div class="form-group-custom form-grid-full">
                             <label for="payout-note">Payout Reference Note (Optional)</label>
                             <input type="text" id="payout-note" placeholder="e.g. October 2026 tuition settlements">
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary">Request Payout</button>
-                    <button type="reset" class="btn-secondary" style="margin-left: 10px;">Reset</button>
+                    <button type="submit" class="btn-primary" id="btnSubmitPayout">Request Payout</button>
+                    <button type="reset" class="btn-secondary btn-ml-10" id="btnResetPayout">Reset</button>
                 </form>
             </div>
         </div>
@@ -130,7 +130,7 @@
         <div class="section-block">
             <div class="section-header">
                 <h3>Monthly Earnings & Commission Breakdown</h3>
-                <button type="button" class="btn-secondary" onclick="alert('Exporting annual tax & earnings summary statement PDF...')">Export Statement PDF</button>
+                <button type="button" class="btn-secondary" id="btnExportEarningsPdf">Export Statement PDF</button>
             </div>
             <table class="data-table">
                 <thead>
@@ -145,147 +145,30 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>October 2026</strong></td>
-                        <td>24 Sessions</td>
-                        <td>36.0 hrs</td>
-                        <td>৳20,550</td>
-                        <td>৳2,055</td>
-                        <td><strong>৳18,495</strong></td>
-                        <td><span class="status-badge active">Available for Payout</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Downloading October 2026 invoice statement PDF...')">Download Invoice</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>September 2026</strong></td>
-                        <td>28 Sessions</td>
-                        <td>42.0 hrs</td>
-                        <td>৳23,800</td>
-                        <td>৳2,380</td>
-                        <td><strong>৳21,420</strong></td>
-                        <td><span class="status-badge completed">Disbursed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Downloading September 2026 invoice statement PDF...')">Download Invoice</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>August 2026</strong></td>
-                        <td>22 Sessions</td>
-                        <td>33.0 hrs</td>
-                        <td>৳19,200</td>
-                        <td>৳1,920</td>
-                        <td><strong>৳17,280</strong></td>
-                        <td><span class="status-badge completed">Disbursed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Downloading August 2026 invoice statement PDF...')">Download Invoice</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>July 2026</strong></td>
-                        <td>26 Sessions</td>
-                        <td>39.0 hrs</td>
-                        <td>৳22,500</td>
-                        <td>৳2,250</td>
-                        <td><strong>৳20,250</strong></td>
-                        <td><span class="status-badge completed">Disbursed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Downloading July 2026 invoice statement PDF...')">Download Invoice</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>June 2026</strong></td>
-                        <td>25 Sessions</td>
-                        <td>37.5 hrs</td>
-                        <td>৳21,750</td>
-                        <td>৳2,175</td>
-                        <td><strong>৳19,575</strong></td>
-                        <td><span class="status-badge completed">Disbursed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Downloading June 2026 invoice statement PDF...')">Download Invoice</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="tutorEarningsTbody"></tbody>
             </table>
         </div>
 
-        <div class="section-block">
-            <div class="section-header">
-                <h3>Payout Settlement History</h3>
-                <span class="badge">Transactions Ledger</span>
+        <div id="simpleModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+                </div>
+                <div id="simpleModalBody" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                </div>
             </div>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Payout ID</th>
-                        <th>Request Date</th>
-                        <th>Disbursed Date</th>
-                        <th>Payment Method</th>
-                        <th>Reference / Account</th>
-                        <th>Disbursed Amount</th>
-                        <th>Status</th>
-                        <th>Receipt</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>#PO-7741</strong></td>
-                        <td>02 Oct 2026</td>
-                        <td>03 Oct 2026</td>
-                        <td>bKash Merchant</td>
-                        <td>01712-345678</td>
-                        <td><strong>৳21,420</strong></td>
-                        <td><span class="status-badge completed">Completed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Viewing Official Receipt #PO-7741\nMethod: bKash\nTxID: 8XK399LM\nAmount: BDT 21,420\nStatus: Settled')">View Receipt</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#PO-6912</strong></td>
-                        <td>02 Sep 2026</td>
-                        <td>03 Sep 2026</td>
-                        <td>Bank Transfer (DBBL)</td>
-                        <td>A/C: 115.120.44892</td>
-                        <td><strong>৳17,280</strong></td>
-                        <td><span class="status-badge completed">Completed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Viewing Official Receipt #PO-6912\nMethod: Dutch-Bangla Bank\nTxID: DBBL-99231\nAmount: BDT 17,280\nStatus: Settled')">View Receipt</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#PO-6188</strong></td>
-                        <td>01 Aug 2026</td>
-                        <td>02 Aug 2026</td>
-                        <td>Nagad Personal</td>
-                        <td>01712-345678</td>
-                        <td><strong>৳20,250</strong></td>
-                        <td><span class="status-badge completed">Completed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Viewing Official Receipt #PO-6188\nMethod: Nagad\nTxID: NGD-55019\nAmount: BDT 20,250\nStatus: Settled')">View Receipt</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#PO-5402</strong></td>
-                        <td>02 Jul 2026</td>
-                        <td>03 Jul 2026</td>
-                        <td>Bank Transfer (BRAC)</td>
-                        <td>A/C: 150.102.77881</td>
-                        <td><strong>৳19,575</strong></td>
-                        <td><span class="status-badge completed">Completed</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Viewing Official Receipt #PO-5402\nMethod: BRAC Bank\nTxID: BRAC-44102\nAmount: BDT 19,575\nStatus: Settled')">View Receipt</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="tutor.js"></script>
 </body>
 </html>

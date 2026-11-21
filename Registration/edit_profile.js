@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let fallbackUrl = "../Login/login.html";
     if (loggedInUser) {
       let r = loggedInUser.userType || loggedInUser.role;
-      if (r == "Tutor") fallbackUrl = "../Tutor/tutor_portal.html";
+      if (r == "Tutor") fallbackUrl = "../Tutor/profile.html";
       else if (r == "Student") fallbackUrl = "../Student/student_portal.html";
       else if (r == "Area Coordinator") fallbackUrl = "../Coordinator/profile.html";
     } else if (document.referrer && document.referrer.length > 0) {
@@ -566,7 +566,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       let nextUrl = "../Admin/user_management.html";
       if (!isViewerAdmin) {
-        if (userType == "Tutor") nextUrl = "../Tutor/tutor_portal.html";
+        if (userType == "Tutor") nextUrl = "../Tutor/profile.html";
         else if (userType == "Student") nextUrl = "../Student/student_portal.html";
         else if (userType == "Area Coordinator") nextUrl = "../Coordinator/profile.html";
         else nextUrl = "../Login/login.html";

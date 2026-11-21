@@ -268,7 +268,7 @@ async function readDatabase() {
   let fileText = "";
   if (typeof localStorage !== "undefined") {
     const storedText = localStorage.getItem(DB_STORAGE_KEY);
-    if (storedText && storedText.length > 0) {
+    if (storedText && storedText.length > 0 && storedText.indexOf("[TUTOR_SUBJECTS]") != -1) {
       fileText = storedText;
     }
   }
@@ -322,6 +322,13 @@ async function readDatabase() {
     analyticsMonthly: [],
     analyticsZones: [],
     stats: {},
+    tutorSubjects: [],
+    bookingRequests: [],
+    studentProgress: [],
+    studyMaterials: [],
+    tutorReviews: [],
+    tutorAvailability: [],
+    tutorEarnings: [],
     raw: fileText
   };
 
@@ -537,6 +544,106 @@ async function readDatabase() {
           sub: parts[2] || "N/A"
         };
       }
+    } else if (currentSection == "TUTOR_SUBJECTS") {
+      db.tutorSubjects.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        tutorId: parts[1] || "N/A",
+        name: parts[2] || "N/A",
+        level: parts[3] || "N/A",
+        curriculum: parts[4] || "N/A",
+        rate: parts[5] || "৳0/hr",
+        mode: parts[6] || "Home & Online",
+        maxStudents: parts[7] || "1",
+        status: parts[8] || "Active",
+        description: parts[9] || "N/A"
+      });
+    } else if (currentSection == "BOOKING_REQUESTS") {
+      db.bookingRequests.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        tutorId: parts[1] || "N/A",
+        studentName: parts[2] || "N/A",
+        studentPhone: parts[3] || "N/A",
+        subject: parts[4] || "N/A",
+        grade: parts[5] || "N/A",
+        dateTime: parts[6] || "N/A",
+        mode: parts[7] || "N/A",
+        rate: parts[8] || "৳0/hr",
+        status: parts[9] || "Pending",
+        details: parts[10] || "N/A"
+      });
+    } else if (currentSection == "STUDENT_PROGRESS") {
+      db.studentProgress.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        tutorId: parts[1] || "N/A",
+        studentName: parts[2] || "N/A",
+        studentId: parts[3] || "N/A",
+        subject: parts[4] || "N/A",
+        grade: parts[5] || "N/A",
+        sessionsCompleted: parts[6] || "0 Sessions",
+        attendanceRate: parts[7] || "0%",
+        latestScore: parts[8] || "0",
+        syllabusDone: parts[9] || "0%",
+        remarks: parts[10] || "N/A"
+      });
+    } else if (currentSection == "STUDY_MATERIALS") {
+      db.studyMaterials.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        tutorId: parts[1] || "N/A",
+        title: parts[2] || "N/A",
+        subject: parts[3] || "N/A",
+        targetLevel: parts[4] || "N/A",
+        category: parts[5] || "N/A",
+        fileName: parts[6] || "N/A",
+        uploadDate: parts[7] || "N/A",
+        fileSize: parts[8] || "0 KB",
+        downloads: parts[9] || "0",
+        description: parts[10] || "N/A"
+      });
+    } else if (currentSection == "TUTOR_REVIEWS") {
+      db.tutorReviews.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        tutorId: parts[1] || "N/A",
+        studentName: parts[2] || "N/A",
+        studentGrade: parts[3] || "N/A",
+        rating: parts[4] || "5",
+        subject: parts[5] || "N/A",
+        date: parts[6] || "N/A",
+        reviewText: parts[7] || "N/A",
+        replyText: parts[8] || "N/A"
+      });
+    } else if (currentSection == "TUTOR_AVAILABILITY") {
+      db.tutorAvailability.push({
+        raw: rawLine,
+        tutorId: parts[0] || "N/A",
+        startTime: parts[1] || "09:00",
+        endTime: parts[2] || "20:30",
+        sessionDuration: parts[3] || "90",
+        bufferMinutes: parts[4] || "15",
+        workdays: parts[5] || "Sun,Mon,Tue,Wed,Thu,Fri",
+        vacationNote: parts[6] || "",
+        totalHours: parts[7] || "28 hrs",
+        workingDaysCount: parts[8] || "6 Days",
+        bookedSlotsCount: parts[9] || "16",
+        openSlotsCount: parts[10] || "8"
+      });
+    } else if (currentSection == "TUTOR_EARNINGS") {
+      db.tutorEarnings.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        tutorId: parts[1] || "N/A",
+        month: parts[2] || "N/A",
+        sessions: parts[3] || "0",
+        hours: parts[4] || "0 hrs",
+        gross: parts[5] || "৳0",
+        commission: parts[6] || "৳0",
+        net: parts[7] || "৳0",
+        status: parts[8] || "Available for Payout"
+      });
     }
   }
 
@@ -609,6 +716,68 @@ function serializeDatabase(db) {
   for (let i = 0; i < statKeys.length; i++) {
     let k = statKeys[i];
     lines.push("{" + k + "}; {" + db.stats[k].value + "}; {" + db.stats[k].sub + "}");
+  }
+
+  if (db.tutorSubjects && db.tutorSubjects.length > 0) {
+    lines.push("\n[TUTOR_SUBJECTS]");
+    for (let i = 0; i < db.tutorSubjects.length; i++) {
+      let s = db.tutorSubjects[i];
+      let sid = s.id || ("SUB-" + (101 + i));
+      lines.push("{" + sid + "}; {" + s.tutorId + "}; {" + s.name + "}; {" + s.level + "}; {" + s.curriculum + "}; {" + s.rate + "}; {" + s.mode + "}; {" + s.maxStudents + "}; {" + s.status + "}; {" + s.description + "}");
+    }
+  }
+
+  if (db.bookingRequests && db.bookingRequests.length > 0) {
+    lines.push("\n[BOOKING_REQUESTS]");
+    for (let i = 0; i < db.bookingRequests.length; i++) {
+      let b = db.bookingRequests[i];
+      let bid = b.id || ("REQ-" + (1040 + i));
+      lines.push("{" + bid + "}; {" + b.tutorId + "}; {" + b.studentName + "}; {" + b.studentPhone + "}; {" + b.subject + "}; {" + b.grade + "}; {" + b.dateTime + "}; {" + b.mode + "}; {" + b.rate + "}; {" + b.status + "}; {" + b.details + "}");
+    }
+  }
+
+  if (db.studentProgress && db.studentProgress.length > 0) {
+    lines.push("\n[STUDENT_PROGRESS]");
+    for (let i = 0; i < db.studentProgress.length; i++) {
+      let sp = db.studentProgress[i];
+      let spid = sp.id || ("PROG-" + (201 + i));
+      lines.push("{" + spid + "}; {" + sp.tutorId + "}; {" + sp.studentName + "}; {" + sp.studentId + "}; {" + sp.subject + "}; {" + sp.grade + "}; {" + sp.sessionsCompleted + "}; {" + sp.attendanceRate + "}; {" + sp.latestScore + "}; {" + sp.syllabusDone + "}; {" + sp.remarks + "}");
+    }
+  }
+
+  if (db.studyMaterials && db.studyMaterials.length > 0) {
+    lines.push("\n[STUDY_MATERIALS]");
+    for (let i = 0; i < db.studyMaterials.length; i++) {
+      let m = db.studyMaterials[i];
+      let mid = m.id || ("MAT-" + (301 + i));
+      lines.push("{" + mid + "}; {" + m.tutorId + "}; {" + m.title + "}; {" + m.subject + "}; {" + m.targetLevel + "}; {" + m.category + "}; {" + m.fileName + "}; {" + m.uploadDate + "}; {" + m.fileSize + "}; {" + m.downloads + "}; {" + m.description + "}");
+    }
+  }
+
+  if (db.tutorReviews && db.tutorReviews.length > 0) {
+    lines.push("\n[TUTOR_REVIEWS]");
+    for (let i = 0; i < db.tutorReviews.length; i++) {
+      let r = db.tutorReviews[i];
+      let rid = r.id || ("REV-" + (501 + i));
+      lines.push("{" + rid + "}; {" + r.tutorId + "}; {" + r.studentName + "}; {" + r.studentGrade + "}; {" + r.rating + "}; {" + r.subject + "}; {" + r.date + "}; {" + r.reviewText + "}; {" + r.replyText + "}");
+    }
+  }
+
+  if (db.tutorAvailability && db.tutorAvailability.length > 0) {
+    lines.push("\n[TUTOR_AVAILABILITY]");
+    for (let i = 0; i < db.tutorAvailability.length; i++) {
+      let a = db.tutorAvailability[i];
+      lines.push("{" + a.tutorId + "}; {" + a.startTime + "}; {" + a.endTime + "}; {" + a.sessionDuration + "}; {" + a.bufferMinutes + "}; {" + a.workdays + "}; {" + a.vacationNote + "}; {" + a.totalHours + "}; {" + a.workingDaysCount + "}; {" + a.bookedSlotsCount + "}; {" + a.openSlotsCount + "}");
+    }
+  }
+
+  if (db.tutorEarnings && db.tutorEarnings.length > 0) {
+    lines.push("\n[TUTOR_EARNINGS]");
+    for (let i = 0; i < db.tutorEarnings.length; i++) {
+      let e = db.tutorEarnings[i];
+      let eid = e.id || ("EARN-" + (601 + i));
+      lines.push("{" + eid + "}; {" + e.tutorId + "}; {" + e.month + "}; {" + e.sessions + "}; {" + e.hours + "}; {" + e.gross + "}; {" + e.commission + "}; {" + e.net + "}; {" + e.status + "}");
+    }
   }
 
   return lines.join("\n");

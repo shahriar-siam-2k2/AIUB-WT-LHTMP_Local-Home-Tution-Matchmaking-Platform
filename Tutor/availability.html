@@ -26,7 +26,7 @@
             <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+            <button type="button" class="btn-logout">🚪 Logout</button>
         </div>
     </aside>
 
@@ -38,13 +38,13 @@
                 <p>Tutor Account • Configure working hours, open slots, and weekly calendar</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" onclick="alert('Schedule is synchronized with the live booking engine.')" title="Notifications">
+                <button type="button" class="notif-btn" title="Notifications">
                     🔔
                     <span class="notif-badge">0</span>
                 </button>
-                <div class="user-avatar">T</div>
+                <div class="user-avatar"></div>
                 <div class="user-info">
-                    <span>Tanbeen</span>
+                    <span>Tutor</span>
                     <span>Tutor Account</span>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 <span class="badge">General Preferences</span>
             </div>
             <div class="form-body">
-                <form onsubmit="alert('Availability and working hour preferences saved successfully!'); return false;">
+                <form id="availabilitySettingsForm">
                     <div class="form-grid">
                         <div class="form-group-custom">
                             <label for="start-time">Daily Earliest Start Time</label>
@@ -107,27 +107,27 @@
                         </div>
                         <div class="form-group-custom form-grid-full">
                             <label>Default Active Teaching Days</label>
-                            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px;">
-                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
-                                    <input type="checkbox" name="workdays" value="Sun" checked style="accent-color: #3b82f6;"> Sunday
+                            <div class="checkbox-row-wrap">
+                                <label class="checkbox-label-flex">
+                                    <input type="checkbox" name="workdays" value="Sun" checked class="accent-checkbox"> Sunday
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
-                                    <input type="checkbox" name="workdays" value="Mon" checked style="accent-color: #3b82f6;"> Monday
+                                <label class="checkbox-label-flex">
+                                    <input type="checkbox" name="workdays" value="Mon" checked class="accent-checkbox"> Monday
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
-                                    <input type="checkbox" name="workdays" value="Tue" checked style="accent-color: #3b82f6;"> Tuesday
+                                <label class="checkbox-label-flex">
+                                    <input type="checkbox" name="workdays" value="Tue" checked class="accent-checkbox"> Tuesday
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
-                                    <input type="checkbox" name="workdays" value="Wed" checked style="accent-color: #3b82f6;"> Wednesday
+                                <label class="checkbox-label-flex">
+                                    <input type="checkbox" name="workdays" value="Wed" checked class="accent-checkbox"> Wednesday
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
-                                    <input type="checkbox" name="workdays" value="Thu" checked style="accent-color: #3b82f6;"> Thursday
+                                <label class="checkbox-label-flex">
+                                    <input type="checkbox" name="workdays" value="Thu" checked class="accent-checkbox"> Thursday
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
-                                    <input type="checkbox" name="workdays" value="Fri" checked style="accent-color: #3b82f6;"> Friday
+                                <label class="checkbox-label-flex">
+                                    <input type="checkbox" name="workdays" value="Fri" checked class="accent-checkbox"> Friday
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; cursor: pointer;">
-                                    <input type="checkbox" name="workdays" value="Sat" style="accent-color: #3b82f6;"> Saturday (Off-day)
+                                <label class="checkbox-label-flex">
+                                    <input type="checkbox" name="workdays" value="Sat" class="accent-checkbox"> Saturday (Off-day)
                                 </label>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                             <input type="text" id="vacation-note" placeholder="e.g. Unavailable on Eid holidays (15 Nov - 18 Nov)">
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary">Save Working Hours</button>
+                    <button type="submit" class="btn-primary" id="btnSaveWorkingHours">Save Working Hours</button>
                 </form>
             </div>
         </div>
@@ -144,73 +144,49 @@
         <div class="section-block">
             <div class="section-header">
                 <h3>Toggle Time Slots</h3>
-                <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-secondary" onclick="alert('All weekly slots enabled.')">Select All</button>
-                    <button type="button" class="btn-secondary" onclick="alert('Weekend slots cleared.')">Reset Weekend</button>
-                    <button type="button" class="btn-primary" onclick="alert('Time slot toggles have been successfully saved!')">Save Availability</button>
+                <div class="flex-gap-8">
+                    <button type="button" class="btn-secondary" id="btnSelectAllSlots">Select All</button>
+                    <button type="button" class="btn-secondary" id="btnResetWeekendSlots">Reset Weekend</button>
+                    <button type="button" class="btn-primary" id="btnSaveSlots">Save Availability</button>
                 </div>
             </div>
-            <div style="padding: 24px;">
-                <p style="font-size: 13px; color: #6b7280; margin-bottom: 16px;">
+            <div class="section-padding-24">
+                <p class="text-meta-small mb-16">
                     Check or uncheck individual time slots to control instant booking opportunities for students.
                 </p>
 
-                <div style="margin-bottom: 20px;">
-                    <h4 style="color: #1e3a5f; margin-bottom: 8px; font-size: 15px;">Sunday & Tuesday (Batch A)</h4>
+                <div class="mb-20">
+                    <h4 class="section-title-md">Sunday & Tuesday (Batch A)</h4>
                     <div class="slot-toggle-grid">
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 09:00 AM - 10:30 AM (Available)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 03:00 PM - 04:30 PM (Booked: Erona)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 05:00 PM - 06:30 PM (Booked: Siam)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 07:00 PM - 08:30 PM (Available)
-                        </label>
+                        <button type="button" class="slot-item active">09:00 AM - 10:30 AM (Available)</button>
+                        <button type="button" class="slot-item booked">03:00 PM - 04:30 PM (Booked: Erona)</button>
+                        <button type="button" class="slot-item booked">05:00 PM - 06:30 PM (Booked: Siam)</button>
+                        <button type="button" class="slot-item active">07:00 PM - 08:30 PM (Available)</button>
                     </div>
                 </div>
 
-                <div style="margin-bottom: 20px;">
-                    <h4 style="color: #1e3a5f; margin-bottom: 8px; font-size: 15px;">Monday & Wednesday (Batch B)</h4>
+                <div class="mb-20">
+                    <h4 class="section-title-md">Monday & Wednesday (Batch B)</h4>
                     <div class="slot-toggle-grid">
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 10:00 AM - 11:30 AM (Available)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 04:00 PM - 05:30 PM (Booked: Rodela)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 06:00 PM - 07:30 PM (Booked: Jerin)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox"> 07:45 PM - 09:15 PM (Disabled)
-                        </label>
+                        <button type="button" class="slot-item active">10:00 AM - 11:30 AM (Available)</button>
+                        <button type="button" class="slot-item booked">04:00 PM - 05:30 PM (Booked: Rodela)</button>
+                        <button type="button" class="slot-item booked">06:00 PM - 07:30 PM (Booked: Jerin)</button>
+                        <button type="button" class="slot-item">07:45 PM - 09:15 PM (Disabled)</button>
                     </div>
                 </div>
 
-                <div style="margin-bottom: 20px;">
-                    <h4 style="color: #1e3a5f; margin-bottom: 8px; font-size: 15px;">Thursday & Friday (Weekend Batches)</h4>
+                <div class="mb-20">
+                    <h4 class="section-title-md">Thursday & Friday (Weekend Batches)</h4>
                     <div class="slot-toggle-grid">
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 09:30 AM - 11:00 AM (Booked: Nowrin)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 03:30 PM - 05:00 PM (Available)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox" checked> 05:30 PM - 07:00 PM (Booked: Farhan)
-                        </label>
-                        <label class="slot-toggle-item">
-                            <input type="checkbox"> 07:30 PM - 09:00 PM (Disabled)
-                        </label>
+                        <button type="button" class="slot-item booked slot-weekend">09:30 AM - 11:00 AM (Booked: Nowrin)</button>
+                        <button type="button" class="slot-item active slot-weekend">03:30 PM - 05:00 PM (Available)</button>
+                        <button type="button" class="slot-item booked slot-weekend">05:30 PM - 07:00 PM (Booked: Farhan)</button>
+                        <button type="button" class="slot-item slot-weekend">07:30 PM - 09:00 PM (Disabled)</button>
                     </div>
                 </div>
 
-                <div style="margin-top: 10px;">
-                    <button type="button" class="btn-primary" onclick="alert('All availability settings updated successfully!')">Save Availability</button>
+                <div class="mt-10">
+                    <button type="button" class="btn-primary" id="btnSaveSlotsBottom">Save Availability</button>
                 </div>
             </div>
         </div>
@@ -271,9 +247,9 @@
                         <div class="schedule-slot-time">05:30 - 07:00 PM</div>
                         <div class="schedule-slot-subj"><strong>Farhan</strong> (Chemistry)</div>
                     </div>
-                    <div class="schedule-slot-card" style="border-left-color: #10b981; background: #f0fdf4;">
+                    <div class="schedule-slot-card schedule-slot-open">
                         <div class="schedule-slot-time">07:00 - 08:30 PM</div>
-                        <div class="schedule-slot-subj" style="color: #047857;">[Open Slot]</div>
+                        <div class="schedule-slot-subj schedule-slot-open-text">[Open Slot]</div>
                     </div>
                 </div>
                 <div class="schedule-day-column">
@@ -287,20 +263,35 @@
                         <div class="schedule-slot-subj"><strong>Tanjim</strong> (SAT Math)</div>
                     </div>
                 </div>
-                <div class="schedule-day-column" style="opacity: 0.65;">
+                <div class="schedule-day-column schedule-day-off">
                     <div class="schedule-day-header">SAT</div>
-                    <div style="text-align: center; font-size: 11px; color: #9ca3af; padding: 20px 0;">
+                    <div class="schedule-day-off-text">
                         Weekly Day Off
                     </div>
                 </div>
             </div>
         </div>
 
+        <div id="simpleModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+                </div>
+                <div id="simpleModalBody" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                </div>
+            </div>
+        </div>
+
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="tutor.js"></script>
 </body>
 </html>
