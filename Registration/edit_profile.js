@@ -256,7 +256,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   let fromAdminParam = getQueryParam("from");
   let roleParam = getQueryParam("role");
-  if (fromAdminParam == "admin" || (roleParam && roleParam.toLowerCase() == "admin")) {
+  if (fromAdminParam == "student" || (roleParam && roleParam.toLowerCase() == "student")) {
+    isViewerAdmin = false;
+  } else if (fromAdminParam == "admin" || (roleParam && roleParam.toLowerCase() == "admin")) {
     isViewerAdmin = true;
   } else if (loggedInUser) {
     let role = loggedInUser.userType || loggedInUser.role;
@@ -287,8 +289,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (userStatusSelect) userStatusSelect.required = false;
 
     let fallbackUrl = "../Login/login.html";
-    if (loggedInUser) {
+    if (fromAdminParam == "student" || (roleParam && roleParam.toLowerCase() == "student")) {
+      fallbackUrl = "../Student/profile.html";
+    } else if (loggedInUser) {
       let r = loggedInUser.userType || loggedInUser.role;
+      if (r == "Tutor") fallbackUrl = "../Tutor/tutor.html";
+      else if (r == "Student") fallbackUrl = "../Student/profile.html";
+      else if (r == "Area Coordinator") fallbackUrl = "../Coordinator/coordinator.html";
       if (r == "Tutor") fallbackUrl = "../Tutor/profile.html";
       else if (r == "Student") fallbackUrl = "../Student/student_portal.html";
       else if (r == "Area Coordinator") fallbackUrl = "../Coordinator/profile.html";
@@ -343,6 +350,15 @@ document.addEventListener("DOMContentLoaded", async function () {
       let u = currentDb.users[i];
       if (u.id == targetUserId || (u.email && u.email.toLowerCase() == targetUserId.toLowerCase())) {
         targetUser = u;
+        break;
+      }
+    }
+  }
+
+  if (!targetUser && fromAdminParam == "student") {
+    for (let i = 0; i < currentDb.users.length; i++) {
+      if (currentDb.users[i].role == "Student") {
+        targetUser = currentDb.users[i];
         break;
       }
     }
@@ -566,6 +582,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       let nextUrl = "../Admin/user_management.html";
       if (!isViewerAdmin) {
+        if (userType == "Tutor") nextUrl = "../Tutor/tutor.html";
+        else if (userType == "Student") nextUrl = "../Student/profile.html";
+        else if (userType == "Area Coordinator") nextUrl = "../Coordinator/coordinator.html";
         if (userType == "Tutor") nextUrl = "../Tutor/profile.html";
         else if (userType == "Student") nextUrl = "../Student/student_portal.html";
         else if (userType == "Area Coordinator") nextUrl = "../Coordinator/profile.html";

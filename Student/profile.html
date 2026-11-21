@@ -34,43 +34,30 @@
         <a href="reviews.html">
           <span class="nav-icon">⭐</span> Reviews
         </a>
-        <a href="messages.html">
-          <span class="nav-icon">✉️</span> Messages
-        </a>
         <a href="profile.html" class="active">
           <span class="nav-icon">👤</span> Profile
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button
-          type="button"
-          class="btn-logout"
-          onclick="window.location.href = '../Login/login.html'"
-        >
-          Logout
-        </button>
+        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
       </div>
     </aside>
 
     <main class="main-content">
       <div class="top-header">
         <div class="header-left">
-          <h2>Student Profile &amp; Settings</h2>
-          <p>Manage your personal academic details, enrollment preferences, and guardian contacts</p>
+          <h2 id="headerGreeting">Student Profile</h2>
+          <p>View personal academic details, enrollment status, and verified credentials</p>
         </div>
         <div class="header-right">
-          <button
-            type="button"
-            class="notif-btn"
-            onclick="alert('You have 3 unread notifications')"
-          >
+          <button type="button" class="notif-btn" id="btnNotification">
             🔔
-            <span class="notif-badge">3</span>
+            <span class="notif-badge" id="notifBadge">0</span>
           </button>
-          <div class="user-avatar">S</div>
+          <div class="user-avatar" id="headerAvatar">S</div>
           <div class="user-info">
-            <span>Siam</span>
-            <span>Grade 10 • Dhaka</span>
+            <span id="headerUserName">Student</span>
+            <span id="headerUserMeta">Grade 10 • Dhaka</span>
           </div>
         </div>
       </div>
@@ -80,185 +67,28 @@
           <h3>Student Academic Profile</h3>
           <span class="badge">Verified Student</span>
         </div>
-        <div class="profile-card-layout">
-          <div class="profile-summary-box">
-            <div class="profile-summary-avatar">S</div>
-            <div style="font-size: 18px; font-weight: 900; color: #1e3a5f;">
-              Siam Ahmed
-            </div>
-            <p style="color: #6b7280; font-size: 13px; margin-top: -6px;">
-              Student ID: #STU-2026-981
-            </p>
-            <div
-              style="display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 8px; text-align: left; font-size: 13px; color: #4b5563;"
-            >
-              <div>📍 <strong>Location:</strong> Mirpur-10, Dhaka</div>
-              <div>🎓 <strong>Level:</strong> Secondary (Grade 10)</div>
-              <div>📖 <strong>Curriculum:</strong> English Version</div>
-              <div>📅 <strong>Enrolled:</strong> January 2026</div>
-            </div>
-            <button
-              type="button"
-              class="btn-secondary"
-              style="width: 100%; margin-top: 10px;"
-              onclick="alert('Select an image file to update your student avatar.')"
-            >
-              Change Photo
-            </button>
-            <button
-              type="button"
-              class="btn-secondary"
-              style="width: 100%;"
-              onclick="alert('Password reset link sent to your registered email.')"
-            >
-              Change Password
-            </button>
-          </div>
+        <div id="profileDetailsContainer"></div>
+      </div>
 
-          <form
-            onsubmit="event.preventDefault(); alert('Student profile updated successfully!');"
-          >
-            <div style="font-size: 16px; font-weight: 700; color: #1e3a5f; margin-bottom: 14px;">
-              Academic &amp; School Information
-            </div>
-            <div class="form-grid">
-              <div class="form-group-custom">
-                <label for="studentName">Full Student Name</label>
-                <input
-                  type="text"
-                  id="studentName"
-                  value="Siam Ahmed"
-                  required
-                />
-              </div>
+      <footer class="page-footer-main">
+        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </footer>
+    </main>
 
-              <div class="form-group-custom">
-                <label for="studentEmail">Email Address</label>
-                <input
-                  type="email"
-                  id="studentEmail"
-                  value="siam.student@example.com"
-                  required
-                />
-              </div>
-
-              <div class="form-group-custom">
-                <label for="schoolName">Current School / College</label>
-                <input
-                  type="text"
-                  id="schoolName"
-                  value="Dhaka Residential Model College"
-                  required
-                />
-              </div>
-
-              <div class="form-group-custom">
-                <label for="gradeLevel">Grade / Class</label>
-                <select id="gradeLevel">
-                  <option value="grade10" selected>Grade 10 (SSC Candidate)</option>
-                  <option value="grade9">Grade 9</option>
-                  <option value="grade8">Grade 8</option>
-                  <option value="hsc1">Grade 11 / HSC 1st Year</option>
-                  <option value="hsc2">Grade 12 / HSC 2nd Year</option>
-                </select>
-              </div>
-
-              <div class="form-group-custom">
-                <label for="curriculum">Curriculum / Medium</label>
-                <select id="curriculum">
-                  <option value="ev" selected>National Curriculum (English Version)</option>
-                  <option value="bm">National Curriculum (Bangla Medium)</option>
-                  <option value="cambridge">Cambridge O-Levels</option>
-                  <option value="edexcel">Edexcel International GCSE</option>
-                </select>
-              </div>
-
-              <div class="form-group-custom">
-                <label for="stream">Academic Group</label>
-                <select id="stream">
-                  <option value="science" selected>Science</option>
-                  <option value="commerce">Business Studies</option>
-                  <option value="humanities">Humanities</option>
-                </select>
-              </div>
-            </div>
-
-            <div
-              style="font-size: 16px; font-weight: 700; color: #1e3a5f; margin: 24px 0 14px; border-top: 1px solid #e5e7eb; padding-top: 18px;"
-            >
-              Emergency / Guardian Contact Details
-            </div>
-            <div class="form-grid">
-              <div class="form-group-custom">
-                <label for="guardianName">Guardian Full Name</label>
-                <input
-                  type="text"
-                  id="guardianName"
-                  value="Md. Rafiqul Islam"
-                  required
-                />
-              </div>
-
-              <div class="form-group-custom">
-                <label for="guardianRelation">Relationship</label>
-                <select id="guardianRelation">
-                  <option value="father" selected>Father</option>
-                  <option value="mother">Mother</option>
-                  <option value="guardian">Legal Guardian</option>
-                </select>
-              </div>
-
-              <div class="form-group-custom">
-                <label for="guardianPhone">Guardian Phone Number</label>
-                <input
-                  type="tel"
-                  id="guardianPhone"
-                  value="+880 1712-345678"
-                  required
-                />
-              </div>
-
-              <div class="form-group-custom">
-                <label for="guardianEmail">Guardian Email</label>
-                <input
-                  type="email"
-                  id="guardianEmail"
-                  value="rafiqul.islam@example.com"
-                  required
-                />
-              </div>
-
-              <div class="form-group-custom form-grid-full">
-                <label for="address">Residential Address</label>
-                <input
-                  type="text"
-                  id="address"
-                  value="House 42, Road 9, Section 10, Mirpur, Dhaka-1216"
-                  required
-                />
-              </div>
-
-              <div class="form-group-custom form-grid-full">
-                <label for="learningGoals">Target Academic Goals / Notes</label>
-                <textarea
-                  id="learningGoals"
-                  rows="3"
-                >Targeting GPA 5.0 in SSC Board Examination 2027. Need dedicated weekly focus on Higher Mathematics and Physics conceptual problem-solving.</textarea>
-              </div>
-            </div>
-
-            <div style="margin-top: 20px;">
-              <button type="submit" class="btn-primary">
-                Save Profile
-              </button>
-            </div>
-          </form>
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>
       </div>
+    </div>
 
-      <div class="page-footer-main">
-        &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
-      </div>
-    </main>
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="student.js"></script>
   </body>
 </html>
