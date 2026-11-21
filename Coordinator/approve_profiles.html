@@ -16,7 +16,6 @@
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
-            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html" class="active"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -26,22 +25,22 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <a href="../Login/login.html"><button type="button" class="btn-logout">🚪 Logout</button></a>
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
         </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
-                <h2 id="topHeaderGreeting">Approve Tutor Profiles</h2>
-                <p id="topHeaderSub">Area Coordinator &bull; Profile Moderation &amp; Publishing</p>
+                <h2>Approve Tutor Profiles</h2>
+                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
-                <span class="zone-badge-header" id="topHeaderZone">Zone: Regional Operations</span>
-                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">0</span></button>
-                <img src="../Files/Img/Profile/coordinator.svg" alt="Avatar" class="user-avatar" id="topHeaderAvatar" onerror="this.src='../Files/Img/Profile/coordinator.svg'" />
+                <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
+                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
+                <div class="user-avatar">RZ</div>
                 <div class="user-info">
-                    <span id="topHeaderName">Coordinator</span>
+                    <span>Razin</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -50,22 +49,22 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="⏳">
                 <div class="stat-label">Awaiting Clearance</div>
-                <div class="stat-value" id="apprStatPending">0</div>
+                <div class="stat-value">5</div>
                 <div class="stat-sub">Pending public discovery</div>
             </div>
             <div class="stat-card" data-icon="🌐">
                 <div class="stat-label">Published to Search</div>
-                <div class="stat-value" id="apprStatActive">0</div>
-                <div class="stat-sub">Live in regional zone</div>
+                <div class="stat-value">28</div>
+                <div class="stat-sub">Live in Dhaka - Mirpur</div>
             </div>
             <div class="stat-card" data-icon="📝">
-                <div class="stat-label">Suspended / Revisions</div>
-                <div class="stat-value" id="apprStatRevision">0</div>
+                <div class="stat-label">Revisions In Progress</div>
+                <div class="stat-value">3</div>
                 <div class="stat-sub">Awaiting tutor updates</div>
             </div>
             <div class="stat-card" data-icon="⚡">
                 <div class="stat-label">Avg Review Speed</div>
-                <div class="stat-value" id="apprStatSpeed">2.1h</div>
+                <div class="stat-value">2.1h</div>
                 <div class="stat-sub">Fastest turnaround zone</div>
             </div>
         </div>
@@ -73,19 +72,7 @@
         <div class="section-block">
             <div class="section-header">
                 <h3>Profiles Awaiting Public Search Clearance</h3>
-                <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnRefreshApprove">🔄 Refresh</button>
-                </div>
-            </div>
-            <div class="filter-bar">
-                <label for="apprStatusFilter" class="text-bold text-small">Filter Status:</label>
-                <select id="apprStatusFilter" class="filter-select">
-                    <option value="all">All Tutors</option>
-                    <option value="Pending Verification" selected>Awaiting Clearance</option>
-                    <option value="Active">Published (Active)</option>
-                    <option value="Suspended">Suspended</option>
-                </select>
-                <input type="text" id="apprSearchInput" placeholder="Filter by tutor name or subject..." class="filter-input" />
+                <button type="button" class="btn-primary" onclick="alert('Filtering profiles by subject and completeness...')">Filter Profiles</button>
             </div>
             <table class="data-table">
                 <thead>
@@ -94,42 +81,126 @@
                         <th>Subjects &amp; Levels</th>
                         <th>Preferred Coverage Areas</th>
                         <th>Expected Honorarium</th>
-                        <th>Profile Completeness</th>
+                        <th>Bio &amp; Completeness</th>
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="approveProfilesBody"></tbody>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Farhan Ahmed</strong><br />
+                            <small style="color: #6b7280;">ID: PRF-410 | Male</small>
+                        </td>
+                        <td>Mathematics &amp; Higher Math<br /><small style="color: #6b7280;">SSC / HSC (Bangla Medium)</small></td>
+                        <td>Mirpur-1, Mirpur-2, Mirpur-10</td>
+                        <td><strong>৳6,000</strong> / month</td>
+                        <td>100% Complete<br /><small style="color: #10b981;">Bio &amp; Schedule ready</small></td>
+                        <td><span class="status-badge pending">Awaiting Clearance</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Profile for Farhan Ahmed approved and published to public search.')">Approve Profile</button>
+                                <button type="button" class="btn-danger" onclick="alert('Revision requested for Farhan Ahmed. Message sent to tutor.')">Request Revision</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening public search preview for Farhan Ahmed.')">Preview</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Sadia Rahman</strong><br />
+                            <small style="color: #6b7280;">ID: PRF-411 | Female</small>
+                        </td>
+                        <td>Physics &amp; Chemistry<br /><small style="color: #6b7280;">HSC &amp; Pre-Medical</small></td>
+                        <td>Mirpur-11, Pallabi, Mirpur-12</td>
+                        <td><strong>৳7,000</strong> / month</td>
+                        <td>95% Complete<br /><small style="color: #10b981;">Strong academic intro</small></td>
+                        <td><span class="status-badge pending">Awaiting Clearance</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Profile for Sadia Rahman approved and published to public search.')">Approve Profile</button>
+                                <button type="button" class="btn-danger" onclick="alert('Revision requested for Sadia Rahman. Message sent to tutor.')">Request Revision</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening public search preview for Sadia Rahman.')">Preview</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Nafis Iqbal</strong><br />
+                            <small style="color: #6b7280;">ID: PRF-412 | Male</small>
+                        </td>
+                        <td>ICT &amp; Computer Science<br /><small style="color: #6b7280;">Class 11-12 &amp; Diploma</small></td>
+                        <td>Mirpur-10, Kazipara, Shewrapara</td>
+                        <td><strong>৳5,500</strong> / month</td>
+                        <td>100% Complete<br /><small style="color: #10b981;">Syllabus outline attached</small></td>
+                        <td><span class="status-badge pending">Awaiting Clearance</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Profile for Nafis Iqbal approved and published to public search.')">Approve Profile</button>
+                                <button type="button" class="btn-danger" onclick="alert('Revision requested for Nafis Iqbal. Message sent to tutor.')">Request Revision</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening public search preview for Nafis Iqbal.')">Preview</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Nusrat Jahan</strong><br />
+                            <small style="color: #6b7280;">ID: PRF-413 | Female</small>
+                        </td>
+                        <td>English &amp; General Science<br /><small style="color: #6b7280;">Class 6-8 (English Version)</small></td>
+                        <td>Mirpur DOHS, Mirpur-12</td>
+                        <td><strong>৳5,000</strong> / month</td>
+                        <td>90% Complete<br /><small style="color: #f59e0b;">Photo requires adjustment</small></td>
+                        <td><span class="status-badge pending">Awaiting Clearance</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Profile for Nusrat Jahan approved and published to public search.')">Approve Profile</button>
+                                <button type="button" class="btn-danger" onclick="alert('Revision requested: Profile picture should be professional portrait.')">Request Revision</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening public search preview for Nusrat Jahan.')">Preview</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Shakil Khan</strong><br />
+                            <small style="color: #6b7280;">ID: PRF-414 | Male</small>
+                        </td>
+                        <td>Bangla, History &amp; Social Studies<br /><small style="color: #6b7280;">SSC Candidates</small></td>
+                        <td>Mirpur-6, Mirpur-7</td>
+                        <td><strong>৳4,500</strong> / month</td>
+                        <td>100% Complete<br /><small style="color: #10b981;">Complete profile</small></td>
+                        <td><span class="status-badge pending">Awaiting Clearance</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Profile for Shakil Khan approved and published to public search.')">Approve Profile</button>
+                                <button type="button" class="btn-danger" onclick="alert('Revision requested for Shakil Khan. Message sent to tutor.')">Request Revision</button>
+                                <button type="button" class="btn-secondary" onclick="alert('Opening public search preview for Shakil Khan.')">Preview</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Tasin Mahmud</strong><br />
+                            <small style="color: #6b7280;">ID: PRF-398 | Male</small>
+                        </td>
+                        <td>Higher Mathematics<br /><small style="color: #6b7280;">HSC &amp; Engineering Admission</small></td>
+                        <td>Mirpur-1, Mirpur-2</td>
+                        <td><strong>৳8,000</strong> / month</td>
+                        <td>100% Complete<br /><small style="color: #10b981;">Top Rated Tutor</small></td>
+                        <td><span class="status-badge approved">Approved</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary" onclick="alert('Viewing live public search listing for Tasin Mahmud.')">View Live Listing</button>
+                                <button type="button" class="btn-danger" onclick="alert('Profile hidden from search temporarily.')">Request Revision</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-            <div class="filter-bar filter-bar-between">
-                <div>Showing profile approval records</div>
-                <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnPrevApprove">Previous</button>
-                    <button type="button" class="btn-primary" id="btnPage1Approve">1</button>
-                    <button type="button" class="btn-secondary" id="btnNextApprove">Next</button>
-                </div>
-            </div>
         </div>
 
         <footer class="page-footer-main">
             &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
-
-    <div id="simpleModal" class="modal-overlay">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
-                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
-            </div>
-            <div id="simpleModalBody" class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="../Helper JS/readWrite.js"></script>
-    <script src="coordinator.js"></script>
 </body>
 </html>

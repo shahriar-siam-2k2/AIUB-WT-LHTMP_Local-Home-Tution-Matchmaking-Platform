@@ -38,13 +38,23 @@
 
           <div class="form-group">
             <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              required
-            />
+            <div class="password-input-wrap">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+              <button
+                type="button"
+                class="btn-toggle-password"
+                id="btnTogglePassword"
+                aria-label="Toggle password visibility"
+              >
+                👁️
+              </button>
+            </div>
           </div>
 
           <div class="forgot-link">

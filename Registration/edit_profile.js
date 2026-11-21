@@ -37,6 +37,93 @@ function cleanInputText(val) {
   return res;
 }
 
+function isAllDigits(str) {
+  if (!str || str.length == 0) return false;
+  for (let i = 0; i < str.length; i++) {
+    const c = str.charCodeAt(i);
+    if (c < 48 || c > 57) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function calculateAge(dobStr) {
+  if (!dobStr || dobStr.length < 10) return -1;
+  const parts = dobStr.split("-");
+  if (parts.length != 3) return -1;
+  const birthYear = parseInt(parts[0], 10);
+  const birthMonth = parseInt(parts[1], 10);
+  const birthDay = parseInt(parts[2], 10);
+  if (isNaN(birthYear) || isNaN(birthMonth) || isNaN(birthDay)) return -1;
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth() + 1;
+  const currentDay = today.getDate();
+
+  let age = currentYear - birthYear;
+  if (currentMonth < birthMonth || (currentMonth == birthMonth && currentDay < birthDay)) {
+    age--;
+  }
+  return age;
+}
+
+function setFieldError(fieldId, errId, message) {
+  const errElem = document.getElementById(errId);
+  if (errElem) {
+    errElem.textContent = message;
+    errElem.className = "field-error active";
+  }
+  const inputElem = document.getElementById(fieldId);
+  if (inputElem) {
+    if (inputElem.className.indexOf("input-error") == -1) {
+      inputElem.className = inputElem.className ? inputElem.className + " input-error" : "input-error";
+    }
+  }
+}
+
+function clearFieldError(fieldId, errId) {
+  const errElem = document.getElementById(errId);
+  if (errElem) {
+    errElem.textContent = "";
+    errElem.className = "field-error";
+  }
+  const inputElem = document.getElementById(fieldId);
+  if (inputElem && inputElem.className) {
+    let classes = inputElem.className.split(" ");
+    let kept = [];
+    for (let i = 0; i < classes.length; i++) {
+      if (classes[i] != "input-error" && classes[i].length > 0) {
+        kept.push(classes[i]);
+      }
+    }
+    inputElem.className = kept.join(" ");
+  }
+}
+
+function clearAllFieldErrors() {
+  const errors = [
+    { field: "userType", err: "err-userType" },
+    { field: "userStatus", err: "err-userStatus" },
+    { field: "fullName", err: "err-fullName" },
+    { field: "email", err: "err-email" },
+    { field: "phone", err: "err-phone" },
+    { field: "dob", err: "err-dob" },
+    { field: "genderMale", err: "err-gender" },
+    { field: "genderFemale", err: "err-gender" },
+    { field: "division", err: "err-division" },
+    { field: "area", err: "err-area" },
+    { field: "grade", err: "err-grade" },
+    { field: "detailedGrade", err: "err-detailedGrade" },
+    { field: "password", err: "err-password" },
+    { field: "confirmPassword", err: "err-confirmPassword" }
+  ];
+  for (let i = 0; i < errors.length; i++) {
+    clearFieldError(errors[i].field, errors[i].err);
+  }
+}
+
 function getQueryParam(key) {
   let search = window.location.search;
   if (!search || search.length == 0) return "";
@@ -235,6 +322,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const emailInput = document.getElementById("email");
   const phoneInput = document.getElementById("phone");
   const dobInput = document.getElementById("dob");
+  const genderRadios = document.getElementsByName("gender");
   const divisionSelect = document.getElementById("division");
   const areaSelect = document.getElementById("area");
   const gradeSection = document.getElementById("gradeSection");
@@ -242,6 +330,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   const detailedGradeInput = document.getElementById("detailedGrade");
   const passwordInput = document.getElementById("password");
   const confirmPasswordInput = document.getElementById("confirmPassword");
+  const btnTogglePassword = document.getElementById("btnTogglePassword");
+  const btnToggleConfirmPassword = document.getElementById("btnToggleConfirmPassword");
   const editProfileForm = document.getElementById("editProfileForm");
   const linkCancelEdit = document.getElementById("linkCancelEdit");
   const btnCancelEdit = document.getElementById("btnCancelEdit");
@@ -273,8 +363,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (accountRoleStatusSection) {
       accountRoleStatusSection.style.display = "block";
     }
-    if (userTypeSelect) userTypeSelect.required = true;
-    if (userStatusSelect) userStatusSelect.required = true;
     if (linkCancelEdit) linkCancelEdit.href = "../Admin/user_management.html";
     if (btnCancelEdit) {
       btnCancelEdit.onclick = function () {
@@ -285,8 +373,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (accountRoleStatusSection) {
       accountRoleStatusSection.style.display = "none";
     }
-    if (userTypeSelect) userTypeSelect.required = false;
-    if (userStatusSelect) userStatusSelect.required = false;
 
     let fallbackUrl = "../Login/login.html";
     if (fromAdminParam == "student" || (roleParam && roleParam.toLowerCase() == "student")) {
@@ -298,7 +384,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       else if (r == "Area Coordinator") fallbackUrl = "../Coordinator/coordinator.html";
       if (r == "Tutor") fallbackUrl = "../Tutor/profile.html";
       else if (r == "Student") fallbackUrl = "../Student/student_portal.html";
-      else if (r == "Area Coordinator") fallbackUrl = "../Coordinator/profile.html";
+      else if (r == "Area Coordinator") fallbackUrl = "../Coordinator/coordinator_portal.html";
     } else if (document.referrer && document.referrer.length > 0) {
       fallbackUrl = document.referrer;
     }
@@ -309,6 +395,32 @@ document.addEventListener("DOMContentLoaded", async function () {
         window.location.href = fallbackUrl;
       };
     }
+  }
+
+  if (btnTogglePassword) {
+    btnTogglePassword.addEventListener("click", function () {
+      if (!passwordInput) return;
+      if (passwordInput.type == "password") {
+        passwordInput.type = "text";
+        btnTogglePassword.textContent = "🙈";
+      } else {
+        passwordInput.type = "password";
+        btnTogglePassword.textContent = "👁️";
+      }
+    });
+  }
+
+  if (btnToggleConfirmPassword) {
+    btnToggleConfirmPassword.addEventListener("click", function () {
+      if (!confirmPasswordInput) return;
+      if (confirmPasswordInput.type == "password") {
+        confirmPasswordInput.type = "text";
+        btnToggleConfirmPassword.textContent = "🙈";
+      } else {
+        confirmPasswordInput.type = "password";
+        btnToggleConfirmPassword.textContent = "👁️";
+      }
+    });
   }
 
   targetUserId = getQueryParam("id");
@@ -405,8 +517,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   let initialRole = targetUser.role || "";
   if (initialRole == "Tutor" || initialRole == "Student") {
     if (gradeSection) gradeSection.style.display = "block";
-    if (gradeSelect) gradeSelect.required = true;
-    if (detailedGradeInput) detailedGradeInput.required = true;
 
     let rawGrade = targetUser.grade || "";
     let underIdx = rawGrade.indexOf("_");
@@ -418,8 +528,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   } else {
     if (gradeSection) gradeSection.style.display = "none";
-    if (gradeSelect) gradeSelect.required = false;
-    if (detailedGradeInput) detailedGradeInput.required = false;
   }
 
   if (passwordInput) {
@@ -431,6 +539,100 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   if (avatarPreview) {
     avatarPreview.src = resolveUserAvatar(targetUser);
+  }
+
+  if (userTypeSelect) {
+    userTypeSelect.addEventListener("change", function () {
+      clearFieldError("userType", "err-userType");
+      const role = userTypeSelect.value;
+      if (role == "Tutor" || role == "Student") {
+        if (gradeSection) gradeSection.style.display = "block";
+      } else {
+        if (gradeSection) gradeSection.style.display = "none";
+        if (gradeSelect) gradeSelect.value = "";
+        if (detailedGradeInput) detailedGradeInput.value = "";
+        clearFieldError("grade", "err-grade");
+        clearFieldError("detailedGrade", "err-detailedGrade");
+      }
+    });
+  }
+
+  if (userStatusSelect) {
+    userStatusSelect.addEventListener("change", function () {
+      clearFieldError("userStatus", "err-userStatus");
+    });
+  }
+
+  if (fullNameInput) {
+    fullNameInput.addEventListener("input", function () {
+      clearFieldError("fullName", "err-fullName");
+    });
+  }
+
+  if (emailInput) {
+    emailInput.addEventListener("input", function () {
+      clearFieldError("email", "err-email");
+    });
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function () {
+      clearFieldError("phone", "err-phone");
+    });
+  }
+
+  if (dobInput) {
+    dobInput.addEventListener("input", function () {
+      clearFieldError("dob", "err-dob");
+    });
+    dobInput.addEventListener("change", function () {
+      clearFieldError("dob", "err-dob");
+    });
+  }
+
+  if (genderRadios) {
+    for (let i = 0; i < genderRadios.length; i++) {
+      genderRadios[i].addEventListener("change", function () {
+        clearFieldError("genderMale", "err-gender");
+      });
+    }
+  }
+
+  if (divisionSelect) {
+    divisionSelect.addEventListener("change", function () {
+      clearFieldError("division", "err-division");
+      populateAreasForDivision(divisionSelect.value, "");
+    });
+  }
+
+  if (areaSelect) {
+    areaSelect.addEventListener("change", function () {
+      clearFieldError("area", "err-area");
+    });
+  }
+
+  if (gradeSelect) {
+    gradeSelect.addEventListener("change", function () {
+      clearFieldError("grade", "err-grade");
+    });
+  }
+
+  if (detailedGradeInput) {
+    detailedGradeInput.addEventListener("input", function () {
+      clearFieldError("detailedGrade", "err-detailedGrade");
+    });
+  }
+
+  if (passwordInput) {
+    passwordInput.addEventListener("input", function () {
+      clearFieldError("password", "err-password");
+    });
+  }
+
+  if (confirmPasswordInput) {
+    confirmPasswordInput.addEventListener("input", function () {
+      clearFieldError("confirmPassword", "err-confirmPassword");
+    });
   }
 
   if (profileImageInput) {
@@ -456,32 +658,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   }
 
-  if (divisionSelect) {
-    divisionSelect.addEventListener("change", function () {
-      populateAreasForDivision(divisionSelect.value, "");
-    });
-  }
-
-  if (userTypeSelect && gradeSection && gradeSelect && detailedGradeInput) {
-    userTypeSelect.addEventListener("change", function () {
-      const role = userTypeSelect.value;
-      if (role == "Tutor" || role == "Student") {
-        gradeSection.style.display = "block";
-        gradeSelect.required = true;
-        detailedGradeInput.required = true;
-      } else {
-        gradeSection.style.display = "none";
-        gradeSelect.required = false;
-        detailedGradeInput.required = false;
-        gradeSelect.value = "";
-        detailedGradeInput.value = "";
-      }
-    });
-  }
-
   if (editProfileForm) {
     editProfileForm.addEventListener("submit", async function (e) {
       e.preventDefault();
+      clearAllFieldErrors();
 
       let userType = targetUser.role;
       let userStatus = targetUser.status || "Active";
@@ -497,7 +677,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       const dob = dobInput.value;
 
       let gender = "";
-      const genderRadios = document.getElementsByName("gender");
       for (let i = 0; i < genderRadios.length; i++) {
         if (genderRadios[i].checked) {
           gender = genderRadios[i].value;
@@ -512,27 +691,97 @@ document.addEventListener("DOMContentLoaded", async function () {
       const password = passwordInput.value;
       const confirmPassword = confirmPasswordInput.value;
 
-      if (userType == "" || fullName == "" || email == "" || phone == "" || dob == "" || gender == "" || division == "" || area == "" || password == "" || confirmPassword == "") {
-        showAlert("Please fill in all required fields.", "error");
-        return;
-      }
+      let isValid = true;
 
-      if (phone.length != 11) {
-        showAlert("Phone number must be exactly 11 digits.", "error");
-        return;
-      }
-
-      let gradeDetailedFormatted = "N/A";
-      if (userType == "Tutor" || userType == "Student") {
-        if (grade == "" || detailedGrade == "") {
-          showAlert("Please select a Grade and enter your Detailed Grade.", "error");
-          return;
+      if (isViewerAdmin) {
+        if (!userType || userType == "") {
+          setFieldError("userType", "err-userType", "Select User type");
+          isValid = false;
         }
-        gradeDetailedFormatted = grade + "_" + detailedGrade;
+        if (!userStatus || userStatus == "") {
+          setFieldError("userStatus", "err-userStatus", "Select account status");
+          isValid = false;
+        }
       }
 
-      if (password != confirmPassword) {
-        showAlert("Password and Confirm Password do not match.", "error");
+      if (fullName.length == 0) {
+        setFieldError("fullName", "err-fullName", "Enter full name");
+        isValid = false;
+      }
+
+      if (email.length == 0) {
+        setFieldError("email", "err-email", "Enter email address");
+        isValid = false;
+      } else {
+        const atIdx = email.indexOf("@");
+        const lastAtIdx = email.lastIndexOf("@");
+        const dotIdx = email.lastIndexOf(".");
+        if (atIdx <= 0 || atIdx != lastAtIdx || dotIdx <= atIdx + 1 || dotIdx >= email.length - 1) {
+          setFieldError("email", "err-email", "Enter a valid email address (must contain @ and .)");
+          isValid = false;
+        }
+      }
+
+      if (phone.length == 0) {
+        setFieldError("phone", "err-phone", "Enter phone number");
+        isValid = false;
+      } else if (phone.length != 11 || !isAllDigits(phone)) {
+        setFieldError("phone", "err-phone", "Phone number must be 11 digits and contain only numbers");
+        isValid = false;
+      }
+
+      if (!dob || dob.length == 0) {
+        setFieldError("dob", "err-dob", "Select date of birth");
+        isValid = false;
+      } else {
+        const age = calculateAge(dob);
+        if (age < 5 || age > 80) {
+          setFieldError("dob", "err-dob", "Age should be from 5 years to 80 years");
+          isValid = false;
+        }
+      }
+
+      if (!gender || gender.length == 0) {
+        setFieldError("genderMale", "err-gender", "Select gender");
+        isValid = false;
+      }
+
+      if (!division || division == "") {
+        setFieldError("division", "err-division", "Select division");
+        isValid = false;
+      }
+
+      if (!area || area == "") {
+        setFieldError("area", "err-area", "Select area");
+        isValid = false;
+      }
+
+      if (userType == "Tutor" || userType == "Student") {
+        if (!grade || grade == "") {
+          setFieldError("grade", "err-grade", "Select grade");
+          isValid = false;
+        }
+        if (detailedGrade.length == 0) {
+          setFieldError("detailedGrade", "err-detailedGrade", "Enter detailed grade");
+          isValid = false;
+        }
+      }
+
+      if (password.length == 0) {
+        setFieldError("password", "err-password", "Enter password");
+        isValid = false;
+      }
+
+      if (confirmPassword.length == 0) {
+        setFieldError("confirmPassword", "err-confirmPassword", "Enter confirm password");
+        isValid = false;
+      } else if (password.length > 0 && password != confirmPassword) {
+        setFieldError("confirmPassword", "err-confirmPassword", "Passwords do not match");
+        isValid = false;
+      }
+
+      if (!isValid) {
+        showAlert("Please resolve the highlighted errors below.", "error");
         return;
       }
 
@@ -540,14 +789,21 @@ document.addEventListener("DOMContentLoaded", async function () {
         let u = currentDb.users[i];
         if (u.id != targetUser.id) {
           if (u.email && u.email.toLowerCase() == email.toLowerCase()) {
+            setFieldError("email", "err-email", "This email address is already used by another account.");
             showAlert("This email address is already used by another account.", "error");
             return;
           }
           if (u.phone && u.phone == phone) {
+            setFieldError("phone", "err-phone", "This phone number is already used by another account.");
             showAlert("This phone number is already used by another account.", "error");
             return;
           }
         }
+      }
+
+      let gradeDetailedFormatted = "N/A";
+      if (userType == "Tutor" || userType == "Student") {
+        gradeDetailedFormatted = grade + "_" + detailedGrade;
       }
 
       let savedImg = targetUser.image && targetUser.image.length > 0 ? targetUser.image : "../Files/Img/Profile/default.svg";
@@ -587,7 +843,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         else if (userType == "Area Coordinator") nextUrl = "../Coordinator/coordinator.html";
         if (userType == "Tutor") nextUrl = "../Tutor/profile.html";
         else if (userType == "Student") nextUrl = "../Student/student_portal.html";
-        else if (userType == "Area Coordinator") nextUrl = "../Coordinator/profile.html";
+        else if (userType == "Area Coordinator") nextUrl = "../Coordinator/coordinator_portal.html";
         else nextUrl = "../Login/login.html";
       }
 
