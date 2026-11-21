@@ -132,3 +132,50 @@
 {payments:Tutor Payouts Disbursed}; {৳1,90,500}; {Disbursed via bKash / Bank}
 {payments:Pending Verification}; {৳14,500}; {3 transactions under review}
 {payments:Total Refunds Issued}; {৳4,500}; {Dispute resolved refunds}
+
+[TUTOR_SUBJECTS]
+{SUB-101}; {USR-1003}; {General Mathematics}; {Class 9 - 10 (SSC)}; {Bangla Medium & English Version}; {৳500/hr}; {Home & Online}; {1}; {Active}; {Covers general math, algebra, geometry, trigonometry.}
+{SUB-102}; {USR-1003}; {Higher Mathematics}; {Class 11 - 12 (HSC)}; {National Curriculum (English Version)}; {৳650/hr}; {Home & Online}; {1}; {Active}; {Focus on calculus, vectors, matrices, coordinate geometry.}
+{SUB-103}; {USR-1003}; {Physics}; {Class 11 - 12 (HSC)}; {Bangla Medium / English Version}; {৳600/hr}; {Home Tuition}; {1}; {Active}; {Mechanics, thermodynamics, optics, modern physics.}
+{SUB-104}; {USR-1003}; {Chemistry}; {Class 9 - 10 (SSC)}; {National Curriculum}; {৳500/hr}; {Online Only}; {1}; {Active}; {Periodic table, chemical bonding, organic fundamentals.}
+{SUB-105}; {USR-1003}; {SAT Math Preparation}; {College / University Entrance}; {International Standard}; {৳950/hr}; {Online Only}; {1}; {Active}; {Official SAT question analysis and timed practice.}
+
+[BOOKING_REQUESTS]
+{REQ-1048}; {USR-1003}; {Erona Rahman}; {+880 1812-445566}; {Mathematics}; {Class 10 (SSC)}; {Sun & Tue 04:00 PM}; {Home Tuition (Mirpur-2)}; {৳500/hr}; {Pending}; {Needs intensive focus on Trigonometry & Algebra. House 14, Road 3, Mirpur-2, Dhaka}
+{REQ-1049}; {USR-1003}; {Rodela Ahmed}; {+880 1911-332211}; {Physics}; {Class 12 (HSC)}; {Mon & Wed 05:30 PM}; {Online Live (Google Meet)}; {৳600/hr}; {Pending}; {Focus on Dynamics, Optics, and Modern Physics. Email: rodela.ahmed@gmail.com}
+{REQ-1050}; {USR-1003}; {Siam Hossain}; {+880 1711-223344}; {Higher Math}; {Class 11 (HSC)}; {Thu & Sat 03:00 PM}; {Home Tuition (Dhanmondi)}; {৳650/hr}; {Pending}; {Calculus and coordinate geometry preparation.}
+{REQ-1045}; {USR-1003}; {Mithila Farzana}; {01284039498}; {Physics}; {HSC-1st year}; {Sun & Thu 06:00 PM}; {Home Tuition}; {৳600/hr}; {Confirmed}; {Mechanics and heat thermodynamics focus.}
+{REQ-1042}; {USR-1003}; {Nafis Rayan}; {01511223344}; {Chemistry}; {Class 9}; {Mon & Wed 04:00 PM}; {Online Only}; {৳500/hr}; {Completed}; {Basic chemistry concepts and lab preparations.}
+{REQ-1039}; {USR-1003}; {Zubair Al Mamun}; {01722334455}; {Mathematics}; {HSC-2nd Year}; {Fri & Sat 10:00 AM}; {Home Tuition}; {৳700/hr}; {Declined}; {Schedule conflict with existing university admission batch.}
+
+[STUDENT_PROGRESS]
+{PROG-201}; {USR-1003}; {Jerin Kabir}; {STU-8821}; {Mathematics}; {Class 10 (SSC)}; {18 Sessions}; {95%}; {88}; {80%}; {Quadratic Functions & Geometry assessment passed with 88/100. Excellent attendance.}
+{PROG-202}; {USR-1003}; {Nowrin Jahan}; {STU-8829}; {Physics}; {Class 12 (HSC)}; {15 Sessions}; {98%}; {92}; {85%}; {Electromagnetic Induction & Alternating Current passed with 92/100. Outstanding performance.}
+{PROG-203}; {USR-1003}; {Erona Rahman}; {STU-8835}; {Mathematics}; {Class 10 (SSC)}; {12 Sessions}; {92%}; {84}; {75%}; {Algebra and Trigonometry foundations completed. Regular homework completion.}
+{PROG-204}; {USR-1003}; {Rodela Ahmed}; {STU-8840}; {Physics}; {Class 12 (HSC)}; {10 Sessions}; {90%}; {79}; {68%}; {Optics module in progress. Practice needed on numerical ray tracing.}
+{PROG-205}; {USR-1003}; {Mithila Farzana}; {STU-8846}; {Chemistry}; {Class 11 (HSC)}; {8 Sessions}; {100%}; {86}; {70%}; {Chemical bonding and organic reactions covered thoroughly.}
+{PROG-206}; {USR-1003}; {Siam Rahman}; {STU-8851}; {Mathematics}; {Class 10 (SSC)}; {14 Sessions}; {93%}; {81}; {72%}; {Strong performance in arithmetic and geometry.}
+
+[STUDY_MATERIALS]
+{MAT-301}; {USR-1003}; {Chapter 5 - Integration & Calculus Quick Formulas}; {Higher Mathematics}; {Class 11-12 (HSC)}; {Formula Sheet}; {Calculus_Integration_Formula_Sheet.pdf}; {2026-10-15}; {2.4 MB}; {45}; {Comprehensive formula compilation for HSC examination.}
+{MAT-302}; {USR-1003}; {SSC General Math Trigonometry Practice Set}; {Mathematics}; {Class 9-10 (SSC)}; {Practice Worksheet}; {SSC_Trigonometry_Worksheet_2026.pdf}; {2026-10-18}; {1.8 MB}; {62}; {Selected board exam problems with step by step hints.}
+{MAT-303}; {USR-1003}; {HSC Physics Optics Lecture Notes & Ray Diagrams}; {Physics}; {Class 11-12 (HSC)}; {Lecture Notes}; {Physics_Optics_Lecture_Summary.pdf}; {2026-10-20}; {3.2 MB}; {38}; {Full chapter walkthrough with illustrated ray diagram exercises.}
+{MAT-304}; {USR-1003}; {Chemistry Periodic Properties & Chemical Bonding}; {Chemistry}; {Class 9-10 (SSC)}; {Lecture Notes}; {Chemistry_Ch3_Bonding_Notes.pdf}; {2026-10-22}; {2.1 MB}; {54}; {Class notes covering electron configurations and bond types.}
+{MAT-305}; {USR-1003}; {SAT Math Problem Solving & Practice Test}; {SAT Math}; {Admission Test}; {Past Exam Papers}; {SAT_Math_Official_Practice_Set.pdf}; {2026-10-24}; {4.5 MB}; {71}; {Realistic 58 question SAT practice test with answer key.}
+
+[TUTOR_REVIEWS]
+{REV-501}; {USR-1003}; {Erona Rahman}; {Student, Class 10 SSC}; {5}; {General Mathematics}; {2026-10-22}; {Sir is an outstanding mathematics mentor. I was struggling with trigonometry and quadratic formulas for months. Within just four weeks of his structured sessions, my mid-term test scores jumped from 62% to 88%. He is always punctual, extremely patient, and gives regular weekly updates after each class.}; {Thank you so much, Erona! You are very hardworking and dedicated. Your analytical skills have improved immensely and I am confident you will achieve an A+ in your upcoming SSC board exam.}
+{REV-502}; {USR-1003}; {Rodela Ahmed}; {Student, Class 12 HSC}; {5}; {Physics}; {2026-10-24}; {The physics concept explanations are top tier! Complex derivations in electromagnetic induction and alternating current became completely clear. Regular formula drills and weekly quizzes helped immensely.}; {Glad to hear that, Rodela! Your curiosity and proactive problem solving are key to mastering HSC physics. Keep up the brilliant momentum.}
+{REV-503}; {USR-1003}; {Mithila Farzana}; {Student, Class 11 HSC}; {5}; {Higher Mathematics}; {2026-10-25}; {Very systematic approach to calculus and functions. Concepts are explained from scratch without skipping fundamentals. Highly recommend for any HSC student wanting conceptual mastery.}; {Thank you Mithila! Your perseverance with challenging problem sets is inspiring. You will do great in your final examinations.}
+{REV-504}; {USR-1003}; {Siam Rahman}; {Student, Class 10 SSC}; {4}; {General Mathematics}; {2026-10-19}; {Great tutor, very friendly and helpful. Sessions always start on time and homework is thoroughly reviewed. More practice on geometry riders would be beneficial.}; {Thanks Siam! Noted regarding geometry riders - we will dedicate extra practice time to theorem proofs in our upcoming sessions.}
+{REV-505}; {USR-1003}; {Anisur Rahman}; {Student, Class 9}; {5}; {Chemistry}; {2026-10-21}; {Explains all the reaction equations and atomic structures with real life examples. Chemistry used to be intimidating, but now it is my favorite subject.}; {N/A}
+
+[TUTOR_AVAILABILITY]
+{USR-1003}; {09:00}; {20:30}; {90}; {15}; {Sun,Mon,Tue,Wed,Thu,Fri}; {Unavailable on Eid holidays (15 Nov - 18 Nov)}; {28 hrs}; {6 Days}; {16}; {8}
+
+[TUTOR_EARNINGS]
+{EARN-601}; {USR-1003}; {October 2026}; {24 Sessions}; {36 hrs}; {৳20,550}; {৳2,055}; {৳18,495}; {Available for Payout}
+{EARN-602}; {USR-1003}; {September 2026}; {28 Sessions}; {42 hrs}; {৳23,800}; {৳2,380}; {৳21,420}; {Disbursed (bKash)}
+{EARN-603}; {USR-1003}; {August 2026}; {22 Sessions}; {33 hrs}; {৳19,200}; {৳1,920}; {৳17,280}; {Disbursed (Bank)}
+{EARN-604}; {USR-1003}; {July 2026}; {20 Sessions}; {30 hrs}; {৳17,500}; {৳1,750}; {৳15,750}; {Disbursed (Nagad)}
+{EARN-605}; {USR-1003}; {June 2026}; {18 Sessions}; {27 hrs}; {৳15,600}; {৳1,560}; {৳14,040}; {Disbursed (Bank)}

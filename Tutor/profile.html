@@ -26,7 +26,7 @@
             <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+            <button type="button" class="btn-logout">🚪 Logout</button>
         </div>
     </aside>
 
@@ -35,114 +35,95 @@
         <header class="top-header">
             <div class="header-left">
                 <h2>Tutor Profile & Teaching Portfolio</h2>
-                <p>Tutor Account • Manage your credentials, bio, and subjects</p>
+                <p>Tutor Account • Manage your profile details, subjects, and hourly rates</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" onclick="alert('Profile is 95% complete. Add your latest certificate to reach 100%.')" title="Notifications">
+                <button type="button" class="notif-btn" title="Notifications">
                     🔔
-                    <span class="notif-badge">1</span>
+                    <span class="notif-badge">0</span>
                 </button>
-                <div class="user-avatar">T</div>
+                <div class="user-avatar"></div>
                 <div class="user-info">
-                    <span>Tanbeen</span>
+                    <span>Tutor</span>
                     <span>Tutor Account</span>
                 </div>
             </div>
         </header>
 
         <div class="section-block">
+            <div class="section-header">
+                <h3>Tutor Profile Information</h3>
+                <span class="badge" id="profileSummaryBadge">Verified Tutor</span>
+            </div>
             <div class="profile-card-layout">
                 <div class="profile-summary-box">
-                    <div class="profile-summary-avatar">T</div>
-                    <div class="profile-name">Tanbeen Ahmed</div>
-                    <div class="profile-title">Lead Mathematics & Physics Tutor</div>
-                    <span class="badge">Verified Super Tutor</span>
+                    <div class="profile-summary-avatar" id="profileSummaryAvatar"></div>
+                    <div class="profile-name" id="profileSummaryName">Nowrrin Kabir</div>
+                    <div class="profile-title" id="profileSummaryTitle">Professional Tutor</div>
                     <div class="profile-badges-row">
-                        <span class="subject-chip">SSC / HSC Specialist</span>
-                        <span class="subject-chip">6+ Years Exp</span>
-                        <span class="subject-chip">4.9 ⭐ Rating</span>
+                        <span class="subject-chip">Verified Educator</span>
+                        <span class="subject-chip">Active Tutor</span>
                     </div>
-                    <p style="font-size: 13px; color: #4b5563; line-height: 1.5; margin-top: 8px;">
-                        Passionate educator specializing in problem-solving techniques, conceptual clarity, and board exam preparations for SSC, HSC, and English medium learners.
+                    <p class="profile-bio-text">
+                        Passionate educator specializing in problem-solving techniques, conceptual clarity, and academic preparations for students.
                     </p>
-                    <button type="button" class="btn-secondary" style="width: 100%; margin-top: 10px;" onclick="alert('Uploading profile picture...')">Change Photo</button>
+                    <a href="edit_profile.html">
+                        <button type="button" class="btn-secondary btn-full-width-mt">Change Profile Photo</button>
+                    </a>
                 </div>
 
-                <div class="form-body" style="padding: 0;">
-                    <form onsubmit="alert('Profile details updated successfully!'); return false;">
-                        <div class="form-grid">
-                            <div class="form-group-custom">
-                                <label for="prof-fullname">Full Name</label>
-                                <input type="text" id="prof-fullname" value="Tanbeen Ahmed" required>
-                            </div>
-                            <div class="form-group-custom">
-                                <label for="prof-email">Email Address</label>
-                                <input type="email" id="prof-email" value="tanbeen.tutor@lhtmp.edu.bd" required>
-                            </div>
-                            <div class="form-group-custom">
-                                <label for="prof-phone">Contact Number</label>
-                                <input type="tel" id="prof-phone" value="+880 1712-345678" required>
-                            </div>
-                            <div class="form-group-custom">
-                                <label for="prof-location">Primary Teaching Area</label>
-                                <input type="text" id="prof-location" value="Mirpur, Dhanmondi & Uttara, Dhaka" required>
-                            </div>
-                            <div class="form-group-custom">
-                                <label for="prof-degree">Highest Degree & Major</label>
-                                <input type="text" id="prof-degree" value="M.Sc. in Applied Mathematics" required>
-                            </div>
-                            <div class="form-group-custom">
-                                <label for="prof-inst">Institution / University</label>
-                                <input type="text" id="prof-inst" value="American International University-Bangladesh (AIUB)" required>
-                            </div>
-                            <div class="form-group-custom form-grid-full">
-                                <label for="prof-bio">Personal Bio & Teaching Philosophy</label>
-                                <textarea id="prof-bio" rows="4" required>Dedicated to making STEM topics intuitive and enjoyable. Over 6 years of proven track record helping students excel in Board Examinations, Math Olympiads, and university admission tests through structured lesson plans, regular practice worksheets, and continuous feedback loops.</textarea>
-                            </div>
+                <div class="form-body form-body-no-padding" id="tutorProfileInfoSection">
+                    <div class="profile-info-grid">
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">User ID</span>
+                            <span class="profile-info-value">USR-1003</span>
                         </div>
-                        <button type="submit" class="btn-primary">Update Profile Information</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-block">
-            <div class="section-header">
-                <h3>Teaching Credentials & Certifications</h3>
-                <button type="button" class="btn-primary" onclick="alert('Select a scanned certification PDF or image to upload.')">+ Upload Certificate</button>
-            </div>
-            <div style="padding: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
-                <div class="cert-card">
-                    <span class="cert-icon">📜</span>
-                    <div class="cert-info" style="flex: 1;">
-                        <h4>Certified STEM Educator</h4>
-                        <p>National Science & Tech Council • Issued 2023</p>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Account Role</span>
+                            <span class="profile-info-value">Tutor</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Full Name</span>
+                            <span class="profile-info-value">Nowrrin Kabir</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Email Address</span>
+                            <span class="profile-info-value">jerin@gmail.com</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Contact Number</span>
+                            <span class="profile-info-value">01957495765</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Date of Birth</span>
+                            <span class="profile-info-value">2003-06-03</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Gender</span>
+                            <span class="profile-info-value">Female</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Division & Area</span>
+                            <span class="profile-info-value">Bhola, Barishal</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Academic Qualification</span>
+                            <span class="profile-info-value">Graduate_BSc. EEE, BUET</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Account Status</span>
+                            <span class="profile-info-value"><span class="status-badge active">Active</span></span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">Member Since</span>
+                            <span class="profile-info-value">12-01-2025 02:15 PM</span>
+                        </div>
                     </div>
-                    <button type="button" class="btn-secondary" onclick="alert('Viewing Certified STEM Educator certificate document.')">View</button>
-                </div>
-                <div class="cert-card">
-                    <span class="cert-icon">🎓</span>
-                    <div class="cert-info" style="flex: 1;">
-                        <h4>Advanced Pedagogy Certificate</h4>
-                        <p>British Council Academic Board • Issued 2024</p>
+                    <div class="profile-actions-bar">
+                        <a href="edit_profile.html">
+                            <button type="button" class="btn-primary" id="btnEditProfile">Edit Profile</button>
+                        </a>
                     </div>
-                    <button type="button" class="btn-secondary" onclick="alert('Viewing Advanced Pedagogy certificate document.')">View</button>
-                </div>
-                <div class="cert-card">
-                    <span class="cert-icon">🌐</span>
-                    <div class="cert-info" style="flex: 1;">
-                        <h4>IELTS Academic (Band 8.0)</h4>
-                        <p>IDP Bangladesh • Issued 2022</p>
-                    </div>
-                    <button type="button" class="btn-secondary" onclick="alert('Viewing IELTS scorecard document.')">View</button>
-                </div>
-                <div class="cert-card">
-                    <span class="cert-icon">🛡️</span>
-                    <div class="cert-info" style="flex: 1;">
-                        <h4>Verified Background & Police Clearance</h4>
-                        <p>Ministry of Home Affairs & Education • Issued 2025</p>
-                    </div>
-                    <button type="button" class="btn-secondary" onclick="alert('Viewing Verification clearance badge document.')">View</button>
                 </div>
             </div>
         </div>
@@ -150,7 +131,7 @@
         <div class="section-block">
             <div class="section-header">
                 <h3>Subjects Offered & Hourly Rates</h3>
-                <button type="button" class="btn-primary" onclick="document.getElementById('add-subject-form').scrollIntoView({behavior: 'smooth'})">+ Add New Subject</button>
+                <button type="button" class="btn-primary" id="btnScrollToAddSubject">+ Add New Subject</button>
             </div>
             <table class="data-table">
                 <thead>
@@ -164,68 +145,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>General Mathematics</strong></td>
-                        <td>Class 9 - 10 (SSC)</td>
-                        <td>Bangla Medium & English Version</td>
-                        <td><strong>৳500/hr</strong></td>
-                        <td>Home & Online</td>
-                        <td><span class="status-badge active">Active</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Editing General Mathematics listing...')">Edit</button>
-                            <button type="button" class="btn-danger" onclick="alert('Deactivated General Mathematics listing.')">Remove</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Higher Mathematics</strong></td>
-                        <td>Class 11 - 12 (HSC)</td>
-                        <td>National Curriculum (English Version)</td>
-                        <td><strong>৳650/hr</strong></td>
-                        <td>Home & Online</td>
-                        <td><span class="status-badge active">Active</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Editing Higher Mathematics listing...')">Edit</button>
-                            <button type="button" class="btn-danger" onclick="alert('Deactivated Higher Mathematics listing.')">Remove</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Physics</strong></td>
-                        <td>Class 11 - 12 (HSC)</td>
-                        <td>Bangla Medium / English Version</td>
-                        <td><strong>৳600/hr</strong></td>
-                        <td>Home Tuition</td>
-                        <td><span class="status-badge active">Active</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Editing Physics listing...')">Edit</button>
-                            <button type="button" class="btn-danger" onclick="alert('Deactivated Physics listing.')">Remove</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Chemistry</strong></td>
-                        <td>Class 9 - 10 (SSC)</td>
-                        <td>National Curriculum</td>
-                        <td><strong>৳500/hr</strong></td>
-                        <td>Online Only</td>
-                        <td><span class="status-badge active">Active</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Editing Chemistry listing...')">Edit</button>
-                            <button type="button" class="btn-danger" onclick="alert('Deactivated Chemistry listing.')">Remove</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>SAT Math Preparation</strong></td>
-                        <td>College / University Entrance</td>
-                        <td>International Standard</td>
-                        <td><strong>৳950/hr</strong></td>
-                        <td>Online Only</td>
-                        <td><span class="status-badge active">Active</span></td>
-                        <td>
-                            <button type="button" class="btn-secondary" onclick="alert('Editing SAT Math listing...')">Edit</button>
-                            <button type="button" class="btn-danger" onclick="alert('Deactivated SAT Math listing.')">Remove</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="profileSubjectsTbody"></tbody>
             </table>
         </div>
 
@@ -235,7 +155,7 @@
                 <span class="badge">Course Builder</span>
             </div>
             <div class="form-body">
-                <form onsubmit="alert('Subject offering added to your profile successfully!'); return false;">
+                <form id="subjectOfferingForm">
                     <div class="form-grid">
                         <div class="form-group-custom">
                             <label for="sub-name">Subject Name</label>
@@ -244,7 +164,7 @@
                         <div class="form-group-custom">
                             <label for="sub-level">Target Class / Level</label>
                             <select id="sub-level" required>
-                                <option value="">-- Choose Class / Grade --</option>
+                                <option value="" disabled selected>-- Choose Class / Grade --</option>
                                 <option value="Class 6-8">Class 6 - 8 (Junior Secondary)</option>
                                 <option value="Class 9-10 (SSC)">Class 9 - 10 (SSC)</option>
                                 <option value="Class 11-12 (HSC)">Class 11 - 12 (HSC)</option>
@@ -256,7 +176,7 @@
                         <div class="form-group-custom">
                             <label for="sub-curr">Curriculum Medium</label>
                             <select id="sub-curr" required>
-                                <option value="">-- Choose Curriculum --</option>
+                                <option value="" disabled selected>-- Choose Curriculum --</option>
                                 <option value="Bangla Medium">Bangla Medium</option>
                                 <option value="English Version">English Version (National)</option>
                                 <option value="English Medium">English Medium (Cambridge/Edexcel)</option>
@@ -264,7 +184,7 @@
                             </select>
                         </div>
                         <div class="form-group-custom">
-                            <label for="sub-rate">Hourly Rate (৳ BDT)</label>
+                            <label for="sub-rate">Hourly Rate (BDT)</label>
                             <input type="number" id="sub-rate" placeholder="e.g. 600" min="200" max="3000" required>
                         </div>
                         <div class="form-group-custom">
@@ -284,17 +204,32 @@
                             <textarea id="sub-desc" rows="3" placeholder="Specify chapter coverage, problem practice, test series, etc."></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary">Save Subject Offering</button>
-                    <button type="reset" class="btn-secondary" style="margin-left: 10px;">Clear Form</button>
+                    <button type="submit" class="btn-primary" id="btnSaveSubject">Save Subject Offering</button>
+                    <button type="reset" class="btn-secondary btn-ml-10" id="btnResetSubject">Clear Form</button>
                 </form>
             </div>
         </div>
 
+        <div id="simpleModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+                </div>
+                <div id="simpleModalBody" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                </div>
+            </div>
+        </div>
+
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="tutor.js"></script>
 </body>
 </html>

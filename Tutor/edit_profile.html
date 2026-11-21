@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHTMP - Edit Tutor Profile</title>
+    <link rel="stylesheet" href="tutor.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">LHTMP</div>
+            <h2>Tutor Portal</h2>
+            <p>Platform Suite</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Main Navigation</div>
+            <a href="tutor.html"><span class="nav-icon">📊</span> Dashboard</a>
+            <a href="profile.html" class="active"><span class="nav-icon">👤</span> My Profile</a>
+            <a href="availability.html"><span class="nav-icon">📅</span> Availability</a>
+            <a href="booking_requests.html"><span class="nav-icon">📨</span> Booking Requests</a>
+            <a href="student_progress.html"><span class="nav-icon">📈</span> Student Progress</a>
+            <a href="study_materials.html"><span class="nav-icon">📚</span> Study Materials</a>
+            <a href="reviews.html"><span class="nav-icon">⭐</span> Reviews</a>
+            <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="btn-logout">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+
+        <header class="top-header">
+            <div class="header-left">
+                <h2>Edit Tutor Profile</h2>
+                <p>Tutor Account • Update your credentials, personal details, and security</p>
+            </div>
+            <div class="header-right">
+                <button type="button" class="notif-btn" title="Notifications">
+                    🔔
+                    <span class="notif-badge">0</span>
+                </button>
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <span>Tutor</span>
+                    <span>Tutor Account</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="edit-profile-card">
+            <div class="edit-profile-header">
+                <h2>Update Account Details</h2>
+                <p>Modify your contact details, academic qualifications, and profile avatar</p>
+            </div>
+
+            <form id="tutorEditProfileForm">
+
+                <fieldset class="form-fieldset">
+                    <legend>Account System Identifiers (Read Only - Locked)</legend>
+                    <div class="form-row">
+                        <div class="form-group-custom">
+                            <label for="editUserId">User ID <span class="req">* (Cannot Change)</span></label>
+                            <input type="text" id="editUserId" readonly disabled class="input-readonly">
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="editUserRole">Role <span class="req">* (Cannot Change)</span></label>
+                            <input type="text" id="editUserRole" readonly disabled class="input-readonly">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group-custom">
+                            <label for="editUserStatus">Account Status <span class="req">* (Cannot Change)</span></label>
+                            <input type="text" id="editUserStatus" readonly disabled class="input-readonly">
+                        </div>
+                        <div class="form-group-custom">
+                            <label>Permission Scope</label>
+                            <input type="text" value="Standard Tutor Operations" readonly disabled class="input-readonly">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>Profile Image (Changeable)</legend>
+                    <div class="avatar-preview-container">
+                        <img id="editAvatarPreview" src="../Files/Img/Profile/default.svg" alt="Avatar Preview" class="avatar-preview-img" onerror="this.src='../Files/Img/Profile/default.svg'">
+                        <div class="avatar-upload-wrap">
+                            <label for="editAvatarFile" class="avatar-upload-label">Select New Profile Photo (Optional)</label>
+                            <div class="avatar-input-box">
+                                <input type="file" id="editAvatarFile" accept="image/*" class="avatar-file-input">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>Personal & Contact Information (Changeable)</legend>
+                    <div class="form-group-custom">
+                        <label for="editFullName">Full Name <span class="req">*</span></label>
+                        <input type="text" id="editFullName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group-custom">
+                            <label for="editEmail">Email Address <span class="req">*</span></label>
+                            <input type="email" id="editEmail" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="editPhone">Contact Number (11 Digits) <span class="req">*</span></label>
+                            <input type="tel" id="editPhone" maxlength="11" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group-custom">
+                            <label for="editDob">Date of Birth <span class="req">*</span></label>
+                            <input type="date" id="editDob" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label>Gender <span class="req">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" id="genderMale" value="Male" required>
+                                    <span>Male</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" id="genderFemale" value="Female" required>
+                                    <span>Female</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>Teaching Location Zone (Changeable)</legend>
+                    <div class="form-row">
+                        <div class="form-group-custom">
+                            <label for="editDivision">Division <span class="req">*</span></label>
+                            <select id="editDivision" required>
+                                <option value="" disabled>Select Division</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="editArea">Primary Area Zone <span class="req">*</span></label>
+                            <select id="editArea" required>
+                                <option value="" disabled>Select Area</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>Academic Qualifications & Institution (Changeable)</legend>
+                    <div class="form-row">
+                        <div class="form-group-custom">
+                            <label for="editGrade">Highest Academic Level <span class="req">*</span></label>
+                            <select id="editGrade" required>
+                                <option value="Graduate">Graduate</option>
+                                <option value="Undergraduate">Undergraduate</option>
+                                <option value="PHD">PHD</option>
+                                <option value="HSC-2nd Year">HSC-2nd Year</option>
+                                <option value="HSC-1st Year">HSC-1st Year</option>
+                                <option value="SSC">SSC</option>
+                            </select>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="editDegree">Degree, Major & University <span class="req">*</span></label>
+                            <input type="text" id="editDegree" placeholder="e.g. BSc. EEE, BUET" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend>Security & Credentials (Changeable)</legend>
+                    <div class="form-row">
+                        <div class="form-group-custom">
+                            <label for="editPassword">Account Password <span class="req">*</span></label>
+                            <input type="password" id="editPassword" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label for="editConfirmPassword">Confirm Password <span class="req">*</span></label>
+                            <input type="password" id="editConfirmPassword" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="table-actions">
+                    <button type="submit" class="btn-primary" id="btnSaveProfileChanges">Save Profile Changes</button>
+                    <a href="profile.html">
+                        <button type="button" class="btn-secondary" id="btnCancelEdit">Cancel</button>
+                    </a>
+                </div>
+
+            </form>
+        </div>
+
+        <div id="simpleModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+                </div>
+                <div id="simpleModalBody" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer-main">
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+
+    </div>
+
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="tutor.js"></script>
+</body>
+</html>
