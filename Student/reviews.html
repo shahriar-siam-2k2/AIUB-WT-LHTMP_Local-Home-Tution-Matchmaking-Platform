@@ -34,43 +34,30 @@
         <a href="reviews.html" class="active">
           <span class="nav-icon">⭐</span> Reviews
         </a>
-        <a href="messages.html">
-          <span class="nav-icon">✉️</span> Messages
-        </a>
         <a href="profile.html">
           <span class="nav-icon">👤</span> Profile
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button
-          type="button"
-          class="btn-logout"
-          onclick="window.location.href = '../Login/login.html'"
-        >
-          Logout
-        </button>
+        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
       </div>
     </aside>
 
     <main class="main-content">
       <div class="top-header">
         <div class="header-left">
-          <h2>Tutor Reviews &amp; Feedback</h2>
+          <h2 id="headerGreeting">Tutor Reviews &amp; Feedback</h2>
           <p>Rate your learning experience and view your feedback for tutors</p>
         </div>
         <div class="header-right">
-          <button
-            type="button"
-            class="notif-btn"
-            onclick="alert('You have 3 unread notifications')"
-          >
+          <button type="button" class="notif-btn" id="btnNotification">
             🔔
-            <span class="notif-badge">3</span>
+            <span class="notif-badge" id="notifBadge">0</span>
           </button>
-          <div class="user-avatar">S</div>
+          <div class="user-avatar" id="headerAvatar">S</div>
           <div class="user-info">
-            <span>Siam</span>
-            <span>Grade 10 • Dhaka</span>
+            <span id="headerUserName">Student</span>
+            <span id="headerUserMeta">Grade 10 • Dhaka</span>
           </div>
         </div>
       </div>
@@ -81,16 +68,12 @@
           <span class="badge">Share Your Feedback</span>
         </div>
         <div class="form-body">
-          <form onsubmit="event.preventDefault(); alert('Thank you! Your tutor review has been submitted successfully.');">
+          <form id="formReview">
             <div class="form-grid">
               <div class="form-group-custom">
                 <label for="selectTutor">Select Tutor</label>
                 <select id="selectTutor" required>
                   <option value="">-- Choose Tutor --</option>
-                  <option value="tanbeen">Tanbeen (Mathematics &amp; Physics)</option>
-                  <option value="erona">Erona (Chemistry &amp; Biology)</option>
-                  <option value="rodela">Rodela (English &amp; Bangla)</option>
-                  <option value="arafat">Arafat Rahman (ICT &amp; Computer)</option>
                 </select>
               </div>
 
@@ -126,7 +109,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn-primary">
+            <button type="submit" class="btn-primary" id="btnSubmitReview">
               Submit Review
             </button>
           </form>
@@ -136,125 +119,30 @@
       <div class="section-block">
         <div class="section-header">
           <h3>My Previous Reviews</h3>
-          <span class="badge">3 Reviews</span>
+          <span class="badge" id="reviewsCountBadge">0 Reviews</span>
         </div>
-        <div class="review-list">
-          <div class="review-item">
-            <div class="review-item-header">
-              <div>
-                <span class="review-tutor-name">Tanbeen</span>
-                <span style="font-size: 13px; color: #6b7280; margin-left: 8px;">(Mathematics)</span>
-              </div>
-              <div style="font-size: 14px; color: #f59e0b;">
-                ⭐⭐⭐⭐⭐ <strong style="color: #1e3a5f;">5.0</strong>
-              </div>
-            </div>
-            <div style="font-weight: 700; color: #1e3a5f; font-size: 14px; margin-bottom: 6px;">
-              Exceptional Mathematics Tutor!
-            </div>
-            <p class="review-text">
-              Tanbeen Bhai explained quadratic equations and algebraic proofs with so much clarity. He gave me personalized worksheets and solved every single question I had. My test scores improved significantly.
-            </p>
-            <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 12px; color: #9ca3af;">Posted on 22 Oct 2026</span>
-              <div style="display: flex; gap: 8px;">
-                <button
-                  type="button"
-                  class="btn-secondary"
-                  onclick="alert('Edit mode activated for this review.')"
-                >
-                  Edit
-                </button>
-                <button
-                  type="button"
-                  class="btn-danger"
-                  onclick="alert('Review removed successfully.')"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-item">
-            <div class="review-item-header">
-              <div>
-                <span class="review-tutor-name">Erona</span>
-                <span style="font-size: 13px; color: #6b7280; margin-left: 8px;">(Physics)</span>
-              </div>
-              <div style="font-size: 14px; color: #f59e0b;">
-                ⭐⭐⭐⭐☆ <strong style="color: #1e3a5f;">4.5</strong>
-              </div>
-            </div>
-            <div style="font-weight: 700; color: #1e3a5f; font-size: 14px; margin-bottom: 6px;">
-              Very thorough with physics derivations
-            </div>
-            <p class="review-text">
-              Miss Erona is always punctual and brings real-world examples to explain Newton's laws of motion. She makes sure foundational formulas are completely understood before moving forward.
-            </p>
-            <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 12px; color: #9ca3af;">Posted on 18 Oct 2026</span>
-              <div style="display: flex; gap: 8px;">
-                <button
-                  type="button"
-                  class="btn-secondary"
-                  onclick="alert('Edit mode activated for this review.')"
-                >
-                  Edit
-                </button>
-                <button
-                  type="button"
-                  class="btn-danger"
-                  onclick="alert('Review removed successfully.')"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-item">
-            <div class="review-item-header">
-              <div>
-                <span class="review-tutor-name">Rodela</span>
-                <span style="font-size: 13px; color: #6b7280; margin-left: 8px;">(English)</span>
-              </div>
-              <div style="font-size: 14px; color: #f59e0b;">
-                ⭐⭐⭐⭐⭐ <strong style="color: #1e3a5f;">5.0</strong>
-              </div>
-            </div>
-            <div style="font-weight: 700; color: #1e3a5f; font-size: 14px; margin-bottom: 6px;">
-              Great support for creative writing &amp; grammar
-            </div>
-            <p class="review-text">
-              Rodela Miss helped me improve my English vocabulary and formal essay writing structure for Class 10 board examination prep. Highly recommended tutor!
-            </p>
-            <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 12px; color: #9ca3af;">Posted on 10 Oct 2026</span>
-              <div style="display: flex; gap: 8px;">
-                <button
-                  type="button"
-                  class="btn-secondary"
-                  onclick="alert('Edit mode activated for this review.')"
-                >
-                  Edit
-                </button>
-                <button
-                  type="button"
-                  class="btn-danger"
-                  onclick="alert('Review removed successfully.')"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="review-list" id="reviewList"></div>
       </div>
 
-      <div class="page-footer-main">
-        &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
-      </div>
+      <footer class="page-footer-main">
+        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+      </footer>
     </main>
+
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="student.js"></script>
   </body>
 </html>

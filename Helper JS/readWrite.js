@@ -268,7 +268,7 @@ async function readDatabase() {
   let fileText = "";
   if (typeof localStorage !== "undefined") {
     const storedText = localStorage.getItem(DB_STORAGE_KEY);
-    if (storedText && storedText.length > 0) {
+    if (storedText && storedText.length > 0 && storedText.indexOf("[SESSIONS]") != -1) {
       fileText = storedText;
     }
   }
@@ -322,6 +322,11 @@ async function readDatabase() {
     analyticsMonthly: [],
     analyticsZones: [],
     stats: {},
+    tutorProfiles: [],
+    sessions: [],
+    studyMaterials: [],
+    reviews: [],
+    schedule: [],
     raw: fileText
   };
 
@@ -537,6 +542,69 @@ async function readDatabase() {
           sub: parts[2] || "N/A"
         };
       }
+    } else if (currentSection == "TUTOR_PROFILES") {
+      db.tutorProfiles.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        userId: parts[1] || "N/A",
+        name: parts[2] || "N/A",
+        subjects: parts[3] || "N/A",
+        rating: parts[4] || "5.0",
+        reviewCount: parts[5] || "0",
+        rate: parts[6] || "500",
+        location: parts[7] || "N/A",
+        experience: parts[8] || "N/A",
+        image: parts[9] || "../Files/Img/Profile/tutor.svg"
+      });
+    } else if (currentSection == "SESSIONS") {
+      db.sessions.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        studentId: parts[1] || "N/A",
+        subject: parts[2] || "N/A",
+        tutorName: parts[3] || "N/A",
+        date: parts[4] || "N/A",
+        time: parts[5] || "N/A",
+        mode: parts[6] || "Online Video",
+        status: parts[7] || "Confirmed",
+        duration: parts[8] || "1.5 hrs"
+      });
+    } else if (currentSection == "STUDY_MATERIALS") {
+      db.studyMaterials.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        title: parts[1] || "N/A",
+        subject: parts[2] || "N/A",
+        tutorName: parts[3] || "N/A",
+        fileType: parts[4] || "PDF",
+        fileSize: parts[5] || "N/A",
+        date: parts[6] || "N/A",
+        fileName: parts[7] || "material.pdf"
+      });
+    } else if (currentSection == "REVIEWS") {
+      db.reviews.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        studentId: parts[1] || "N/A",
+        tutorName: parts[2] || "N/A",
+        subject: parts[3] || "N/A",
+        rating: parts[4] || "5.0",
+        headline: parts[5] || "N/A",
+        feedback: parts[6] || "N/A",
+        date: parts[7] || "N/A"
+      });
+    } else if (currentSection == "SCHEDULE") {
+      db.schedule.push({
+        raw: rawLine,
+        id: parts[0] || "N/A",
+        studentId: parts[1] || "N/A",
+        day: parts[2] || "N/A",
+        time: parts[3] || "N/A",
+        subject: parts[4] || "N/A",
+        tutorName: parts[5] || "N/A",
+        mode: parts[6] || "Online Video",
+        color: parts[7] || "#10b981"
+      });
     }
   }
 
@@ -609,6 +677,46 @@ function serializeDatabase(db) {
   for (let i = 0; i < statKeys.length; i++) {
     let k = statKeys[i];
     lines.push("{" + k + "}; {" + db.stats[k].value + "}; {" + db.stats[k].sub + "}");
+  }
+
+  if (db.tutorProfiles && db.tutorProfiles.length > 0) {
+    lines.push("\n[TUTOR_PROFILES]");
+    for (let i = 0; i < db.tutorProfiles.length; i++) {
+      let tp = db.tutorProfiles[i];
+      lines.push("{" + tp.id + "}; {" + tp.userId + "}; {" + tp.name + "}; {" + tp.subjects + "}; {" + tp.rating + "}; {" + tp.reviewCount + "}; {" + tp.rate + "}; {" + tp.location + "}; {" + tp.experience + "}; {" + tp.image + "}");
+    }
+  }
+
+  if (db.sessions && db.sessions.length > 0) {
+    lines.push("\n[SESSIONS]");
+    for (let i = 0; i < db.sessions.length; i++) {
+      let s = db.sessions[i];
+      lines.push("{" + s.id + "}; {" + s.studentId + "}; {" + s.subject + "}; {" + s.tutorName + "}; {" + s.date + "}; {" + s.time + "}; {" + s.mode + "}; {" + s.status + "}; {" + s.duration + "}");
+    }
+  }
+
+  if (db.studyMaterials && db.studyMaterials.length > 0) {
+    lines.push("\n[STUDY_MATERIALS]");
+    for (let i = 0; i < db.studyMaterials.length; i++) {
+      let sm = db.studyMaterials[i];
+      lines.push("{" + sm.id + "}; {" + sm.title + "}; {" + sm.subject + "}; {" + sm.tutorName + "}; {" + sm.fileType + "}; {" + sm.fileSize + "}; {" + sm.date + "}; {" + sm.fileName + "}");
+    }
+  }
+
+  if (db.reviews && db.reviews.length > 0) {
+    lines.push("\n[REVIEWS]");
+    for (let i = 0; i < db.reviews.length; i++) {
+      let r = db.reviews[i];
+      lines.push("{" + r.id + "}; {" + r.studentId + "}; {" + r.tutorName + "}; {" + r.subject + "}; {" + r.rating + "}; {" + r.headline + "}; {" + r.feedback + "}; {" + r.date + "}");
+    }
+  }
+
+  if (db.schedule && db.schedule.length > 0) {
+    lines.push("\n[SCHEDULE]");
+    for (let i = 0; i < db.schedule.length; i++) {
+      let sc = db.schedule[i];
+      lines.push("{" + sc.id + "}; {" + sc.studentId + "}; {" + sc.day + "}; {" + sc.time + "}; {" + sc.subject + "}; {" + sc.tutorName + "}; {" + sc.mode + "}; {" + sc.color + "}");
+    }
   }
 
   return lines.join("\n");

@@ -132,3 +132,43 @@
 {payments:Tutor Payouts Disbursed}; {৳1,90,500}; {Disbursed via bKash / Bank}
 {payments:Pending Verification}; {৳14,500}; {3 transactions under review}
 {payments:Total Refunds Issued}; {৳4,500}; {Dispute resolved refunds}
+
+[TUTOR_PROFILES]
+{TP-501}; {USR-1003}; {Nowrrin Kabir}; {Mathematics & Physics}; {4.9}; {128}; {500}; {Dhaka, Mirpur}; {6 years experience}; {../Files/Img/Profile/tutor.svg}
+{TP-502}; {USR-1006}; {Marium Sultana}; {Chemistry & Biology}; {4.3}; {87}; {450}; {Dhaka, Dhanmondi}; {4 years experience}; {../Files/Img/Profile/tutor.svg}
+{TP-503}; {USR-1012}; {Sadia Afreen}; {English & Bangla}; {4.7}; {103}; {400}; {Dhaka, Uttara}; {5 years experience}; {../Files/Img/Profile/tutor.svg}
+{TP-504}; {USR-1015}; {Mehedi Hasan}; {ICT & Computer Science}; {4.8}; {64}; {600}; {Dhaka, Gulshan}; {7 years experience}; {../Files/Img/Profile/tutor.svg}
+{TP-505}; {USR-1016}; {Nusrat Jahan}; {General Science & Math}; {4.6}; {92}; {380}; {Dhaka, Mohammadpur}; {3 years experience}; {../Files/Img/Profile/tutor.svg}
+{TP-506}; {USR-1020}; {Shafiqul Islam}; {Higher Math & Physics}; {5.0}; {45}; {550}; {Dhaka, Banani}; {8 years experience}; {../Files/Img/Profile/tutor.svg}
+
+[SESSIONS]
+{SES-101}; {USR-1005}; {Mathematics}; {Nowrrin Kabir}; {26 Oct 2026}; {4:00 PM - 5:30 PM}; {Online Video}; {Confirmed}; {1.5 hrs}
+{SES-102}; {USR-1005}; {Physics}; {Marium Sultana}; {27 Oct 2026}; {5:00 PM - 6:30 PM}; {Home Visit}; {Confirmed}; {1.5 hrs}
+{SES-103}; {USR-1005}; {English}; {Sadia Afreen}; {28 Oct 2026}; {3:00 PM - 4:30 PM}; {Online Video}; {Pending}; {1.5 hrs}
+{SES-104}; {USR-1005}; {ICT & Computer}; {Mehedi Hasan}; {29 Oct 2026}; {6:00 PM - 7:30 PM}; {Online Video}; {Confirmed}; {1.5 hrs}
+{SES-105}; {USR-1005}; {Mathematics}; {Nowrrin Kabir}; {22 Oct 2026}; {4:00 PM - 5:30 PM}; {Online Video}; {Completed}; {1.5 hrs}
+{SES-106}; {USR-1005}; {Physics}; {Marium Sultana}; {20 Oct 2026}; {5:00 PM - 6:30 PM}; {Home Visit}; {Completed}; {1.5 hrs}
+{SES-107}; {USR-1005}; {English}; {Sadia Afreen}; {18 Oct 2026}; {3:00 PM - 4:30 PM}; {Online Video}; {Completed}; {1.5 hrs}
+{SES-108}; {USR-1005}; {Chemistry}; {Shafiqul Islam}; {15 Oct 2026}; {2:00 PM - 3:30 PM}; {Home Visit}; {Cancelled}; {1.5 hrs}
+
+[STUDY_MATERIALS]
+{MAT-201}; {Chapter 5 - Quadratic Equations & Algebra Notes}; {Mathematics}; {Nowrrin Kabir}; {PDF}; {2.4 MB}; {24 Oct 2026}; {Algebra_Notes.pdf}
+{MAT-202}; {Motion, Force & Dynamics Formula Sheet}; {Physics}; {Marium Sultana}; {PDF}; {1.8 MB}; {22 Oct 2026}; {Physics_Formulas.pdf}
+{MAT-203}; {Periodic Table & Chemical Bonding Summaries}; {Chemistry}; {Shafiqul Islam}; {PDF}; {3.1 MB}; {21 Oct 2026}; {Chemical_Bonding.pdf}
+{MAT-204}; {English Formal Essay Writing & Vocabulary Guide}; {English}; {Sadia Afreen}; {DOCX}; {950 KB}; {20 Oct 2026}; {English_Essay_Guide.docx}
+{MAT-205}; {Introduction to Python Programming & Flowcharts}; {ICT & Computer}; {Mehedi Hasan}; {ZIP}; {4.5 MB}; {19 Oct 2026}; {Python_Basics.zip}
+{MAT-206}; {Cell Division & Genetics Diagrams}; {Biology}; {Shafiqul Islam}; {PDF}; {3.8 MB}; {16 Oct 2026}; {Genetics_Diagrams.pdf}
+{MAT-207}; {Geometry Theorems & Practice Question Set}; {Mathematics}; {Nowrrin Kabir}; {PDF}; {1.5 MB}; {14 Oct 2026}; {Geometry_Theorems.pdf}
+{MAT-208}; {Bangla 2nd Paper Grammar & Composition}; {English & Bangla}; {Sadia Afreen}; {PDF}; {2.1 MB}; {12 Oct 2026}; {Bangla_Grammar.pdf}
+
+[REVIEWS]
+{REV-301}; {USR-1005}; {Nowrrin Kabir}; {Mathematics}; {5.0}; {Exceptional Mathematics Tutor!}; {Nowrrin Apu explained quadratic equations and algebraic proofs with so much clarity. She gave me personalized worksheets and solved every single question I had. My test scores improved significantly.}; {22 Oct 2026}
+{REV-302}; {USR-1005}; {Marium Sultana}; {Physics}; {4.5}; {Very thorough with physics derivations}; {Miss Marium is always punctual and brings real-world examples to explain Newton's laws of motion. She makes sure foundational formulas are completely understood before moving forward.}; {18 Oct 2026}
+{REV-303}; {USR-1005}; {Sadia Afreen}; {English}; {5.0}; {Great support for creative writing & grammar}; {Sadia Miss helped me improve my English vocabulary and formal essay writing structure for Class 10 board examination prep. Highly recommended tutor!}; {10 Oct 2026}
+
+[SCHEDULE]
+{SCH-401}; {USR-1005}; {Sunday}; {4:00 PM - 5:30 PM}; {Mathematics}; {Nowrrin Kabir}; {Online Video}; {#10b981}
+{SCH-402}; {USR-1005}; {Monday}; {5:00 PM - 6:30 PM}; {Physics}; {Marium Sultana}; {Home Visit}; {#3b82f6}
+{SCH-403}; {USR-1005}; {Tuesday}; {3:00 PM - 4:30 PM}; {English}; {Sadia Afreen}; {Online Video}; {#f59e0b}
+{SCH-404}; {USR-1005}; {Wednesday}; {6:00 PM - 7:30 PM}; {ICT & Computer}; {Mehedi Hasan}; {Online Video}; {#8b5cf6}
+{SCH-405}; {USR-1005}; {Thursday}; {4:00 PM - 5:30 PM}; {Mathematics}; {Nowrrin Kabir}; {Online Video}; {#10b981}
