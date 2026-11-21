@@ -26,7 +26,7 @@
             <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+            <button type="button" class="btn-logout">🚪 Logout</button>
         </div>
     </aside>
 
@@ -34,17 +34,17 @@
 
         <header class="top-header">
             <div class="header-left">
-                <h2>Welcome, Tanbeen!</h2>
-                <p>Tutor Account • Sunday, 26 October 2026</p>
+                <h2>Welcome, Tutor!</h2>
+                <p>Tutor Account • Academic Session 2026</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" onclick="alert('You have 3 new notifications: 2 new booking requests and 1 student review.')" title="Notifications">
+                <button type="button" class="notif-btn" title="Notifications">
                     🔔
-                    <span class="notif-badge">3</span>
+                    <span class="notif-badge">0</span>
                 </button>
-                <div class="user-avatar">T</div>
+                <div class="user-avatar"></div>
                 <div class="user-info">
-                    <span>Tanbeen</span>
+                    <span>Tutor</span>
                     <span>Tutor Account</span>
                 </div>
             </div>
@@ -53,7 +53,7 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="👥">
                 <div class="stat-label">Active Students</div>
-                <div class="stat-value">8</div>
+                <div class="stat-value">6</div>
                 <div class="stat-sub">Enrolled regular learners</div>
             </div>
             <div class="stat-card" data-icon="📨">
@@ -63,13 +63,13 @@
             </div>
             <div class="stat-card" data-icon="💰">
                 <div class="stat-label">October Earnings</div>
-                <div class="stat-value">৳18,500</div>
+                <div class="stat-value">৳18,495</div>
                 <div class="stat-sub">Net after 10% platform fee</div>
             </div>
             <div class="stat-card" data-icon="⭐">
                 <div class="stat-label">Average Rating</div>
                 <div class="stat-value">4.9</div>
-                <div class="stat-sub">Based on 42 reviews</div>
+                <div class="stat-sub">Based on verified reviews</div>
             </div>
         </div>
 
@@ -79,45 +79,63 @@
                 <span class="badge">Shortcut Center</span>
             </div>
             <div class="quick-actions-grid">
-                <button type="button" class="btn-quick-action" onclick="window.location.href='profile.html'">
-                    <span class="action-icon">👤</span>
-                    <span>My Profile</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='availability.html'">
-                    <span class="action-icon">📅</span>
-                    <span>Set Availability</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='booking_requests.html'">
-                    <span class="action-icon">📨</span>
-                    <span>Booking Requests</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='student_progress.html'">
-                    <span class="action-icon">📈</span>
-                    <span>Log Progress</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='study_materials.html'">
-                    <span class="action-icon">📚</span>
-                    <span>Study Materials</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='reviews.html'">
-                    <span class="action-icon">⭐</span>
-                    <span>Student Reviews</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='earnings.html'">
-                    <span class="action-icon">💰</span>
-                    <span>Payout Dashboard</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='../Login/login.html'">
-                    <span class="action-icon">🚪</span>
-                    <span>Exit Portal</span>
-                </button>
+                <a href="profile.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">👤</span>
+                        <span>My Profile</span>
+                    </button>
+                </a>
+                <a href="availability.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">📅</span>
+                        <span>Set Availability</span>
+                    </button>
+                </a>
+                <a href="booking_requests.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">📨</span>
+                        <span>Booking Requests</span>
+                    </button>
+                </a>
+                <a href="student_progress.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">📈</span>
+                        <span>Log Progress</span>
+                    </button>
+                </a>
+                <a href="study_materials.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">📚</span>
+                        <span>Study Materials</span>
+                    </button>
+                </a>
+                <a href="reviews.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">⭐</span>
+                        <span>Student Reviews</span>
+                    </button>
+                </a>
+                <a href="earnings.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">💰</span>
+                        <span>Payout Dashboard</span>
+                    </button>
+                </a>
+                <a href="../Login/login.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">🚪</span>
+                        <span>Exit Portal</span>
+                    </button>
+                </a>
             </div>
         </div>
 
         <div class="section-block">
             <div class="section-header">
                 <h3>Pending Booking Requests</h3>
-                <button type="button" class="btn-primary" onclick="window.location.href='booking_requests.html'">View All</button>
+                <a href="booking_requests.html">
+                    <button type="button" class="btn-primary">View All</button>
+                </a>
             </div>
             <table class="data-table">
                 <thead>
@@ -131,51 +149,16 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Erona Rahman</strong></td>
-                        <td><span class="subject-chip">Mathematics</span></td>
-                        <td>Class 10 (SSC)</td>
-                        <td>28 Oct 2026 • 04:00 PM</td>
-                        <td>Home Tuition</td>
-                        <td><span class="status-badge pending">Pending</span></td>
-                        <td>
-                            <button type="button" class="btn-success" onclick="alert('Accepted request from Erona Rahman!')">Accept</button>
-                            <button type="button" class="btn-danger" onclick="alert('Declined request from Erona Rahman.')">Decline</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Rodela Ahmed</strong></td>
-                        <td><span class="subject-chip">Physics</span></td>
-                        <td>Class 12 (HSC)</td>
-                        <td>29 Oct 2026 • 05:30 PM</td>
-                        <td>Online</td>
-                        <td><span class="status-badge pending">Pending</span></td>
-                        <td>
-                            <button type="button" class="btn-success" onclick="alert('Accepted request from Rodela Ahmed!')">Accept</button>
-                            <button type="button" class="btn-danger" onclick="alert('Declined request from Rodela Ahmed.')">Decline</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Siam Hossain</strong></td>
-                        <td><span class="subject-chip">Higher Math</span></td>
-                        <td>Class 11 (HSC)</td>
-                        <td>30 Oct 2026 • 03:00 PM</td>
-                        <td>Home Tuition</td>
-                        <td><span class="status-badge pending">Pending</span></td>
-                        <td>
-                            <button type="button" class="btn-success" onclick="alert('Accepted request from Siam Hossain!')">Accept</button>
-                            <button type="button" class="btn-danger" onclick="alert('Declined request from Siam Hossain.')">Decline</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="dashBookingTbody"></tbody>
             </table>
         </div>
 
         <div class="section-block">
             <div class="section-header">
                 <h3>Earnings Overview</h3>
-                <button type="button" class="btn-primary" onclick="window.location.href='earnings.html'">View Earnings</button>
+                <a href="earnings.html">
+                    <button type="button" class="btn-primary">View Earnings</button>
+                </a>
             </div>
             <table class="data-table">
                 <thead>
@@ -188,40 +171,30 @@
                         <th>Payout Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>October 2026</strong></td>
-                        <td>24 Sessions</td>
-                        <td>৳20,550</td>
-                        <td>৳2,055</td>
-                        <td><strong>৳18,495</strong></td>
-                        <td><span class="status-badge active">Available for Payout</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>September 2026</strong></td>
-                        <td>28 Sessions</td>
-                        <td>৳23,800</td>
-                        <td>৳2,380</td>
-                        <td><strong>৳21,420</strong></td>
-                        <td><span class="status-badge completed">Disbursed (bKash)</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>August 2026</strong></td>
-                        <td>22 Sessions</td>
-                        <td>৳19,200</td>
-                        <td>৳1,920</td>
-                        <td><strong>৳17,280</strong></td>
-                        <td><span class="status-badge completed">Disbursed (Bank)</span></td>
-                    </tr>
-                </tbody>
+                <tbody id="dashEarningsTbody"></tbody>
             </table>
         </div>
 
+        <div id="simpleModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+                </div>
+                <div id="simpleModalBody" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                </div>
+            </div>
+        </div>
+
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="tutor.js"></script>
 </body>
 </html>
