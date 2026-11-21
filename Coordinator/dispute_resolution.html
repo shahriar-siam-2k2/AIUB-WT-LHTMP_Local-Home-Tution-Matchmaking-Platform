@@ -16,6 +16,7 @@
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html" class="active"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,22 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
+            <a href="../Login/login.html"><button type="button" class="btn-logout">🚪 Logout</button></a>
         </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
-                <h2>Local Dispute Resolution</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <h2 id="topHeaderGreeting">Local Dispute Resolution</h2>
+                <p id="topHeaderSub">Area Coordinator &bull; Mediation &amp; Conflict Management</p>
             </div>
             <div class="header-right">
-                <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <span class="zone-badge-header" id="topHeaderZone">Zone: Regional Operations</span>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">0</span></button>
+                <img src="../Files/Img/Profile/coordinator.svg" alt="Avatar" class="user-avatar" id="topHeaderAvatar" onerror="this.src='../Files/Img/Profile/coordinator.svg'" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span id="topHeaderName">Coordinator</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -49,22 +50,22 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="⚠️">
                 <div class="stat-label">Open Disputes</div>
-                <div class="stat-value">2</div>
+                <div class="stat-value" id="dispStatOpen">0</div>
                 <div class="stat-sub">Immediate action needed</div>
             </div>
             <div class="stat-card" data-icon="🔍">
-                <div class="stat-label">Under Investigation</div>
-                <div class="stat-value">2</div>
-                <div class="stat-sub">Hearing scheduled</div>
+                <div class="stat-label">Urgent / High Priority</div>
+                <div class="stat-value" id="dispStatInvestigating">0</div>
+                <div class="stat-sub">Priority escalation</div>
             </div>
             <div class="stat-card" data-icon="🤝">
-                <div class="stat-label">Resolved This Month</div>
-                <div class="stat-value">14</div>
-                <div class="stat-sub">Mutually settled</div>
+                <div class="stat-label">Resolved Disputes</div>
+                <div class="stat-value" id="dispStatResolved">0</div>
+                <div class="stat-sub">Mutually settled cases</div>
             </div>
             <div class="stat-card" data-icon="📈">
                 <div class="stat-label">Resolution SLA</div>
-                <div class="stat-value">96%</div>
+                <div class="stat-value" id="dispStatSla">96%</div>
                 <div class="stat-sub">Resolved within 48 hours</div>
             </div>
         </div>
@@ -72,7 +73,20 @@
         <div class="section-block">
             <div class="section-header">
                 <h3>Reported Issues Between Students &amp; Tutors</h3>
-                <button type="button" class="btn-primary" onclick="alert('Opening new dispute mediation case docket...')">Log New Dispute</button>
+                <div class="table-actions">
+                    <button type="button" class="btn-primary" id="btnLogDisputeModal">➕ Log New Dispute</button>
+                    <button type="button" class="btn-secondary" id="btnRefreshDisputes">🔄 Refresh</button>
+                </div>
+            </div>
+            <div class="filter-bar">
+                <label for="dispStatusFilter" class="text-bold text-small">Filter Status:</label>
+                <select id="dispStatusFilter" class="filter-select">
+                    <option value="all">All Cases</option>
+                    <option value="Pending" selected>Pending / Open Cases</option>
+                    <option value="Resolved">Resolved Cases</option>
+                    <option value="Closed">Closed Cases</option>
+                </select>
+                <input type="text" id="dispSearchInput" placeholder="Search by case ID, party or issue..." class="filter-input" />
             </div>
             <table class="data-table">
                 <thead>
@@ -81,144 +95,43 @@
                         <th>Complainant</th>
                         <th>Respondent</th>
                         <th>Issue Category</th>
-                        <th>Description Summary</th>
                         <th>Date Filed</th>
+                        <th>Priority</th>
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>DISP-2026-01</strong></td>
-                        <td>
-                            <strong>Fatema Begum</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Mirpur-2</small>
-                        </td>
-                        <td>
-                            <strong>Kona Rahman</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-781</small>
-                        </td>
-                        <td>Tuition Fee Dispute</td>
-                        <td>Student billed for 3 unconducted sessions due to tutor rescheduling</td>
-                        <td>20 Oct 2026</td>
-                        <td><span class="status-badge open">Open</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-primary" onclick="alert('Reviewing Case DISP-2026-01: Session audit log and chat history opened.')">Review Case</button>
-                                <button type="button" class="btn-success" onclick="alert('Dispute DISP-2026-01 marked as resolved. Adjusted invoice sent.')">Resolve Issue</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>DISP-2026-02</strong></td>
-                        <td>
-                            <strong>Rafi Islam</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Class 10</small>
-                        </td>
-                        <td>
-                            <strong>Jui Chowdhury</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-652</small>
-                        </td>
-                        <td>Repeated Absenteeism</td>
-                        <td>Tutor missed 3 scheduled exam preparation sessions without prior notice</td>
-                        <td>22 Oct 2026</td>
-                        <td><span class="status-badge open">Open</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-primary" onclick="alert('Reviewing Case DISP-2026-02: Tutor attendance timestamps opened.')">Review Case</button>
-                                <button type="button" class="btn-success" onclick="alert('Dispute DISP-2026-02 marked as resolved. Replaced tutor assigned.')">Resolve Issue</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>DISP-2026-03</strong></td>
-                        <td>
-                            <strong>Siam Hossain</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-902</small>
-                        </td>
-                        <td>
-                            <strong>Mr. Rahim Uddin</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Mirpur-10</small>
-                        </td>
-                        <td>Honorarium Payment Delay</td>
-                        <td>Monthly tuition fee for September delayed past agreed contractual deadline</td>
-                        <td>24 Oct 2026</td>
-                        <td><span class="status-badge pending">Under Review</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-primary" onclick="alert('Reviewing Case DISP-2026-03: Payment escrow details loaded.')">Review Case</button>
-                                <button type="button" class="btn-success" onclick="alert('Dispute DISP-2026-03 resolved: Escrow disbursed.')">Resolve Issue</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>DISP-2026-04</strong></td>
-                        <td>
-                            <strong>Dr. Anisur Rahman</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Mirpur DOHS</small>
-                        </td>
-                        <td>
-                            <strong>Tanvir Hasan</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-540</small>
-                        </td>
-                        <td>Curriculum Divergence</td>
-                        <td>Tutor deviated significantly from Cambridge English syllabus milestones</td>
-                        <td>25 Oct 2026</td>
-                        <td><span class="status-badge pending">Under Review</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-primary" onclick="alert('Reviewing Case DISP-2026-04: Lesson plan evaluation report opened.')">Review Case</button>
-                                <button type="button" class="btn-success" onclick="alert('Dispute DISP-2026-04 resolved: Revised syllabus roadmap signed.')">Resolve Issue</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>DISP-2026-05</strong></td>
-                        <td>
-                            <strong>Areeba Kamal</strong><br />
-                            <small style="color: #6b7280;">Student &bull; HSC Batch</small>
-                        </td>
-                        <td>
-                            <strong>Mahfuz Ahmed</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-819</small>
-                        </td>
-                        <td>Punctuality &amp; Schedule</td>
-                        <td>Recurring 30-minute delay in home arrival times</td>
-                        <td>18 Oct 2026</td>
-                        <td><span class="status-badge verified">Resolved</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-secondary" onclick="alert('Viewing archived mediation outcome for Case DISP-2026-05.')">View Case</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>DISP-2026-06</strong></td>
-                        <td>
-                            <strong>Mrs. Shireen</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Mirpur-12</small>
-                        </td>
-                        <td>
-                            <strong>Nusrat Jahan</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-413</small>
-                        </td>
-                        <td>Subject Scope Discrepancy</td>
-                        <td>Requested General Science coverage added to English routine</td>
-                        <td>12 Oct 2026</td>
-                        <td><span class="status-badge verified">Resolved</span></td>
-                        <td>
-                            <div class="table-actions">
-                                <button type="button" class="btn-secondary" onclick="alert('Viewing archived mediation outcome for Case DISP-2026-06.')">View Case</button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="disputesTableBody"></tbody>
             </table>
+            <div class="filter-bar filter-bar-between">
+                <div>Showing dispute resolution records</div>
+                <div class="table-actions">
+                    <button type="button" class="btn-secondary" id="btnPrevDisputes">Previous</button>
+                    <button type="button" class="btn-primary" id="btnPage1Disputes">1</button>
+                    <button type="button" class="btn-secondary" id="btnNextDisputes">Next</button>
+                </div>
+            </div>
         </div>
 
         <footer class="page-footer-main">
             &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+
+    <div id="simpleModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="coordinator.js"></script>
 </body>
 </html>
