@@ -16,7 +16,6 @@
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html" class="active"><span class="nav-icon">📊</span>Dashboard</a>
-            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -26,22 +25,22 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <a href="../Login/login.html"><button type="button" class="btn-logout">🚪 Logout</button></a>
+            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
         </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
-                <h2 id="topHeaderGreeting">Welcome, Coordinator!</h2>
-                <p id="topHeaderSub">Area Coordinator &bull; Regional Operations</p>
+                <h2>Welcome, Razin!</h2>
+                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
-                <span class="zone-badge-header" id="topHeaderZone">Zone: Regional Operations</span>
-                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">0</span></button>
-                <img src="../Files/Img/Profile/coordinator.svg" alt="Avatar" class="user-avatar" id="topHeaderAvatar" onerror="this.src='../Files/Img/Profile/coordinator.svg'" />
+                <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
+                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
+                <div class="user-avatar">RZ</div>
                 <div class="user-info">
-                    <span id="topHeaderName">Coordinator</span>
+                    <span>Razin</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -50,23 +49,23 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="📋">
                 <div class="stat-label">Pending Verification</div>
-                <div class="stat-value" id="dashStatPending">0</div>
-                <div class="stat-sub" id="dashStatPendingSub">Requires credential review</div>
+                <div class="stat-value">4</div>
+                <div class="stat-sub">Requires credential review</div>
             </div>
             <div class="stat-card" data-icon="👥">
                 <div class="stat-label">Active Tutors in Zone</div>
-                <div class="stat-value" id="dashStatActive">0</div>
-                <div class="stat-sub" id="dashStatActiveSub">Active regional educator pool</div>
+                <div class="stat-value">23</div>
+                <div class="stat-sub">Mirpur Zone active pool</div>
             </div>
             <div class="stat-card" data-icon="⚠️">
                 <div class="stat-label">Open Disputes</div>
-                <div class="stat-value" id="dashStatDisputes">0</div>
-                <div class="stat-sub" id="dashStatDisputesSub">Pending mediator resolution</div>
+                <div class="stat-value">2</div>
+                <div class="stat-sub">Pending mediator resolution</div>
             </div>
             <div class="stat-card" data-icon="⭐">
                 <div class="stat-label">Avg Zone Rating</div>
-                <div class="stat-value" id="dashStatRating">4.8</div>
-                <div class="stat-sub" id="dashStatRatingSub">Based on platform reviews</div>
+                <div class="stat-value">4.8</div>
+                <div class="stat-sub">Based on 156 local reviews</div>
             </div>
         </div>
 
@@ -75,63 +74,45 @@
                 <h3>Quick Actions</h3>
             </div>
             <div class="quick-actions-grid">
-                <a href="verify_tutors.html">
-                    <button type="button" class="btn-quick-action w-100">
-                        <span class="action-icon">📜</span>
-                        <span>Verify Credentials</span>
-                    </button>
-                </a>
-                <a href="approve_profiles.html">
-                    <button type="button" class="btn-quick-action w-100">
-                        <span class="action-icon">✅</span>
-                        <span>Approve Profiles</span>
-                    </button>
-                </a>
-                <a href="dispute_resolution.html">
-                    <button type="button" class="btn-quick-action w-100">
-                        <span class="action-icon">⚖️</span>
-                        <span>Resolve Disputes</span>
-                    </button>
-                </a>
-                <a href="tutor_quality.html">
-                    <button type="button" class="btn-quick-action w-100">
-                        <span class="action-icon">⭐</span>
-                        <span>Monitor Quality</span>
-                    </button>
-                </a>
-                <a href="suspend_accounts.html">
-                    <button type="button" class="btn-quick-action w-100">
-                        <span class="action-icon">🚫</span>
-                        <span>Suspend Accounts</span>
-                    </button>
-                </a>
-                <a href="area_reports.html">
-                    <button type="button" class="btn-quick-action w-100">
-                        <span class="action-icon">📈</span>
-                        <span>Area Reports</span>
-                    </button>
-                </a>
-                <a href="broadcast_alert.html">
-                    <button type="button" class="btn-quick-action w-100">
-                        <span class="action-icon">📢</span>
-                        <span>Broadcast Alert</span>
-                    </button>
-                </a>
-                <a href="profile.html">
-                    <button type="button" class="btn-quick-action w-100">
-                        <span class="action-icon">👤</span>
-                        <span>My Profile</span>
-                    </button>
-                </a>
+                <button type="button" class="btn-quick-action" onclick="window.location.href='verify_tutors.html'">
+                    <span class="action-icon">📜</span>
+                    <span>Verify Credentials</span>
+                </button>
+                <button type="button" class="btn-quick-action" onclick="window.location.href='approve_profiles.html'">
+                    <span class="action-icon">✅</span>
+                    <span>Approve Profiles</span>
+                </button>
+                <button type="button" class="btn-quick-action" onclick="window.location.href='dispute_resolution.html'">
+                    <span class="action-icon">⚖️</span>
+                    <span>Resolve Disputes</span>
+                </button>
+                <button type="button" class="btn-quick-action" onclick="window.location.href='tutor_quality.html'">
+                    <span class="action-icon">⭐</span>
+                    <span>Monitor Quality</span>
+                </button>
+                <button type="button" class="btn-quick-action" onclick="window.location.href='suspend_accounts.html'">
+                    <span class="action-icon">🚫</span>
+                    <span>Suspend Accounts</span>
+                </button>
+                <button type="button" class="btn-quick-action" onclick="window.location.href='area_reports.html'">
+                    <span class="action-icon">📈</span>
+                    <span>Area Reports</span>
+                </button>
+                <button type="button" class="btn-quick-action" onclick="window.location.href='broadcast_alert.html'">
+                    <span class="action-icon">📢</span>
+                    <span>Broadcast Alert</span>
+                </button>
+                <button type="button" class="btn-quick-action" onclick="window.location.href='../Login/login.html'">
+                    <span class="action-icon">🚪</span>
+                    <span>Logout Session</span>
+                </button>
             </div>
         </div>
 
         <div class="section-block">
             <div class="section-header">
                 <h3>Tutor Verification Queue</h3>
-                <a href="verify_tutors.html">
-                    <button type="button" class="btn-primary">View Full Queue</button>
-                </a>
+                <button type="button" class="btn-primary" onclick="window.location.href='verify_tutors.html'">View Full Queue</button>
             </div>
             <table class="data-table">
                 <thead>
@@ -144,24 +125,71 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="dashTutorQueueBody"></tbody>
+                <tbody>
+                    <tr>
+                        <td><strong>Erona Akhtar</strong></td>
+                        <td>Dhaka University</td>
+                        <td>Chemistry / Biology</td>
+                        <td><span class="status-badge pending">Documents Uploaded</span></td>
+                        <td>20 Oct 2026</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Erona Akhtar credentials verified successfully.')">Verify</button>
+                                <button type="button" class="btn-danger" onclick="alert('Erona Akhtar credentials rejected.')">Reject</button>
+                                <button type="button" class="btn-secondary" onclick="window.location.href='verify_tutors.html'">View Docs</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Siam Hossain</strong></td>
+                        <td>BUET</td>
+                        <td>Mathematics / Physics</td>
+                        <td><span class="status-badge pending">Documents Uploaded</span></td>
+                        <td>21 Oct 2026</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Siam Hossain credentials verified successfully.')">Verify</button>
+                                <button type="button" class="btn-danger" onclick="alert('Siam Hossain credentials rejected.')">Reject</button>
+                                <button type="button" class="btn-secondary" onclick="window.location.href='verify_tutors.html'">View Docs</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tanbeen Noman</strong></td>
+                        <td>Jahangirnagar University</td>
+                        <td>Physics / ICT</td>
+                        <td><span class="status-badge pending">Under Review</span></td>
+                        <td>22 Oct 2026</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Tanbeen Noman credentials verified successfully.')">Verify</button>
+                                <button type="button" class="btn-danger" onclick="alert('Tanbeen Noman credentials rejected.')">Reject</button>
+                                <button type="button" class="btn-secondary" onclick="window.location.href='verify_tutors.html'">View Docs</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nowrin Sultana</strong></td>
+                        <td>Brac University</td>
+                        <td>English Language &amp; Literature</td>
+                        <td><span class="status-badge pending">Documents Uploaded</span></td>
+                        <td>23 Oct 2026</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success" onclick="alert('Nowrin Sultana credentials verified successfully.')">Verify</button>
+                                <button type="button" class="btn-danger" onclick="alert('Nowrin Sultana credentials rejected.')">Reject</button>
+                                <button type="button" class="btn-secondary" onclick="window.location.href='verify_tutors.html'">View Docs</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-            <div class="filter-bar filter-bar-between">
-                <div>Showing pending verification records</div>
-                <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnPrevDashTutors">Previous</button>
-                    <button type="button" class="btn-primary" id="btnPage1DashTutors">1</button>
-                    <button type="button" class="btn-secondary" id="btnNextDashTutors">Next</button>
-                </div>
-            </div>
         </div>
 
         <div class="section-block">
             <div class="section-header">
                 <h3>Open Disputes Preview</h3>
-                <a href="dispute_resolution.html">
-                    <button type="button" class="btn-primary">Resolve Disputes</button>
-                </a>
+                <button type="button" class="btn-primary" onclick="window.location.href='dispute_resolution.html'">Resolve Disputes</button>
             </div>
             <table class="data-table">
                 <thead>
@@ -175,37 +203,42 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody id="dashDisputesBody"></tbody>
+                <tbody>
+                    <tr>
+                        <td><strong>DISP-2026-01</strong></td>
+                        <td>Student: Fatema Begum</td>
+                        <td>Tutor: Kona Rahman</td>
+                        <td>Monthly tuition fee calculation discrepancy</td>
+                        <td>20 Oct 2026</td>
+                        <td><span class="status-badge open">Open</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary" onclick="window.location.href='dispute_resolution.html'">Review Case</button>
+                                <button type="button" class="btn-success" onclick="alert('Case DISP-2026-01 marked as resolved.')">Resolve Issue</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>DISP-2026-02</strong></td>
+                        <td>Student: Rafi Islam</td>
+                        <td>Tutor: Jui Chowdhury</td>
+                        <td>Consecutive unnotified absences during exam week</td>
+                        <td>22 Oct 2026</td>
+                        <td><span class="status-badge open">Open</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary" onclick="window.location.href='dispute_resolution.html'">Review Case</button>
+                                <button type="button" class="btn-success" onclick="alert('Case DISP-2026-02 marked as resolved.')">Resolve Issue</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-            <div class="filter-bar filter-bar-between">
-                <div>Showing open dispute records</div>
-                <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnPrevDashDisputes">Previous</button>
-                    <button type="button" class="btn-primary" id="btnPage1DashDisputes">1</button>
-                    <button type="button" class="btn-secondary" id="btnNextDashDisputes">Next</button>
-                </div>
-            </div>
         </div>
 
         <footer class="page-footer-main">
             &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
-
-    <div id="simpleModal" class="modal-overlay">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
-                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
-            </div>
-            <div id="simpleModalBody" class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="../Helper JS/readWrite.js"></script>
-    <script src="coordinator.js"></script>
 </body>
 </html>

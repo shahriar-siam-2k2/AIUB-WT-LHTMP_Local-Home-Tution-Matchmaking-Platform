@@ -28,6 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
     showAlert("Registration successful! Please login with your email or phone number.", "success");
   }
 
+  const btnTogglePassword = document.getElementById("btnTogglePassword");
+  if (btnTogglePassword) {
+    btnTogglePassword.addEventListener("click", function () {
+      const passInput = document.getElementById("password");
+      if (!passInput) return;
+      if (passInput.type == "password") {
+        passInput.type = "text";
+        btnTogglePassword.textContent = "🙈";
+      } else {
+        passInput.type = "password";
+        btnTogglePassword.textContent = "👁️";
+      }
+    });
+  }
+
   if (loginForm) {
     loginForm.addEventListener("reset", function () {
       const alertBox = document.getElementById("login-alert");
@@ -35,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alertBox.style.display = "none";
         alertBox.textContent = "";
       }
+      const passInput = document.getElementById("password");
+      if (passInput) passInput.type = "password";
+      if (btnTogglePassword) btnTogglePassword.textContent = "👁️";
     });
 
     loginForm.addEventListener("submit", async function (e) {

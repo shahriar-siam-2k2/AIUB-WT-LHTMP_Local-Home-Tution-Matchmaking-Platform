@@ -14,6 +14,110 @@ function showAlert(message, type) {
   alertBox.style.display = "block";
 }
 
+function cleanInputText(val) {
+  if (val === null || val === undefined) return "";
+  let str = "" + val;
+  let start = 0;
+  while (start < str.length && (str.charAt(start) == " " || str.charAt(start) == "\t" || str.charAt(start) == "\r" || str.charAt(start) == "\n")) {
+    start++;
+  }
+  let end = str.length - 1;
+  while (end >= start && (str.charAt(end) == " " || str.charAt(end) == "\t" || str.charAt(end) == "\r" || str.charAt(end) == "\n")) {
+    end--;
+  }
+  let res = "";
+  for (let i = start; i <= end; i++) {
+    res += str.charAt(i);
+  }
+  return res;
+}
+
+function isAllDigits(str) {
+  if (!str || str.length == 0) return false;
+  for (let i = 0; i < str.length; i++) {
+    const c = str.charCodeAt(i);
+    if (c < 48 || c > 57) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function calculateAge(dobStr) {
+  if (!dobStr || dobStr.length < 10) return -1;
+  const parts = dobStr.split("-");
+  if (parts.length != 3) return -1;
+  const birthYear = parseInt(parts[0], 10);
+  const birthMonth = parseInt(parts[1], 10);
+  const birthDay = parseInt(parts[2], 10);
+  if (isNaN(birthYear) || isNaN(birthMonth) || isNaN(birthDay)) return -1;
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth() + 1;
+  const currentDay = today.getDate();
+
+  let age = currentYear - birthYear;
+  if (currentMonth < birthMonth || (currentMonth == birthMonth && currentDay < birthDay)) {
+    age--;
+  }
+  return age;
+}
+
+function setFieldError(fieldId, errId, message) {
+  const errElem = document.getElementById(errId);
+  if (errElem) {
+    errElem.textContent = message;
+    errElem.className = "field-error active";
+  }
+  const inputElem = document.getElementById(fieldId);
+  if (inputElem) {
+    if (inputElem.className.indexOf("input-error") == -1) {
+      inputElem.className = inputElem.className ? inputElem.className + " input-error" : "input-error";
+    }
+  }
+}
+
+function clearFieldError(fieldId, errId) {
+  const errElem = document.getElementById(errId);
+  if (errElem) {
+    errElem.textContent = "";
+    errElem.className = "field-error";
+  }
+  const inputElem = document.getElementById(fieldId);
+  if (inputElem && inputElem.className) {
+    let classes = inputElem.className.split(" ");
+    let kept = [];
+    for (let i = 0; i < classes.length; i++) {
+      if (classes[i] != "input-error" && classes[i].length > 0) {
+        kept.push(classes[i]);
+      }
+    }
+    inputElem.className = kept.join(" ");
+  }
+}
+
+function clearAllFieldErrors() {
+  const errors = [
+    { field: "userType", err: "err-userType" },
+    { field: "fullName", err: "err-fullName" },
+    { field: "email", err: "err-email" },
+    { field: "phone", err: "err-phone" },
+    { field: "dob", err: "err-dob" },
+    { field: "genderMale", err: "err-gender" },
+    { field: "genderFemale", err: "err-gender" },
+    { field: "division", err: "err-division" },
+    { field: "area", err: "err-area" },
+    { field: "grade", err: "err-grade" },
+    { field: "detailedGrade", err: "err-detailedGrade" },
+    { field: "password", err: "err-password" },
+    { field: "confirmPassword", err: "err-confirmPassword" }
+  ];
+  for (let i = 0; i < errors.length; i++) {
+    clearFieldError(errors[i].field, errors[i].err);
+  }
+}
+
 async function loadLists() {
   let fileText = "";
   const candidatePaths = [
@@ -25,7 +129,7 @@ async function loadLists() {
 
   for (let p = 0; p < candidatePaths.length; p++) {
     try {
-      const response = await fetch(candidatePaths[p], { cache: "no-store" }).catch(() => null);
+      const response = await fetch(candidatePaths[p], { cache: "no-store" }).catch(function () { return null; });
       if (response && response.ok) {
         fileText = await response.text();
         if (fileText.length > 0) break;
@@ -55,17 +159,13 @@ async function loadLists() {
       if (currentSection == "DIVISIONS") {
         const colonIndex = line.indexOf(":");
         if (colonIndex != -1) {
-          const division = line.substring(0, colonIndex);
+          const division = cleanInputText(line.substring(0, colonIndex));
           const rawAreas = line.substring(colonIndex + 1).split(",");
           let areas = [];
           for (let a = 0; a < rawAreas.length; a++) {
-            let item = rawAreas[a];
-            let start = 0;
-            while (start < item.length && item.charAt(start) == " ") start++;
-            let end = item.length - 1;
-            while (end >= 0 && item.charAt(end) == " ") end--;
-            if (start <= end) {
-              areas.push(item.substring(start, end + 1));
+            let item = cleanInputText(rawAreas[a]);
+            if (item.length > 0) {
+              areas.push(item);
             }
           }
           divisionAreaData.push({ division: division, areas: areas });
@@ -73,13 +173,9 @@ async function loadLists() {
       } else if (currentSection == "GRADES") {
         const rawGrades = line.split(",");
         for (let g = 0; g < rawGrades.length; g++) {
-          let item = rawGrades[g];
-          let start = 0;
-          while (start < item.length && item.charAt(start) == " ") start++;
-          let end = item.length - 1;
-          while (end >= 0 && item.charAt(end) == " ") end--;
-          if (start <= end) {
-            gradesData.push(item.substring(start, end + 1));
+          let item = cleanInputText(rawGrades[g]);
+          if (item.length > 0) {
+            gradesData.push(item);
           }
         }
       }
@@ -109,12 +205,21 @@ async function loadLists() {
 
 document.addEventListener("DOMContentLoaded", async function () {
   const userTypeSelect = document.getElementById("userType");
+  const fullNameInput = document.getElementById("fullName");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+  const dobInput = document.getElementById("dob");
+  const genderRadios = document.getElementsByName("gender");
   const divisionSelect = document.getElementById("division");
   const areaSelect = document.getElementById("area");
   const gradeSection = document.getElementById("gradeSection");
   const gradeSelect = document.getElementById("grade");
   const detailedGradeInput = document.getElementById("detailedGrade");
+  const passwordInput = document.getElementById("password");
+  const confirmPasswordInput = document.getElementById("confirmPassword");
   const registrationForm = document.getElementById("registrationForm");
+  const btnTogglePassword = document.getElementById("btnTogglePassword");
+  const btnToggleConfirmPassword = document.getElementById("btnToggleConfirmPassword");
 
   let isFromAdmin = window.location.search.indexOf("source=user_management") != -1;
   if (!isFromAdmin && document.referrer.indexOf("user_management") != -1) {
@@ -135,6 +240,32 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   if (gradeSection) {
     gradeSection.style.display = "none";
+  }
+
+  if (btnTogglePassword) {
+    btnTogglePassword.addEventListener("click", function () {
+      if (!passwordInput) return;
+      if (passwordInput.type == "password") {
+        passwordInput.type = "text";
+        btnTogglePassword.textContent = "🙈";
+      } else {
+        passwordInput.type = "password";
+        btnTogglePassword.textContent = "👁️";
+      }
+    });
+  }
+
+  if (btnToggleConfirmPassword) {
+    btnToggleConfirmPassword.addEventListener("click", function () {
+      if (!confirmPasswordInput) return;
+      if (confirmPasswordInput.type == "password") {
+        confirmPasswordInput.type = "text";
+        btnToggleConfirmPassword.textContent = "🙈";
+      } else {
+        confirmPasswordInput.type = "password";
+        btnToggleConfirmPassword.textContent = "👁️";
+      }
+    });
   }
 
   await loadLists();
@@ -168,12 +299,66 @@ document.addEventListener("DOMContentLoaded", async function () {
     showAlert("Could not read users.txt. Please run the project on a local server.");
   }
 
-  if (divisionSelect && areaSelect) {
+  if (userTypeSelect) {
+    userTypeSelect.addEventListener("change", function () {
+      clearFieldError("userType", "err-userType");
+      const role = userTypeSelect.value;
+      if (role == "Tutor" || role == "Student") {
+        if (gradeSection) gradeSection.style.display = "block";
+      } else {
+        if (gradeSection) gradeSection.style.display = "none";
+        if (gradeSelect) gradeSelect.value = "";
+        if (detailedGradeInput) detailedGradeInput.value = "";
+        clearFieldError("grade", "err-grade");
+        clearFieldError("detailedGrade", "err-detailedGrade");
+      }
+    });
+  }
+
+  if (fullNameInput) {
+    fullNameInput.addEventListener("input", function () {
+      clearFieldError("fullName", "err-fullName");
+    });
+  }
+
+  if (emailInput) {
+    emailInput.addEventListener("input", function () {
+      clearFieldError("email", "err-email");
+    });
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function () {
+      clearFieldError("phone", "err-phone");
+    });
+  }
+
+  if (dobInput) {
+    dobInput.addEventListener("input", function () {
+      clearFieldError("dob", "err-dob");
+    });
+    dobInput.addEventListener("change", function () {
+      clearFieldError("dob", "err-dob");
+    });
+  }
+
+  if (genderRadios) {
+    for (let i = 0; i < genderRadios.length; i++) {
+      genderRadios[i].addEventListener("change", function () {
+        clearFieldError("genderMale", "err-gender");
+      });
+    }
+  }
+
+  if (divisionSelect) {
     divisionSelect.addEventListener("change", function () {
+      clearFieldError("division", "err-division");
       const selectedDivision = divisionSelect.value;
       if (!selectedDivision) {
-        areaSelect.disabled = true;
-        areaSelect.innerHTML = '<option value="" disabled selected>Select Division First</option>';
+        if (areaSelect) {
+          areaSelect.disabled = true;
+          areaSelect.innerHTML = '<option value="" disabled selected>Select Division First</option>';
+        }
         return;
       }
 
@@ -187,32 +372,47 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
       }
 
-      if (foundAreas.length > 0) {
-        areaSelect.disabled = false;
-        for (let i = 0; i < foundAreas.length; i++) {
-          areaHtml += '<option value="' + foundAreas[i] + '">' + foundAreas[i] + '</option>';
+      if (areaSelect) {
+        if (foundAreas.length > 0) {
+          areaSelect.disabled = false;
+          for (let i = 0; i < foundAreas.length; i++) {
+            areaHtml += '<option value="' + foundAreas[i] + '">' + foundAreas[i] + '</option>';
+          }
+          areaSelect.innerHTML = areaHtml;
+        } else {
+          areaSelect.disabled = true;
         }
-        areaSelect.innerHTML = areaHtml;
-      } else {
-        areaSelect.disabled = true;
       }
     });
   }
 
-  if (userTypeSelect && gradeSection && gradeSelect && detailedGradeInput) {
-    userTypeSelect.addEventListener("change", function () {
-      const role = userTypeSelect.value;
-      if (role == "Tutor" || role == "Student") {
-        gradeSection.style.display = "block";
-        gradeSelect.required = true;
-        detailedGradeInput.required = true;
-      } else {
-        gradeSection.style.display = "none";
-        gradeSelect.required = false;
-        detailedGradeInput.required = false;
-        gradeSelect.value = "";
-        detailedGradeInput.value = "";
-      }
+  if (areaSelect) {
+    areaSelect.addEventListener("change", function () {
+      clearFieldError("area", "err-area");
+    });
+  }
+
+  if (gradeSelect) {
+    gradeSelect.addEventListener("change", function () {
+      clearFieldError("grade", "err-grade");
+    });
+  }
+
+  if (detailedGradeInput) {
+    detailedGradeInput.addEventListener("input", function () {
+      clearFieldError("detailedGrade", "err-detailedGrade");
+    });
+  }
+
+  if (passwordInput) {
+    passwordInput.addEventListener("input", function () {
+      clearFieldError("password", "err-password");
+    });
+  }
+
+  if (confirmPasswordInput) {
+    confirmPasswordInput.addEventListener("input", function () {
+      clearFieldError("confirmPassword", "err-confirmPassword");
     });
   }
 
@@ -244,20 +444,31 @@ document.addEventListener("DOMContentLoaded", async function () {
         alertBox.style.display = "none";
         alertBox.textContent = "";
       }
+      clearAllFieldErrors();
       if (gradeSection) {
         gradeSection.style.display = "none";
       }
       if (gradeSelect) {
-        gradeSelect.required = false;
         gradeSelect.value = "";
       }
       if (detailedGradeInput) {
-        detailedGradeInput.required = false;
         detailedGradeInput.value = "";
       }
       if (areaSelect) {
         areaSelect.disabled = true;
         areaSelect.innerHTML = '<option value="" disabled selected>Select Division First</option>';
+      }
+      if (passwordInput) {
+        passwordInput.type = "password";
+      }
+      if (confirmPasswordInput) {
+        confirmPasswordInput.type = "password";
+      }
+      if (btnTogglePassword) {
+        btnTogglePassword.textContent = "👁️";
+      }
+      if (btnToggleConfirmPassword) {
+        btnToggleConfirmPassword.textContent = "👁️";
       }
       let profileImgField = document.getElementById("profileImage");
       if (profileImgField) {
@@ -271,21 +482,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     registrationForm.addEventListener("submit", async function (e) {
       e.preventDefault();
-
-      let profileImgName = "../Files/Img/Profile/default.svg";
-      const profileImgInput = document.getElementById("profileImage");
-      if (profileImgInput && profileImgInput.files && profileImgInput.files.length > 0) {
-        profileImgName = "../Files/Img/Profile/" + profileImgInput.files[0].name;
-      }
+      clearAllFieldErrors();
 
       const userType = userTypeSelect ? userTypeSelect.value : "";
-      const fullName = document.getElementById("fullName").value;
-      const email = document.getElementById("email").value;
-      const phone = document.getElementById("phone").value;
-      const dob = document.getElementById("dob").value;
+      const fullName = fullNameInput ? cleanInputText(fullNameInput.value) : "";
+      const email = emailInput ? cleanInputText(emailInput.value) : "";
+      const phone = phoneInput ? cleanInputText(phoneInput.value) : "";
+      const dob = dobInput ? dobInput.value : "";
 
       let gender = "";
-      const genderRadios = document.getElementsByName("gender");
       for (let i = 0; i < genderRadios.length; i++) {
         if (genderRadios[i].checked) {
           gender = genderRadios[i].value;
@@ -296,32 +501,106 @@ document.addEventListener("DOMContentLoaded", async function () {
       const division = divisionSelect ? divisionSelect.value : "";
       const area = areaSelect ? areaSelect.value : "";
       const grade = gradeSelect ? gradeSelect.value : "";
-      const detailedGrade = detailedGradeInput ? detailedGradeInput.value : "";
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
+      const detailedGrade = detailedGradeInput ? cleanInputText(detailedGradeInput.value) : "";
+      const password = passwordInput ? passwordInput.value : "";
+      const confirmPassword = confirmPasswordInput ? confirmPasswordInput.value : "";
 
-      if (userType == "" || fullName == "" || email == "" || phone == "" || dob == "" || gender == "" || division == "" || area == "" || password == "" || confirmPassword == "") {
-        showAlert("Please fill in all required fields.");
+      let isValid = true;
+
+      if (!userType || userType == "") {
+        setFieldError("userType", "err-userType", "Select User type");
+        isValid = false;
+      }
+
+      if (fullName.length == 0) {
+        setFieldError("fullName", "err-fullName", "Enter full name");
+        isValid = false;
+      }
+
+      if (email.length == 0) {
+        setFieldError("email", "err-email", "Enter email address");
+        isValid = false;
+      } else {
+        const atIdx = email.indexOf("@");
+        const lastAtIdx = email.lastIndexOf("@");
+        const dotIdx = email.lastIndexOf(".");
+        if (atIdx <= 0 || atIdx != lastAtIdx || dotIdx <= atIdx + 1 || dotIdx >= email.length - 1) {
+          setFieldError("email", "err-email", "Enter a valid email address (must contain @ and .)");
+          isValid = false;
+        }
+      }
+
+      if (phone.length == 0) {
+        setFieldError("phone", "err-phone", "Enter phone number");
+        isValid = false;
+      } else if (phone.length != 11 || !isAllDigits(phone)) {
+        setFieldError("phone", "err-phone", "Phone number must be 11 digits and contain only numbers");
+        isValid = false;
+      }
+
+      if (!dob || dob.length == 0) {
+        setFieldError("dob", "err-dob", "Select date of birth");
+        isValid = false;
+      } else {
+        const age = calculateAge(dob);
+        if (age < 5 || age > 80) {
+          setFieldError("dob", "err-dob", "Age should be from 5 years to 80 years");
+          isValid = false;
+        }
+      }
+
+      if (!gender || gender.length == 0) {
+        setFieldError("genderMale", "err-gender", "Select gender");
+        isValid = false;
+      }
+
+      if (!division || division == "") {
+        setFieldError("division", "err-division", "Select division");
+        isValid = false;
+      }
+
+      if (!area || area == "") {
+        setFieldError("area", "err-area", "Select area");
+        isValid = false;
+      }
+
+      if (userType == "Tutor" || userType == "Student") {
+        if (!grade || grade == "") {
+          setFieldError("grade", "err-grade", "Select grade");
+          isValid = false;
+        }
+        if (detailedGrade.length == 0) {
+          setFieldError("detailedGrade", "err-detailedGrade", "Enter detailed grade");
+          isValid = false;
+        }
+      }
+
+      if (password.length == 0) {
+        setFieldError("password", "err-password", "Enter password");
+        isValid = false;
+      }
+
+      if (confirmPassword.length == 0) {
+        setFieldError("confirmPassword", "err-confirmPassword", "Enter confirm password");
+        isValid = false;
+      } else if (password.length > 0 && password != confirmPassword) {
+        setFieldError("confirmPassword", "err-confirmPassword", "Passwords do not match");
+        isValid = false;
+      }
+
+      if (!isValid) {
+        showAlert("Please resolve the highlighted errors below.", "error");
         return;
       }
 
-      if (phone.length != 11) {
-        showAlert("Phone number must be exactly 11 digits.");
-        return;
+      let profileImgName = "../Files/Img/Profile/default.svg";
+      if (profileImageInput && profileImageInput.files && profileImageInput.files.length > 0) {
+        profileImgName = "../Files/Img/Profile/" + profileImageInput.files[0].name;
       }
 
       let gradeDetailedFormatted = "N/A";
       if (userType == "Tutor" || userType == "Student") {
-        if (grade == "" || detailedGrade == "") {
-          showAlert("Please select a Grade and enter your Detailed Grade.");
-          return;
-        }
         gradeDetailedFormatted = grade + "_" + detailedGrade;
-      }
-
-      if (password != confirmPassword) {
-        showAlert("Password and Confirm Password do not match.");
-        return;
       }
 
       try {
@@ -333,11 +612,13 @@ document.addEventListener("DOMContentLoaded", async function () {
           let acc = currentEntries[i].parsed;
           if (acc) {
             if (acc.email.toLowerCase() == email.toLowerCase()) {
-              showAlert("This email address is already registered. Please use a unique email.");
+              setFieldError("email", "err-email", "This email address is already registered.");
+              showAlert("This email address is already registered. Please use a unique email.", "error");
               return;
             }
             if (acc.phone == phone) {
-              showAlert("This phone number is already registered. Please use a unique 11-digit phone number.");
+              setFieldError("phone", "err-phone", "This phone number is already registered.");
+              showAlert("This phone number is already registered. Please use a unique 11-digit phone number.", "error");
               return;
             }
           }
@@ -416,7 +697,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           }, 1000);
         }
       } catch (error) {
-        showAlert("Error accessing users.txt. Please run the project using a local server.");
+        showAlert("Error accessing users.txt. Please run the project using a local server.", "error");
       }
     });
   }

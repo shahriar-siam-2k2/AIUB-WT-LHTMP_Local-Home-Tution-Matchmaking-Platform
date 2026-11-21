@@ -32,18 +32,20 @@
           class="registration-form"
           action="../Login/login.html"
           method="get"
+          novalidate
         >
           <fieldset class="form-fieldset">
             <legend>Account Role</legend>
             <div class="form-group">
               <label for="userType">User Type <span class="req">*</span></label>
-              <select id="userType" name="userType" required>
+              <select id="userType" name="userType">
                 <option value="" disabled selected>Select User Type</option>
                 <option value="Admin">Admin</option>
                 <option value="Area Coordinator">Area Coordinator</option>
                 <option value="Tutor">Tutor</option>
                 <option value="Student">Student</option>
               </select>
+              <span class="field-error" id="err-userType"></span>
             </div>
           </fieldset>
 
@@ -84,8 +86,8 @@
                 id="fullName"
                 name="fullName"
                 placeholder="Enter your full name"
-                required
               />
+              <span class="field-error" id="err-fullName"></span>
             </div>
 
             <div class="form-row">
@@ -98,8 +100,8 @@
                   id="email"
                   name="email"
                   placeholder="example@gmail.com"
-                  required
                 />
+                <span class="field-error" id="err-email"></span>
               </div>
 
               <div class="form-group">
@@ -112,8 +114,8 @@
                   name="phone"
                   placeholder="11-digit number (e.g. 017XXXXXXXX)"
                   maxlength="11"
-                  required
                 />
+                <span class="field-error" id="err-phone"></span>
               </div>
             </div>
 
@@ -122,7 +124,8 @@
                 <label for="dob"
                   >Date of Birth <span class="req">*</span></label
                 >
-                <input type="date" id="dob" name="dob" required />
+                <input type="date" id="dob" name="dob" />
+                <span class="field-error" id="err-dob"></span>
               </div>
 
               <div class="form-group">
@@ -134,7 +137,6 @@
                       name="gender"
                       id="genderMale"
                       value="Male"
-                      required
                     />
                     <span>Male</span>
                   </label>
@@ -144,11 +146,11 @@
                       name="gender"
                       id="genderFemale"
                       value="Female"
-                      required
                     />
                     <span>Female</span>
                   </label>
                 </div>
+                <span class="field-error" id="err-gender"></span>
               </div>
             </div>
           </fieldset>
@@ -160,7 +162,7 @@
                 <label for="division"
                   >Division <span class="req">*</span></label
                 >
-                <select id="division" name="division" required>
+                <select id="division" name="division">
                   <option value="" disabled selected>Select Division</option>
                   <option value="Barisal">Barisal</option>
                   <option value="Chittagong">Chittagong</option>
@@ -171,15 +173,17 @@
                   <option value="Rangpur">Rangpur</option>
                   <option value="Sylhet">Sylhet</option>
                 </select>
+                <span class="field-error" id="err-division"></span>
               </div>
 
               <div class="form-group">
                 <label for="area">Area <span class="req">*</span></label>
-                <select id="area" name="area" required disabled>
+                <select id="area" name="area" disabled>
                   <option value="" disabled selected>
                     Select Division First
                   </option>
                 </select>
+                <span class="field-error" id="err-area"></span>
               </div>
             </div>
           </fieldset>
@@ -212,6 +216,7 @@
                   <option value="Graduate">Graduate</option>
                   <option value="PHD">PHD</option>
                 </select>
+                <span class="field-error" id="err-grade"></span>
               </div>
 
               <div class="form-group">
@@ -222,6 +227,7 @@
                   name="detailedGrade"
                   placeholder="e.g. Science / BSc. EEE, BUET"
                 />
+                <span class="field-error" id="err-detailedGrade"></span>
               </div>
             </div>
           </fieldset>
@@ -233,26 +239,46 @@
                 <label for="password"
                   >Password <span class="req">*</span></label
                 >
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Create password"
-                  required
-                />
+                <div class="password-input-wrap">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create password"
+                  />
+                  <button
+                    type="button"
+                    class="btn-toggle-password"
+                    id="btnTogglePassword"
+                    aria-label="Toggle password visibility"
+                  >
+                    👁️
+                  </button>
+                </div>
+                <span class="field-error" id="err-password"></span>
               </div>
 
               <div class="form-group">
                 <label for="confirmPassword"
                   >Confirm Password <span class="req">*</span></label
                 >
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  placeholder="Re-enter password"
-                  required
-                />
+                <div class="password-input-wrap">
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Re-enter password"
+                  />
+                  <button
+                    type="button"
+                    class="btn-toggle-password"
+                    id="btnToggleConfirmPassword"
+                    aria-label="Toggle confirm password visibility"
+                  >
+                    👁️
+                  </button>
+                </div>
+                <span class="field-error" id="err-confirmPassword"></span>
               </div>
             </div>
           </fieldset>
