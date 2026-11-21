@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Coordinator - Profile | LHTMP</title>
+    <link rel="stylesheet" href="coordinator.css" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">AC</div>
+            <h2>LHTMP</h2>
+            <p>Coordinator Portal</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Management</div>
+            <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html" class="active"><span class="nav-icon">👤</span>Profile</a>
+            <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
+            <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
+            <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
+            <a href="tutor_quality.html"><span class="nav-icon">⭐</span>Tutor Quality</a>
+            <a href="suspend_accounts.html"><span class="nav-icon">🚫</span>Suspend Accounts</a>
+            <a href="area_reports.html"><span class="nav-icon">📈</span>Area Reports</a>
+            <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../Login/login.html"><button type="button" class="btn-logout">🚪 Logout</button></a>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <h2 id="topHeaderGreeting">Welcome, Coordinator!</h2>
+                <p id="topHeaderSub">Area Coordinator &bull; Regional Operations</p>
+            </div>
+            <div class="header-right">
+                <span class="zone-badge-header" id="topHeaderZone">Zone: Regional Operations</span>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">0</span></button>
+                <img src="../Files/Img/Profile/coordinator.svg" alt="Avatar" class="user-avatar" id="topHeaderAvatar" onerror="this.src='../Files/Img/Profile/coordinator.svg'" />
+                <div class="user-info">
+                    <span id="topHeaderName">Coordinator</span>
+                    <span>Area Coordinator</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="section-block">
+            <div class="section-header">
+                <h3>Area Coordinator Profile &amp; Authority</h3>
+                <span class="badge" id="profileStatusBadge">Verified Area Coordinator</span>
+            </div>
+
+            <div class="profile-card-layout">
+                <div class="profile-summary-box">
+                    <img src="../Files/Img/Profile/coordinator.svg" alt="Profile Photo" class="profile-summary-avatar" id="profSummaryAvatar" onerror="this.src='../Files/Img/Profile/coordinator.svg'" />
+                    <div class="profile-summary-name" id="profSummaryName">Loading...</div>
+                    <div class="profile-summary-id" id="profSummaryId">ID: USR-0000</div>
+                    <div class="profile-summary-badge" id="profSummaryZone">Zone: Loading...</div>
+
+                    <div class="profile-summary-details">
+                        <div>📍 <strong class="text-bold">Territory:</strong> <span id="profDetailTerritory">Loading...</span></div>
+                        <div>📱 <strong class="text-bold">Contact:</strong> <span id="profDetailPhone">Loading...</span></div>
+                        <div>✉️ <strong class="text-bold">Email:</strong> <span id="profDetailEmail">Loading...</span></div>
+                        <div>🎂 <strong class="text-bold">Birth Date:</strong> <span id="profDetailDob">Loading...</span></div>
+                        <div>🚻 <strong class="text-bold">Gender:</strong> <span id="profDetailGender">Loading...</span></div>
+                        <div>📅 <strong class="text-bold">Appointed:</strong> <span id="profDetailDate">Loading...</span></div>
+                    </div>
+
+                    <a href="edit_profile.html" class="w-100">
+                        <button type="button" class="btn-primary w-100" id="btnSummaryEditProfile">Edit Profile</button>
+                    </a>
+                </div>
+
+                <div class="profile-content-box">
+                    <div class="profile-section-card">
+                        <div class="profile-section-title">
+                            <span>🛡️</span>
+                            <span>System Identification &amp; Operational Scope (Read-Only)</span>
+                        </div>
+                        <div class="profile-grid-2">
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">User Identifier</span>
+                                <span class="profile-field-val" id="profFieldId">Loading...</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">System Role</span>
+                                <span class="profile-field-val">Area Coordinator</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Assigned Division</span>
+                                <span class="profile-field-val" id="profFieldDivision">Loading...</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Assigned Local Area</span>
+                                <span class="profile-field-val" id="profFieldArea">Loading...</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Account Operational Status</span>
+                                <span class="profile-field-val text-success" id="profFieldStatus">Active</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Security Clearance</span>
+                                <span class="profile-field-val">Level 2 Regional Authority</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section-card">
+                        <div class="profile-section-title">
+                            <span>👤</span>
+                            <span>Personal Information</span>
+                        </div>
+                        <div class="profile-grid-2">
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Full Name</span>
+                                <span class="profile-field-val" id="profFieldFullName">Loading...</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Email Address</span>
+                                <span class="profile-field-val" id="profFieldEmail">Loading...</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Phone Number</span>
+                                <span class="profile-field-val" id="profFieldPhone">Loading...</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Date of Birth</span>
+                                <span class="profile-field-val" id="profFieldDob">Loading...</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Gender</span>
+                                <span class="profile-field-val" id="profFieldGender">Loading...</span>
+                            </div>
+                            <div class="profile-field-item">
+                                <span class="profile-field-label">Account Joined Date</span>
+                                <span class="profile-field-val" id="profFieldDate">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-rules-box">
+                        <h4>Platform Policy: Editable vs Protected Coordinator Attributes</h4>
+                        <ul class="profile-rules-list">
+                            <li>
+                                <span class="badge-allowed">Allowed</span>
+                                <span><strong class="text-bold">What Coordinator Can Change:</strong> Full Name, Contact Phone, Date of Birth, Gender, Account Password, and Profile Photo.</span>
+                            </li>
+                            <li>
+                                <span class="badge-locked">Protected</span>
+                                <span><strong class="text-bold">What Coordinator Cannot Change:</strong> User ID, System Role (Area Coordinator), Account Status (Active/Suspended), and Assigned Territory (Division &amp; Area). These are strictly managed by Platform Administration.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="table-actions">
+                        <a href="edit_profile.html">
+                            <button type="button" class="btn-primary" id="btnMainEditProfile">Edit Coordinator Profile</button>
+                        </a>
+                        <a href="coordinator.html">
+                            <button type="button" class="btn-secondary">Return to Dashboard</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer-main">
+            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        </footer>
+    </div>
+
+    <div id="simpleModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Helper JS/readWrite.js"></script>
+    <script src="coordinator.js"></script>
+</body>
+</html>
