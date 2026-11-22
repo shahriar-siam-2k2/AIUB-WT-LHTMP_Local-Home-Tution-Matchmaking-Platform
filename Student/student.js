@@ -10,6 +10,24 @@ document.addEventListener("DOMContentLoaded", function () {
     return false;
   }
 
+  function cleanInputText(val) {
+    if (val === null || val === undefined) return "";
+    let str = "" + val;
+    let start = 0;
+    while (start < str.length && (str.charAt(start) == " " || str.charAt(start) == "\t" || str.charAt(start) == "\r" || str.charAt(start) == "\n")) {
+      start++;
+    }
+    let end = str.length - 1;
+    while (end >= start && (str.charAt(end) == " " || str.charAt(end) == "\t" || str.charAt(end) == "\r" || str.charAt(end) == "\n")) {
+      end--;
+    }
+    let res = "";
+    for (let i = start; i <= end; i++) {
+      res += str.charAt(i);
+    }
+    return res;
+  }
+
   function setError(inpId, errId, msg) {
     const inp = document.getElementById(inpId);
     const err = document.getElementById(errId);
@@ -201,103 +219,71 @@ document.addEventListener("DOMContentLoaded", function () {
   setupPagination("studyMaterialsBody", "btnPrevMaterials", "btnPage1Materials", "btnPage2Materials", "btnNextMaterials");
   setupPagination("reviewList", "btnPrevReviews", "btnPage1Reviews", "btnPage2Reviews", "btnNextReviews", "review-item-card");
 
-  const btnSearchTutors = document.getElementById("btnSearchTutors");
-  if (btnSearchTutors) {
-    btnSearchTutors.addEventListener("click", function () {
-      alert("Tutor directory filtered based on search criteria.");
-    });
-  }
+  const allButtons = document.getElementsByTagName("button");
+  for (let i = 0; i < allButtons.length; i++) {
+    const btn = allButtons[i];
+    const bId = btn.id || "";
+    const bType = btn.type || "";
+    const bText = cleanInputText(btn.innerText || btn.textContent || "");
 
-  const btnResetTutors = document.getElementById("btnResetTutors");
-  if (btnResetTutors) {
-    btnResetTutors.addEventListener("click", function () {
-      const searchTutor = document.getElementById("searchTutorInput");
-      const filterSubject = document.getElementById("filterSubjectSelect");
-      const filterRate = document.getElementById("filterRateSelect");
-      if (searchTutor) searchTutor.value = "";
-      if (filterSubject) filterSubject.value = "";
-      if (filterRate) filterRate.value = "";
-      alert("Tutor search filters reset to default.");
-    });
-  }
-
-  const btnSearchMaterials = document.getElementById("btnSearchMaterials");
-  if (btnSearchMaterials) {
-    btnSearchMaterials.addEventListener("click", function () {
-      alert("Study materials filtered based on search criteria.");
-    });
-  }
-
-  const btnResetMaterials = document.getElementById("btnResetMaterials");
-  if (btnResetMaterials) {
-    btnResetMaterials.addEventListener("click", function () {
-      const searchMat = document.getElementById("searchMaterialsInput");
-      const filterMat = document.getElementById("filterMaterialsSubject");
-      if (searchMat) searchMat.value = "";
-      if (filterMat) filterMat.value = "";
-      alert("Study material filters reset to default.");
-    });
-  }
-
-  const btnRequestNotes = document.getElementById("btnRequestNotes");
-  if (btnRequestNotes) {
-    btnRequestNotes.addEventListener("click", function () {
-      alert("Study notes request forwarded to your subject tutors.");
-    });
-  }
-
-  const btnPrintRoutine = document.getElementById("btnPrintRoutine");
-  if (btnPrintRoutine) {
-    btnPrintRoutine.addEventListener("click", function () {
-      alert("Weekly timetable routine sent to printer.");
-    });
-  }
-
-  const btnDownloadID = document.getElementById("btnDownloadID");
-  if (btnDownloadID) {
-    btnDownloadID.addEventListener("click", function () {
-      alert("Student ID card generated and downloaded.");
-    });
-  }
-
-  function attachContainerAlerts(containerId, matchText, alertMsg) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    const btns = container.getElementsByTagName("button");
-    for (let i = 0; i < btns.length; i++) {
-      const b = btns[i];
-      const txt = b.innerText || b.textContent || "";
-      if (txt.indexOf(matchText) != -1) {
-        b.addEventListener("click", function () {
-          alert(alertMsg);
-        });
-      }
+    if (bId == "btnLogout" || bId == "btnNotification" || bId == "btnNotif" || bId == "btnModalClose" || bId == "btnModalOk") {
+      continue;
     }
+    if (bId.indexOf("btnPage") != -1 || bId.indexOf("btnPrev") != -1 || bId.indexOf("btnNext") != -1) {
+      continue;
+    }
+    if (bType == "submit" || bType == "reset") {
+      continue;
+    }
+
+    btn.addEventListener("click", function () {
+      if (bText.indexOf("Book Session") != -1) {
+        alert("Session booking request submitted successfully.");
+      } else if (bText.indexOf("Join Class") != -1 || bText.indexOf("Class Link") != -1) {
+        alert("Connecting to live interactive tuition class...");
+      } else if (bText.indexOf("Reschedule") != -1) {
+        alert("Session reschedule request submitted to tutor.");
+      } else if (bText.indexOf("Download") != -1) {
+        alert("Study material resource PDF downloaded successfully.");
+      } else if (bText.indexOf("Start Test") != -1) {
+        alert("Starting weekly preparation assessment test...");
+      } else if (bText.indexOf("Details") != -1) {
+        alert("Viewing tuition session details.");
+      } else if (bText.indexOf("Profile Details") != -1 || bText.indexOf("Profile") != -1) {
+        alert("Viewing tutor academic profile details.");
+      } else if (bText.indexOf("Edit Review") != -1) {
+        alert("Review opened for editing.");
+      } else if (bText.indexOf("Book New") != -1) {
+        alert("Opening session booking form...");
+      } else if (bText.indexOf("Find More") != -1 || bText.indexOf("View All") != -1) {
+        alert("Opening complete directory listing...");
+      } else if (bId == "btnSearchTutors" || bId == "btnSearchMaterials") {
+        alert("Directory filtered based on search criteria.");
+      } else if (bId == "btnResetTutors") {
+        const searchTutor = document.getElementById("searchTutorInput");
+        const filterSubject = document.getElementById("filterSubjectSelect");
+        const filterRate = document.getElementById("filterRateSelect");
+        if (searchTutor) searchTutor.value = "";
+        if (filterSubject) filterSubject.value = "";
+        if (filterRate) filterRate.value = "";
+        alert("Tutor search filters reset to default.");
+      } else if (bId == "btnResetMaterials") {
+        const searchMat = document.getElementById("searchMaterialsInput");
+        const filterMat = document.getElementById("filterMaterialsSubject");
+        if (searchMat) searchMat.value = "";
+        if (filterMat) filterMat.value = "";
+        alert("Study material filters reset to default.");
+      } else if (bId == "btnRequestNotes") {
+        alert("Study notes request forwarded to your subject tutors.");
+      } else if (bId == "btnPrintRoutine") {
+        alert("Weekly timetable routine sent to printer.");
+      } else if (bId == "btnDownloadID") {
+        alert("Student ID card generated and downloaded.");
+      } else {
+        alert("Action completed: " + bText);
+      }
+    });
   }
-
-  attachContainerAlerts("dashUpcomingSessionsBody", "Join Class", "Connecting to live interactive tuition class...");
-  attachContainerAlerts("dashUpcomingSessionsBody", "Details", "Viewing tuition session details.");
-  attachContainerAlerts("dashUpcomingSessionsBody", "Reschedule", "Session reschedule request submitted to tutor.");
-
-  attachContainerAlerts("dashFeaturedTutorsGrid", "Book Session", "Session booking request submitted successfully.");
-
-  attachContainerAlerts("dashStudyMaterialsBody", "Download", "Study material resource PDF downloaded successfully.");
-
-  attachContainerAlerts("findTutorsGrid", "Book Session", "Session booking request submitted successfully.");
-
-  attachContainerAlerts("upcomingSessionsBody", "Join Class", "Connecting to live interactive tuition class...");
-  attachContainerAlerts("upcomingSessionsBody", "Details", "Viewing tuition session details.");
-  attachContainerAlerts("upcomingSessionsBody", "Reschedule", "Session reschedule request submitted to tutor.");
-
-  attachContainerAlerts("pastSessionsBody", "Details", "Viewing tuition session details.");
-
-  attachContainerAlerts("studyMaterialsBody", "Download", "Study material resource PDF downloaded successfully.");
-
-  attachContainerAlerts("scheduleGridContainer", "Class Link", "Connecting to live interactive tuition class...");
-  attachContainerAlerts("scheduleGridContainer", "Details", "Viewing scheduled session details.");
-  attachContainerAlerts("scheduleGridContainer", "Start Test", "Starting weekly preparation assessment test...");
-
-  attachContainerAlerts("reviewList", "Edit Review", "Review opened for editing.");
 
   attachClearListener("selectTutor", "err-selectTutor");
   attachClearListener("ratingStars", "err-ratingStars");
