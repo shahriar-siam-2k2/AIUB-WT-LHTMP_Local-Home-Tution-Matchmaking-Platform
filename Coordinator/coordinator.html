@@ -9,13 +9,14 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">AC</div>
-            <h2>LHTMP</h2>
-            <p>Coordinator Portal</p>
-        </div>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Coordinator Portal</h2>
+        <p>Area Operations</p>
+      </div>
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html" class="active"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,24 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
-        </div>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
+      </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
-                <h2>Welcome, Razin!</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <h2>Welcome, Tanbeen!</h2>
+                <p>Area Coordinator • Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
                 <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">3</span></button>
+                <img src="../Files/Img/Profile/default.svg" alt="Coordinator" class="header-user-img" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span>Tanbeen</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -73,39 +76,50 @@
             <div class="section-header">
                 <h3>Quick Actions</h3>
             </div>
-            <div class="quick-actions-grid">
-                <button type="button" class="btn-quick-action" onclick="window.location.href='verify_tutors.html'">
-                    <span class="action-icon">📜</span>
-                    <span>Verify Credentials</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='approve_profiles.html'">
-                    <span class="action-icon">✅</span>
-                    <span>Approve Profiles</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='dispute_resolution.html'">
-                    <span class="action-icon">⚖️</span>
-                    <span>Resolve Disputes</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='tutor_quality.html'">
-                    <span class="action-icon">⭐</span>
-                    <span>Monitor Quality</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='suspend_accounts.html'">
-                    <span class="action-icon">🚫</span>
-                    <span>Suspend Accounts</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='area_reports.html'">
-                    <span class="action-icon">📈</span>
-                    <span>Area Reports</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='broadcast_alert.html'">
-                    <span class="action-icon">📢</span>
-                    <span>Broadcast Alert</span>
-                </button>
-                <button type="button" class="btn-quick-action" onclick="window.location.href='../Login/login.html'">
-                    <span class="action-icon">🚪</span>
-                    <span>Logout Session</span>
-                </button>
+            <div class="quick-actions-grid quick-actions-centered">
+                <a href="verify_tutors.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">📜</span>
+                        <span>Verify Credentials</span>
+                    </button>
+                </a>
+                <a href="approve_profiles.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">✅</span>
+                        <span>Approve Profiles</span>
+                    </button>
+                </a>
+                <a href="dispute_resolution.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">⚖️</span>
+                        <span>Resolve Disputes</span>
+                    </button>
+                </a>
+                <a href="tutor_quality.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">⭐</span>
+                        <span>Monitor Quality</span>
+                    </button>
+                </a>
+                <a href="suspend_accounts.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">🚫</span>
+                        <span>Suspend Accounts</span>
+                    </button>
+                </a>
+                <a href="area_reports.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">📈</span>
+                        <span>Area Reports</span>
+                    </button>
+                </a>
+                <a href="broadcast_alert.html">
+                    <button type="button" class="btn-quick-action">
+                        <span class="action-icon">📢</span>
+                        <span>Broadcast Alert</span>
+                    </button>
+                </a>
+                
             </div>
         </div>
 
@@ -171,7 +185,7 @@
                     <tr>
                         <td><strong>Nowrin Sultana</strong></td>
                         <td>Brac University</td>
-                        <td>English Language &amp; Literature</td>
+                        <td>English Language and Literature</td>
                         <td><span class="status-badge pending">Documents Uploaded</span></td>
                         <td>23 Oct 2026</td>
                         <td>
@@ -237,8 +251,44 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Coordinator Notifications</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Credential Verification Request</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Erona Akhtar submitted academic credentials for Dhaka - Mirpur Zone review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Dispute Case Mediation Docket</strong>
+              <span class="modal-notif-meta">1h ago</span>
+            </div>
+            <p class="modal-notif-meta">Student Fatema Begum filed a tuition fee inquiry regarding case DISP-2026-01.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Area Performance Audit</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Regional Mirpur zone matching SLA reached 96.4% target fulfillment.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="coordinator.js"></script>
 </body>
 </html>

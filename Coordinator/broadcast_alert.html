@@ -9,13 +9,14 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">AC</div>
-            <h2>LHTMP</h2>
-            <p>Coordinator Portal</p>
-        </div>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Coordinator Portal</h2>
+        <p>Area Operations</p>
+      </div>
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,24 @@
             <a href="broadcast_alert.html" class="active"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
-        </div>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
+      </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
                 <h2>Broadcast Local Alert</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <p>Area Coordinator • Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
                 <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">3</span></button>
+                <img src="../Files/Img/Profile/default.svg" alt="Coordinator" class="header-user-img" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span>Tanbeen</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -60,7 +63,7 @@
             <div class="stat-card" data-icon="👥">
                 <div class="stat-label">Potential Zone Reach</div>
                 <div class="stat-value">142</div>
-                <div class="stat-sub">Tutors &amp; students</div>
+                <div class="stat-sub">Tutors and students</div>
             </div>
             <div class="stat-card" data-icon="👁️">
                 <div class="stat-label">Avg Read Rate</div>
@@ -73,40 +76,49 @@
             <div class="section-header">
                 <h3>Announcement Message Composer</h3>
             </div>
-            <form class="form-body" onsubmit="event.preventDefault(); alert('Zone alert dispatched successfully to target audience in Dhaka - Mirpur zone.'); this.reset();">
+            <div id="broadcastAlertBox" class="alert-box"></div>
+            <form id="broadcastAlertForm" class="form-body" novalidate>
                 <div class="form-grid">
                     <div class="form-group-custom">
-                        <label for="target-audience">Target Audience</label>
-                        <select id="target-audience" name="target_audience" required>
-                            <option value="all">All Users in Dhaka - Mirpur Zone (112)</option>
+                        <label for="target-audience">Target Audience <span class="req">*</span></label>
+                        <select id="target-audience" name="target_audience">
+                            <option value="">Select Target Audience</option>
+                            <option value="all" selected>All Users in Dhaka - Mirpur Zone (112)</option>
                             <option value="tutors">Registered Tutors Only (23)</option>
                             <option value="students">Enrolled Students Only (89)</option>
-                            <option value="hsc_tutors">High School &amp; HSC Tutors (14)</option>
+                            <option value="hsc_tutors">High School and HSC Tutors (14)</option>
                         </select>
+                        <span class="field-error" id="err-target-audience"></span>
                     </div>
                     <div class="form-group-custom">
-                        <label for="alert-priority">Alert Priority</label>
-                        <select id="alert-priority" name="alert_priority" required>
-                            <option value="normal">Normal Announcement (Standard notice)</option>
+                        <label for="alert-priority">Alert Priority <span class="req">*</span></label>
+                        <select id="alert-priority" name="alert_priority">
+                            <option value="">Select Alert Priority</option>
+                            <option value="normal" selected>Normal Announcement (Standard notice)</option>
                             <option value="important">Important Advisory (Highlighted banner)</option>
-                            <option value="urgent">Urgent / Emergency (Push notification &amp; SMS)</option>
+                            <option value="urgent">Urgent / Emergency (Push notification and SMS)</option>
                         </select>
+                        <span class="field-error" id="err-alert-priority"></span>
                     </div>
                     <div class="form-group-custom">
-                        <label for="alert-title">Subject / Title</label>
-                        <input type="text" id="alert-title" name="alert_title" placeholder="e.g. Weather Advisory: Heavy rain schedule adjustments" required />
+                        <label for="alert-title">Subject / Title <span class="req">*</span></label>
+                        <input type="text" id="alert-title" name="alert_title" placeholder="e.g. Weather Advisory: Heavy rain schedule adjustments" />
+                        <span class="field-error" id="err-alert-title"></span>
                     </div>
                     <div class="form-group-custom">
-                        <label for="delivery-channel">Delivery Channel</label>
-                        <select id="delivery-channel" name="delivery_channel" required>
-                            <option value="in_app_sms">In-App Notice &amp; SMS Notification</option>
+                        <label for="delivery-channel">Delivery Channel <span class="req">*</span></label>
+                        <select id="delivery-channel" name="delivery_channel">
+                            <option value="">Select Delivery Channel</option>
+                            <option value="in_app_sms" selected>In-App Notice and SMS Notification</option>
                             <option value="in_app">In-App Dashboard Banner Only</option>
                             <option value="sms_only">Direct SMS Only</option>
                         </select>
+                        <span class="field-error" id="err-delivery-channel"></span>
                     </div>
                     <div class="form-group-custom form-grid-full">
-                        <label for="alert-message">Announcement Message Body</label>
-                        <textarea id="alert-message" name="alert_message" rows="5" placeholder="Type your local zone alert message clearly. Include specific area sectors if applicable..." required></textarea>
+                        <label for="alert-message">Announcement Message Body <span class="req">*</span></label>
+                        <textarea id="alert-message" name="alert_message" rows="5" placeholder="Type your local zone alert message clearly. Include specific area sectors if applicable..."></textarea>
+                        <span class="field-error" id="err-alert-message"></span>
                     </div>
                 </div>
                 <div class="table-actions">
@@ -118,16 +130,16 @@
 
         <div class="section-block">
             <div class="section-header">
-                <h3>Past Broadcast Announcements &amp; Delivery Log</h3>
-                <button type="button" class="btn-secondary" onclick="alert('Refreshing broadcast log...')">🔄 Refresh Log</button>
+                <h3>Past Broadcast Announcements and Delivery Log</h3>
+                <button type="button" class="btn-secondary" id="btnRefreshBroadcast">🔄 Refresh Log</button>
             </div>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Broadcast ID &amp; Subject</th>
+                        <th>Broadcast ID and Subject</th>
                         <th>Target Audience</th>
                         <th>Priority</th>
-                        <th>Sent Date &amp; Time</th>
+                        <th>Sent Date and Time</th>
                         <th>Delivery Status</th>
                         <th>Sent By</th>
                         <th>Actions</th>
@@ -136,8 +148,8 @@
                 <tbody>
                     <tr>
                         <td>
-                            <strong>Severe Weather &amp; Waterlogging Advisory</strong><br />
-                            <small style="color: #6b7280;">ID: BCAST-2026-08 &bull; Mirpur-10 Sector</small>
+                            <strong>Severe Weather and Waterlogging Advisory</strong><br />
+                            <small class="text-muted">ID: BCAST-2026-08 • Mirpur-10 Sector</small>
                         </td>
                         <td>All Zone Users (142)</td>
                         <td><span class="status-badge suspended">Urgent</span></td>
@@ -154,7 +166,7 @@
                     <tr>
                         <td>
                             <strong>Monthly Honorarium Settlement Deadline Reminder</strong><br />
-                            <small style="color: #6b7280;">ID: BCAST-2026-07 &bull; Escrow System</small>
+                            <small class="text-muted">ID: BCAST-2026-07 • Escrow System</small>
                         </td>
                         <td>Students Only (89)</td>
                         <td><span class="status-badge pending">Important</span></td>
@@ -170,9 +182,9 @@
                     <tr>
                         <td>
                             <strong>HSC Final Exam Preparation Study Guidelines</strong><br />
-                            <small style="color: #6b7280;">ID: BCAST-2026-06 &bull; Academic Board</small>
+                            <small class="text-muted">ID: BCAST-2026-06 • Academic Board</small>
                         </td>
-                        <td>Tutors &amp; Students (112)</td>
+                        <td>Tutors and Students (112)</td>
                         <td><span class="status-badge active">Normal</span></td>
                         <td>18 Oct 2026, 02:15 PM</td>
                         <td><span class="status-badge verified">Delivered (94%)</span></td>
@@ -185,8 +197,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Platform Escrow Security &amp; Safe Payment Policy</strong><br />
-                            <small style="color: #6b7280;">ID: BCAST-2026-05 &bull; Policy Update</small>
+                            <strong>Platform Escrow Security and Safe Payment Policy</strong><br />
+                            <small class="text-muted">ID: BCAST-2026-05 • Policy Update</small>
                         </td>
                         <td>Zone Tutors (23)</td>
                         <td><span class="status-badge pending">Important</span></td>
@@ -201,8 +213,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Welcome &amp; Orientation for New Verified Tutors</strong><br />
-                            <small style="color: #6b7280;">ID: BCAST-2026-04 &bull; Community</small>
+                            <strong>Welcome and Orientation for New Verified Tutors</strong><br />
+                            <small class="text-muted">ID: BCAST-2026-04 • Community</small>
                         </td>
                         <td>New Tutors (6)</td>
                         <td><span class="status-badge active">Normal</span></td>
@@ -220,8 +232,44 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Coordinator Notifications</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Credential Verification Request</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Erona Akhtar submitted academic credentials for Dhaka - Mirpur Zone review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Dispute Case Mediation Docket</strong>
+              <span class="modal-notif-meta">1h ago</span>
+            </div>
+            <p class="modal-notif-meta">Student Fatema Begum filed a tuition fee inquiry regarding case DISP-2026-01.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Area Performance Audit</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Regional Mirpur zone matching SLA reached 96.4% target fulfillment.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="coordinator.js"></script>
 </body>
 </html>

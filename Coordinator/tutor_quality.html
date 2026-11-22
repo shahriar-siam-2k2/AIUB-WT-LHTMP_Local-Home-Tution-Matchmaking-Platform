@@ -9,13 +9,14 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">AC</div>
-            <h2>LHTMP</h2>
-            <p>Coordinator Portal</p>
-        </div>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Coordinator Portal</h2>
+        <p>Area Operations</p>
+      </div>
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,24 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
-        </div>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
+      </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
                 <h2>Tutor Quality Monitoring</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <p>Area Coordinator • Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
                 <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">3</span></button>
+                <img src="../Files/Img/Profile/default.svg" alt="Coordinator" class="header-user-img" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span>Tanbeen</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -58,7 +61,7 @@
                 <div class="stat-sub">Top rated tier</div>
             </div>
             <div class="stat-card" data-icon="⚠️">
-                <div class="stat-label">Quality Flagged (&lt;4.0)</div>
+                <div class="stat-label">Quality Flagged (<4.0)</div>
                 <div class="stat-value">2</div>
                 <div class="stat-sub">Audit intervention needed</div>
             </div>
@@ -71,13 +74,13 @@
 
         <div class="section-block">
             <div class="section-header">
-                <h3>Tutor Performance, Ratings &amp; Student Feedback Summary</h3>
+                <h3>Tutor Performance, Ratings and Student Feedback Summary</h3>
                 <button type="button" class="btn-primary" onclick="alert('Exporting Tutor Quality Audit Report...')">Export Quality Audit</button>
             </div>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Tutor &amp; ID</th>
+                        <th>Tutor and ID</th>
                         <th>Subjects</th>
                         <th>Sessions Completed</th>
                         <th>Rating</th>
@@ -91,13 +94,13 @@
                     <tr>
                         <td>
                             <strong>Tasin Mahmud</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-398</small>
+                            <small class="text-muted">ID: TUT-398</small>
                         </td>
-                        <td>Higher Math &amp; Physics</td>
+                        <td>Higher Math and Physics</td>
                         <td>42 Sessions</td>
                         <td><strong>4.9 ⭐</strong></td>
                         <td>98.5%</td>
-                        <td>&ldquo;Outstanding conceptual clarity; student scored highest in college exam.&rdquo;</td>
+                        <td>"Outstanding conceptual clarity; student scored highest in college exam."</td>
                         <td><span class="status-badge verified">Exemplary</span></td>
                         <td>
                             <div class="table-actions">
@@ -109,13 +112,13 @@
                     <tr>
                         <td>
                             <strong>Rodela Chowdhury</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-395</small>
+                            <small class="text-muted">ID: TUT-395</small>
                         </td>
                         <td>English Language (O/A Level)</td>
                         <td>36 Sessions</td>
                         <td><strong>4.8 ⭐</strong></td>
                         <td>97.0%</td>
-                        <td>&ldquo;Patient mentor, extremely disciplined with timings and homework tracking.&rdquo;</td>
+                        <td>"Patient mentor, extremely disciplined with timings and homework tracking."</td>
                         <td><span class="status-badge verified">Exemplary</span></td>
                         <td>
                             <div class="table-actions">
@@ -127,13 +130,13 @@
                     <tr>
                         <td>
                             <strong>Jerin Sultana</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-380</small>
+                            <small class="text-muted">ID: TUT-380</small>
                         </td>
-                        <td>Chemistry &amp; Biology</td>
+                        <td>Chemistry and Biology</td>
                         <td>29 Sessions</td>
                         <td><strong>4.4 ⭐</strong></td>
                         <td>92.0%</td>
-                        <td>&ldquo;Great subject depth, but requested weekend rescheduling twice this month.&rdquo;</td>
+                        <td>"Great subject depth, but requested weekend rescheduling twice this month."</td>
                         <td><span class="status-badge active">Good Standing</span></td>
                         <td>
                             <div class="table-actions">
@@ -145,13 +148,13 @@
                     <tr>
                         <td>
                             <strong>Mitu Rani</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-375</small>
+                            <small class="text-muted">ID: TUT-375</small>
                         </td>
                         <td>General Mathematics</td>
                         <td>22 Sessions</td>
                         <td><strong>4.1 ⭐</strong></td>
                         <td>88.0%</td>
-                        <td>&ldquo;Good teacher, but needs faster pace for SSC test paper practice.&rdquo;</td>
+                        <td>"Good teacher, but needs faster pace for SSC test paper practice."</td>
                         <td><span class="status-badge pending">Monitored</span></td>
                         <td>
                             <div class="table-actions">
@@ -163,13 +166,13 @@
                     <tr>
                         <td>
                             <strong>Tariqul Islam</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-342</small>
+                            <small class="text-muted">ID: TUT-342</small>
                         </td>
-                        <td>ICT &amp; Computer Science</td>
+                        <td>ICT and Computer Science</td>
                         <td>15 Sessions</td>
-                        <td><strong style="color: #ef4444;">3.7 ⭐</strong></td>
+                        <td><strong class="text-danger">3.7 ⭐</strong></td>
                         <td>78.5%</td>
-                        <td>&ldquo;Late arrivals reported by students; 2 sessions rescheduled at last minute.&rdquo;</td>
+                        <td>"Late arrivals reported by students; 2 sessions rescheduled at last minute."</td>
                         <td><span class="status-badge rejected">Audit Flagged</span></td>
                         <td>
                             <div class="table-actions">
@@ -181,13 +184,13 @@
                     <tr>
                         <td>
                             <strong>Fahad Al Mamun</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-331</small>
+                            <small class="text-muted">ID: TUT-331</small>
                         </td>
                         <td>Physics (HSC)</td>
                         <td>18 Sessions</td>
-                        <td><strong style="color: #ef4444;">3.9 ⭐</strong></td>
+                        <td><strong class="text-danger">3.9 ⭐</strong></td>
                         <td>81.0%</td>
-                        <td>&ldquo;Teaching pace is rushed; student needed additional explanations on mechanics.&rdquo;</td>
+                        <td>"Teaching pace is rushed; student needed additional explanations on mechanics."</td>
                         <td><span class="status-badge rejected">Audit Flagged</span></td>
                         <td>
                             <div class="table-actions">
@@ -201,8 +204,44 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Coordinator Notifications</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Credential Verification Request</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Erona Akhtar submitted academic credentials for Dhaka - Mirpur Zone review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Dispute Case Mediation Docket</strong>
+              <span class="modal-notif-meta">1h ago</span>
+            </div>
+            <p class="modal-notif-meta">Student Fatema Begum filed a tuition fee inquiry regarding case DISP-2026-01.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Area Performance Audit</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Regional Mirpur zone matching SLA reached 96.4% target fulfillment.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="coordinator.js"></script>
 </body>
 </html>

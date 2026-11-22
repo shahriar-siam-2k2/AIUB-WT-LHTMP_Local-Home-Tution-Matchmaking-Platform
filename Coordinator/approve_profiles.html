@@ -9,13 +9,14 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">AC</div>
-            <h2>LHTMP</h2>
-            <p>Coordinator Portal</p>
-        </div>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Coordinator Portal</h2>
+        <p>Area Operations</p>
+      </div>
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html" class="active"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,24 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
-        </div>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
+      </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
                 <h2>Approve Tutor Profiles</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <p>Area Coordinator • Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
                 <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">3</span></button>
+                <img src="../Files/Img/Profile/default.svg" alt="Coordinator" class="header-user-img" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span>Tanbeen</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -62,11 +65,6 @@
                 <div class="stat-value">3</div>
                 <div class="stat-sub">Awaiting tutor updates</div>
             </div>
-            <div class="stat-card" data-icon="⚡">
-                <div class="stat-label">Avg Review Speed</div>
-                <div class="stat-value">2.1h</div>
-                <div class="stat-sub">Fastest turnaround zone</div>
-            </div>
         </div>
 
         <div class="section-block">
@@ -77,11 +75,11 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Profile &amp; Tutor</th>
-                        <th>Subjects &amp; Levels</th>
+                        <th>Profile and Tutor</th>
+                        <th>Subjects and Levels</th>
                         <th>Preferred Coverage Areas</th>
                         <th>Expected Honorarium</th>
-                        <th>Bio &amp; Completeness</th>
+                        <th>Bio and Completeness</th>
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
@@ -90,12 +88,12 @@
                     <tr>
                         <td>
                             <strong>Farhan Ahmed</strong><br />
-                            <small style="color: #6b7280;">ID: PRF-410 | Male</small>
+                            <small class="text-muted">ID: PRF-410 | Male</small>
                         </td>
-                        <td>Mathematics &amp; Higher Math<br /><small style="color: #6b7280;">SSC / HSC (Bangla Medium)</small></td>
+                        <td>Mathematics and Higher Math<br /><small class="text-muted">SSC / HSC (Bangla Medium)</small></td>
                         <td>Mirpur-1, Mirpur-2, Mirpur-10</td>
                         <td><strong>৳6,000</strong> / month</td>
-                        <td>100% Complete<br /><small style="color: #10b981;">Bio &amp; Schedule ready</small></td>
+                        <td>100% Complete<br /><small class="text-success">Bio and Schedule ready</small></td>
                         <td><span class="status-badge pending">Awaiting Clearance</span></td>
                         <td>
                             <div class="table-actions">
@@ -108,12 +106,12 @@
                     <tr>
                         <td>
                             <strong>Sadia Rahman</strong><br />
-                            <small style="color: #6b7280;">ID: PRF-411 | Female</small>
+                            <small class="text-muted">ID: PRF-411 | Female</small>
                         </td>
-                        <td>Physics &amp; Chemistry<br /><small style="color: #6b7280;">HSC &amp; Pre-Medical</small></td>
+                        <td>Physics and Chemistry<br /><small class="text-muted">HSC and Pre-Medical</small></td>
                         <td>Mirpur-11, Pallabi, Mirpur-12</td>
                         <td><strong>৳7,000</strong> / month</td>
-                        <td>95% Complete<br /><small style="color: #10b981;">Strong academic intro</small></td>
+                        <td>95% Complete<br /><small class="text-success">Strong academic intro</small></td>
                         <td><span class="status-badge pending">Awaiting Clearance</span></td>
                         <td>
                             <div class="table-actions">
@@ -126,12 +124,12 @@
                     <tr>
                         <td>
                             <strong>Nafis Iqbal</strong><br />
-                            <small style="color: #6b7280;">ID: PRF-412 | Male</small>
+                            <small class="text-muted">ID: PRF-412 | Male</small>
                         </td>
-                        <td>ICT &amp; Computer Science<br /><small style="color: #6b7280;">Class 11-12 &amp; Diploma</small></td>
+                        <td>ICT and Computer Science<br /><small class="text-muted">Class 11-12 and Diploma</small></td>
                         <td>Mirpur-10, Kazipara, Shewrapara</td>
                         <td><strong>৳5,500</strong> / month</td>
-                        <td>100% Complete<br /><small style="color: #10b981;">Syllabus outline attached</small></td>
+                        <td>100% Complete<br /><small class="text-success">Syllabus outline attached</small></td>
                         <td><span class="status-badge pending">Awaiting Clearance</span></td>
                         <td>
                             <div class="table-actions">
@@ -144,12 +142,12 @@
                     <tr>
                         <td>
                             <strong>Nusrat Jahan</strong><br />
-                            <small style="color: #6b7280;">ID: PRF-413 | Female</small>
+                            <small class="text-muted">ID: PRF-413 | Female</small>
                         </td>
-                        <td>English &amp; General Science<br /><small style="color: #6b7280;">Class 6-8 (English Version)</small></td>
+                        <td>English and General Science<br /><small class="text-muted">Class 6-8 (English Version)</small></td>
                         <td>Mirpur DOHS, Mirpur-12</td>
                         <td><strong>৳5,000</strong> / month</td>
-                        <td>90% Complete<br /><small style="color: #f59e0b;">Photo requires adjustment</small></td>
+                        <td>90% Complete<br /><small class="text-warning">Photo requires adjustment</small></td>
                         <td><span class="status-badge pending">Awaiting Clearance</span></td>
                         <td>
                             <div class="table-actions">
@@ -162,12 +160,12 @@
                     <tr>
                         <td>
                             <strong>Shakil Khan</strong><br />
-                            <small style="color: #6b7280;">ID: PRF-414 | Male</small>
+                            <small class="text-muted">ID: PRF-414 | Male</small>
                         </td>
-                        <td>Bangla, History &amp; Social Studies<br /><small style="color: #6b7280;">SSC Candidates</small></td>
+                        <td>Bangla, History and Social Studies<br /><small class="text-muted">SSC Candidates</small></td>
                         <td>Mirpur-6, Mirpur-7</td>
                         <td><strong>৳4,500</strong> / month</td>
-                        <td>100% Complete<br /><small style="color: #10b981;">Complete profile</small></td>
+                        <td>100% Complete<br /><small class="text-success">Complete profile</small></td>
                         <td><span class="status-badge pending">Awaiting Clearance</span></td>
                         <td>
                             <div class="table-actions">
@@ -180,12 +178,12 @@
                     <tr>
                         <td>
                             <strong>Tasin Mahmud</strong><br />
-                            <small style="color: #6b7280;">ID: PRF-398 | Male</small>
+                            <small class="text-muted">ID: PRF-398 | Male</small>
                         </td>
-                        <td>Higher Mathematics<br /><small style="color: #6b7280;">HSC &amp; Engineering Admission</small></td>
+                        <td>Higher Mathematics<br /><small class="text-muted">HSC and Engineering Admission</small></td>
                         <td>Mirpur-1, Mirpur-2</td>
                         <td><strong>৳8,000</strong> / month</td>
-                        <td>100% Complete<br /><small style="color: #10b981;">Top Rated Tutor</small></td>
+                        <td>100% Complete<br /><small class="text-success">Top Rated Tutor</small></td>
                         <td><span class="status-badge approved">Approved</span></td>
                         <td>
                             <div class="table-actions">
@@ -199,8 +197,44 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Coordinator Notifications</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Credential Verification Request</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Erona Akhtar submitted academic credentials for Dhaka - Mirpur Zone review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Dispute Case Mediation Docket</strong>
+              <span class="modal-notif-meta">1h ago</span>
+            </div>
+            <p class="modal-notif-meta">Student Fatema Begum filed a tuition fee inquiry regarding case DISP-2026-01.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Area Performance Audit</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Regional Mirpur zone matching SLA reached 96.4% target fulfillment.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="coordinator.js"></script>
 </body>
 </html>

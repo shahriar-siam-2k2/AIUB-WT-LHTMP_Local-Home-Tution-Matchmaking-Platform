@@ -9,13 +9,14 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">AC</div>
-            <h2>LHTMP</h2>
-            <p>Coordinator Portal</p>
-        </div>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Coordinator Portal</h2>
+        <p>Area Operations</p>
+      </div>
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,24 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
-        </div>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
+      </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
                 <h2>Area Performance Reports</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <p>Area Coordinator • Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
                 <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">3</span></button>
+                <img src="../Files/Img/Profile/default.svg" alt="Coordinator" class="header-user-img" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span>Tanbeen</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -89,7 +92,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Mirpur-1 &amp; Ansar Camp</strong></td>
+                        <td><strong>Mirpur-1 and Ansar Camp</strong></td>
                         <td>6 Tutors</td>
                         <td>28 Students</td>
                         <td>45 Bookings</td>
@@ -103,7 +106,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Mirpur-2 &amp; Sony Square</strong></td>
+                        <td><strong>Mirpur-2 and Sony Square</strong></td>
                         <td>5 Tutors</td>
                         <td>24 Students</td>
                         <td>38 Bookings</td>
@@ -117,7 +120,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Mirpur-10 &amp; Roundabout</strong></td>
+                        <td><strong>Mirpur-10 and Roundabout</strong></td>
                         <td>4 Tutors</td>
                         <td>26 Students</td>
                         <td>42 Bookings</td>
@@ -131,7 +134,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Mirpur-11 &amp; Pallabi</strong></td>
+                        <td><strong>Mirpur-11 and Pallabi</strong></td>
                         <td>3 Tutors</td>
                         <td>22 Students</td>
                         <td>31 Bookings</td>
@@ -145,7 +148,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Mirpur-12 &amp; Eastern Housing</strong></td>
+                        <td><strong>Mirpur-12 and Eastern Housing</strong></td>
                         <td>3 Tutors</td>
                         <td>18 Students</td>
                         <td>24 Bookings</td>
@@ -184,7 +187,7 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Month &amp; Year</th>
+                        <th>Month and Year</th>
                         <th>Active Zone Users</th>
                         <th>Booking Volumes</th>
                         <th>Completion Rate</th>
@@ -235,8 +238,44 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Coordinator Notifications</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Credential Verification Request</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Erona Akhtar submitted academic credentials for Dhaka - Mirpur Zone review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Dispute Case Mediation Docket</strong>
+              <span class="modal-notif-meta">1h ago</span>
+            </div>
+            <p class="modal-notif-meta">Student Fatema Begum filed a tuition fee inquiry regarding case DISP-2026-01.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Area Performance Audit</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Regional Mirpur zone matching SLA reached 96.4% target fulfillment.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="coordinator.js"></script>
 </body>
 </html>
