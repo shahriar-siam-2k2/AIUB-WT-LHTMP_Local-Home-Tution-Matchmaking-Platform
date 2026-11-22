@@ -9,13 +9,14 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">AC</div>
-            <h2>LHTMP</h2>
-            <p>Coordinator Portal</p>
-        </div>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Coordinator Portal</h2>
+        <p>Area Operations</p>
+      </div>
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html" class="active"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,24 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
-        </div>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
+      </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
                 <h2>Local Dispute Resolution</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <p>Area Coordinator • Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
                 <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">3</span></button>
+                <img src="../Files/Img/Profile/default.svg" alt="Coordinator" class="header-user-img" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span>Tanbeen</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -71,7 +74,7 @@
 
         <div class="section-block">
             <div class="section-header">
-                <h3>Reported Issues Between Students &amp; Tutors</h3>
+                <h3>Reported Issues Between Students and Tutors</h3>
                 <button type="button" class="btn-primary" onclick="alert('Opening new dispute mediation case docket...')">Log New Dispute</button>
             </div>
             <table class="data-table">
@@ -92,11 +95,11 @@
                         <td><strong>DISP-2026-01</strong></td>
                         <td>
                             <strong>Fatema Begum</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Mirpur-2</small>
+                            <small class="text-muted">Student • Mirpur-2</small>
                         </td>
                         <td>
                             <strong>Kona Rahman</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-781</small>
+                            <small class="text-muted">Tutor ID: TUT-781</small>
                         </td>
                         <td>Tuition Fee Dispute</td>
                         <td>Student billed for 3 unconducted sessions due to tutor rescheduling</td>
@@ -113,11 +116,11 @@
                         <td><strong>DISP-2026-02</strong></td>
                         <td>
                             <strong>Rafi Islam</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Class 10</small>
+                            <small class="text-muted">Student • Class 10</small>
                         </td>
                         <td>
                             <strong>Jui Chowdhury</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-652</small>
+                            <small class="text-muted">Tutor ID: TUT-652</small>
                         </td>
                         <td>Repeated Absenteeism</td>
                         <td>Tutor missed 3 scheduled exam preparation sessions without prior notice</td>
@@ -134,11 +137,11 @@
                         <td><strong>DISP-2026-03</strong></td>
                         <td>
                             <strong>Siam Hossain</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-902</small>
+                            <small class="text-muted">Tutor ID: TUT-902</small>
                         </td>
                         <td>
                             <strong>Mr. Rahim Uddin</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Mirpur-10</small>
+                            <small class="text-muted">Student • Mirpur-10</small>
                         </td>
                         <td>Honorarium Payment Delay</td>
                         <td>Monthly tuition fee for September delayed past agreed contractual deadline</td>
@@ -155,11 +158,11 @@
                         <td><strong>DISP-2026-04</strong></td>
                         <td>
                             <strong>Dr. Anisur Rahman</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Mirpur DOHS</small>
+                            <small class="text-muted">Student • Mirpur DOHS</small>
                         </td>
                         <td>
                             <strong>Tanvir Hasan</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-540</small>
+                            <small class="text-muted">Tutor ID: TUT-540</small>
                         </td>
                         <td>Curriculum Divergence</td>
                         <td>Tutor deviated significantly from Cambridge English syllabus milestones</td>
@@ -176,13 +179,13 @@
                         <td><strong>DISP-2026-05</strong></td>
                         <td>
                             <strong>Areeba Kamal</strong><br />
-                            <small style="color: #6b7280;">Student &bull; HSC Batch</small>
+                            <small class="text-muted">Student • HSC Batch</small>
                         </td>
                         <td>
                             <strong>Mahfuz Ahmed</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-819</small>
+                            <small class="text-muted">Tutor ID: TUT-819</small>
                         </td>
-                        <td>Punctuality &amp; Schedule</td>
+                        <td>Punctuality and Schedule</td>
                         <td>Recurring 30-minute delay in home arrival times</td>
                         <td>18 Oct 2026</td>
                         <td><span class="status-badge verified">Resolved</span></td>
@@ -196,11 +199,11 @@
                         <td><strong>DISP-2026-06</strong></td>
                         <td>
                             <strong>Mrs. Shireen</strong><br />
-                            <small style="color: #6b7280;">Student &bull; Mirpur-12</small>
+                            <small class="text-muted">Student • Mirpur-12</small>
                         </td>
                         <td>
                             <strong>Nusrat Jahan</strong><br />
-                            <small style="color: #6b7280;">Tutor ID: TUT-413</small>
+                            <small class="text-muted">Tutor ID: TUT-413</small>
                         </td>
                         <td>Subject Scope Discrepancy</td>
                         <td>Requested General Science coverage added to English routine</td>
@@ -217,8 +220,44 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Coordinator Notifications</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Credential Verification Request</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Erona Akhtar submitted academic credentials for Dhaka - Mirpur Zone review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Dispute Case Mediation Docket</strong>
+              <span class="modal-notif-meta">1h ago</span>
+            </div>
+            <p class="modal-notif-meta">Student Fatema Begum filed a tuition fee inquiry regarding case DISP-2026-01.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Area Performance Audit</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Regional Mirpur zone matching SLA reached 96.4% target fulfillment.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="coordinator.js"></script>
 </body>
 </html>

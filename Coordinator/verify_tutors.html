@@ -9,13 +9,14 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">AC</div>
-            <h2>LHTMP</h2>
-            <p>Coordinator Portal</p>
-        </div>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Coordinator Portal</h2>
+        <p>Area Operations</p>
+      </div>
         <nav class="sidebar-nav">
             <div class="nav-section-label">Management</div>
             <a href="coordinator.html"><span class="nav-icon">📊</span>Dashboard</a>
+            <a href="profile.html"><span class="nav-icon">👤</span>Profile</a>
             <a href="verify_tutors.html" class="active"><span class="nav-icon">📜</span>Verify Tutors</a>
             <a href="approve_profiles.html"><span class="nav-icon">✅</span>Approve Profiles</a>
             <a href="dispute_resolution.html"><span class="nav-icon">⚖️</span>Dispute Resolution</a>
@@ -25,22 +26,24 @@
             <a href="broadcast_alert.html"><span class="nav-icon">📢</span>Broadcast Alert</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout" onclick="window.location.href = '../Login/login.html'">🚪 Logout</button>
-        </div>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
+      </div>
     </aside>
 
     <div class="main-content">
         <header class="top-header">
             <div class="header-left">
                 <h2>Verify Tutor Credentials</h2>
-                <p>Area Coordinator &bull; Dhaka - Mirpur Zone</p>
+                <p>Area Coordinator • Dhaka - Mirpur Zone</p>
             </div>
             <div class="header-right">
                 <span class="zone-badge-header">Zone: Dhaka - Mirpur</span>
-                <button type="button" class="notif-btn" onclick="alert('You have 3 unread coordinator notifications.')">🔔<span class="notif-badge">3</span></button>
-                <div class="user-avatar">RZ</div>
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">🔔<span class="notif-badge" id="topNotifBadge">3</span></button>
+                <img src="../Files/Img/Profile/default.svg" alt="Coordinator" class="header-user-img" />
                 <div class="user-info">
-                    <span>Razin</span>
+                    <span>Tanbeen</span>
                     <span>Area Coordinator</span>
                 </div>
             </div>
@@ -62,23 +65,18 @@
                 <div class="stat-value">3</div>
                 <div class="stat-sub">Insufficient document proof</div>
             </div>
-            <div class="stat-card" data-icon="⏱️">
-                <div class="stat-label">Avg Verification Time</div>
-                <div class="stat-value">4.2h</div>
-                <div class="stat-sub">Well within 24h SLA</div>
-            </div>
         </div>
 
         <div class="section-block">
             <div class="section-header">
-                <h3>Submitted Educational Certificates &amp; NID Documents</h3>
+                <h3>Submitted Educational Certificates and NID Documents</h3>
                 <button type="button" class="btn-secondary" onclick="alert('Refreshing verification queue list...')">🔄 Refresh List</button>
             </div>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Tutor ID &amp; Name</th>
-                        <th>Institution &amp; Degree</th>
+                        <th>Tutor ID and Name</th>
+                        <th>Institution and Degree</th>
                         <th>Submitted Certificates</th>
                         <th>NID Document</th>
                         <th>Submission Date</th>
@@ -90,10 +88,10 @@
                     <tr>
                         <td>
                             <strong>Erona Akhtar</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-901</small>
+                            <small class="text-muted">ID: TUT-901</small>
                         </td>
-                        <td>Dhaka University<br /><small style="color: #6b7280;">BSc in Chemistry</small></td>
-                        <td>BSc Transcript &amp; Certificate (PDF)</td>
+                        <td>Dhaka University<br /><small class="text-muted">BSc in Chemistry</small></td>
+                        <td>BSc Transcript and Certificate (PDF)</td>
                         <td>NID-7729103948 (Verified Copy)</td>
                         <td>20 Oct 2026</td>
                         <td><span class="status-badge pending">Pending</span></td>
@@ -108,10 +106,10 @@
                     <tr>
                         <td>
                             <strong>Siam Hossain</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-902</small>
+                            <small class="text-muted">ID: TUT-902</small>
                         </td>
-                        <td>BUET<br /><small style="color: #6b7280;">BSc in Mechanical Engg</small></td>
-                        <td>HSC Certificate &amp; 3rd Yr Grade Sheet</td>
+                        <td>BUET<br /><small class="text-muted">BSc in Mechanical Engg</small></td>
+                        <td>HSC Certificate and 3rd Yr Grade Sheet</td>
                         <td>NID-1994820194 (Smart NID)</td>
                         <td>21 Oct 2026</td>
                         <td><span class="status-badge pending">Pending</span></td>
@@ -126,9 +124,9 @@
                     <tr>
                         <td>
                             <strong>Tanbeen Noman</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-903</small>
+                            <small class="text-muted">ID: TUT-903</small>
                         </td>
-                        <td>Jahangirnagar University<br /><small style="color: #6b7280;">MSc in Applied Physics</small></td>
+                        <td>Jahangirnagar University<br /><small class="text-muted">MSc in Applied Physics</small></td>
                         <td>MSc Provisional Certificate</td>
                         <td>NID-8839201923 (Standard NID)</td>
                         <td>22 Oct 2026</td>
@@ -144,9 +142,9 @@
                     <tr>
                         <td>
                             <strong>Nowrin Sultana</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-904</small>
+                            <small class="text-muted">ID: TUT-904</small>
                         </td>
-                        <td>Brac University<br /><small style="color: #6b7280;">BA in English</small></td>
+                        <td>Brac University<br /><small class="text-muted">BA in English</small></td>
                         <td>BA Honours Certificate</td>
                         <td>NID-3910294821 (Smart NID)</td>
                         <td>23 Oct 2026</td>
@@ -162,9 +160,9 @@
                     <tr>
                         <td>
                             <strong>Fahim Shahriar</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-895</small>
+                            <small class="text-muted">ID: TUT-895</small>
                         </td>
-                        <td>AIUB<br /><small style="color: #6b7280;">BSc in CSE</small></td>
+                        <td>AIUB<br /><small class="text-muted">BSc in CSE</small></td>
                         <td>BSc Graduation Certificate</td>
                         <td>NID-5501928472 (Smart NID)</td>
                         <td>18 Oct 2026</td>
@@ -178,9 +176,9 @@
                     <tr>
                         <td>
                             <strong>Sanjida Kabir</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-896</small>
+                            <small class="text-muted">ID: TUT-896</small>
                         </td>
-                        <td>Dhaka University<br /><small style="color: #6b7280;">MA in Bangla Literature</small></td>
+                        <td>Dhaka University<br /><small class="text-muted">MA in Bangla Literature</small></td>
                         <td>MA Degree Certificate</td>
                         <td>NID-6610293847 (Smart NID)</td>
                         <td>17 Oct 2026</td>
@@ -194,9 +192,9 @@
                     <tr>
                         <td>
                             <strong>Mahir Alom</strong><br />
-                            <small style="color: #6b7280;">ID: TUT-890</small>
+                            <small class="text-muted">ID: TUT-890</small>
                         </td>
-                        <td>North South University<br /><small style="color: #6b7280;">BBA in Finance</small></td>
+                        <td>North South University<br /><small class="text-muted">BBA in Finance</small></td>
                         <td>Unclear Phone Snapshot (Illegible)</td>
                         <td>NID-9920192837 (Blurry copy)</td>
                         <td>15 Oct 2026</td>
@@ -213,8 +211,44 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
     </div>
+    <div id="simpleModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="simpleModalTitle" class="modal-title">Coordinator Notifications</h3>
+          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        </div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Credential Verification Request</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Erona Akhtar submitted academic credentials for Dhaka - Mirpur Zone review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Dispute Case Mediation Docket</strong>
+              <span class="modal-notif-meta">1h ago</span>
+            </div>
+            <p class="modal-notif-meta">Student Fatema Begum filed a tuition fee inquiry regarding case DISP-2026-01.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Area Performance Audit</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Regional Mirpur zone matching SLA reached 96.4% target fulfillment.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="coordinator.js"></script>
 </body>
 </html>
