@@ -10,7 +10,7 @@
 
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">LHTMP</div>
+            <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
             <h2>Tutor Portal</h2>
             <p>Platform Suite</p>
         </div>
@@ -26,7 +26,9 @@
             <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout">🚪 Logout</button>
+            <a href="../Login/login.html">
+                <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+            </a>
         </div>
     </aside>
 
@@ -34,18 +36,18 @@
 
         <header class="top-header">
             <div class="header-left">
-                <h2>Study Materials & Lecture Resources</h2>
-                <p>Tutor Account • Upload worksheets, lecture slides, formulas, and mock tests</p>
+                <h2>Study Materials Repository</h2>
+                <p>Tutor Account • Academic Session 2026</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" title="Notifications">
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
                     🔔
-                    <span class="notif-badge">0</span>
+                    <span class="notif-badge" id="topNotifBadge">3</span>
                 </button>
-                <div class="user-avatar"></div>
+                <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="header-user-img" id="headerAvatar" />
                 <div class="user-info">
-                    <span>Tutor</span>
-                    <span>Tutor Account</span>
+                    <span id="headerUserName">Nowrrin Kabir</span>
+                    <span id="headerUserMeta">Mathematics • Dhaka</span>
                 </div>
             </div>
         </header>
@@ -79,11 +81,12 @@
                 <span class="badge">Share Resources</span>
             </div>
             <div class="form-body">
-                <form id="studyMaterialUploadForm">
+                <form id="studyMaterialUploadForm" novalidate>
                     <div class="form-grid">
                         <div class="form-group-custom">
                             <label for="material-title">Material Title</label>
                             <input type="text" id="material-title" placeholder="e.g. Chapter 5 - Integration & Calculus Quick Formulas" required>
+                            <span class="field-error" id="err-material-title"></span>
                         </div>
                         <div class="form-group-custom">
                             <label for="material-subject">Subject</label>
@@ -147,7 +150,92 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="studyMaterialsTbody"></tbody>
+                <tbody id="studyMaterialsTbody">
+<tr>
+                        <td><strong>MAT-201</strong><br />HSC Higher Math Formula Sheet (PDF)</td>
+                        <td>Mathematics</td>
+                        <td>Class 11-12 (HSC)</td>
+                        <td>15 Oct 2026</td>
+                        <td>2.4 MB</td>
+                        <td>42 Downloads</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary">Download</button>
+                                <button type="button" class="btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>MAT-202</strong><br />SSC Physics Motion and Dynamics Practice (PDF)</td>
+                        <td>Physics</td>
+                        <td>Class 9-10 (SSC)</td>
+                        <td>20 Oct 2026</td>
+                        <td>1.8 MB</td>
+                        <td>38 Downloads</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary">Download</button>
+                                <button type="button" class="btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>MAT-203</strong><br />Organic Chemistry Nomenclature Guide (PDF)</td>
+                        <td>Chemistry</td>
+                        <td>Class 11-12 (HSC)</td>
+                        <td>24 Oct 2026</td>
+                        <td>3.1 MB</td>
+                        <td>56 Downloads</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary">Download</button>
+                                <button type="button" class="btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>MAT-204</strong><br />O-Level Trigonometry Solved Past Papers (PDF)</td>
+                        <td>Mathematics</td>
+                        <td>O-Level Cambridge</td>
+                        <td>28 Oct 2026</td>
+                        <td>4.5 MB</td>
+                        <td>61 Downloads</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary">Download</button>
+                                <button type="button" class="btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>MAT-205</strong><br />Biology Cell Structure Illustrated Diagrams (PDF)</td>
+                        <td>Biology</td>
+                        <td>Class 9-10 (SSC)</td>
+                        <td>01 Nov 2026</td>
+                        <td>2.9 MB</td>
+                        <td>29 Downloads</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary">Download</button>
+                                <button type="button" class="btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>MAT-206</strong><br />ICT Number Systems Practice Problems (PDF)</td>
+                        <td>ICT</td>
+                        <td>Class 11-12 (HSC)</td>
+                        <td>05 Nov 2026</td>
+                        <td>1.2 MB</td>
+                        <td>33 Downloads</td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-primary">Download</button>
+                                <button type="button" class="btn-danger">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
 
             <div class="filter-bar filter-bar-between">
@@ -165,25 +253,46 @@
         </div>
 
         <div id="simpleModal" class="modal-overlay">
-            <div class="modal-box">
-                <div class="modal-header">
-                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
-                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Tutor Notifications</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body">
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New Tuition Booking Request</strong>
+                        <span class="modal-notif-meta">15m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Student Farzana Jui requested a trial session for General Mathematics.</p>
                 </div>
-                <div id="simpleModalBody" class="modal-body"></div>
-                <div class="modal-footer">
-                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Session Payout Credited</strong>
+                        <span class="modal-notif-meta">2h ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Monthly tuition fee of ৳18,495 disbursed via bank transfer.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New 5-Star Rating Received</strong>
+                        <span class="modal-notif-meta">1d ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Nafis Iqbal posted a 5-star review for Higher Math classes.</p>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
         </div>
+    </div></div>
 
         <footer class="page-footer-main">
-            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="tutor.js"></script>
 </body>
 </html>

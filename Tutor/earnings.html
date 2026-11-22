@@ -10,7 +10,7 @@
 
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">LHTMP</div>
+            <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
             <h2>Tutor Portal</h2>
             <p>Platform Suite</p>
         </div>
@@ -26,7 +26,9 @@
             <a href="earnings.html" class="active"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout">🚪 Logout</button>
+            <a href="../Login/login.html">
+                <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+            </a>
         </div>
     </aside>
 
@@ -34,18 +36,18 @@
 
         <header class="top-header">
             <div class="header-left">
-                <h2>Earnings & Payout Dashboard</h2>
-                <p>Tutor Account • Track tuition revenues, commission fees, and withdrawal settlements</p>
+                <h2>Tutor Earnings & Settlements</h2>
+                <p>Tutor Account • Academic Session 2026</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" title="Notifications">
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
                     🔔
-                    <span class="notif-badge">0</span>
+                    <span class="notif-badge" id="topNotifBadge">3</span>
                 </button>
-                <div class="user-avatar"></div>
+                <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="header-user-img" id="headerAvatar" />
                 <div class="user-info">
-                    <span>Tutor</span>
-                    <span>Tutor Account</span>
+                    <span id="headerUserName">Nowrrin Kabir</span>
+                    <span id="headerUserMeta">Mathematics • Dhaka</span>
                 </div>
             </div>
         </header>
@@ -95,6 +97,7 @@
                         <div class="form-group-custom">
                             <label for="payout-amount">Withdrawal Amount (BDT)</label>
                             <input type="number" id="payout-amount" value="18495" min="1000" max="18495" required>
+                            <span class="field-error" id="err-payout-amount"></span>
                             <span class="text-meta-small">Minimum withdrawal is ৳1,000. Maximum available: ৳18,495</span>
                         </div>
                         <div class="form-group-custom">
@@ -110,11 +113,13 @@
                         </div>
                         <div class="form-group-custom">
                             <label for="account-num">Account / Wallet Number</label>
-                            <input type="text" id="account-num" value="01957495765" required>
+                            <input type="text" id="account-num" value="01957495765">
+                            <span class="field-error" id="err-account-num"></span>
                         </div>
                         <div class="form-group-custom">
                             <label for="account-name">Account Holder Name</label>
-                            <input type="text" id="account-name" value="Nowrrin Kabir" required>
+                            <input type="text" id="account-name" value="Nowrrin Kabir">
+                            <span class="field-error" id="err-account-name"></span>
                         </div>
                         <div class="form-group-custom form-grid-full">
                             <label for="payout-note">Payout Reference Note (Optional)</label>
@@ -145,30 +150,142 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="tutorEarningsTbody"></tbody>
+                <tbody id="tutorEarningsTbody">
+<tr>
+                        <td><strong>October 2026</strong></td>
+                        <td>24 Sessions</td>
+                        <td>36.0 Hrs</td>
+                        <td>৳20,550</td>
+                        <td>৳2,055</td>
+                        <td><strong>৳18,495</strong> / month</td>
+                        <td><span class="status-badge active">Disbursed</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Invoice PDF</button>
+                                <button type="button" class="btn-secondary">Statement</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>September 2026</strong></td>
+                        <td>28 Sessions</td>
+                        <td>42.0 Hrs</td>
+                        <td>৳24,000</td>
+                        <td>৳2,400</td>
+                        <td><strong>৳21,600</strong> / month</td>
+                        <td><span class="status-badge active">Disbursed</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Invoice PDF</button>
+                                <button type="button" class="btn-secondary">Statement</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>August 2026</strong></td>
+                        <td>20 Sessions</td>
+                        <td>30.0 Hrs</td>
+                        <td>৳17,500</td>
+                        <td>৳1,750</td>
+                        <td><strong>৳15,750</strong> / month</td>
+                        <td><span class="status-badge active">Disbursed</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Invoice PDF</button>
+                                <button type="button" class="btn-secondary">Statement</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>July 2026</strong></td>
+                        <td>22 Sessions</td>
+                        <td>33.0 Hrs</td>
+                        <td>৳19,000</td>
+                        <td>৳1,900</td>
+                        <td><strong>৳17,100</strong> / month</td>
+                        <td><span class="status-badge active">Disbursed</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Invoice PDF</button>
+                                <button type="button" class="btn-secondary">Statement</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>June 2026</strong></td>
+                        <td>25 Sessions</td>
+                        <td>37.5 Hrs</td>
+                        <td>৳21,500</td>
+                        <td>৳2,150</td>
+                        <td><strong>৳19,350</strong> / month</td>
+                        <td><span class="status-badge active">Disbursed</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Invoice PDF</button>
+                                <button type="button" class="btn-secondary">Statement</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>May 2026</strong></td>
+                        <td>18 Sessions</td>
+                        <td>27.0 Hrs</td>
+                        <td>৳15,000</td>
+                        <td>৳1,500</td>
+                        <td><strong>৳13,500</strong> / month</td>
+                        <td><span class="status-badge active">Disbursed</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Invoice PDF</button>
+                                <button type="button" class="btn-secondary">Statement</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
         <div id="simpleModal" class="modal-overlay">
-            <div class="modal-box">
-                <div class="modal-header">
-                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
-                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Tutor Notifications</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body">
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New Tuition Booking Request</strong>
+                        <span class="modal-notif-meta">15m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Student Farzana Jui requested a trial session for General Mathematics.</p>
                 </div>
-                <div id="simpleModalBody" class="modal-body"></div>
-                <div class="modal-footer">
-                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Session Payout Credited</strong>
+                        <span class="modal-notif-meta">2h ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Monthly tuition fee of ৳18,495 disbursed via bank transfer.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New 5-Star Rating Received</strong>
+                        <span class="modal-notif-meta">1d ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Nafis Iqbal posted a 5-star review for Higher Math classes.</p>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
         </div>
+    </div></div>
 
         <footer class="page-footer-main">
-            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="tutor.js"></script>
 </body>
 </html>

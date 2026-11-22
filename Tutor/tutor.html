@@ -10,7 +10,7 @@
 
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">LHTMP</div>
+            <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
             <h2>Tutor Portal</h2>
             <p>Platform Suite</p>
         </div>
@@ -26,7 +26,9 @@
             <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout">🚪 Logout</button>
+            <a href="../Login/login.html">
+                <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+            </a>
         </div>
     </aside>
 
@@ -34,18 +36,18 @@
 
         <header class="top-header">
             <div class="header-left">
-                <h2>Welcome, Tutor!</h2>
+                <h2>Welcome, Nowrrin Kabir!</h2>
                 <p>Tutor Account • Academic Session 2026</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" title="Notifications">
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
                     🔔
-                    <span class="notif-badge">0</span>
+                    <span class="notif-badge" id="topNotifBadge">3</span>
                 </button>
-                <div class="user-avatar"></div>
+                <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="header-user-img" id="headerAvatar" />
                 <div class="user-info">
-                    <span>Tutor</span>
-                    <span>Tutor Account</span>
+                    <span id="headerUserName">Nowrrin Kabir</span>
+                    <span id="headerUserMeta">Mathematics • Dhaka</span>
                 </div>
             </div>
         </header>
@@ -121,12 +123,7 @@
                         <span>Payout Dashboard</span>
                     </button>
                 </a>
-                <a href="../Login/login.html">
-                    <button type="button" class="btn-quick-action">
-                        <span class="action-icon">🚪</span>
-                        <span>Exit Portal</span>
-                    </button>
-                </a>
+                
             </div>
         </div>
 
@@ -149,7 +146,51 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="dashBookingTbody"></tbody>
+                <tbody id="dashBookingTbody">
+<tr>
+                        <td><strong>Farzana Jui</strong><br /><small class="text-muted">STD-101 • Mirpur</small></td>
+                        <td>General Mathematics</td>
+                        <td>Class-10 (SSC)</td>
+                        <td>22-11-2026 04:00 PM</td>
+                        <td>Home Tuition</td>
+                        <td><span class="status-badge pending">Pending</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success">Confirm</button>
+                                <button type="button" class="btn-danger">Decline</button>
+                                <button type="button" class="btn-secondary">Details</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nafis Iqbal</strong><br /><small class="text-muted">STD-103 • Uttara</small></td>
+                        <td>Higher Mathematics</td>
+                        <td>O-Level Cambridge</td>
+                        <td>23-11-2026 06:00 PM</td>
+                        <td>Home Tuition</td>
+                        <td><span class="status-badge pending">Pending</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-success">Confirm</button>
+                                <button type="button" class="btn-danger">Decline</button>
+                                <button type="button" class="btn-secondary">Details</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tanbeen Noman</strong><br /><small class="text-muted">STD-104 • Dhanmondi</small></td>
+                        <td>Chemistry</td>
+                        <td>Class-11 (HSC)</td>
+                        <td>24-11-2026 05:30 PM</td>
+                        <td>Online Interactive</td>
+                        <td><span class="status-badge active">Confirmed</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Details</button>
+                            </div>
+                        </td>
+                    </tr>
+</tbody>
             </table>
         </div>
 
@@ -171,30 +212,76 @@
                         <th>Payout Status</th>
                     </tr>
                 </thead>
-                <tbody id="dashEarningsTbody"></tbody>
+                <tbody id="dashEarningsTbody">
+<tr>
+                        <td><strong>November 2026</strong></td>
+                        <td>18 Sessions</td>
+                        <td>৳34,000</td>
+                        <td>-৳3,400</td>
+                        <td><strong>৳30,600</strong></td>
+                        <td><span class="status-badge pending">In Processing</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>October 2026</strong></td>
+                        <td>24 Sessions</td>
+                        <td>৳42,500</td>
+                        <td>-৳4,250</td>
+                        <td><strong>৳38,250</strong></td>
+                        <td><span class="status-badge active">Disbursed</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>September 2026</strong></td>
+                        <td>22 Sessions</td>
+                        <td>৳38,000</td>
+                        <td>-৳3,800</td>
+                        <td><strong>৳34,200</strong></td>
+                        <td><span class="status-badge active">Disbursed</span></td>
+                    </tr>
+</tbody>
             </table>
         </div>
 
         <div id="simpleModal" class="modal-overlay">
-            <div class="modal-box">
-                <div class="modal-header">
-                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
-                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Tutor Notifications</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body">
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New Tuition Booking Request</strong>
+                        <span class="modal-notif-meta">15m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Student Farzana Jui requested a trial session for General Mathematics.</p>
                 </div>
-                <div id="simpleModalBody" class="modal-body"></div>
-                <div class="modal-footer">
-                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Session Payout Credited</strong>
+                        <span class="modal-notif-meta">2h ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Monthly tuition fee of ৳18,495 disbursed via bank transfer.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New 5-Star Rating Received</strong>
+                        <span class="modal-notif-meta">1d ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Nafis Iqbal posted a 5-star review for Higher Math classes.</p>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
         </div>
+    </div></div>
 
         <footer class="page-footer-main">
-            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="tutor.js"></script>
 </body>
 </html>

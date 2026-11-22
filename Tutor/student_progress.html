@@ -10,7 +10,7 @@
 
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">LHTMP</div>
+            <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
             <h2>Tutor Portal</h2>
             <p>Platform Suite</p>
         </div>
@@ -26,7 +26,9 @@
             <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout">🚪 Logout</button>
+            <a href="../Login/login.html">
+                <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+            </a>
         </div>
     </aside>
 
@@ -35,17 +37,17 @@
         <header class="top-header">
             <div class="header-left">
                 <h2>Student Progress & Evaluation</h2>
-                <p>Tutor Account • Track attendance records, test scores, and syllabus milestones</p>
+                <p>Tutor Account • Academic Session 2026</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" title="Notifications">
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
                     🔔
-                    <span class="notif-badge">0</span>
+                    <span class="notif-badge" id="topNotifBadge">3</span>
                 </button>
-                <div class="user-avatar"></div>
+                <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="header-user-img" id="headerAvatar" />
                 <div class="user-info">
-                    <span>Tutor</span>
-                    <span>Tutor Account</span>
+                    <span id="headerUserName">Nowrrin Kabir</span>
+                    <span id="headerUserMeta">Mathematics • Dhaka</span>
                 </div>
             </div>
         </header>
@@ -81,16 +83,108 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Student Name</th>
-                        <th>Subject & Grade</th>
+                        <th>Student ID and Name</th>
+                        <th>Subject</th>
+                        <th>Target Grade</th>
                         <th>Sessions Completed</th>
                         <th>Attendance Rate</th>
                         <th>Latest Test Score</th>
-                        <th>Syllabus Done</th>
+                        <th>Syllabus Coverage</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="studentProgressTbody"></tbody>
+                <tbody id="studentProgressTbody">
+<tr>
+                        <td><strong>STD-101</strong><br />Farzana Jui</td>
+                        <td>General Mathematics</td>
+                        <td>Class-10 (SSC)</td>
+                        <td>18 / 20 Classes</td>
+                        <td><span class="status-badge active">90% Attendance</span></td>
+                        <td><strong>92%</strong> (Grade A+)</td>
+                        <td><span class="status-badge active">85% Syllabus</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Log Test</button>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>STD-102</strong><br />Tamim Hasan</td>
+                        <td>Physics</td>
+                        <td>Class-12 (HSC)</td>
+                        <td>16 / 16 Classes</td>
+                        <td><span class="status-badge active">100% Attendance</span></td>
+                        <td><strong>88%</strong> (Grade A)</td>
+                        <td><span class="status-badge active">90% Syllabus</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Log Test</button>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>STD-103</strong><br />Nafis Iqbal</td>
+                        <td>Higher Mathematics</td>
+                        <td>O-Level Cambridge</td>
+                        <td>14 / 16 Classes</td>
+                        <td><span class="status-badge active">87.5% Attendance</span></td>
+                        <td><strong>85%</strong> (Grade A)</td>
+                        <td><span class="status-badge active">75% Syllabus</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Log Test</button>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>STD-104</strong><br />Tanbeen Noman</td>
+                        <td>Chemistry</td>
+                        <td>Class-11 (HSC)</td>
+                        <td>15 / 16 Classes</td>
+                        <td><span class="status-badge active">93.8% Attendance</span></td>
+                        <td><strong>79%</strong> (Grade B+)</td>
+                        <td><span class="status-badge active">80% Syllabus</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Log Test</button>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>STD-105</strong><br />Erona Akhtar</td>
+                        <td>Biology</td>
+                        <td>Class-10 (SSC)</td>
+                        <td>12 / 14 Classes</td>
+                        <td><span class="status-badge active">85.7% Attendance</span></td>
+                        <td><strong>84%</strong> (Grade A)</td>
+                        <td><span class="status-badge active">65% Syllabus</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Log Test</button>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>STD-106</strong><br />Sadia Afrin</td>
+                        <td>English</td>
+                        <td>Class-9</td>
+                        <td>10 / 12 Classes</td>
+                        <td><span class="status-badge pending">83.3% Attendance</span></td>
+                        <td><strong>76%</strong> (Grade B)</td>
+                        <td><span class="status-badge active">70% Syllabus</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button type="button" class="btn-secondary">Log Test</button>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
 
             <div class="filter-bar filter-bar-between">
@@ -113,15 +207,17 @@
                 <span class="badge">Performance Entry</span>
             </div>
             <div class="form-body">
-                <form id="progressLogForm">
+                <form id="progressLogForm" novalidate>
                     <div class="form-grid">
                         <div class="form-group-custom">
                             <label for="log-student">Student Name</label>
-                            <input type="text" id="log-student" placeholder="e.g. Jerin Kabir" required>
+                            <input type="text" id="log-student" placeholder="e.g. Farzana Jui">
+                            <span class="field-error" id="err-log-student"></span>
                         </div>
                         <div class="form-group-custom">
                             <label for="log-subject">Subject</label>
-                            <input type="text" id="log-subject" placeholder="e.g. Mathematics" required>
+                            <input type="text" id="log-subject" placeholder="e.g. Mathematics">
+                            <span class="field-error" id="err-log-subject"></span>
                         </div>
                         <div class="form-group-custom">
                             <label for="log-date">Session Date</label>
@@ -137,15 +233,18 @@
                         </div>
                         <div class="form-group-custom">
                             <label for="log-score">Quiz / Test Score (out of 100)</label>
-                            <input type="number" id="log-score" placeholder="e.g. 88" min="0" max="100" required>
+                            <input type="number" id="log-score" placeholder="e.g. 88" min="0" max="100">
+                            <span class="field-error" id="err-log-score"></span>
                         </div>
                         <div class="form-group-custom">
                             <label for="log-syllabus">Syllabus Progress (%)</label>
-                            <input type="text" id="log-syllabus" placeholder="e.g. 80%" required>
+                            <input type="text" id="log-syllabus" placeholder="e.g. 80%">
+                            <span class="field-error" id="err-log-syllabus"></span>
                         </div>
                         <div class="form-group-custom form-grid-full">
                             <label for="log-notes">Tutor Observations & Recommendations</label>
                             <textarea id="log-notes" rows="3" placeholder="Note student strengths, conceptual gaps, and recommended self-study practice before next class." required></textarea>
+                            <span class="field-error" id="err-log-notes"></span>
                         </div>
                     </div>
                     <button type="submit" class="btn-primary" id="btnSaveProgress">Save Progress Log</button>
@@ -155,25 +254,46 @@
         </div>
 
         <div id="simpleModal" class="modal-overlay">
-            <div class="modal-box">
-                <div class="modal-header">
-                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
-                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Tutor Notifications</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body">
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New Tuition Booking Request</strong>
+                        <span class="modal-notif-meta">15m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Student Farzana Jui requested a trial session for General Mathematics.</p>
                 </div>
-                <div id="simpleModalBody" class="modal-body"></div>
-                <div class="modal-footer">
-                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Session Payout Credited</strong>
+                        <span class="modal-notif-meta">2h ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Monthly tuition fee of ৳18,495 disbursed via bank transfer.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New 5-Star Rating Received</strong>
+                        <span class="modal-notif-meta">1d ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Nafis Iqbal posted a 5-star review for Higher Math classes.</p>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
         </div>
+    </div></div>
 
         <footer class="page-footer-main">
-            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="tutor.js"></script>
 </body>
 </html>
