@@ -9,15 +9,13 @@
   <body>
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <div class="brand-logo">LH</div>
-        <h2>LHTMP</h2>
-        <p>Student Portal</p>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Student Portal</h2>
+        <p>Student Account</p>
       </div>
       <nav class="sidebar-nav">
         <span class="nav-section-label">Main Menu</span>
-        <a href="student.html">
-          <span class="nav-icon">🖥️</span> Dashboard
-        </a>
+        <a href="student.html"> <span class="nav-icon">🖥️</span> Dashboard </a>
         <a href="find_tutors.html">
           <span class="nav-icon">🔍</span> Find Tutors
         </a>
@@ -31,15 +29,17 @@
           <span class="nav-icon">📅</span> My Schedule
         </a>
         <span class="nav-section-label">Account</span>
-        <a href="reviews.html">
-          <span class="nav-icon">⭐</span> Reviews
-        </a>
+        <a href="reviews.html"> <span class="nav-icon">⭐</span> Reviews </a>
         <a href="profile.html" class="active">
           <span class="nav-icon">👤</span> Profile
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">
+            LOGOUT
+          </button>
+        </a>
       </div>
     </aside>
 
@@ -47,16 +47,29 @@
       <div class="top-header">
         <div class="header-left">
           <h2 id="headerGreeting">Student Profile</h2>
-          <p>View personal academic details, enrollment status, and verified credentials</p>
+          <p>
+            View personal academic details, enrollment status, and verified
+            credentials
+          </p>
         </div>
         <div class="header-right">
-          <button type="button" class="notif-btn" id="btnNotification">
+          <button
+            type="button"
+            class="notif-btn"
+            id="btnNotification"
+            title="Notifications"
+          >
             🔔
-            <span class="notif-badge" id="notifBadge">0</span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <div class="user-avatar" id="headerAvatar">S</div>
+          <img
+            src="../Files/Img/Profile/default.svg"
+            alt="Student"
+            class="header-user-img"
+            id="headerAvatar"
+          />
           <div class="user-info">
-            <span id="headerUserName">Student</span>
+            <span id="headerUserName">Farhan Kabir</span>
             <span id="headerUserMeta">Grade 10 • Dhaka</span>
           </div>
         </div>
@@ -67,11 +80,134 @@
           <h3>Student Academic Profile</h3>
           <span class="badge">Verified Student</span>
         </div>
-        <div id="profileDetailsContainer"></div>
+        <div id="profileDetailsContainer">
+          <div class="profile-card-layout">
+            <div class="profile-summary-box">
+              <div class="profile-avatar-centered">
+                <img
+                  src="../Files/Img/Profile/default.svg"
+                  alt="Farhan Kabir"
+                  class="profile-avatar-img"
+                />
+              </div>
+              <div class="profile-summary-name" id="dispSummaryName">
+                Farhan Kabir
+              </div>
+              <p class="profile-summary-id" id="dispSummaryId">
+                Student ID: USR-1005
+              </p>
+              <span class="status-badge active">Active Student</span>
+              <div class="profile-summary-meta">
+                <div>📍 <strong>Location:</strong> Mirpur - Zone 1, Dhaka</div>
+                <div>🎓 <strong>Level:</strong> Class-10 (Science)</div>
+                <div>👤 <strong>Role:</strong> Student</div>
+                <div>📅 <strong>Enrolled:</strong> 14-11-2026 05:32 AM</div>
+              </div>
+              <div class="profile-actions-bar">
+                <a
+                  href="../Registration/edit_profile.html?id=USR-1005&from=student"
+                  id="linkEditProfile"
+                >
+                  <button type="button" class="btn-primary" id="btnEditProfile">
+                    Edit Profile
+                  </button>
+                </a>
+              </div>
+              <div class="profile-actions-bar">
+                <button type="button" class="btn-secondary" id="btnDownloadID">
+                  Download Student ID Card
+                </button>
+              </div>
+            </div>
+
+            <div class="profile-view-grid">
+              <div class="profile-detail-card">
+                <div class="profile-card-title">Academic Information</div>
+                <div class="profile-fields-grid">
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Student ID</span>
+                    <div class="profile-field-value">USR-1005</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Full Name</span>
+                    <div class="profile-field-value">Farhan Kabir</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Grade / Class</span>
+                    <div class="profile-field-value">Class-10</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Detailed Grade</span>
+                    <div class="profile-field-value">Science</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Account Role</span>
+                    <div class="profile-field-value">Student</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Account Status</span>
+                    <div class="profile-field-value">Active</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Division</span>
+                    <div class="profile-field-value">Dhaka</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Local Area</span>
+                    <div class="profile-field-value">Mirpur - Zone 1</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="profile-detail-card">
+                <div class="profile-card-title">
+                  Personal and Contact Details
+                </div>
+                <div class="profile-fields-grid">
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Email Address</span>
+                    <div class="profile-field-value">
+                      farhan.student@gmail.com
+                    </div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Mobile Phone</span>
+                    <div class="profile-field-value">01712345678</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Date of Birth</span>
+                    <div class="profile-field-value">15-08-2009</div>
+                  </div>
+                  <div class="profile-field-row">
+                    <span class="profile-field-label">Gender</span>
+                    <div class="profile-field-value">Male</div>
+                  </div>
+                  <div class="profile-field-row full-width">
+                    <span class="profile-field-label"
+                      >Account Registration Date</span
+                    >
+                    <div class="profile-field-value">14-11-2026 05:32 AM</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="profile-actions-bar">
+                <a
+                  href="../Registration/edit_profile.html?id=USR-1005&from=student"
+                >
+                  <button type="button" class="btn-primary">
+                    Edit Profile
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <footer class="page-footer-main">
-        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        Copyright 2026 Local Home Tuition Matchmaking Platform. All rights
+        reserved.
       </footer>
     </main>
 
@@ -79,16 +215,52 @@
       <div class="modal-box">
         <div class="modal-header">
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
-          <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+          <button type="button" id="btnModalClose" class="modal-close-btn">
+            ✕
+          </button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tuition Session Confirmed</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">
+              Higher Mathematics session with Tariq Hasan confirmed for tomorrow
+              at 10:00 AM.
+            </p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>New Material Uploaded</strong>
+              <span class="modal-notif-meta">2h ago</span>
+            </div>
+            <p class="modal-notif-meta">
+              Rafiqul Islam uploaded Thermodynamics and Waves Formula Sheet.
+            </p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Progress Report</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">
+              Your November academic progress evaluation is ready for review.
+            </p>
+          </div>
+        </div>
         <div class="modal-footer">
-          <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+          <button
+            type="button"
+            id="btnModalOk"
+            class="btn-primary modal-ok-btn"
+          >
+            OK
+          </button>
         </div>
       </div>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="student.js"></script>
   </body>
 </html>

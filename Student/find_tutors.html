@@ -9,9 +9,10 @@
   <body>
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <div class="brand-logo">LH</div>
-        <h2>LHTMP</h2>
-        <p>Student Portal</p>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Student Portal</h2>
+        <p>Student Account</p>
+      </div>
       </div>
       <nav class="sidebar-nav">
         <span class="nav-section-label">Main Menu</span>
@@ -39,7 +40,9 @@
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
       </div>
     </aside>
 
@@ -50,13 +53,13 @@
           <p>Discover expert home and online tutors tailored to your syllabus</p>
         </div>
         <div class="header-right">
-          <button type="button" class="notif-btn" id="btnNotification">
+          <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
             🔔
-            <span class="notif-badge" id="notifBadge">0</span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <div class="user-avatar" id="headerAvatar">S</div>
+          <img src="../Files/Img/Profile/default.svg" alt="Student" class="header-user-img" id="headerAvatar" />
           <div class="user-info">
-            <span id="headerUserName">Student</span>
+            <span id="headerUserName">Farhan Kabir</span>
             <span id="headerUserMeta">Grade 10 • Dhaka</span>
           </div>
         </div>
@@ -64,8 +67,8 @@
 
       <div class="section-block">
         <div class="section-header">
-          <h3>Search &amp; Filter Tutors</h3>
-          <span class="badge" id="tutorsCountBadge">0 Tutors Available</span>
+          <h3>Search and Filter Tutors</h3>
+          <span class="badge" id="tutorsCountBadge">10 Tutors Available</span>
         </div>
         <div class="search-bar-row">
           <input
@@ -80,21 +83,231 @@
             <option value="chemistry">Chemistry</option>
             <option value="biology">Biology</option>
             <option value="english">English</option>
-            <option value="ict">ICT &amp; Computer</option>
+            <option value="ict">ICT and Computer</option>
           </select>
           <select id="filterRateSelect">
             <option value="">All Rates</option>
-            <option value="low">Under ৳400/hr</option>
-            <option value="mid">৳400 - ৳500/hr</option>
-            <option value="high">Above ৳500/hr</option>
+            <option value="low">Under 2,500 tk / month</option>
+            <option value="mid">2,500 - 3,500 tk / month</option>
+            <option value="high">Above 3,500 tk / month</option>
           </select>
-          <button type="button" class="btn-search" id="btnSearchTutors">Search</button>
+          <button type="button" class="btn-primary" id="btnSearchTutors">Search</button>
+          <button type="button" class="btn-secondary" id="btnResetTutors">Reset</button>
         </div>
-        <div class="tutor-cards-grid" id="findTutorsGrid"></div>
+
+        <div class="tutor-cards-grid" id="findTutorsGrid">
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Tariq Hasan</h4>
+                <p class="tutor-subject">Higher Mathematics and Calculus</p>
+                <p class="tutor-university">BUET • Computer Science</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.9 (42 reviews)</div>
+              <div class="tutor-rate">৳3,000 / month • Mirpur, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-101">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Rafiqul Islam</h4>
+                <p class="tutor-subject">Physics 1st and 2nd Paper</p>
+                <p class="tutor-university">Dhaka University • Physics</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.8 (35 reviews)</div>
+              <div class="tutor-rate">৳2,700 / month • Dhanmondi, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-102">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Sadia Afrin</h4>
+                <p class="tutor-subject">English Language and Literature</p>
+                <p class="tutor-university">Jahangirnagar University • English</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.9 (29 reviews)</div>
+              <div class="tutor-rate">৳2,400 / month • Uttara, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-103">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Kamrul Islam</h4>
+                <p class="tutor-subject">Chemistry and Biochemistry</p>
+                <p class="tutor-university">Dhaka Medical College • MBBS</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 5.0 (51 reviews)</div>
+              <div class="tutor-rate">৳3,300 / month • Farmgate, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-104">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Md. Shohidul Islam</h4>
+                <p class="tutor-subject">ICT and Programming Fundamentals</p>
+                <p class="tutor-university">AIUB • Computer Science</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.8 (24 reviews)</div>
+              <div class="tutor-rate">৳2,700 / month • Banani, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-105">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card row-hidden">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Zubair Hossain</h4>
+                <p class="tutor-subject">General and Advanced Biology</p>
+                <p class="tutor-university">Dhaka University • Zoology</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.7 (18 reviews)</div>
+              <div class="tutor-rate">৳2,300 / month • Mohammadpur, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-106">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card row-hidden">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Nusrat Jahan</h4>
+                <p class="tutor-subject">General Mathematics and Geometry</p>
+                <p class="tutor-university">Chittagong University • Applied Math</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.9 (31 reviews)</div>
+              <div class="tutor-rate">৳2,500 / month • Chittagong Zone 2</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-107">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card row-hidden">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Asif Mahmud</h4>
+                <p class="tutor-subject">Physics Optics and Electronics</p>
+                <p class="tutor-university">RUET • Electrical Engineering</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.8 (27 reviews)</div>
+              <div class="tutor-rate">৳2,900 / month • Rajshahi Zone 3</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-108">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card row-hidden">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Salma Akter</h4>
+                <p class="tutor-subject">Accounting and Business Studies</p>
+                <p class="tutor-university">Dhaka University • Accounting</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.9 (33 reviews)</div>
+              <div class="tutor-rate">৳2,400 / month • Barishal Zone 4</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-109">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+
+          <div class="tutor-card row-hidden">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Rahat Karim</h4>
+                <p class="tutor-subject">Statistics and Data Analysis</p>
+                <p class="tutor-university">SUST • Statistics</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.7 (19 reviews)</div>
+              <div class="tutor-rate">৳2,700 / month • Sylhet Zone 8</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-110">Book Session</button>
+              <button type="button" class="btn-secondary">Profile Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-bar-between">
+          <div>Showing verified home and online tutors</div>
+          <div class="table-actions">
+            <button type="button" class="btn-secondary" id="btnPrevTutors" disabled>
+              Previous
+            </button>
+            <button type="button" class="btn-primary" id="btnPage1Tutors">
+              1
+            </button>
+            <button type="button" class="btn-secondary" id="btnPage2Tutors">
+              2
+            </button>
+            <button type="button" class="btn-secondary" id="btnNextTutors">
+              Next
+            </button>
+          </div>
+        </div>
       </div>
 
       <footer class="page-footer-main">
-        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
       </footer>
     </main>
 
@@ -104,14 +317,35 @@
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
           <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Matching Available</strong>
+              <span class="modal-notif-meta">15m ago</span>
+            </div>
+            <p class="modal-notif-meta">New verified Mathematics tutors are now available in Mirpur zone.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Discounted Booking Offer</strong>
+              <span class="modal-notif-meta">3h ago</span>
+            </div>
+            <p class="modal-notif-meta">Get 10% off on your first monthly package with top rated tutors.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Schedule Reminder</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Remember to book upcoming weekend review classes in advance.</p>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>
       </div>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="student.js"></script>
   </body>
 </html>

@@ -9,9 +9,10 @@
   <body>
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <div class="brand-logo">LH</div>
-        <h2>LHTMP</h2>
-        <p>Student Portal</p>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Student Portal</h2>
+        <p>Student Account</p>
+      </div>
       </div>
       <nav class="sidebar-nav">
         <span class="nav-section-label">Main Menu</span>
@@ -39,24 +40,26 @@
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
       </div>
     </aside>
 
     <main class="main-content">
       <div class="top-header">
         <div class="header-left">
-          <h2 id="headerGreeting">Tutor Reviews &amp; Feedback</h2>
+          <h2 id="headerGreeting">Tutor Reviews and Feedback</h2>
           <p>Rate your learning experience and view your feedback for tutors</p>
         </div>
         <div class="header-right">
-          <button type="button" class="notif-btn" id="btnNotification">
+          <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
             🔔
-            <span class="notif-badge" id="notifBadge">0</span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <div class="user-avatar" id="headerAvatar">S</div>
+          <img src="../Files/Img/Profile/default.svg" alt="Student" class="header-user-img" id="headerAvatar" />
           <div class="user-info">
-            <span id="headerUserName">Student</span>
+            <span id="headerUserName">Farhan Kabir</span>
             <span id="headerUserMeta">Grade 10 • Dhaka</span>
           </div>
         </div>
@@ -68,50 +71,64 @@
           <span class="badge">Share Your Feedback</span>
         </div>
         <div class="form-body">
-          <form id="formReview">
+          <form id="formReview" novalidate>
             <div class="form-grid">
               <div class="form-group-custom">
-                <label for="selectTutor">Select Tutor</label>
-                <select id="selectTutor" required>
-                  <option value="">-- Choose Tutor --</option>
+                <label for="selectTutor">Select Tutor: <span class="req">*</span></label>
+                <select id="selectTutor">
+                  <option value="" disabled selected>-- Choose Tutor --</option>
+                  <option value="Tariq Hasan (Higher Mathematics)">Tariq Hasan (Higher Mathematics)</option>
+                  <option value="Rafiqul Islam (Physics)">Rafiqul Islam (Physics)</option>
+                  <option value="Kamrul Islam (Chemistry)">Kamrul Islam (Chemistry)</option>
+                  <option value="Zubair Hossain (Biology)">Zubair Hossain (Biology)</option>
+                  <option value="Sadia Afrin (English)">Sadia Afrin (English)</option>
+                  <option value="Tanvir Ahmed (ICT)">Tanvir Ahmed (ICT)</option>
                 </select>
+                <span class="field-error" id="err-selectTutor"></span>
               </div>
 
               <div class="form-group-custom">
-                <label for="ratingStars">Rating (1 to 5 Stars)</label>
-                <select id="ratingStars" required>
+                <label for="ratingStars">Rating (1 to 5 Stars): <span class="req">*</span></label>
+                <select id="ratingStars">
+                  <option value="" disabled selected>-- Select Rating --</option>
                   <option value="5">⭐⭐⭐⭐⭐ 5.0 - Excellent</option>
                   <option value="4">⭐⭐⭐⭐☆ 4.0 - Very Good</option>
                   <option value="3">⭐⭐⭐☆☆ 3.0 - Good</option>
                   <option value="2">⭐⭐☆☆☆ 2.0 - Fair</option>
                   <option value="1">⭐☆☆☆☆ 1.0 - Poor</option>
                 </select>
+                <span class="field-error" id="err-ratingStars"></span>
               </div>
 
               <div class="form-group-custom form-grid-full">
-                <label for="reviewTitle">Review Headline</label>
+                <label for="reviewTitle">Review Headline: <span class="req">*</span></label>
                 <input
                   type="text"
                   id="reviewTitle"
                   placeholder="e.g. Outstanding explanation and very patient!"
-                  required
                 />
+                <span class="field-error" id="err-reviewTitle"></span>
               </div>
 
               <div class="form-group-custom form-grid-full">
-                <label for="reviewComments">Detailed Feedback</label>
+                <label for="reviewComments">Detailed Feedback: <span class="req">*</span></label>
                 <textarea
                   id="reviewComments"
                   rows="4"
                   placeholder="Share details about the tutor's teaching clarity, punctuality, and help with your syllabus..."
-                  required
                 ></textarea>
+                <span class="field-error" id="err-reviewComments"></span>
               </div>
             </div>
 
-            <button type="submit" class="btn-primary" id="btnSubmitReview">
-              Submit Review
-            </button>
+            <div class="table-actions">
+              <button type="submit" class="btn-primary" id="btnSubmitReview">
+                Submit Review
+              </button>
+              <button type="button" class="btn-secondary" id="btnClearReview">
+                Clear
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -119,13 +136,181 @@
       <div class="section-block">
         <div class="section-header">
           <h3>My Previous Reviews</h3>
-          <span class="badge" id="reviewsCountBadge">0 Reviews</span>
+          <span class="badge" id="reviewsCountBadge">10 Reviews Submitted</span>
         </div>
-        <div class="review-list" id="reviewList"></div>
+        <div class="review-list" id="reviewList">
+          <div class="review-item-card">
+            <div class="review-item-header">
+              <h4>Tariq Hasan <span class="review-subject-tag">• Higher Mathematics</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐⭐ <span class="review-rating-val">5.0</span></span>
+            </div>
+            <div class="review-item-headline">Outstanding calculus explanations and problem techniques!</div>
+            <p class="review-item-comment">Sir explained differential calculus from the ground up. My test marks improved from 62 to 89 within two months.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">20-11-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card">
+            <div class="review-item-header">
+              <h4>Rafiqul Islam <span class="review-subject-tag">• Physics 1st Paper</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐⭐ <span class="review-rating-val">5.0</span></span>
+            </div>
+            <div class="review-item-headline">Great conceptual clarity on vectors and dynamics.</div>
+            <p class="review-item-comment">Very punctual and provides handwritten lecture summaries after every class. Highly recommended.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">18-11-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card">
+            <div class="review-item-header">
+              <h4>Kamrul Islam <span class="review-subject-tag">• Chemistry</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐☆ <span class="review-rating-val">4.0</span></span>
+            </div>
+            <div class="review-item-headline">Very thorough with chemical equations and laboratory prep.</div>
+            <p class="review-item-comment">Helped me memorize organic reaction mechanisms with easy tricks. Solved all past board questions.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">15-11-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card">
+            <div class="review-item-header">
+              <h4>Sadia Afrin <span class="review-subject-tag">• English 2nd Paper</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐⭐ <span class="review-rating-val">5.0</span></span>
+            </div>
+            <div class="review-item-headline">Excellent grammar and composition teacher!</div>
+            <p class="review-item-comment">Structured daily essay writing and corrected my grammatical weak spots patiently.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">12-11-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card">
+            <div class="review-item-header">
+              <h4>Zubair Hossain <span class="review-subject-tag">• Biology</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐⭐ <span class="review-rating-val">5.0</span></span>
+            </div>
+            <div class="review-item-headline">Clear diagrams and excellent botany explanations.</div>
+            <p class="review-item-comment">Prepared chapter summaries that made revision very fast before term finals.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">10-11-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card row-hidden">
+            <div class="review-item-header">
+              <h4>Tanvir Ahmed <span class="review-subject-tag">• ICT Programming</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐☆ <span class="review-rating-val">4.0</span></span>
+            </div>
+            <div class="review-item-headline">Practical coding walkthroughs for C language.</div>
+            <p class="review-item-comment">Very friendly approach and showed live execution in class.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">08-11-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card row-hidden">
+            <div class="review-item-header">
+              <h4>Tariq Hasan <span class="review-subject-tag">• Trigonometry</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐⭐ <span class="review-rating-val">5.0</span></span>
+            </div>
+            <div class="review-item-headline">Solved difficult university admission problem sets.</div>
+            <p class="review-item-comment">Great teacher who challenges students with advanced practice sets.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">05-11-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card row-hidden">
+            <div class="review-item-header">
+              <h4>Rafiqul Islam <span class="review-subject-tag">• Thermodynamics</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐⭐ <span class="review-rating-val">5.0</span></span>
+            </div>
+            <div class="review-item-headline">Crystal clear explanations of heat engines and entropy.</div>
+            <p class="review-item-comment">Gave real world engineering examples for physics principles.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">02-11-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card row-hidden">
+            <div class="review-item-header">
+              <h4>Kamrul Islam <span class="review-subject-tag">• Inorganic Chemistry</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐☆ <span class="review-rating-val">4.0</span></span>
+            </div>
+            <div class="review-item-headline">Periodic table trends simplified brilliantly.</div>
+            <p class="review-item-comment">Helpful mnemonic techniques for remembering transition metals.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">28-10-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item-card row-hidden">
+            <div class="review-item-header">
+              <h4>Sadia Afrin <span class="review-subject-tag">• English Comprehension</span></h4>
+              <span class="review-rating-star">⭐⭐⭐⭐⭐ <span class="review-rating-val">5.0</span></span>
+            </div>
+            <div class="review-item-headline">Passage answering and vocabulary building exercises.</div>
+            <p class="review-item-comment">Significantly boosted my reading speed and critical analysis skills.</p>
+            <div class="review-item-footer">
+              <span class="review-item-date">25-10-2026</span>
+              <div class="review-item-btns">
+                <button type="button" class="btn-secondary">Edit Review</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-bar-between">
+          <div>Showing verified student feedback submissions</div>
+          <div class="table-actions">
+            <button type="button" class="btn-secondary" id="btnPrevReviews" disabled>
+              Previous
+            </button>
+            <button type="button" class="btn-primary" id="btnPage1Reviews">
+              1
+            </button>
+            <button type="button" class="btn-secondary" id="btnPage2Reviews">
+              2
+            </button>
+            <button type="button" class="btn-secondary" id="btnNextReviews">
+              Next
+            </button>
+          </div>
+        </div>
       </div>
 
       <footer class="page-footer-main">
-        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
       </footer>
     </main>
 
@@ -135,14 +320,35 @@
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
           <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Review Published</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Your feedback for Tariq Hasan has been verified and published.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tutor Thank You Note</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Rafiqul Islam acknowledged your feedback review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Community Recognition</strong>
+              <span class="modal-notif-meta">3d ago</span>
+            </div>
+            <p class="modal-notif-meta">Thank you for contributing helpful reviews for local students.</p>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>
       </div>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="student.js"></script>
   </body>
 </html>

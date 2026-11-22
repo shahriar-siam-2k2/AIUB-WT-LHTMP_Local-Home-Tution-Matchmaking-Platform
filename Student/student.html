@@ -9,9 +9,10 @@
   <body>
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <div class="brand-logo">LH</div>
-        <h2>LHTMP</h2>
-        <p>Student Portal</p>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Student Portal</h2>
+        <p>Student Account</p>
+      </div>
       </div>
       <nav class="sidebar-nav">
         <span class="nav-section-label">Main Menu</span>
@@ -39,24 +40,26 @@
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
       </div>
     </aside>
 
     <main class="main-content">
       <div class="top-header">
         <div class="header-left">
-          <h2 id="headerGreeting">Welcome back, Student!</h2>
-          <p>Sunday, 26 October 2026 • Student Account</p>
+          <h2 id="headerGreeting">Welcome back, Jui!</h2>
+          <p>Sunday, 22 November 2026 • Student Account</p>
         </div>
         <div class="header-right">
-          <button type="button" class="notif-btn" id="btnNotification">
+          <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
             🔔
-            <span class="notif-badge" id="notifBadge">0</span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <div class="user-avatar" id="headerAvatar">S</div>
+          <img src="../Files/Img/Profile/default.svg" alt="Student" class="header-user-img" id="headerAvatar" />
           <div class="user-info">
-            <span id="headerUserName">Student</span>
+            <span id="headerUserName">Farzana Jui</span>
             <span id="headerUserMeta">Grade 10 • Dhaka</span>
           </div>
         </div>
@@ -65,22 +68,22 @@
       <div class="stats-grid">
         <div class="stat-card" data-icon="📅">
           <div class="stat-label">Upcoming Sessions</div>
-          <div class="stat-value" id="statUpcomingSessions">0</div>
-          <div class="stat-sub">Next session scheduled</div>
+          <div class="stat-value" id="statUpcomingSessions">3</div>
+          <div class="stat-sub">Next session tomorrow</div>
         </div>
         <div class="stat-card" data-icon="👨‍🏫">
           <div class="stat-label">Active Tutors</div>
-          <div class="stat-value" id="statActiveTutors">0</div>
+          <div class="stat-value" id="statActiveTutors">4</div>
           <div class="stat-sub">Enrolled subject specialists</div>
         </div>
         <div class="stat-card" data-icon="📚">
           <div class="stat-label">Study Materials</div>
-          <div class="stat-value" id="statStudyMaterials">0</div>
+          <div class="stat-value" id="statStudyMaterials">12</div>
           <div class="stat-sub">Available lecture notes</div>
         </div>
         <div class="stat-card" data-icon="⭐">
           <div class="stat-label">Average Rating Given</div>
-          <div class="stat-value" id="statAvgRating">5.0⭐</div>
+          <div class="stat-value" id="statAvgRating">4.9⭐</div>
           <div class="stat-sub">Out of 5.0 rating scale</div>
         </div>
       </div>
@@ -89,7 +92,7 @@
         <div class="section-header">
           <h3>Quick Navigation</h3>
         </div>
-        <div class="quick-actions-grid">
+        <div class="quick-actions-grid quick-actions-centered">
           <a href="find_tutors.html">
             <button type="button" class="btn-quick-action">
               <span class="action-icon">🔍</span>
@@ -124,19 +127,160 @@
             <button type="button" class="btn-secondary">View All</button>
           </a>
         </div>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Subject</th>
-              <th>Tutor Name</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="dashUpcomingSessionsBody"></tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Tutor Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="dashUpcomingSessionsBody">
+              <tr>
+                <td><strong>Higher Mathematics</strong></td>
+                <td>Tariq Hasan</td>
+                <td>23-11-2026</td>
+                <td>10:00 AM - 11:30 AM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-101">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Physics 1st Paper</strong></td>
+                <td>Rafiqul Islam</td>
+                <td>24-11-2026</td>
+                <td>04:00 PM - 05:30 PM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-102">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Chemistry</strong></td>
+                <td>Kamrul Islam</td>
+                <td>25-11-2026</td>
+                <td>06:00 PM - 07:30 PM</td>
+                <td><span class="status-badge in-review">Pending</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-secondary" value="SES-103">Details</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Biology</strong></td>
+                <td>Zubair Hossain</td>
+                <td>26-11-2026</td>
+                <td>11:30 AM - 01:00 PM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-104">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>English 2nd Paper</strong></td>
+                <td>Sadia Afrin</td>
+                <td>27-11-2026</td>
+                <td>05:00 PM - 06:30 PM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-105">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>ICT and Programming</strong></td>
+                <td>Tanvir Ahmed</td>
+                <td>28-11-2026</td>
+                <td>03:00 PM - 04:30 PM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-106">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Higher Math Mock Test</strong></td>
+                <td>Tariq Hasan</td>
+                <td>29-11-2026</td>
+                <td>10:00 AM - 11:30 AM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-107">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Physics Problem Solving</strong></td>
+                <td>Rafiqul Islam</td>
+                <td>30-11-2026</td>
+                <td>04:00 PM - 05:30 PM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-108">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Organic Chemistry Lab Prep</strong></td>
+                <td>Kamrul Islam</td>
+                <td>01-12-2026</td>
+                <td>06:00 PM - 07:30 PM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-109">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Genetics and Evolution</strong></td>
+                <td>Zubair Hossain</td>
+                <td>02-12-2026</td>
+                <td>11:30 AM - 01:00 PM</td>
+                <td><span class="status-badge active">Confirmed</span></td>
+                <td>
+                  <div class="table-action-group">
+                    <button type="button" class="btn-primary" value="SES-110">Join Class</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="filter-bar-between">
+          <div>Showing scheduled tuition sessions</div>
+          <div class="table-actions">
+            <button type="button" class="btn-secondary" id="btnPrevDashSessions" disabled>
+              Previous
+            </button>
+            <button type="button" class="btn-primary" id="btnPage1DashSessions">
+              1
+            </button>
+            <button type="button" class="btn-secondary" id="btnPage2DashSessions">
+              2
+            </button>
+            <button type="button" class="btn-secondary" id="btnNextDashSessions">
+              Next
+            </button>
+          </div>
+        </div>
       </div>
 
       <div class="section-block">
@@ -146,7 +290,91 @@
             <button type="button" class="btn-secondary">Find More Tutors</button>
           </a>
         </div>
-        <div class="tutor-cards-grid" id="dashFeaturedTutorsGrid"></div>
+        <div class="tutor-cards-grid" id="dashFeaturedTutorsGrid">
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Tariq Hasan</h4>
+                <p class="tutor-subject">Higher Mathematics</p>
+                <p class="tutor-university">BUET • Computer Science</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.9 (42 reviews)</div>
+              <div class="tutor-rate">৳3,000 / month • Mirpur, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-101">Book Session</button>
+              <a href="find_tutors.html">
+                <button type="button" class="btn-secondary">Profile</button>
+              </a>
+            </div>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Rafiqul Islam</h4>
+                <p class="tutor-subject">Physics 1st and 2nd Paper</p>
+                <p class="tutor-university">Dhaka University • Physics</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.8 (35 reviews)</div>
+              <div class="tutor-rate">৳2,700 / month • Dhanmondi, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-102">Book Session</button>
+              <a href="find_tutors.html">
+                <button type="button" class="btn-secondary">Profile</button>
+              </a>
+            </div>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Sadia Afrin</h4>
+                <p class="tutor-subject">English Language and Literature</p>
+                <p class="tutor-university">Jahangirnagar University • English</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 4.9 (29 reviews)</div>
+              <div class="tutor-rate">৳2,400 / month • Uttara, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-103">Book Session</button>
+              <a href="find_tutors.html">
+                <button type="button" class="btn-secondary">Profile</button>
+              </a>
+            </div>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-card-header">
+              <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="tutor-avatar" />
+              <div>
+                <h4>Kamrul Islam</h4>
+                <p class="tutor-subject">Chemistry and Biochemistry</p>
+                <p class="tutor-university">Dhaka Medical College • MBBS</p>
+              </div>
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-rating">⭐ 5.0 (51 reviews)</div>
+              <div class="tutor-rate">৳3,300 / month • Farmgate, Dhaka</div>
+            </div>
+            <div class="tutor-card-footer">
+              <button type="button" class="btn-primary" value="TTR-104">Book Session</button>
+              <a href="find_tutors.html">
+                <button type="button" class="btn-secondary">Profile</button>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="section-block">
@@ -156,22 +384,133 @@
             <button type="button" class="btn-secondary">View All</button>
           </a>
         </div>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Material Name</th>
-              <th>Subject</th>
-              <th>Tutor</th>
-              <th>Uploaded Date</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="dashStudyMaterialsBody"></tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Material Name</th>
+                <th>Subject</th>
+                <th>Tutor</th>
+                <th>Uploaded Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="dashStudyMaterialsBody">
+              <tr>
+                <td><strong>Calculus and Coordinate Geometry Notes</strong></td>
+                <td>Higher Mathematics</td>
+                <td>Tariq Hasan</td>
+                <td>20-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-101">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Thermodynamics and Waves Formula Sheet</strong></td>
+                <td>Physics</td>
+                <td>Rafiqul Islam</td>
+                <td>19-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-102">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Organic Chemistry Reaction Pathways</strong></td>
+                <td>Chemistry</td>
+                <td>Kamrul Islam</td>
+                <td>18-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-103">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Cell Biology and Genetics Revision Sheet</strong></td>
+                <td>Biology</td>
+                <td>Zubair Hossain</td>
+                <td>17-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-104">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>English Grammar and Essay Writing Techniques</strong></td>
+                <td>English</td>
+                <td>Sadia Afrin</td>
+                <td>16-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-105">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>C Programming and ICT Board Question Bank</strong></td>
+                <td>ICT</td>
+                <td>Tanvir Ahmed</td>
+                <td>15-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-106">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Vector and Motion Analysis Worksheets</strong></td>
+                <td>Physics</td>
+                <td>Rafiqul Islam</td>
+                <td>14-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-107">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Periodic Table Trends and Chemical Bonding</strong></td>
+                <td>Chemistry</td>
+                <td>Kamrul Islam</td>
+                <td>13-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-108">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Trigonometry Practice Problem Set</strong></td>
+                <td>Higher Mathematics</td>
+                <td>Tariq Hasan</td>
+                <td>12-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-109">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>HSC Science Model Examination Paper</strong></td>
+                <td>Model Test</td>
+                <td>Academic Panel</td>
+                <td>11-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-110">Download</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="filter-bar-between">
+          <div>Showing verified academic resources</div>
+          <div class="table-actions">
+            <button type="button" class="btn-secondary" id="btnPrevDashMaterials" disabled>
+              Previous
+            </button>
+            <button type="button" class="btn-primary" id="btnPage1DashMaterials">
+              1
+            </button>
+            <button type="button" class="btn-secondary" id="btnPage2DashMaterials">
+              2
+            </button>
+            <button type="button" class="btn-secondary" id="btnNextDashMaterials">
+              Next
+            </button>
+          </div>
+        </div>
       </div>
 
       <footer class="page-footer-main">
-        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
       </footer>
     </main>
 
@@ -181,14 +520,35 @@
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
           <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Tuition Session Confirmed</strong>
+              <span class="modal-notif-meta">10m ago</span>
+            </div>
+            <p class="modal-notif-meta">Higher Mathematics session with Tariq Hasan confirmed for tomorrow at 10:00 AM.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>New Material Uploaded</strong>
+              <span class="modal-notif-meta">2h ago</span>
+            </div>
+            <p class="modal-notif-meta">Rafiqul Islam uploaded Thermodynamics and Waves Formula Sheet.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Monthly Progress Report</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Your November academic progress evaluation is ready for review.</p>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>
       </div>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="student.js"></script>
   </body>
 </html>

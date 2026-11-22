@@ -9,9 +9,10 @@
   <body>
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <div class="brand-logo">LH</div>
-        <h2>LHTMP</h2>
-        <p>Student Portal</p>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Student Portal</h2>
+        <p>Student Account</p>
+      </div>
       </div>
       <nav class="sidebar-nav">
         <span class="nav-section-label">Main Menu</span>
@@ -39,7 +40,9 @@
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
       </div>
     </aside>
 
@@ -50,13 +53,13 @@
           <p>View your 7-day class routine and upcoming tuition timings</p>
         </div>
         <div class="header-right">
-          <button type="button" class="notif-btn" id="btnNotification">
+          <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
             🔔
-            <span class="notif-badge" id="notifBadge">0</span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <div class="user-avatar" id="headerAvatar">S</div>
+          <img src="../Files/Img/Profile/default.svg" alt="Student" class="header-user-img" id="headerAvatar" />
           <div class="user-info">
-            <span id="headerUserName">Student</span>
+            <span id="headerUserName">Farhan Kabir</span>
             <span id="headerUserMeta">Grade 10 • Dhaka</span>
           </div>
         </div>
@@ -64,18 +67,113 @@
 
       <div class="section-block">
         <div class="section-header">
-          <h3>Class Timetable (26 Oct - 01 Nov 2026)</h3>
+          <h3>Class Timetable (22 Nov - 28 Nov 2026)</h3>
           <a href="find_tutors.html">
             <button type="button" class="btn-primary">+ Book New Class</button>
           </a>
         </div>
 
-        <div class="schedule-grid-container" id="scheduleGridContainer"></div>
+        <div class="schedule-grid-container" id="scheduleGridContainer">
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">
+              <h4>Saturday</h4>
+              <span>22 Nov</span>
+            </div>
+            <div class="schedule-slot-card slot-blue">
+              <div class="schedule-time">10:00 AM - 11:30 AM</div>
+              <h5>Higher Mathematics</h5>
+              <p>Tutor: Tariq Hasan</p>
+              <span class="badge">Online Zoom</span>
+              <button type="button" class="btn-primary schedule-btn-mini">Class Link</button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">
+              <h4>Sunday</h4>
+              <span>23 Nov</span>
+            </div>
+            <div class="schedule-slot-card slot-green">
+              <div class="schedule-time">04:00 PM - 05:30 PM</div>
+              <h5>Physics 1st Paper</h5>
+              <p>Tutor: Rafiqul Islam</p>
+              <span class="badge">Home Tuition</span>
+              <button type="button" class="btn-secondary schedule-btn-mini">Details</button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">
+              <h4>Monday</h4>
+              <span>24 Nov</span>
+            </div>
+            <div class="schedule-slot-card slot-yellow">
+              <div class="schedule-time">06:00 PM - 07:30 PM</div>
+              <h5>Chemistry</h5>
+              <p>Tutor: Kamrul Islam</p>
+              <span class="badge">Home Tuition</span>
+              <button type="button" class="btn-secondary schedule-btn-mini">Details</button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">
+              <h4>Tuesday</h4>
+              <span>25 Nov</span>
+            </div>
+            <div class="schedule-slot-card free-slot">
+              <div class="schedule-time">Full Day</div>
+              <h5>Self-Study Revision</h5>
+              <p>No live classes scheduled</p>
+              <span class="badge">Revision Day</span>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">
+              <h4>Wednesday</h4>
+              <span>26 Nov</span>
+            </div>
+            <div class="schedule-slot-card slot-purple">
+              <div class="schedule-time">10:00 AM - 11:30 AM</div>
+              <h5>ICT Programming</h5>
+              <p>Tutor: Tanvir Ahmed</p>
+              <span class="badge">Online Meet</span>
+              <button type="button" class="btn-primary schedule-btn-mini">Class Link</button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">
+              <h4>Thursday</h4>
+              <span>27 Nov</span>
+            </div>
+            <div class="schedule-slot-card slot-green">
+              <div class="schedule-time">05:00 PM - 06:30 PM</div>
+              <h5>English 2nd Paper</h5>
+              <p>Tutor: Sadia Afrin</p>
+              <span class="badge">Home Tuition</span>
+              <button type="button" class="btn-secondary schedule-btn-mini">Details</button>
+            </div>
+          </div>
+
+          <div class="schedule-day-column">
+            <div class="schedule-day-header">
+              <h4>Friday</h4>
+              <span>28 Nov</span>
+            </div>
+            <div class="schedule-slot-card slot-blue">
+              <div class="schedule-time">09:30 AM - 11:30 AM</div>
+              <h5>Weekly Mock Assessment</h5>
+              <p>All Core Science Subjects</p>
+              <span class="badge">Weekly Test</span>
+              <button type="button" class="btn-primary schedule-btn-mini">Start Test</button>
+            </div>
+          </div>
+        </div>
 
         <div class="section-footer-bar">
-          <span>
-            Weekly scheduled sessions are loaded dynamically from the central database.
-          </span>
+          <span>Weekly scheduled sessions are synchronized with verified tutor calendars.</span>
           <div class="table-action-group">
             <button type="button" class="btn-secondary" id="btnPrintRoutine">
               Print Routine
@@ -88,7 +186,7 @@
       </div>
 
       <footer class="page-footer-main">
-        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
       </footer>
     </main>
 
@@ -98,14 +196,35 @@
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
           <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Routine Updated</strong>
+              <span class="modal-notif-meta">2h ago</span>
+            </div>
+            <p class="modal-notif-meta">Your weekly class timetable has been finalized for the current week.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Room Assignment</strong>
+              <span class="modal-notif-meta">6h ago</span>
+            </div>
+            <p class="modal-notif-meta">Virtual study room for Saturday Higher Math is confirmed.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Schedule Advisory</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">No timetable conflicts detected for enrolled subjects.</p>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>
       </div>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="student.js"></script>
   </body>
 </html>
