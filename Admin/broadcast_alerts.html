@@ -42,11 +42,11 @@
             </div>
             <div class="header-right">
                 <span class="admin-badge-header">System Administrator</span>
-                <button class="notif-btn" type="button" title="Notifications">
+                <button class="notif-btn" id="btnNotif" type="button" title="Notifications">
                     🔔
-                    <span class="notif-badge" id="notifBadge"></span>
+                    <span class="notif-badge" id="notifBadge">3</span>
                 </button>
-                <img src="../Files/Img/Profile/admin.svg" alt="Admin">
+                <img src="../Files/Img/Profile/default.svg" alt="Admin">
                 <div class="user-info">
                     <span>Admin</span>
                     <span>System Administrator</span>
@@ -57,23 +57,23 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="📢">
                 <div class="stat-label">Total Broadcasts Dispatched</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">24</div>
+                <div class="stat-sub">Platform notifications</div>
             </div>
             <div class="stat-card" data-icon="🚨">
                 <div class="stat-label">Active Global Alerts</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">2</div>
+                <div class="stat-sub">Currently displaying</div>
             </div>
             <div class="stat-card" data-icon="📡">
                 <div class="stat-label">Total Audience Reach</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">1,248</div>
+                <div class="stat-sub">100% platform reach</div>
             </div>
             <div class="stat-card" data-icon="💬">
                 <div class="stat-label">SMS Alerts Sent</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">340</div>
+                <div class="stat-sub">Priority carrier gateway</div>
             </div>
         </div>
 
@@ -83,42 +83,50 @@
                 <span class="badge">Immediate Dispatch</span>
             </div>
             <div class="form-body">
-                <form id="broadcastForm">
+                <form id="broadcastForm" novalidate>
                     <div class="form-grid">
                         <div class="form-group-custom">
-                            <label for="alert-title-input">Alert Headline / Title</label>
-                            <input type="text" id="alert-title-input" required placeholder="e.g., Scheduled Payment Gateway Maintenance: Friday 2:00 AM - 4:00 AM">
+                            <label for="alert-title-input">Alert Headline / Title <span class="req">*</span></label>
+                            <input type="text" id="alert-title-input" placeholder="e.g., Scheduled Payment Gateway Maintenance: Friday 2:00 AM - 4:00 AM">
+                            <span class="field-error" id="err-alertTitle"></span>
                         </div>
                         <div class="form-group-custom">
-                            <label for="alert-category-input">Alert Category / Severity</label>
+                            <label for="alert-category-input">Alert Category / Severity <span class="req">*</span></label>
                             <select id="alert-category-input">
+                                <option value="">-- Select Category --</option>
                                 <option value="Global">Emergency / Critical Alert (High Priority)</option>
                                 <option value="Academic">Academic Schedule & Exam Guidelines</option>
                                 <option value="Finance">Payment Gateway Maintenance Bulletin</option>
                                 <option value="Policy">Policy & Safety Protocol Update</option>
                             </select>
+                            <span class="field-error" id="err-alertCategory"></span>
                         </div>
                         <div class="form-group-custom">
-                            <label for="target-audience-select">Target Audience</label>
+                            <label for="target-audience-select">Target Audience <span class="req">*</span></label>
                             <select id="target-audience-select">
+                                <option value="">-- Select Target Audience --</option>
                                 <option value="All Users">All Platform Users</option>
                                 <option value="Students & Tutors">Students & Tutors</option>
                                 <option value="All Coordinators">Area Coordinators Only</option>
                                 <option value="All Tutors">Verified Tutors Only</option>
                             </select>
+                            <span class="field-error" id="err-targetAudience"></span>
                         </div>
                         <div class="form-group-custom">
-                            <label for="alert-channels">Dispatch Channels</label>
+                            <label for="alert-channels">Dispatch Channels <span class="req">*</span></label>
                             <select id="alert-channels">
+                                <option value="">-- Select Dispatch Channel --</option>
                                 <option value="all-channels">In-App Banner + Web Push + Email</option>
                                 <option value="in-app-only">In-App Sticky Banner Only</option>
                                 <option value="urgent-sms">In-App + SMS Priority Gateway</option>
                                 <option value="email-only">Email Digest Broadcast</option>
                             </select>
+                            <span class="field-error" id="err-alertChannels"></span>
                         </div>
                         <div class="form-group-custom form-grid-full">
-                            <label for="alert-body-text">Alert Message Body</label>
-                            <textarea id="alert-body-text" rows="4" required placeholder="Enter clear, concise broadcast text. This message will display as a persistent banner across active web sessions for the selected target audience..."></textarea>
+                            <label for="alert-body-text">Alert Message Body <span class="req">*</span></label>
+                            <textarea id="alert-body-text" rows="4" placeholder="Enter clear, concise broadcast text. This message will display as a persistent banner across active web sessions for the selected target audience..."></textarea>
+                            <span class="field-error" id="err-alertBody"></span>
                         </div>
                     </div>
                     <div class="table-actions">
@@ -153,14 +161,145 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody id="broadcastTableBody"></tbody>
+                    <tbody id="broadcastTableBody">
+                        <tr>
+                            <td><strong>BCA-2026-08</strong></td>
+                            <td>Scheduled Payment Gateway Maintenance</td>
+                            <td><span class="status-badge pending">Finance</span></td>
+                            <td>All Platform Users</td>
+                            <td>21-11-2026 08:00 PM</td>
+                            <td>System Admin</td>
+                            <td>1,248 Users</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>
+                                <button type="button" class="btn-danger">Archive</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>BCA-2026-07</strong></td>
+                            <td>HSC-2nd Year Exam Season Guidelines</td>
+                            <td><span class="status-badge active">Academic</span></td>
+                            <td>Students & Tutors</td>
+                            <td>19-11-2026 11:30 AM</td>
+                            <td>System Admin</td>
+                            <td>1,202 Users</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>
+                                <button type="button" class="btn-danger">Archive</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>BCA-2026-06</strong></td>
+                            <td>Code of Conduct & Safety Protocols</td>
+                            <td><span class="status-badge">Policy</span></td>
+                            <td>All Platform Users</td>
+                            <td>15-11-2026 02:15 PM</td>
+                            <td>System Admin</td>
+                            <td>1,180 Users</td>
+                            <td><span class="status-badge suspended">Archived</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>BCA-2026-05</strong></td>
+                            <td>System Security & Password Refresh</td>
+                            <td><span class="status-badge pending">Emergency</span></td>
+                            <td>All Platform Users</td>
+                            <td>10-11-2026 09:00 AM</td>
+                            <td>System Admin</td>
+                            <td>1,150 Users</td>
+                            <td><span class="status-badge suspended">Archived</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>BCA-2026-04</strong></td>
+                            <td>New Term Tuition Enrollment Notice</td>
+                            <td><span class="status-badge active">Academic</span></td>
+                            <td>Students & Tutors</td>
+                            <td>05-11-2026 10:00 AM</td>
+                            <td>System Admin</td>
+                            <td>1,120 Users</td>
+                            <td><span class="status-badge suspended">Archived</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>BCA-2026-03</strong></td>
+                            <td>Severe Weather Class Rescheduling Protocol</td>
+                            <td><span class="status-badge pending">Emergency</span></td>
+                            <td>All Platform Users</td>
+                            <td>28-10-2026 07:30 AM</td>
+                            <td>System Admin</td>
+                            <td>1,100 Users</td>
+                            <td><span class="status-badge suspended">Archived</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>BCA-2026-02</strong></td>
+                            <td>Revised Tuition Settlement Payout Timetable</td>
+                            <td><span class="status-badge pending">Finance</span></td>
+                            <td>Verified Tutors Only</td>
+                            <td>20-10-2026 03:00 PM</td>
+                            <td>System Admin</td>
+                            <td>480 Users</td>
+                            <td><span class="status-badge suspended">Archived</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>BCA-2026-01</strong></td>
+                            <td>Autumn Semester Coordinator Orientation</td>
+                            <td><span class="status-badge active">Academic</span></td>
+                            <td>Area Coordinators Only</td>
+                            <td>15-10-2026 10:00 AM</td>
+                            <td>System Admin</td>
+                            <td>35 Users</td>
+                            <td><span class="status-badge suspended">Archived</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>BCA-2025-24</strong></td>
+                            <td>End of Quarter Platform Security Audit</td>
+                            <td><span class="status-badge">Policy</span></td>
+                            <td>All Platform Users</td>
+                            <td>30-09-2026 04:15 PM</td>
+                            <td>System Admin</td>
+                            <td>1,050 Users</td>
+                            <td><span class="status-badge suspended">Archived</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>BCA-2025-23</strong></td>
+                            <td>Standardized Student Assessment Guidelines</td>
+                            <td><span class="status-badge active">Academic</span></td>
+                            <td>Students & Tutors</td>
+                            <td>15-09-2026 11:00 AM</td>
+                            <td>System Admin</td>
+                            <td>1,010 Users</td>
+                            <td><span class="status-badge suspended">Archived</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">View Report</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
             <div class="filter-bar filter-bar-between">
                 <div>Showing verified platform broadcast dispatches</div>
                 <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnPrevAlerts">Previous</button>
+                    <button type="button" class="btn-secondary" id="btnPrevAlerts" disabled>Previous</button>
                     <button type="button" class="btn-primary" id="btnPage1Alerts">1</button>
                     <button type="button" class="btn-secondary" id="btnPage2Alerts">2</button>
                     <button type="button" class="btn-secondary" id="btnNextAlerts">Next</button>
@@ -169,12 +308,11 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="admin.js"></script>
     <div id="simpleModal" class="modal-overlay">
         <div class="modal-box">
@@ -182,7 +320,29 @@
                 <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
                 <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
             </div>
-            <div id="simpleModalBody" class="modal-body"></div>
+            <div id="simpleModalBody" class="modal-body">
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Urgent Dispute Docket</strong>
+                        <span class="modal-notif-meta">15m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Case DSP-2026-005 escalated to arbitration desk for binding review.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Content Moderation</strong>
+                        <span class="modal-notif-meta">45m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Item MOD-101 flagged for unverified certificates and requires inspection.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Payment Reconciliation</strong>
+                        <span class="modal-notif-meta">2h ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Automated gateway settlement and commission disbursal verified.</p>
+                </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
             </div>

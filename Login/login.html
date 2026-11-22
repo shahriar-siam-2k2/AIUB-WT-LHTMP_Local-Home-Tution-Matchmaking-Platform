@@ -18,13 +18,13 @@
             Local Home Tuition <br />
             Matchmaking Platform
           </h1>
-          <p>Connecting Students &amp; Qualified Tutors</p>
+          <p>Connecting Students & Qualified Tutors</p>
           <div class="divider"></div>
         </div>
 
         <div id="login-alert" class="alert-box"></div>
 
-        <form id="loginForm" class="login-form">
+        <form id="loginForm" class="login-form" novalidate>
           <div class="form-group">
             <label for="identifier">Email or Phone Number</label>
             <input
@@ -32,8 +32,8 @@
               id="identifier"
               name="identifier"
               placeholder="user@gmail.com or 017XXXXXXXX"
-              required
             />
+            <span class="field-error" id="err-identifier"></span>
           </div>
 
           <div class="form-group">
@@ -44,7 +44,6 @@
                 id="password"
                 name="password"
                 placeholder="Enter your password"
-                required
               />
               <button
                 type="button"
@@ -52,9 +51,15 @@
                 id="btnTogglePassword"
                 aria-label="Toggle password visibility"
               >
-                👁️
+                <img
+                  src="../Files/Img/Icon/eye.svg"
+                  id="imgTogglePassword"
+                  alt="Show Password"
+                  class="toggle-password-icon"
+                />
               </button>
             </div>
+            <span class="field-error" id="err-password"></span>
           </div>
 
           <div class="forgot-link">
@@ -105,7 +110,7 @@
           </a>
           <a href="../Admin/admin.html">
             <button type="button" class="btn-secondary">
-              Direct Access: Platform Admin Portal
+              Direct Access: Admin Portal
             </button>
           </a>
         </div>
@@ -115,7 +120,6 @@
       </p>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="login.js"></script>
   </body>
 </html>

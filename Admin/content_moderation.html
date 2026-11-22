@@ -53,11 +53,11 @@
         </div>
         <div class="header-right">
           <span class="admin-badge-header">System Administrator</span>
-          <button class="notif-btn" type="button" title="Notifications">
+          <button class="notif-btn" id="btnNotif" type="button" title="Notifications">
             🔔
-            <span class="notif-badge" id="notifBadge"></span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <img src="../Files/Img/Profile/admin.svg" alt="Admin" />
+          <img src="../Files/Img/Profile/default.svg" alt="Admin" />
           <div class="user-info">
             <span>Admin</span>
             <span>System Administrator</span>
@@ -68,33 +68,33 @@
       <div class="stats-grid">
         <div class="stat-card" data-icon="🛡️">
           <div class="stat-label">Active Moderation Queue</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">7</div>
+          <div class="stat-sub">Pending review</div>
         </div>
         <div class="stat-card" data-icon="👤">
           <div class="stat-label">Flagged Tutor Profiles</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">3</div>
+          <div class="stat-sub">Misleading qualifications</div>
         </div>
         <div class="stat-card" data-icon="💬">
           <div class="stat-label">Abusive Reviews Reported</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">2</div>
+          <div class="stat-sub">Defamatory text</div>
         </div>
         <div class="stat-card" data-icon="✉️">
           <div class="stat-label">Inappropriate Messages</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">2</div>
+          <div class="stat-sub">Policy violation</div>
         </div>
         <div class="stat-card" data-icon="🗑️">
           <div class="stat-label">Removed Content This Week</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">5</div>
+          <div class="stat-sub">Enforced removals</div>
         </div>
         <div class="stat-card" data-icon="✔️">
           <div class="stat-label">Dismissed False Reports</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">9</div>
+          <div class="stat-sub">Cleared reports</div>
         </div>
       </div>
 
@@ -162,14 +162,155 @@
                 <th>Moderator Actions</th>
               </tr>
             </thead>
-            <tbody id="moderationTableBody"></tbody>
+            <tbody id="modQueueBody">
+              <tr>
+                <td><strong>MOD-101</strong></td>
+                <td>Tutor Profile</td>
+                <td>Rafiqul Islam</td>
+                <td>Coordinator (Dhaka-1)</td>
+                <td>Unverified certificates and misleading university credentials.</td>
+                <td>Credential Fraud</td>
+                <td>21-11-2026 10:14 AM</td>
+                <td><span class="severity-badge high">High</span></td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td>
+                  <button type="button" class="btn-primary" value="MOD-101">Inspect</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>MOD-102</strong></td>
+                <td>Student Review</td>
+                <td>Sadia Anjum</td>
+                <td>Tariq Hasan (Tutor)</td>
+                <td>Inappropriate language and personal attacks in review text.</td>
+                <td>Abusive Language</td>
+                <td>20-11-2026 03:22 PM</td>
+                <td><span class="severity-badge medium">Medium</span></td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td>
+                  <button type="button" class="btn-primary" value="MOD-102">Inspect</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>MOD-103</strong></td>
+                <td>Direct Message</td>
+                <td>Imran Khan</td>
+                <td>Ayesha Siddiqua</td>
+                <td>External contact sharing attempting to bypass platform payment.</td>
+                <td>Circumvention</td>
+                <td>19-11-2026 06:45 PM</td>
+                <td><span class="severity-badge low">Low</span></td>
+                <td><span class="status-badge dismissed">Dismissed</span></td>
+                <td>
+                  <button type="button" class="btn-secondary" disabled>Inspect</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>MOD-104</strong></td>
+                <td>Tutor Profile</td>
+                <td>Tanvir Ahmed</td>
+                <td>Auto Filter</td>
+                <td>Commercial advertising in public tutor profile overview.</td>
+                <td>Spam / Advertising</td>
+                <td>18-11-2026 08:30 AM</td>
+                <td><span class="severity-badge high">High</span></td>
+                <td><span class="status-badge removed">Removed</span></td>
+                <td>
+                  <button type="button" class="btn-secondary" disabled>Inspect</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>MOD-105</strong></td>
+                <td>Student Review</td>
+                <td>Mehedi Hasan</td>
+                <td>Zubair Hossain</td>
+                <td>Unsubstantiated claims regarding payment extra fees.</td>
+                <td>Misinformation</td>
+                <td>17-11-2026 02:10 PM</td>
+                <td><span class="severity-badge medium">Medium</span></td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td>
+                  <button type="button" class="btn-primary" value="MOD-105">Inspect</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>MOD-106</strong></td>
+                <td>Tutor Profile</td>
+                <td>Farhana Yeasmin</td>
+                <td>Coordinator (Zone-2)</td>
+                <td>Inappropriate personal contact numbers listed in subject intro.</td>
+                <td>Solicitation</td>
+                <td>16-11-2026 09:40 AM</td>
+                <td><span class="severity-badge high">High</span></td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td>
+                  <button type="button" class="btn-primary" value="MOD-106">Inspect</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>MOD-107</strong></td>
+                <td>Tuition Post</td>
+                <td>Mahmudul Hasan</td>
+                <td>Auto Filter</td>
+                <td>Excessive promotional external URL links in description.</td>
+                <td>Spam / Advertising</td>
+                <td>15-11-2026 04:20 PM</td>
+                <td><span class="severity-badge medium">Medium</span></td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td>
+                  <button type="button" class="btn-primary" value="MOD-107">Inspect</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>MOD-108</strong></td>
+                <td>Chat Message</td>
+                <td>Aminul Haque</td>
+                <td>Salma Akter</td>
+                <td>Disputed feedback comment alleging attendance failure.</td>
+                <td>Misinformation</td>
+                <td>14-11-2026 11:15 AM</td>
+                <td><span class="severity-badge low">Low</span></td>
+                <td><span class="status-badge dismissed">Dismissed</span></td>
+                <td>
+                  <button type="button" class="btn-secondary" disabled>Inspect</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>MOD-109</strong></td>
+                <td>Student Review</td>
+                <td>Tamanna Akter</td>
+                <td>Mod Bot</td>
+                <td>Violation of language courtesy guidelines in tutor evaluation.</td>
+                <td>Harassment</td>
+                <td>13-11-2026 02:50 PM</td>
+                <td><span class="severity-badge urgent">Urgent</span></td>
+                <td><span class="status-badge removed">Removed</span></td>
+                <td>
+                  <button type="button" class="btn-secondary" disabled>Inspect</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>MOD-110</strong></td>
+                <td>Tutor Bio</td>
+                <td>Sadia Afrin</td>
+                <td>Auto Filter</td>
+                <td>Unverified claim of national board examiner certification.</td>
+                <td>Academic Fraud</td>
+                <td>12-11-2026 10:00 AM</td>
+                <td><span class="severity-badge high">High</span></td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td>
+                  <button type="button" class="btn-primary" value="MOD-110">Inspect</button>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
 
         <div class="filter-bar filter-bar-between">
           <div>Showing verified moderation queue items</div>
           <div class="table-actions">
-            <button type="button" class="btn-secondary" id="btnPrevMod">
+            <button type="button" class="btn-secondary" id="btnPrevMod" disabled>
               Previous
             </button>
             <button type="button" class="btn-primary" id="btnPage1Mod">
@@ -194,28 +335,32 @@
           <div class="form-grid">
             <div class="form-group-custom">
               <label>Active Inspection Case</label>
-              <input type="text" id="inspectCaseId" value="" readonly />
+              <input type="text" id="inspectCaseId" readonly />
+              <span class="field-error" id="err-inspectCase"></span>
             </div>
             <div class="form-group-custom">
-              <label>Reported By</label>
-              <input type="text" id="inspectReporter" value="" readonly />
+              <label>Reported By <span class="req">*</span></label>
+              <input type="text" id="inspectReporter" readonly />
+              <span class="field-error" id="err-inspectReporter"></span>
             </div>
             <div class="form-group-custom form-grid-full">
-              <label>Flagged Text Content</label>
+              <label>Flagged Text Content <span class="req">*</span></label>
               <textarea
                 id="inspectSnippet"
                 rows="3"
                 readonly
                 class="inspect-snippet-area"
               ></textarea>
+              <span class="field-error" id="err-inspectSnippet"></span>
             </div>
             <div class="form-group-custom form-grid-full">
-              <label>Moderator Action Notes</label>
+              <label>Moderator Action Notes <span class="req">*</span></label>
               <input
                 type="text"
                 id="modActionNote"
                 placeholder="Add administrative justification for disciplinary record..."
               />
+              <span class="field-error" id="err-modActionNote"></span>
             </div>
           </div>
           <div class="table-actions table-actions-mt">
@@ -242,7 +387,6 @@
       </footer>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="admin.js"></script>
     <div id="simpleModal" class="modal-overlay">
       <div class="modal-box">
@@ -250,7 +394,29 @@
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
           <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Urgent Dispute Docket</strong>
+              <span class="modal-notif-meta">15m ago</span>
+            </div>
+            <p class="modal-notif-meta">Case DSP-2026-005 escalated to arbitration desk for binding review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Content Moderation</strong>
+              <span class="modal-notif-meta">45m ago</span>
+            </div>
+            <p class="modal-notif-meta">Item MOD-101 flagged for unverified certificates and requires inspection.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Payment Reconciliation</strong>
+              <span class="modal-notif-meta">2h ago</span>
+            </div>
+            <p class="modal-notif-meta">Automated gateway settlement and commission disbursal verified.</p>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>

@@ -42,11 +42,11 @@
             </div>
             <div class="header-right">
                 <span class="admin-badge-header">System Administrator</span>
-                <button class="notif-btn" type="button" title="Notifications">
+                <button class="notif-btn" id="btnNotif" type="button" title="Notifications">
                     🔔
-                    <span class="notif-badge" id="notifBadge"></span>
+                    <span class="notif-badge" id="notifBadge">3</span>
                 </button>
-                <img src="../Files/Img/Profile/admin.svg" alt="Admin">
+                <img src="../Files/Img/Profile/default.svg" alt="Admin">
                 <div class="user-info">
                     <span>Admin</span>
                     <span>System Administrator</span>
@@ -57,28 +57,28 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="৳">
                 <div class="stat-label">Total Platform Inflow</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">৳ 1,854,000</div>
+                <div class="stat-sub">Total gross volume</div>
             </div>
             <div class="stat-card" data-icon="📊">
                 <div class="stat-label">Platform Commissions</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">৳ 185,400</div>
+                <div class="stat-sub">10% retained fee</div>
             </div>
             <div class="stat-card" data-icon="💸">
                 <div class="stat-label">Tutor Payouts Disbursed</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">৳ 1,668,600</div>
+                <div class="stat-sub">Direct disbursement</div>
             </div>
             <div class="stat-card" data-icon="⏳">
                 <div class="stat-label">Pending Verification</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">৳ 14,500</div>
+                <div class="stat-sub">3 transactions awaiting audit</div>
             </div>
             <div class="stat-card" data-icon="↩️">
                 <div class="stat-label">Total Refunds Issued</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">৳ 8,200</div>
+                <div class="stat-sub">Resolved disputes</div>
             </div>
         </div>
 
@@ -162,29 +162,168 @@
                             <th>Gateway Actions</th>
                         </tr>
                     </thead>
-                    <tbody id="paymentTableBody"></tbody>
+                    <tbody id="paymentTableBody">
+                        <tr>
+                            <td><strong>TXN-2026-9081</strong></td>
+                            <td>Saimum Hasan</td>
+                            <td>Tanvir Ahmed</td>
+                            <td>Tuition Fee</td>
+                            <td>৳ 6,000</td>
+                            <td>৳ 600</td>
+                            <td>bKash Merchant</td>
+                            <td>20-11-2026 10:15 AM</td>
+                            <td><span class="status-badge active">Completed</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">Receipt</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>TXN-2026-9080</strong></td>
+                            <td>Nafisa Rahman</td>
+                            <td>Fahim Morshed</td>
+                            <td>Tuition Fee</td>
+                            <td>৳ 8,500</td>
+                            <td>৳ 850</td>
+                            <td>Nagad API</td>
+                            <td>19-11-2026 04:30 PM</td>
+                            <td><span class="status-badge active">Completed</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">Receipt</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>TXN-2026-9079</strong></td>
+                            <td>Farhan Kabir</td>
+                            <td>Kamrul Islam</td>
+                            <td>Tuition Fee</td>
+                            <td>৳ 5,000</td>
+                            <td>৳ 500</td>
+                            <td>DBBL Rocket</td>
+                            <td>19-11-2026 11:20 AM</td>
+                            <td><span class="status-badge active">Completed</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">Receipt</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>TXN-2026-9078</strong></td>
+                            <td>Tahmid Hasan</td>
+                            <td>Nusrat Jahan</td>
+                            <td>Refund</td>
+                            <td>৳ 4,000</td>
+                            <td>৳ 0</td>
+                            <td>bKash Merchant</td>
+                            <td>18-11-2026 02:45 PM</td>
+                            <td><span class="status-badge suspended">Refunded</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">Audit Log</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>TXN-2026-9077</strong></td>
+                            <td>Mehedi Hasan</td>
+                            <td>Zubair Hossain</td>
+                            <td>Tuition Fee</td>
+                            <td>৳ 7,500</td>
+                            <td>৳ 750</td>
+                            <td>UCB Bank</td>
+                            <td>18-11-2026 09:10 AM</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>
+                                <button type="button" class="btn-primary">Verify</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>TXN-2026-9076</strong></td>
+                            <td>Rafiqul Islam</td>
+                            <td>Jahidul Islam</td>
+                            <td>Tuition Fee</td>
+                            <td>৳ 5,000</td>
+                            <td>৳ 500</td>
+                            <td>Bank Transfer</td>
+                            <td>17-11-2026 02:00 PM</td>
+                            <td><span class="status-badge active">Completed</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">Receipt</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>TXN-2026-9075</strong></td>
+                            <td>Nazmul Huda</td>
+                            <td>Anwar Hossain</td>
+                            <td>Tuition Fee</td>
+                            <td>৳ 3,800</td>
+                            <td>৳ 380</td>
+                            <td>Nagad API</td>
+                            <td>17-11-2026 11:30 AM</td>
+                            <td><span class="status-badge active">Completed</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">Receipt</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>TXN-2026-9074</strong></td>
+                            <td>Platform Payout</td>
+                            <td>Shamsul Huda</td>
+                            <td>Coordinator Payout</td>
+                            <td>৳ 11,200</td>
+                            <td>৳ 0</td>
+                            <td>Bank Transfer</td>
+                            <td>16-11-2026 09:15 AM</td>
+                            <td><span class="status-badge active">Completed</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">Receipt</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>TXN-2026-9073</strong></td>
+                            <td>Mehedi Hasan</td>
+                            <td>Sadia Afrin</td>
+                            <td>Tuition Fee</td>
+                            <td>৳ 2,500</td>
+                            <td>৳ 250</td>
+                            <td>bKash Merchant</td>
+                            <td>16-11-2026 04:45 PM</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>
+                                <button type="button" class="btn-primary">Verify</button>
+                            </td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>TXN-2026-9072</strong></td>
+                            <td>Tamanna Akter</td>
+                            <td>Tanvir Ahmed</td>
+                            <td>Tuition Fee</td>
+                            <td>৳ 4,000</td>
+                            <td>৳ 400</td>
+                            <td>DBBL Rocket</td>
+                            <td>15-11-2026 01:10 PM</td>
+                            <td><span class="status-badge active">Completed</span></td>
+                            <td>
+                                <button type="button" class="btn-secondary">Receipt</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
             <div class="filter-bar filter-bar-between">
                 <div>Showing verified platform financial transactions</div>
                 <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnPrevPayments">Previous</button>
+                    <button type="button" class="btn-secondary" id="btnPrevPayments" disabled>Previous</button>
                     <button type="button" class="btn-primary" id="btnPage1Payments">1</button>
                     <button type="button" class="btn-secondary" id="btnPage2Payments">2</button>
-                    <button type="button" class="btn-secondary" id="btnPage3Payments">3</button>
                     <button type="button" class="btn-secondary" id="btnNextPayments">Next</button>
                 </div>
             </div>
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="admin.js"></script>
     <div id="simpleModal" class="modal-overlay">
         <div class="modal-box">
@@ -192,7 +331,29 @@
                 <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
                 <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
             </div>
-            <div id="simpleModalBody" class="modal-body"></div>
+            <div id="simpleModalBody" class="modal-body">
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Urgent Dispute Docket</strong>
+                        <span class="modal-notif-meta">15m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Case DSP-2026-005 escalated to arbitration desk for binding review.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Content Moderation</strong>
+                        <span class="modal-notif-meta">45m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Item MOD-101 flagged for unverified certificates and requires inspection.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Payment Reconciliation</strong>
+                        <span class="modal-notif-meta">2h ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Automated gateway settlement and commission disbursal verified.</p>
+                </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
             </div>

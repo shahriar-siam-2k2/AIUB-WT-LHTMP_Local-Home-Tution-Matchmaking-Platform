@@ -52,11 +52,11 @@
         </div>
         <div class="header-right">
           <span class="admin-badge-header">System Administrator</span>
-          <button class="notif-btn" type="button" title="Notifications">
+          <button class="notif-btn" id="btnNotif" type="button" title="Notifications">
             🔔
-            <span class="notif-badge" id="notifBadge"></span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <img src="../Files/Img/Profile/admin.svg" alt="Admin" />
+          <img src="../Files/Img/Profile/default.svg" alt="Admin" />
           <div class="user-info">
             <span>Admin</span>
             <span>System Administrator</span>
@@ -67,33 +67,28 @@
       <div class="stats-grid">
         <div class="stat-card" data-icon="👥">
           <div class="stat-label">Total Platform Users</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">1,248</div>
+          <div class="stat-sub">+12% from last month</div>
         </div>
         <div class="stat-card" data-icon="🎓">
           <div class="stat-label">Active Tutors</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">482</div>
+          <div class="stat-sub">Across 8 Divisions</div>
         </div>
         <div class="stat-card" data-icon="৳">
           <div class="stat-label">Monthly Revenue</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">৳ 185,400</div>
+          <div class="stat-sub">Platform commission</div>
         </div>
         <div class="stat-card" data-icon="⚖️">
           <div class="stat-label">Open Disputes</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">4</div>
+          <div class="stat-sub">2 urgent docket</div>
         </div>
         <div class="stat-card" data-icon="🛡️">
           <div class="stat-label">Content Moderation Queue</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
-        </div>
-        <div class="stat-card" data-icon="📈">
-          <div class="stat-label">Platform Success Rate</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">7</div>
+          <div class="stat-sub">Flagged posts & reviews</div>
         </div>
       </div>
 
@@ -159,17 +154,87 @@
                 <th>Current Month</th>
                 <th>Previous Month</th>
                 <th>Growth / Delta</th>
-                <th>Target KPI</th>
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody id="analyticsOverviewBody"></tbody>
+            <tbody id="analyticsOverviewBody">
+              <tr>
+                <td><strong>Total Platform Signups</strong></td>
+                <td>1,248</td>
+                <td>1,114</td>
+                <td><span class="trend-rate trend-positive">+12.0%</span></td>
+                <td><span class="status-badge active">ON TARGET</span></td>
+              </tr>
+              <tr>
+                <td><strong>Monthly Active Tutors</strong></td>
+                <td>482</td>
+                <td>430</td>
+                <td><span class="trend-rate trend-positive">+12.1%</span></td>
+                <td><span class="status-badge active">ON TARGET</span></td>
+              </tr>
+              <tr>
+                <td><strong>Platform Commission Volume</strong></td>
+                <td>৳ 185,400</td>
+                <td>৳ 162,000</td>
+                <td><span class="trend-rate trend-positive">+14.4%</span></td>
+                <td><span class="status-badge active">EXCEEDED</span></td>
+              </tr>
+              <tr>
+                <td><strong>Tuition Matches Finalized</strong></td>
+                <td>560</td>
+                <td>490</td>
+                <td><span class="trend-rate trend-positive">+14.3%</span></td>
+                <td><span class="status-badge active">ON TARGET</span></td>
+              </tr>
+              <tr>
+                <td><strong>Dispute Resolution Rate</strong></td>
+                <td>94.2%</td>
+                <td>91.5%</td>
+                <td><span class="trend-rate trend-positive">+2.7%</span></td>
+                <td><span class="status-badge pending">NEAR TARGET</span></td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Tutor Retention Rate</strong></td>
+                <td>91.4%</td>
+                <td>89.2%</td>
+                <td><span class="trend-rate trend-positive">+2.2%</span></td>
+                <td><span class="status-badge active">ON TARGET</span></td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Average Response Latency</strong></td>
+                <td>2.4 Hours</td>
+                <td>3.1 Hours</td>
+                <td><span class="trend-rate trend-positive">-22.5%</span></td>
+                <td><span class="status-badge active">EXCEEDED</span></td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Student Satisfaction Index</strong></td>
+                <td>4.8 / 5.0</td>
+                <td>4.7 / 5.0</td>
+                <td><span class="trend-rate trend-positive">+2.1%</span></td>
+                <td><span class="status-badge active">EXCEEDED</span></td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Platform Uptime SLA</strong></td>
+                <td>99.98%</td>
+                <td>99.95%</td>
+                <td><span class="trend-rate trend-positive">+0.03%</span></td>
+                <td><span class="status-badge active">ON TARGET</span></td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Escrow Security Verification</strong></td>
+                <td>100%</td>
+                <td>100%</td>
+                <td><span class="trend-rate trend-positive">0.0%</span></td>
+                <td><span class="status-badge active">SECURE</span></td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div class="filter-bar filter-bar-between">
           <div>Showing platform analytics overview</div>
           <div class="table-actions">
-            <button type="button" class="btn-secondary" id="btnPrevDashAnalytics">Previous</button>
+            <button type="button" class="btn-secondary" id="btnPrevDashAnalytics" disabled>Previous</button>
             <button type="button" class="btn-primary" id="btnPage1DashAnalytics">1</button>
             <button type="button" class="btn-secondary" id="btnPage2DashAnalytics">2</button>
             <button type="button" class="btn-secondary" id="btnNextDashAnalytics">Next</button>
@@ -199,13 +264,144 @@
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody id="escalatedDisputesBody"></tbody>
+            <tbody id="escalatedDisputesBody">
+              <tr>
+                <td><strong>DSP-2026-005</strong></td>
+                <td>Dhaka - Zone 1</td>
+                <td>Farhan Kabir (Student)</td>
+                <td>Tanvir Hasan (Tutor)</td>
+                <td>Scheduling Conflict</td>
+                <td><span class="priority-badge urgent">Urgent</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>DSP-2026-004</strong></td>
+                <td>Barishal - Zone 4</td>
+                <td>Rahat Karim (Tutor)</td>
+                <td>Salma Akter (Student)</td>
+                <td>Tuition Session Disruption</td>
+                <td><span class="priority-badge urgent">Urgent</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>DSP-2026-003</strong></td>
+                <td>Chittagong - Zone 2</td>
+                <td>Nusrat Jahan (Student)</td>
+                <td>Kamrul Islam (Tutor)</td>
+                <td>Late Rescheduling Fee</td>
+                <td><span class="priority-badge high">High</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>DSP-2026-002</strong></td>
+                <td>Rajshahi - Zone 3</td>
+                <td>Tariqul Islam (Student)</td>
+                <td>Asif Mahmud (Tutor)</td>
+                <td>Unnotified Session Absence</td>
+                <td><span class="priority-badge medium">Medium</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>DSP-2026-001</strong></td>
+                <td>Sylhet - Zone 5</td>
+                <td>Sadia Anjum (Student)</td>
+                <td>Ayesha Siddiqua (Tutor)</td>
+                <td>Syllabus Pacing Disagreement</td>
+                <td><span class="priority-badge low">Low</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>DSP-2026-006</strong></td>
+                <td>Dhaka - Zone 1</td>
+                <td>Salma Akter (Student)</td>
+                <td>Zubair Hossain (Tutor)</td>
+                <td>Unapproved Fee Adjustment</td>
+                <td><span class="priority-badge urgent">Urgent</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>DSP-2026-007</strong></td>
+                <td>Khulna - Zone 6</td>
+                <td>Farhan Kabir (Student)</td>
+                <td>Kamrul Islam (Tutor)</td>
+                <td>Lesson Location Inconsistency</td>
+                <td><span class="priority-badge high">High</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>DSP-2026-008</strong></td>
+                <td>Chittagong - Zone 2</td>
+                <td>Rahat Karim (Tutor)</td>
+                <td>Tanvir Hasan (Tutor)</td>
+                <td>Unfinished Syllabus Topic</td>
+                <td><span class="priority-badge medium">Medium</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>DSP-2026-009</strong></td>
+                <td>Barishal - Zone 4</td>
+                <td>Nusrat Jahan (Student)</td>
+                <td>Asif Mahmud (Tutor)</td>
+                <td>Session Timing Overlap</td>
+                <td><span class="priority-badge low">Low</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>DSP-2026-010</strong></td>
+                <td>Rajshahi - Zone 3</td>
+                <td>Sadia Anjum (Student)</td>
+                <td>Zubair Hossain (Tutor)</td>
+                <td>Exam Preparation Gap</td>
+                <td><span class="priority-badge low">Low</span></td>
+                <td>
+                  <a href="dispute_center.html">
+                    <button type="button" class="btn-primary">Review Case</button>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div class="filter-bar filter-bar-between">
           <div>Showing escalated disputes pending action</div>
           <div class="table-actions">
-            <button type="button" class="btn-secondary" id="btnPrevDashDisputes">Previous</button>
+            <button type="button" class="btn-secondary" id="btnPrevDashDisputes" disabled>Previous</button>
             <button type="button" class="btn-primary" id="btnPage1DashDisputes">1</button>
             <button type="button" class="btn-secondary" id="btnPage2DashDisputes">2</button>
             <button type="button" class="btn-secondary" id="btnNextDashDisputes">Next</button>
@@ -214,11 +410,9 @@
       </div>
 
       <footer class="page-footer-main">
-        © 2026 Local Home Tuition Matchmaking Platform. All rights
-        reserved.
+        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
       </footer>
     </div>
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="admin.js"></script>
     <div id="simpleModal" class="modal-overlay">
       <div class="modal-box">
@@ -226,11 +420,33 @@
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
           <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Urgent Dispute Docket</strong>
+              <span class="modal-notif-meta">15m ago</span>
+            </div>
+            <p class="modal-notif-meta">Case DSP-2026-005 escalated to arbitration desk for binding review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Content Moderation</strong>
+              <span class="modal-notif-meta">45m ago</span>
+            </div>
+            <p class="modal-notif-meta">Item MOD-101 flagged for unverified certificates and requires inspection.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Payment Reconciliation</strong>
+              <span class="modal-notif-meta">2h ago</span>
+            </div>
+            <p class="modal-notif-meta">Automated gateway settlement and commission disbursal verified.</p>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>
       </div>
     </div>
-</body>
+  </body>
 </html>

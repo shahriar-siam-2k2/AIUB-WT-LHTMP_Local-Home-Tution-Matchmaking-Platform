@@ -50,11 +50,11 @@
         </div>
         <div class="header-right">
           <span class="admin-badge-header">System Administrator</span>
-          <button class="notif-btn" type="button" title="Notifications">
+          <button class="notif-btn" id="btnNotif" type="button" title="Notifications">
             🔔
-            <span class="notif-badge" id="notifBadge"></span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <img src="../Files/Img/Profile/admin.svg" alt="Admin" />
+          <img src="../Files/Img/Profile/default.svg" alt="Admin" />
           <div class="user-info">
             <span>Admin</span>
             <span>System Administrator</span>
@@ -65,33 +65,33 @@
       <div class="stats-grid">
         <div class="stat-card" data-icon="👥">
           <div class="stat-label">Total Users</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">1,248</div>
+          <div class="stat-sub">+12% this month</div>
         </div>
         <div class="stat-card" data-icon="🎒">
           <div class="stat-label">Registered Students</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">720</div>
+          <div class="stat-sub">Active learners</div>
         </div>
         <div class="stat-card" data-icon="🎓">
           <div class="stat-label">Verified Tutors</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">482</div>
+          <div class="stat-sub">Across 8 Divisions</div>
         </div>
         <div class="stat-card" data-icon="📍">
           <div class="stat-label">Area Coordinators</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">42</div>
+          <div class="stat-sub">Regional supervisors</div>
         </div>
         <div class="stat-card" data-icon="🚫">
           <div class="stat-label">Suspended Users</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">3</div>
+          <div class="stat-sub">Policy violations</div>
         </div>
         <div class="stat-card" data-icon="🛡️">
           <div class="stat-label">Platform Admins</div>
-          <div class="stat-value"></div>
-          <div class="stat-sub"></div>
+          <div class="stat-value">1</div>
+          <div class="stat-sub">System Root</div>
         </div>
       </div>
 
@@ -157,14 +157,235 @@
                 <th>Account Actions</th>
               </tr>
             </thead>
-            <tbody id="userTableBody"></tbody>
+            <tbody id="userTableBody">
+              <tr>
+                <td><strong>USR-1001</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>System Admin</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-admin">Admin</span></td>
+                <td>simba@gmail.com</td>
+                <td>Dhaka (Mirpur)</td>
+                <td>14-11-2026 05:32 AM</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1001&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>USR-1002</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Tariqul Islam</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-coordinator">Area Coordinator</span></td>
+                <td>tbn@gmail.com</td>
+                <td>Chittagong (Feni)</td>
+                <td>14-11-2026 06:15 AM</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1002&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>USR-1003</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Jerin Akter</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-tutor">Tutor</span></td>
+                <td>jerin@gmail.com</td>
+                <td>Dhaka (Dhanmondi)</td>
+                <td>14-11-2026 07:40 AM</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1003&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>USR-1004</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Jui Sultana</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-student">Student</span></td>
+                <td>jui@gmail.com</td>
+                <td>Khulna (Jashore)</td>
+                <td>14-11-2026 08:20 AM</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1004&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>USR-1005</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Nafis Ahmed</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-tutor">Tutor</span></td>
+                <td>nafis.ahmed@yahoo.com</td>
+                <td>Rajshahi (Bogura)</td>
+                <td>15-11-2026 11:10 AM</td>
+                <td><span class="status-badge pending">Pending Verification</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1005&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>USR-1006</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Farhana Yeasmin</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-student">Student</span></td>
+                <td>farhana@gmail.com</td>
+                <td>Dhaka (Gulshan)</td>
+                <td>16-11-2026 09:30 AM</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1006&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>USR-1007</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Tanvir Ahmed</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-tutor">Tutor</span></td>
+                <td>tanvir@gmail.com</td>
+                <td>Dhaka (Banani)</td>
+                <td>16-11-2026 10:15 AM</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1007&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>USR-1008</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Aminul Haque</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-coordinator">Area Coordinator</span></td>
+                <td>aminul@gmail.com</td>
+                <td>Rajshahi (Sadar)</td>
+                <td>17-11-2026 02:40 PM</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1008&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>USR-1009</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Mahmudul Hasan</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-student">Student</span></td>
+                <td>mahmud@gmail.com</td>
+                <td>Dhaka (Mohakhali)</td>
+                <td>18-11-2026 11:00 AM</td>
+                <td><span class="status-badge suspended">Suspended</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1009&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>USR-1010</strong></td>
+                <td>
+                  <div class="user-cell">
+                    <img src="../Files/Img/Profile/default.svg" alt="Avatar" class="user-avatar-sm" />
+                    <span>Sadia Afrin</span>
+                  </div>
+                </td>
+                <td><span class="role-badge role-tutor">Tutor</span></td>
+                <td>sadia@gmail.com</td>
+                <td>Barishal (Kotwali)</td>
+                <td>19-11-2026 04:25 PM</td>
+                <td><span class="status-badge active">Active</span></td>
+                <td>
+                  <div class="user-action-group">
+                    <a href="../Registration/edit_profile.html?id=USR-1010&from=admin">
+                      <button type="button" class="btn-secondary">Edit Profile</button>
+                    </a>
+                    <button type="button" class="btn-danger">Suspend</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
 
         <div class="filter-bar filter-bar-between">
           <div>Showing verified platform user directory</div>
           <div class="table-actions">
-            <button type="button" class="btn-secondary" id="btnPrevUsers">
+            <button type="button" class="btn-secondary" id="btnPrevUsers" disabled>
               Previous
             </button>
             <button type="button" class="btn-primary" id="btnPage1Users">
@@ -192,7 +413,6 @@
       </footer>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="admin.js"></script>
     <div id="simpleModal" class="modal-overlay">
       <div class="modal-box">
@@ -200,7 +420,29 @@
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
           <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Urgent Dispute Docket</strong>
+              <span class="modal-notif-meta">15m ago</span>
+            </div>
+            <p class="modal-notif-meta">Case DSP-2026-005 escalated to arbitration desk for binding review.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Content Moderation</strong>
+              <span class="modal-notif-meta">45m ago</span>
+            </div>
+            <p class="modal-notif-meta">Item MOD-101 flagged for unverified certificates and requires inspection.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Payment Reconciliation</strong>
+              <span class="modal-notif-meta">2h ago</span>
+            </div>
+            <p class="modal-notif-meta">Automated gateway settlement and commission disbursal verified.</p>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>
