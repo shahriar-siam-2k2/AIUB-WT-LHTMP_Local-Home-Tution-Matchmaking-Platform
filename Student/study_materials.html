@@ -9,9 +9,10 @@
   <body>
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <div class="brand-logo">LH</div>
-        <h2>LHTMP</h2>
-        <p>Student Portal</p>
+        <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
+        <h2>Student Portal</h2>
+        <p>Student Account</p>
+      </div>
       </div>
       <nav class="sidebar-nav">
         <span class="nav-section-label">Main Menu</span>
@@ -39,24 +40,26 @@
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
+        <a href="../Login/login.html">
+          <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+        </a>
       </div>
     </aside>
 
     <main class="main-content">
       <div class="top-header">
         <div class="header-left">
-          <h2 id="headerGreeting">Study Materials &amp; Resources</h2>
+          <h2 id="headerGreeting">Study Materials and Resources</h2>
           <p>Access notes, lecture slides, worksheets, and practice exams uploaded by your tutors</p>
         </div>
         <div class="header-right">
-          <button type="button" class="notif-btn" id="btnNotification">
+          <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
             🔔
-            <span class="notif-badge" id="notifBadge">0</span>
+            <span class="notif-badge" id="notifBadge">3</span>
           </button>
-          <div class="user-avatar" id="headerAvatar">S</div>
+          <img src="../Files/Img/Profile/default.svg" alt="Student" class="header-user-img" id="headerAvatar" />
           <div class="user-info">
-            <span id="headerUserName">Student</span>
+            <span id="headerUserName">Farhan Kabir</span>
             <span id="headerUserMeta">Grade 10 • Dhaka</span>
           </div>
         </div>
@@ -64,8 +67,8 @@
 
       <div class="section-block">
         <div class="section-header">
-          <h3>Search Files &amp; Resources</h3>
-          <span class="badge" id="materialsCountBadge">0 Materials Available</span>
+          <h3>Search Files and Resources</h3>
+          <span class="badge" id="materialsCountBadge">10 Materials Available</span>
         </div>
         <div class="search-bar-row">
           <input
@@ -80,23 +83,147 @@
             <option value="chemistry">Chemistry</option>
             <option value="biology">Biology</option>
             <option value="english">English</option>
-            <option value="ict">ICT &amp; Computer</option>
+            <option value="ict">ICT and Computer</option>
           </select>
-          <button type="button" class="btn-search" id="btnSearchMaterials">Search</button>
+          <button type="button" class="btn-primary" id="btnSearchMaterials">Search</button>
+          <button type="button" class="btn-secondary" id="btnResetMaterials">Reset</button>
         </div>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Document Name</th>
-              <th>Subject</th>
-              <th>Tutor / Author</th>
-              <th>File Type &amp; Size</th>
-              <th>Date Added</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="studyMaterialsBody"></tbody>
-        </table>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Document Name</th>
+                <th>Subject</th>
+                <th>Tutor / Author</th>
+                <th>File Type and Size</th>
+                <th>Date Added</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="studyMaterialsBody">
+              <tr>
+                <td><strong>Calculus and Coordinate Geometry Notes</strong></td>
+                <td>Higher Mathematics</td>
+                <td>Tariq Hasan</td>
+                <td>PDF • 3.4 MB</td>
+                <td>20-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-101">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Thermodynamics and Waves Formula Sheet</strong></td>
+                <td>Physics</td>
+                <td>Rafiqul Islam</td>
+                <td>PDF • 1.8 MB</td>
+                <td>19-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-102">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Organic Chemistry Reaction Pathways</strong></td>
+                <td>Chemistry</td>
+                <td>Kamrul Islam</td>
+                <td>PDF • 4.2 MB</td>
+                <td>18-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-103">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Cell Biology and Genetics Revision Sheet</strong></td>
+                <td>Biology</td>
+                <td>Zubair Hossain</td>
+                <td>PDF • 2.6 MB</td>
+                <td>17-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-104">Download</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>English Grammar and Essay Writing Techniques</strong></td>
+                <td>English</td>
+                <td>Sadia Afrin</td>
+                <td>DOCX • 1.2 MB</td>
+                <td>16-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-105">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>C Programming and ICT Board Question Bank</strong></td>
+                <td>ICT</td>
+                <td>Tanvir Ahmed</td>
+                <td>PDF • 5.1 MB</td>
+                <td>15-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-106">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Vector and Motion Analysis Worksheets</strong></td>
+                <td>Physics</td>
+                <td>Rafiqul Islam</td>
+                <td>PDF • 2.1 MB</td>
+                <td>14-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-107">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Periodic Table Trends and Chemical Bonding</strong></td>
+                <td>Chemistry</td>
+                <td>Kamrul Islam</td>
+                <td>PDF • 3.0 MB</td>
+                <td>13-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-108">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>Trigonometry Practice Problem Set</strong></td>
+                <td>Higher Mathematics</td>
+                <td>Tariq Hasan</td>
+                <td>PDF • 2.9 MB</td>
+                <td>12-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-109">Download</button>
+                </td>
+              </tr>
+              <tr class="row-hidden">
+                <td><strong>HSC Science Model Examination Paper</strong></td>
+                <td>Model Test</td>
+                <td>Academic Panel</td>
+                <td>ZIP • 8.5 MB</td>
+                <td>11-11-2026</td>
+                <td>
+                  <button type="button" class="btn-primary" value="MAT-110">Download</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="filter-bar-between">
+          <div>Showing verified academic resources and lecture notes</div>
+          <div class="table-actions">
+            <button type="button" class="btn-secondary" id="btnPrevMaterials" disabled>
+              Previous
+            </button>
+            <button type="button" class="btn-primary" id="btnPage1Materials">
+              1
+            </button>
+            <button type="button" class="btn-secondary" id="btnPage2Materials">
+              2
+            </button>
+            <button type="button" class="btn-secondary" id="btnNextMaterials">
+              Next
+            </button>
+          </div>
+        </div>
+
         <div class="section-footer-bar">
           <span>Need specific lecture notes or homework worksheets?</span>
           <button type="button" class="btn-primary" id="btnRequestNotes">
@@ -106,7 +233,7 @@
       </div>
 
       <footer class="page-footer-main">
-        © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+        Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
       </footer>
     </main>
 
@@ -116,14 +243,35 @@
           <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
           <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
         </div>
-        <div id="simpleModalBody" class="modal-body"></div>
+        <div id="simpleModalBody" class="modal-body">
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Calculus Chapter Added</strong>
+              <span class="modal-notif-meta">1h ago</span>
+            </div>
+            <p class="modal-notif-meta">Tutor Tariq Hasan uploaded Calculus chapter revision questions.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Physics Worksheet</strong>
+              <span class="modal-notif-meta">5h ago</span>
+            </div>
+            <p class="modal-notif-meta">Practice worksheet on Waves and Optics is ready for download.</p>
+          </div>
+          <div class="modal-notif-item">
+            <div class="modal-notif-header">
+              <strong>Chemistry Solution Key</strong>
+              <span class="modal-notif-meta">1d ago</span>
+            </div>
+            <p class="modal-notif-meta">Solutions for organic chemistry practice set 3 have been published.</p>
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
         </div>
       </div>
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="student.js"></script>
   </body>
 </html>
