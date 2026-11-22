@@ -10,7 +10,7 @@
 
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <div class="brand-logo">LHTMP</div>
+            <img src="../Files/Img/Logo/logo.svg" alt="LHTMP Logo" />
             <h2>Tutor Portal</h2>
             <p>Platform Suite</p>
         </div>
@@ -26,7 +26,9 @@
             <a href="earnings.html"><span class="nav-icon">💰</span> Earnings</a>
         </nav>
         <div class="sidebar-footer">
-            <button type="button" class="btn-logout">🚪 Logout</button>
+            <a href="../Login/login.html">
+                <button type="button" class="btn-logout" id="btnLogout">LOGOUT</button>
+            </a>
         </div>
     </aside>
 
@@ -34,18 +36,18 @@
 
         <header class="top-header">
             <div class="header-left">
-                <h2>Availability & Schedule Management</h2>
-                <p>Tutor Account • Configure working hours, open slots, and weekly calendar</p>
+                <h2>Tuition Availability & Schedule</h2>
+                <p>Tutor Account • Academic Session 2026</p>
             </div>
             <div class="header-right">
-                <button type="button" class="notif-btn" title="Notifications">
+                <button type="button" class="notif-btn" id="btnNotification" title="Notifications">
                     🔔
-                    <span class="notif-badge">0</span>
+                    <span class="notif-badge" id="topNotifBadge">3</span>
                 </button>
-                <div class="user-avatar"></div>
+                <img src="../Files/Img/Profile/default.svg" alt="Tutor" class="header-user-img" id="headerAvatar" />
                 <div class="user-info">
-                    <span>Tutor</span>
-                    <span>Tutor Account</span>
+                    <span id="headerUserName">Nowrrin Kabir</span>
+                    <span id="headerUserMeta">Mathematics • Dhaka</span>
                 </div>
             </div>
         </header>
@@ -79,15 +81,17 @@
                 <span class="badge">General Preferences</span>
             </div>
             <div class="form-body">
-                <form id="availabilitySettingsForm">
+                <form id="availabilitySettingsForm" novalidate>
                     <div class="form-grid">
                         <div class="form-group-custom">
                             <label for="start-time">Daily Earliest Start Time</label>
                             <input type="time" id="start-time" value="09:00" required>
+                            <span class="field-error" id="err-start-time"></span>
                         </div>
                         <div class="form-group-custom">
                             <label for="end-time">Daily Latest End Time</label>
                             <input type="time" id="end-time" value="20:30" required>
+                            <span class="field-error" id="err-end-time"></span>
                         </div>
                         <div class="form-group-custom">
                             <label for="duration">Default Session Duration</label>
@@ -156,17 +160,17 @@
                 </p>
 
                 <div class="mb-20">
-                    <h4 class="section-title-md">Sunday & Tuesday (Batch A)</h4>
+                    <h4 class="section-title-md">Sunday and Tuesday (Batch A)</h4>
                     <div class="slot-toggle-grid">
                         <button type="button" class="slot-item active">09:00 AM - 10:30 AM (Available)</button>
                         <button type="button" class="slot-item booked">03:00 PM - 04:30 PM (Booked: Erona)</button>
-                        <button type="button" class="slot-item booked">05:00 PM - 06:30 PM (Booked: Siam)</button>
+                        <button type="button" class="slot-item booked">05:00 PM - 06:30 PM (Booked: Nafis)</button>
                         <button type="button" class="slot-item active">07:00 PM - 08:30 PM (Available)</button>
                     </div>
                 </div>
 
                 <div class="mb-20">
-                    <h4 class="section-title-md">Monday & Wednesday (Batch B)</h4>
+                    <h4 class="section-title-md">Monday and Wednesday (Batch B)</h4>
                     <div class="slot-toggle-grid">
                         <button type="button" class="slot-item active">10:00 AM - 11:30 AM (Available)</button>
                         <button type="button" class="slot-item booked">04:00 PM - 05:30 PM (Booked: Rodela)</button>
@@ -176,7 +180,7 @@
                 </div>
 
                 <div class="mb-20">
-                    <h4 class="section-title-md">Thursday & Friday (Weekend Batches)</h4>
+                    <h4 class="section-title-md">Thursday and Friday (Weekend Batches)</h4>
                     <div class="slot-toggle-grid">
                         <button type="button" class="slot-item booked slot-weekend">09:30 AM - 11:00 AM (Booked: Nowrin)</button>
                         <button type="button" class="slot-item active slot-weekend">03:30 PM - 05:00 PM (Available)</button>
@@ -205,7 +209,7 @@
                     </div>
                     <div class="schedule-slot-card">
                         <div class="schedule-slot-time">05:00 - 06:30 PM</div>
-                        <div class="schedule-slot-subj"><strong>Siam</strong> (Higher Math)</div>
+                        <div class="schedule-slot-subj"><strong>Nafis</strong> (Higher Math)</div>
                     </div>
                 </div>
                 <div class="schedule-day-column">
@@ -227,7 +231,7 @@
                     </div>
                     <div class="schedule-slot-card">
                         <div class="schedule-slot-time">05:00 - 06:30 PM</div>
-                        <div class="schedule-slot-subj"><strong>Siam</strong> (Higher Math)</div>
+                        <div class="schedule-slot-subj"><strong>Nafis</strong> (Higher Math)</div>
                     </div>
                 </div>
                 <div class="schedule-day-column">
@@ -273,25 +277,46 @@
         </div>
 
         <div id="simpleModal" class="modal-overlay">
-            <div class="modal-box">
-                <div class="modal-header">
-                    <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
-                    <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="simpleModalTitle" class="modal-title">Tutor Notifications</h3>
+                <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
+            </div>
+            <div id="simpleModalBody" class="modal-body">
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New Tuition Booking Request</strong>
+                        <span class="modal-notif-meta">15m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Student Farzana Jui requested a trial session for General Mathematics.</p>
                 </div>
-                <div id="simpleModalBody" class="modal-body"></div>
-                <div class="modal-footer">
-                    <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Session Payout Credited</strong>
+                        <span class="modal-notif-meta">2h ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Monthly tuition fee of ৳18,495 disbursed via bank transfer.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>New 5-Star Rating Received</strong>
+                        <span class="modal-notif-meta">1d ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Nafis Iqbal posted a 5-star review for Higher Math classes.</p>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
+            </div>
         </div>
+    </div></div>
 
         <footer class="page-footer-main">
-            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            Copyright 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="tutor.js"></script>
 </body>
 </html>
