@@ -219,7 +219,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   const confirmPasswordInput = document.getElementById("confirmPassword");
   const registrationForm = document.getElementById("registrationForm");
   const btnTogglePassword = document.getElementById("btnTogglePassword");
+  const imgTogglePassword = document.getElementById("imgTogglePassword");
   const btnToggleConfirmPassword = document.getElementById("btnToggleConfirmPassword");
+  const imgToggleConfirmPassword = document.getElementById("imgToggleConfirmPassword");
 
   let isFromAdmin = window.location.search.indexOf("source=user_management") != -1;
   if (!isFromAdmin && document.referrer.indexOf("user_management") != -1) {
@@ -247,10 +249,16 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (!passwordInput) return;
       if (passwordInput.type == "password") {
         passwordInput.type = "text";
-        btnTogglePassword.textContent = "🙈";
+        if (imgTogglePassword) {
+          imgTogglePassword.src = "../Files/Img/Icon/eye-off.svg";
+          imgTogglePassword.alt = "Hide Password";
+        }
       } else {
         passwordInput.type = "password";
-        btnTogglePassword.textContent = "👁️";
+        if (imgTogglePassword) {
+          imgTogglePassword.src = "../Files/Img/Icon/eye.svg";
+          imgTogglePassword.alt = "Show Password";
+        }
       }
     });
   }
@@ -260,10 +268,16 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (!confirmPasswordInput) return;
       if (confirmPasswordInput.type == "password") {
         confirmPasswordInput.type = "text";
-        btnToggleConfirmPassword.textContent = "🙈";
+        if (imgToggleConfirmPassword) {
+          imgToggleConfirmPassword.src = "../Files/Img/Icon/eye-off.svg";
+          imgToggleConfirmPassword.alt = "Hide Password";
+        }
       } else {
         confirmPasswordInput.type = "password";
-        btnToggleConfirmPassword.textContent = "👁️";
+        if (imgToggleConfirmPassword) {
+          imgToggleConfirmPassword.src = "../Files/Img/Icon/eye.svg";
+          imgToggleConfirmPassword.alt = "Show Password";
+        }
       }
     });
   }
@@ -295,9 +309,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (typeof readUser == "function") {
       existingDatabaseEntries = await readUser();
     }
-  } catch (error) {
-    showAlert("Could not read users.txt. Please run the project on a local server.");
-  }
+  } catch (error) {}
 
   if (userTypeSelect) {
     userTypeSelect.addEventListener("change", function () {
@@ -464,11 +476,13 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (confirmPasswordInput) {
         confirmPasswordInput.type = "password";
       }
-      if (btnTogglePassword) {
-        btnTogglePassword.textContent = "👁️";
+      if (imgTogglePassword) {
+        imgTogglePassword.src = "../Files/Img/Icon/eye.svg";
+        imgTogglePassword.alt = "Show Password";
       }
-      if (btnToggleConfirmPassword) {
-        btnToggleConfirmPassword.textContent = "👁️";
+      if (imgToggleConfirmPassword) {
+        imgToggleConfirmPassword.src = "../Files/Img/Icon/eye.svg";
+        imgToggleConfirmPassword.alt = "Show Password";
       }
       let profileImgField = document.getElementById("profileImage");
       if (profileImgField) {
@@ -603,101 +617,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         gradeDetailedFormatted = grade + "_" + detailedGrade;
       }
 
-      try {
-        const currentEntries = existingDatabaseEntries.length > 0
-          ? existingDatabaseEntries
-          : (typeof readUser == "function" ? await readUser() : []);
+      let isFromAdmin = window.location.search.indexOf("source=user_management") != -1;
+      if (!isFromAdmin && document.referrer.indexOf("user_management") != -1) {
+        isFromAdmin = true;
+      }
 
-        for (let i = 0; i < currentEntries.length; i++) {
-          let acc = currentEntries[i].parsed;
-          if (acc) {
-            if (acc.email.toLowerCase() == email.toLowerCase()) {
-              setFieldError("email", "err-email", "This email address is already registered.");
-              showAlert("This email address is already registered. Please use a unique email.", "error");
-              return;
-            }
-            if (acc.phone == phone) {
-              setFieldError("phone", "err-phone", "This phone number is already registered.");
-              showAlert("This phone number is already registered. Please use a unique 11-digit phone number.", "error");
-              return;
-            }
-          }
-        }
-
-        const newRecordLine = "{" + fullName + "}; {" + email + "}; {" + phone + "}; {" + password + "}; {" + dob + "}; {" + gender + "}; {" + division + "}; {" + area + "}; {" + gradeDetailedFormatted + "}; {" + userType + "}";
-
-        let lines = [];
-        for (let i = 0; i < currentEntries.length; i++) {
-          lines.push(currentEntries[i].raw);
-        }
-        lines.push(newRecordLine);
-        const updatedText = lines.join("\n");
-
-        if (typeof writeUser == "function") {
-          await writeUser(updatedText);
-        }
-
-        if (typeof readDatabase == "function" && typeof writeDatabase == "function") {
-          try {
-            let db = await readDatabase();
-            if (db && db.users) {
-              let newId = "USR-" + (1001 + db.users.length);
-              let now = new Date();
-              let y = now.getFullYear();
-              let m = now.getMonth() + 1;
-              let d = now.getDate();
-              let hr = now.getHours();
-              let mn = now.getMinutes();
-              let yStr = "" + y;
-              let mStr = m < 10 ? "0" + m : "" + m;
-              let dStr = d < 10 ? "0" + d : "" + d;
-              let hrStr = hr < 10 ? "0" + hr : "" + hr;
-              let mnStr = mn < 10 ? "0" + mn : "" + mn;
-              let dateStr = yStr + "-" + mStr + "-" + dStr + " " + hrStr + ":" + mnStr;
-              db.users.push({
-                raw: "{" + newId + "}; {" + fullName + "}; {" + email + "}; {" + phone + "}; {" + password + "}; {" + dob + "}; {" + gender + "}; {" + division + "}; {" + area + "}; {" + gradeDetailedFormatted + "}; {" + userType + "}; {Active}; {" + dateStr + "}; {" + profileImgName + "}",
-                id: newId,
-                fullName: fullName,
-                email: email,
-                phone: phone,
-                password: password,
-                dob: dob,
-                gender: gender,
-                division: division,
-                area: area,
-                grade: gradeDetailedFormatted,
-                role: userType,
-                status: "Active",
-                date: dateStr,
-                image: profileImgName
-              });
-              writeDatabase(db);
-              if (regAvatarDataUrl.length > 0) {
-                localStorage.setItem("lhtmp_avatar_" + newId, regAvatarDataUrl);
-                localStorage.setItem("lhtmp_avatar_" + email, regAvatarDataUrl);
-              }
-            }
-          } catch (e) {}
-        }
-
-        let isFromAdmin = window.location.search.indexOf("source=user_management") != -1;
-        if (!isFromAdmin && document.referrer.indexOf("user_management") != -1) {
-          isFromAdmin = true;
-        }
-
-        if (isFromAdmin) {
-          showAlert("Account registered successfully! Redirecting to user management...", "success");
-          setTimeout(function () {
-            window.location.href = "../Admin/user_management.html";
-          }, 1000);
-        } else {
-          showAlert("Account registered and written to users.txt! Redirecting to login...", "success");
-          setTimeout(function () {
-            window.location.href = "../Login/login.html?registered=true";
-          }, 1000);
-        }
-      } catch (error) {
-        showAlert("Error accessing users.txt. Please run the project using a local server.", "error");
+      if (isFromAdmin) {
+        alert("Account registered successfully! Redirecting to user management...");
+        window.location.href = "../Admin/user_management.html";
+      } else {
+        alert("Account registered successfully! Redirecting to login...");
+        window.location.href = "../Login/login.html?registered=true";
       }
     });
   }

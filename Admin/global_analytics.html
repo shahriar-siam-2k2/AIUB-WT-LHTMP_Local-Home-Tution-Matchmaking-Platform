@@ -42,11 +42,11 @@
             </div>
             <div class="header-right">
                 <span class="admin-badge-header">System Administrator</span>
-                <button class="notif-btn" type="button" title="Notifications">
+                <button class="notif-btn" id="btnNotif" type="button" title="Notifications">
                     🔔
-                    <span class="notif-badge" id="notifBadge"></span>
+                    <span class="notif-badge" id="notifBadge">3</span>
                 </button>
-                <img src="../Files/Img/Profile/admin.svg" alt="Admin">
+                <img src="../Files/Img/Profile/default.svg" alt="Admin">
                 <div class="user-info">
                     <span>Admin</span>
                     <span>System Administrator</span>
@@ -57,28 +57,28 @@
         <div class="stats-grid">
             <div class="stat-card" data-icon="👥">
                 <div class="stat-label">Total Platform Users</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">1,248</div>
+                <div class="stat-sub">+12% this month</div>
             </div>
             <div class="stat-card" data-icon="🎯">
                 <div class="stat-label">Matching Success Rate</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">84.6%</div>
+                <div class="stat-sub">+3.2% vs target</div>
             </div>
             <div class="stat-card" data-icon="৳">
                 <div class="stat-label">Gross Merchandise Value</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">৳ 1,854,000</div>
+                <div class="stat-sub">Monthly tuition volume</div>
             </div>
             <div class="stat-card" data-icon="📚">
                 <div class="stat-label">Active Tuition Matches</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">560</div>
+                <div class="stat-sub">Ongoing sessions</div>
             </div>
             <div class="stat-card" data-icon="⭐">
                 <div class="stat-label">Tutor Retention Rate</div>
-                <div class="stat-value"></div>
-                <div class="stat-sub"></div>
+                <div class="stat-value">91.4%</div>
+                <div class="stat-sub">90-day active retention</div>
             </div>
         </div>
 
@@ -97,17 +97,87 @@
                             <th>Current Month (Oct)</th>
                             <th>Previous Month (Sep)</th>
                             <th>MoM Growth</th>
-                            <th>Target KPI</th>
                             <th>Performance Status</th>
                         </tr>
                     </thead>
-                    <tbody id="analyticsPerformanceBody"></tbody>
+                    <tbody id="analyticsPerformanceBody">
+                        <tr>
+                            <td><strong>Total User Registrations</strong></td>
+                            <td>1,248</td>
+                            <td>1,114</td>
+                            <td><span class="trend-rate trend-positive">+12.0%</span></td>
+                            <td><span class="status-badge active">EXCEEDED</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Active Tutor Profiles</strong></td>
+                            <td>482</td>
+                            <td>430</td>
+                            <td><span class="trend-rate trend-positive">+12.1%</span></td>
+                            <td><span class="status-badge active">EXCEEDED</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gross Volume Transacted</strong></td>
+                            <td>৳ 1,854,000</td>
+                            <td>৳ 1,620,000</td>
+                            <td><span class="trend-rate trend-positive">+14.4%</span></td>
+                            <td><span class="status-badge active">EXCEEDED</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tuition Matches Finalized</strong></td>
+                            <td>560</td>
+                            <td>490</td>
+                            <td><span class="trend-rate trend-positive">+14.3%</span></td>
+                            <td><span class="status-badge active">EXCEEDED</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Matching Success Rate</strong></td>
+                            <td>84.6%</td>
+                            <td>81.4%</td>
+                            <td><span class="trend-rate trend-positive">+3.2%</span></td>
+                            <td><span class="status-badge active">ON TARGET</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Dispute Resolution Rate</strong></td>
+                            <td>94.2%</td>
+                            <td>91.5%</td>
+                            <td><span class="trend-rate trend-positive">+2.7%</span></td>
+                            <td><span class="status-badge pending">NEAR TARGET</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Tutor Retention Rate</strong></td>
+                            <td>91.4%</td>
+                            <td>89.2%</td>
+                            <td><span class="trend-rate trend-positive">+2.2%</span></td>
+                            <td><span class="status-badge active">ON TARGET</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Average Response Latency</strong></td>
+                            <td>2.4 Hours</td>
+                            <td>3.1 Hours</td>
+                            <td><span class="trend-rate trend-positive">-22.5%</span></td>
+                            <td><span class="status-badge active">EXCEEDED</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Student Satisfaction Index</strong></td>
+                            <td>4.8 / 5.0</td>
+                            <td>4.7 / 5.0</td>
+                            <td><span class="trend-rate trend-positive">+2.1%</span></td>
+                            <td><span class="status-badge active">EXCEEDED</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Platform Uptime SLA</strong></td>
+                            <td>99.98%</td>
+                            <td>99.95%</td>
+                            <td><span class="trend-rate trend-positive">+0.03%</span></td>
+                            <td><span class="status-badge active">ON TARGET</span></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="filter-bar filter-bar-between">
                 <div>Showing platform performance telemetry</div>
                 <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnPrevAnalyticsPerf">Previous</button>
+                    <button type="button" class="btn-secondary" id="btnPrevAnalyticsPerf" disabled>Previous</button>
                     <button type="button" class="btn-primary" id="btnPage1AnalyticsPerf">1</button>
                     <button type="button" class="btn-secondary" id="btnPage2AnalyticsPerf">2</button>
                     <button type="button" class="btn-secondary" id="btnNextAnalyticsPerf">Next</button>
@@ -133,13 +203,104 @@
                             <th>Matching Success Rate</th>
                         </tr>
                     </thead>
-                    <tbody id="analyticsMonthlyBody"></tbody>
+                    <tbody id="analyticsMonthlyBody">
+                        <tr>
+                            <td><strong>October 2026</strong></td>
+                            <td>1,248</td>
+                            <td>482</td>
+                            <td>560</td>
+                            <td>1,854,000</td>
+                            <td>185,400</td>
+                            <td><span class="trend-rate trend-positive">84.6%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>September 2026</strong></td>
+                            <td>1,114</td>
+                            <td>430</td>
+                            <td>490</td>
+                            <td>1,620,000</td>
+                            <td>162,000</td>
+                            <td><span class="trend-rate trend-positive">81.4%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>August 2026</strong></td>
+                            <td>980</td>
+                            <td>385</td>
+                            <td>425</td>
+                            <td>1,410,000</td>
+                            <td>141,000</td>
+                            <td><span class="trend-rate trend-positive">79.2%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>July 2026</strong></td>
+                            <td>845</td>
+                            <td>340</td>
+                            <td>360</td>
+                            <td>1,200,000</td>
+                            <td>120,000</td>
+                            <td><span class="trend-rate trend-positive">76.5%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>June 2026</strong></td>
+                            <td>720</td>
+                            <td>295</td>
+                            <td>305</td>
+                            <td>1,010,000</td>
+                            <td>101,000</td>
+                            <td><span class="trend-rate trend-positive">74.0%</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>May 2026</strong></td>
+                            <td>630</td>
+                            <td>250</td>
+                            <td>260</td>
+                            <td>890,000</td>
+                            <td>89,000</td>
+                            <td><span class="trend-rate trend-positive">72.1%</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>April 2026</strong></td>
+                            <td>540</td>
+                            <td>210</td>
+                            <td>220</td>
+                            <td>760,000</td>
+                            <td>76,000</td>
+                            <td><span class="trend-rate trend-positive">70.4%</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>March 2026</strong></td>
+                            <td>450</td>
+                            <td>180</td>
+                            <td>185</td>
+                            <td>630,000</td>
+                            <td>63,000</td>
+                            <td><span class="trend-rate trend-positive">68.2%</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>February 2026</strong></td>
+                            <td>370</td>
+                            <td>145</td>
+                            <td>150</td>
+                            <td>510,000</td>
+                            <td>51,000</td>
+                            <td><span class="trend-rate trend-positive">65.8%</span></td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>January 2026</strong></td>
+                            <td>300</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>410,000</td>
+                            <td>41,000</td>
+                            <td><span class="trend-rate trend-positive">63.5%</span></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="filter-bar filter-bar-between">
                 <div>Showing historical monthly platform inflow</div>
                 <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnPrevAnalyticsMonthly">Previous</button>
+                    <button type="button" class="btn-secondary" id="btnPrevAnalyticsMonthly" disabled>Previous</button>
                     <button type="button" class="btn-primary" id="btnPage1AnalyticsMonthly">1</button>
                     <button type="button" class="btn-secondary" id="btnPage2AnalyticsMonthly">2</button>
                     <button type="button" class="btn-secondary" id="btnNextAnalyticsMonthly">Next</button>
@@ -166,13 +327,94 @@
                             <th>Zone Rating</th>
                         </tr>
                     </thead>
-                    <tbody id="analyticsZonesBody"></tbody>
+                    <tbody id="analyticsZonesBody">
+                        <tr>
+                            <td><strong>Dhaka Central (Zone 1)</strong></td>
+                            <td>Tariqul Islam</td>
+                            <td>280</td>
+                            <td>242</td>
+                            <td><span class="trend-rate trend-positive">86.4%</span></td>
+                            <td>⭐ 4.9 / 5.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chittagong Metro (Zone 2)</strong></td>
+                            <td>Shamsul Huda</td>
+                            <td>195</td>
+                            <td>164</td>
+                            <td><span class="trend-rate trend-positive">84.1%</span></td>
+                            <td>⭐ 4.8 / 5.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rajshahi City (Zone 3)</strong></td>
+                            <td>Aminul Haque</td>
+                            <td>130</td>
+                            <td>108</td>
+                            <td><span class="trend-rate trend-positive">83.1%</span></td>
+                            <td>⭐ 4.7 / 5.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Barishal Sadar (Zone 4)</strong></td>
+                            <td>Mizanur Rahman</td>
+                            <td>95</td>
+                            <td>78</td>
+                            <td><span class="trend-rate trend-positive">82.1%</span></td>
+                            <td>⭐ 4.7 / 5.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sylhet Urban (Zone 5)</strong></td>
+                            <td>Anwar Hossain</td>
+                            <td>110</td>
+                            <td>92</td>
+                            <td><span class="trend-rate trend-positive">83.6%</span></td>
+                            <td>⭐ 4.8 / 5.0</td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Khulna Division (Zone 6)</strong></td>
+                            <td>Jahidul Islam</td>
+                            <td>85</td>
+                            <td>70</td>
+                            <td><span class="trend-rate trend-positive">82.4%</span></td>
+                            <td>⭐ 4.6 / 5.0</td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Rangpur Town (Zone 7)</strong></td>
+                            <td>Mostafa Kamal</td>
+                            <td>75</td>
+                            <td>61</td>
+                            <td><span class="trend-rate trend-positive">81.3%</span></td>
+                            <td>⭐ 4.6 / 5.0</td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Mymensingh Zone (Zone 8)</strong></td>
+                            <td>Asaduzzaman</td>
+                            <td>60</td>
+                            <td>49</td>
+                            <td><span class="trend-rate trend-positive">81.7%</span></td>
+                            <td>⭐ 4.7 / 5.0</td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Comilla Region (Zone 9)</strong></td>
+                            <td>Kabir Ahmed</td>
+                            <td>50</td>
+                            <td>41</td>
+                            <td><span class="trend-rate trend-positive">82.0%</span></td>
+                            <td>⭐ 4.6 / 5.0</td>
+                        </tr>
+                        <tr class="row-hidden">
+                            <td><strong>Gazipur Industrial (Zone 10)</strong></td>
+                            <td>Nazmul Hasan</td>
+                            <td>45</td>
+                            <td>37</td>
+                            <td><span class="trend-rate trend-positive">82.2%</span></td>
+                            <td>⭐ 4.5 / 5.0</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="filter-bar filter-bar-between">
                 <div>Showing regional coordinator zone performance</div>
                 <div class="table-actions">
-                    <button type="button" class="btn-secondary" id="btnPrevAnalyticsZones">Previous</button>
+                    <button type="button" class="btn-secondary" id="btnPrevAnalyticsZones" disabled>Previous</button>
                     <button type="button" class="btn-primary" id="btnPage1AnalyticsZones">1</button>
                     <button type="button" class="btn-secondary" id="btnPage2AnalyticsZones">2</button>
                     <button type="button" class="btn-secondary" id="btnNextAnalyticsZones">Next</button>
@@ -181,12 +423,11 @@
         </div>
 
         <footer class="page-footer-main">
-            &copy; 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
+            © 2026 Local Home Tuition Matchmaking Platform. All rights reserved.
         </footer>
 
     </div>
 
-    <script src="../Helper JS/readWrite.js"></script>
     <script src="admin.js"></script>
     <div id="simpleModal" class="modal-overlay">
         <div class="modal-box">
@@ -194,7 +435,29 @@
                 <h3 id="simpleModalTitle" class="modal-title">Notification</h3>
                 <button type="button" id="btnModalClose" class="modal-close-btn">✕</button>
             </div>
-            <div id="simpleModalBody" class="modal-body"></div>
+            <div id="simpleModalBody" class="modal-body">
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Urgent Dispute Docket</strong>
+                        <span class="modal-notif-meta">15m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Case DSP-2026-005 escalated to arbitration desk for binding review.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Content Moderation</strong>
+                        <span class="modal-notif-meta">45m ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Item MOD-101 flagged for unverified certificates and requires inspection.</p>
+                </div>
+                <div class="modal-notif-item">
+                    <div class="modal-notif-header">
+                        <strong>Payment Reconciliation</strong>
+                        <span class="modal-notif-meta">2h ago</span>
+                    </div>
+                    <p class="modal-notif-meta">Automated gateway settlement and commission disbursal verified.</p>
+                </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" id="btnModalOk" class="btn-primary modal-ok-btn">OK</button>
             </div>

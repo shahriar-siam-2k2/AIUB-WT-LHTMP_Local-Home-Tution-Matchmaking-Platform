@@ -1069,6 +1069,10 @@ a {
   justify-content: center;
 }
 
+.modal-overlay.active {
+  display: flex;
+}
+
 .modal-box {
   background: #ffffff;
   border-radius: 10px;
@@ -1172,11 +1176,33 @@ a {
   display: flex;
   gap: 8px;
   align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
-.btn-table-disabled {
-  opacity: 0.5;
+.user-action-group button {
+  min-width: 105px;
+  height: 32px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.user-action-group a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+button:disabled {
+  opacity: 0.45;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .text-truncate-cell {
@@ -1240,6 +1266,10 @@ a {
   margin-top: 8px;
 }
 
+.modal-other-container.active {
+  display: block;
+}
+
 .modal-notif-item {
   padding: 12px;
   border-bottom: 1px solid #e2e8f0;
@@ -1262,4 +1292,28 @@ a {
   padding: 20px;
   text-align: center;
   color: #64748b;
+}
+
+.row-hidden {
+  display: none;
+}
+
+.field-error {
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 4px;
+  display: none;
+}
+
+.field-error.active {
+  display: block;
+}
+
+.input-error {
+  border-color: #dc2626 !important;
+}
+
+.req {
+  color: #dc2626;
 }

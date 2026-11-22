@@ -490,6 +490,13 @@ a button {
   opacity: 0.75;
 }
 
+.toggle-password-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  pointer-events: none;
+}
+
 .field-error {
   color: #dc2626;
   font-size: 12px;
